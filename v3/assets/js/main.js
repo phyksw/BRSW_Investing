@@ -5,13 +5,13 @@
 // ---- Sector registry (single source of truth for nav + landing) ----
 window.SECTORS = [
   // AI (최상단 · LLM → 엔터 → 솔루션 순)
-  { slug: "ai-llm",           name: "AI LLM 사업방향",        period: "2026–",     group: "AI",
+  { slug: "ai-llm",           name: "AI LLM 개발",            period: "2026–",     group: "AI",
     desc: "치킨게임에서 가치 구독으로. 클로드 코드의 ARPU 역전.",
     tickers: ["ANTHROPIC*", "OPENAI*", "GOOGL", "META"] },
   { slug: "ai-entertainment", name: "AI 엔터테인먼트",        period: "2025–",     group: "AI",
     desc: "월드모델·AI 캐릭터·생성형 스토리. 스캐터랩·MiniMax·Genie.",
     tickers: ["SCATTERLAB*", "WRTN*", "META"] },
-  { slug: "ai-solutions",     name: "AI 솔루션",             period: "2023–2026", group: "AI",
+  { slug: "ai-solutions",     name: "데이터 솔루션",          period: "2023–2026", group: "AI",
     desc: "팔란티어·C3.ai·Snowflake·ServiceNow 등 B2B AI 적용층.",
     tickers: ["PLTR", "AI", "SNOW", "NOW"] },
 
@@ -32,7 +32,7 @@ window.SECTORS = [
   { slug: "quantum",          name: "양자컴퓨팅",            period: "2022–2026", group: "프런티어",
     desc: "초전도·이온·광자 노선의 PoC 경쟁. 미국이 전략자산으로 분류.",
     tickers: ["IONQ", "RGTI", "QBTS", "QUBT"] },
-  { slug: "ai-robot-future",  name: "AI·로봇·미래사회",      period: "2025–",     group: "프런티어",
+  { slug: "ai-robot-future",  name: "휴머노이드",            period: "2025–",     group: "프런티어",
     desc: "휴머노이드와 일자리·기본소득·새로운 유희경제 논의.",
     tickers: ["TSLA", "FIGURE*", "277810.KQ"] },
   { slug: "batteries",        name: "이차전지",              period: "2022–2023", group: "프런티어",
@@ -135,7 +135,7 @@ window.FONT_MONO_KR = "JetBrains Mono, Pretendard Variable, Consolas, monospace"
 window.SECTOR_COLOR = {
   "방산":          "#ffb020",   // 4분면과 동일
   "드론":          "#ffb020",   // 같은 그룹 (앰버 톤)
-  "AI 솔루션":     "#2bd4a4",
+  "데이터 솔루션":     "#2bd4a4",
   "AI LLM":         "#2bd4a4",
   "AI 엔터":        "#2bd4a4",
   "AI 인프라":     "#5aa7ff",
@@ -147,7 +147,6 @@ window.SECTOR_COLOR = {
   "우주":          "#c489ff",
   "로봇":          "#c489ff",
   "휴머노이드":    "#c489ff",
-  "AI·로봇·미래": "#c489ff",
   "신규상장 AI LLM":  "#2bd4a4",
   "신규상장 AI 엔터": "#2bd4a4",
 };

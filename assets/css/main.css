@@ -691,3 +691,130 @@ section {
   /* 푸터 상단 여백 축소 */
   .footer { margin-top: 48px; padding: 36px 0 28px; }
 }
+
+/* ========================================
+   📈 대표 종목 사이클 산포 (Lite 라이트 차트)
+   v3 chartPos 이식 · 망고보드 라이트 톤
+   ======================================== */
+.cycle-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.cycle-card-head {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mango-deep);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+.cycle-chart {
+  width: 100%;
+  height: 520px;
+  min-width: 0;
+}
+.cycle-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 12.5px;
+}
+.cycle-key i {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--swatch);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.cycle-note {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+/* 호버 상세 패널 — 살구빛 카드 */
+.cycle-detail {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  min-height: 84px;
+}
+.cycle-detail .detail-placeholder {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  text-align: center;
+  padding: 14px 0;
+  font-style: italic;
+}
+.cycle-detail .detail-content[hidden] { display: none; }
+.cycle-detail .detail-content {
+  display: grid;
+  grid-template-columns: minmax(120px, 170px) 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.cycle-detail .detail-head {
+  padding-right: 14px;
+  border-right: 1px solid var(--line);
+}
+.cycle-detail .detail-ticker {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--mango-deep);
+}
+.cycle-detail .detail-sector {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cycle-detail .detail-body { font-size: 13px; color: var(--text); line-height: 1.55; }
+.cycle-detail .detail-years {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+.cycle-detail .detail-years thead th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: right;
+  padding: 2px 6px;
+  border-bottom: 1px solid var(--line);
+}
+.cycle-detail .detail-years thead th:first-child { text-align: left; }
+.cycle-detail .detail-years tbody td {
+  padding: 4px 6px;
+  text-align: right;
+  border-bottom: 1px dashed var(--line-soft);
+}
+.cycle-detail .detail-years tbody tr:last-child td { border-bottom: none; }
+.cycle-detail .detail-years .yr { text-align: left; color: var(--text-soft); font-weight: 700; }
+.cycle-detail .detail-years .mc { color: var(--text-strong); font-weight: 600; }
+.cycle-detail .detail-years .rt { font-weight: 700; }
+.cycle-detail .detail-years .rt.up   { color: var(--up); }
+.cycle-detail .detail-years .rt.down { color: var(--down); }
+.cycle-detail .detail-years .rt.gold { color: #cf9000; }
+.cycle-detail .detail-years .rt.pink { color: var(--berry); }
+.cycle-detail .detail-body p { margin: 4px 0 0; font-size: 12.5px; color: var(--text-soft); }
+
+@media (max-width: 640px) {
+  .cycle-card { padding: 16px 12px 14px; }
+  .cycle-chart { height: 440px; }
+  .cycle-detail .detail-content { grid-template-columns: 1fr; gap: 10px; }
+  .cycle-detail .detail-head { padding-right: 0; padding-bottom: 8px; border-right: none; border-bottom: 1px solid var(--line); }
+}

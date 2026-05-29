@@ -255,11 +255,13 @@ const navTemplate = (currentSlug) => `
       <a class="nav-brand" href="../index.html"><span class="nav-brand-dot"></span> Investing Memo <span style="color:var(--mango);font-size:11px;font-weight:600;letter-spacing:0.1em;">v4 LITE</span></a>
       <div class="nav-links">
         <a href="../index.html">홈</a>
+        <a href="./ai-llm.html"${currentSlug === "ai-llm" ? ' class="active"' : ""}>AI LLM</a>
         <a href="./semiconductors.html"${currentSlug === "semiconductors" ? ' class="active"' : ""}>반도체</a>
-        <a href="./datacenter.html"${currentSlug === "datacenter" ? ' class="active"' : ""}>DC</a>
-        <a href="./ai-llm.html"${currentSlug === "ai-llm" ? ' class="active"' : ""}>AI</a>
         <a href="./space.html"${currentSlug === "space" ? ' class="active"' : ""}>우주</a>
-        <a href="./defense.html"${currentSlug === "defense" ? ' class="active"' : ""}>방산</a>
+        <a href="./datacenter.html"${currentSlug === "datacenter" ? ' class="active"' : ""}>DC</a>
+        <a href="./ai-entertainment.html"${currentSlug === "ai-entertainment" ? ' class="active"' : ""}>AI 엔터</a>
+        <a href="./drones.html"${currentSlug === "drones" ? ' class="active"' : ""}>드론</a>
+        <a href="./quantum.html"${currentSlug === "quantum" ? ' class="active"' : ""}>양자</a>
         <a href="/v3/sectors/${currentSlug}.html" style="color:var(--mango-deep);font-weight:700">v3 상세 ↗</a>
       </div>
     </div>
