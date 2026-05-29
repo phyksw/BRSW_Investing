@@ -1,0 +1,14 @@
+{
+  // Cloudflare Workers — static-assets-only config for Investing Memo v4 (Lite Dashboard).
+  // 정적 HTML/CSS/JS만 서빙하며 Worker 스크립트는 없습니다.
+  //
+  // 이 파일을 커밋하는 이유: wrangler 설정이 없으면 `npx wrangler deploy`가
+  // 대화형 초기 설정(C3)을 돌려 node_modules를 repo 루트에 설치하고, 그 안의
+  // workerd 바이너리(119 MiB)가 25 MiB 자산 한도를 넘겨 배포가 실패합니다.
+  // 설정을 명시하면 그 자동 설치가 일어나지 않습니다.
+  "name": "brswinvesting",
+  "compatibility_date": "2026-05-29",
+  "assets": {
+    "directory": "."
+  }
+}

@@ -1,0 +1,15 @@
+# Cloudflare Workers 정적 자산 업로드에서 제외할 항목 (.gitignore 문법).
+# 가장 중요한 건 node_modules — workerd 바이너리가 119 MiB라 25 MiB 한도를 넘김.
+# 나머지는 사이트 구성요소가 아닌 설정/도구/문서 파일이라 공개 서빙에서 제외.
+node_modules
+tools
+package.json
+package-lock.json
+bun.lockb
+wrangler.jsonc
+wrangler.toml
+.assetsignore
+netlify.toml
+.gitignore
+*.md
+LICENSE
