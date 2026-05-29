@@ -9,7 +9,6 @@ bun.lockb
 wrangler.jsonc
 wrangler.toml
 .assetsignore
-netlify.toml
 .gitignore
 *.md
 LICENSE

@@ -1,0 +1,10 @@
+# Cloudflare Workers/Pages 응답 헤더 (netlify.toml에서 이전).
+# Cloudflare가 이 파일을 자동 인식해 정적 자산 응답에 헤더를 붙입니다.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
