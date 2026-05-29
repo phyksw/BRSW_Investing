@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / deploy
+.netlify/
+
+# Secrets / env (never commit tokens or API keys)
+.env*
+*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Local Claude Code settings (dev ports etc. — machine-specific)
+.claude/
+
+# Internal working docs — local only, not for public release
+CLAUDE.md
+PROJECT_RULES.md
+REFERENCE_DOC.md
+IMPROVEMENT_PLAN.md
+
+# Logs
+*.log

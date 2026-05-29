@@ -1,0 +1,11 @@
+{
+  "name": "investing-memo-v4",
+  "version": "0.1.0",
+  "description": "한국 개인 투자자 11원칙 검증 — 간략·시각 중심 인포그래픽 대시보드 (Light Mode · Mangoboard 톤)",
+  "scripts": {
+    "preview": "python -m http.server 8081",
+    "build": "echo 'No build step — static HTML'"
+  },
+  "license": "CC-BY-NC-4.0",
+  "author": "상보그룹 BRSW (Kim Sangwoo · Won Bora)"
+}
