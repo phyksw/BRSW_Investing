@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investing Memo · 대시보드</title>
+  <meta name="description" content="개인 투자 검증 메모. 11원칙·섹터·연도별 키워드로 글로벌 트렌드를 점검하는 도구. 다크 모드.">
+  <!-- v2.7 — KakaoTalk·Naver 공유 미리보기 및 인앱 WebView 정상 렌더 보강 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Investing Memo — 11원칙 검증 대시보드">
+  <meta property="og:description" content="11원칙으로 글로벌 시장·테마를 검증하는 개인 투자 메모. 데이터센터·반도체·AI·우주·방산·양자 11개 섹터.">
+  <meta property="og:site_name" content="Investing Memo v3">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="./assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb">대시보드</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>Investing Memo <span style="color:var(--accent);font-family:var(--font-mono);font-size:0.6em;letter-spacing:0.1em;">// v1.2</span></h1>
+          <p class="subtitle">11원칙 위에서 본 시장 — 사이클·테마·이슈를 한 화면에</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">KOSPI · S&amp;P 500</div>
+          <div class="as-of">DATA AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <!-- v2.6 — Hero KPI strip 축소: 4칸 카드 → 한 줄 텍스트 메타바 (덜 시선 끌도록) -->
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:18px;padding:8px 12px;border:1px solid var(--bg-2);border-radius:6px;background:var(--bg-1);font-size:11.5px;color:var(--text-3);letter-spacing:0.01em">
+        <span><b style="color:var(--text-1)">11</b> 섹터</span>
+        <span style="color:var(--text-3)">·</span>
+        <span><b style="color:var(--text-1)">11</b> 원칙</span>
+        <span style="color:var(--text-3)">·</span>
+        <span>2026 키워드 <b style="color:var(--accent)">데이터센터</b></span>
+        <span style="color:var(--text-3)">·</span>
+        <span>컷오프 <b style="color:var(--text-1)">2026-05-29 00:30 KST</b></span>
+      </div>
+
+      <!-- 리포트의 약속 -->
+      <div class="callout fact">
+        <div class="head">이 리포트가 하는 일 · 하지 않는 일</div>
+        <p><b>하는 일</b> — 11원칙 프레임으로 11개 섹터·종목이 그 영역의 글로벌 트렌드·매크로 방향에 부합하는지 <b>검증·검토</b>합니다.
+        모든 섹터는 <b>FACT(공개 데이터)</b> · <b>REVIEW(검증·정정)</b> · <b>OPINION(저자 해석)</b> 세 층으로 분리.<br>
+        <b>하지 않는 일</b> — 종목 추천·매수 신호·포트폴리오 배분 권고. 본 문서는 학습·메모용이며 투자 권유가 아닙니다. <a href="./methodology.html">방법론·면책</a>.</p>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 1. 11원칙 · 한눈에 (최상단) -->
+      <!-- ============================== -->
+      <h2 style="margin-top:36px;border-left:4px solid var(--accent);padding-left:14px">① 검증의 잣대 — 11원칙</h2>
+      <p class="section-lede">아래 모든 섹터·종목 검토는 이 <b>11원칙</b> 위에서 이뤄집니다. 시장 선정(①②) → 기업 분석(③~⑦) → 매수 시점(⑧) → 보유·매도(⑨) → 위기 대응(⑩⑪) 흐름.</p>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>RULES — 종목 진입·보유·매도 기준</div>
+        <div class="grid cols-3" style="gap:12px;font-size:13.5px">
+          <div>① <b>본진</b> · 코스피·미국</div>
+          <div>② <b>실수요</b> 있는 산업</div>
+          <div>③ 3개년 매출·영익 <b style="color:var(--up)">상승</b></div>
+          <div>④ 3개년 같으면 <b style="color:var(--down)">매수 X</b></div>
+          <div>⑤ 흑자 또는 <b style="color:var(--up)">흑자 전환</b></div>
+          <div>⑥ 매출=시장, 이익=점유 <b>관점</b></div>
+          <div>⑦ 연결 업체 · 의존성 <b>파악</b></div>
+          <div>⑧ 시장·섹터 대비 시총 <b style="color:var(--up)">낮을 때</b></div>
+          <div>⑨ 3년 뒤 <b>수확</b>, 일부 매도 원칙</div>
+          <div>⑩ 고점 <b style="color:var(--warn)">-20~30%</b> 분할, <b style="color:var(--down)">-50% 과감</b></div>
+          <div>⑪ 하락장 <b>리밸런싱</b> (비중·신규 동시)</div>
+          <div style="text-align:right"><a href="./principles.html">자세히 보기 →</a></div>
+        </div>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 2. 미국 전략자산 프레임 (큰 그림 — 위로 이동) -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--accent);padding-left:14px">② 큰 그림 — 미국이 전략자산으로 분류한 영역</h2>
+      <p class="section-lede">앞으로 펼칠 모든 그림의 <b>장기 백본</b>. 반도체·AI·우주·방산·양자 — 정책·재정·관세가 같이 움직이는 다섯 영역은 단기 변동성보다 장기 우상향 베팅으로 본다는 입장 정리.</p>
+      <div class="callout opinion">
+        <div class="head">관전 프레임</div>
+        <p>반도체·AI·우주·방산·양자 — 미국이 안보 자산으로 본 영역은 <b>정책·재정·관세가 같이 움직인다</b>.
+        이 다섯 영역은 단기 변동성보다 <b>장기 우상향 정책 베팅</b>으로 본다.
+        리스크는 <b>정권 교체</b> (2025.9 <abbr data-term="IRA">IRA</abbr> EV 세액공제 종료)와 <b>중국 보복</b> (희토류·드론 배터리 셀 99% 점유).</p>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 3. 섹터별 포지셔닝 (위험 vs 보상) — 위로 이동 -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--warn);padding-left:14px">③ 어디에 베팅의 무게중심이 있나 — 섹터 4분면</h2>
+      <p class="section-lede">큰 그림을 깔았으니, 11개 섹터를 <b>"앞으로 어디에 베팅하느냐"</b>의 위험·보상 지형도에 올려놓습니다. 우상단은 옵션성 베팅, 좌상단은 가시성 베팅. 사이클 강도(어디에 돈이 실제로 흘렀나)는 뒤의 <a href="#yearly">⑥ 사이클 생존 지도</a>에서.</p>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>10개 섹터 4분면 매트릭스 (이차전지 제외 · 저자 주관)</div>
+        <div id="chartQuad" class="chart lg chart-readable"></div>
+        <div class="chart-key" aria-label="섹터 색상 범례">
+          <span><i style="--swatch:#2bd4a4"></i>AI</span>
+          <span><i style="--swatch:#5aa7ff"></i>AI 인프라</span>
+          <span><i style="--swatch:#c489ff"></i>우주 · 로봇 · 양자</span>
+          <span><i style="--swatch:#ffb020"></i>지정학·국방</span>
+        </div>
+        <p style="color:var(--text-2);font-size:13.5px;margin-top:10px">
+          가로축=리스크 / 세로축=잠재 보상 / 버블 크기=현재 사이클 강도 / 색=섹터 그룹.
+          우상단은 <b>고위험 고수익(양자·우주·로봇)</b>, 좌상단은 <b>가시성+상승 여력 균형(데이터센터·반도체)</b>.
+        </p>
+      </div>
+
+      <h2 style="margin-top:36px;border-left:4px solid var(--up);padding-left:14px">④ 대표 종목의 사이클 이동 — 시총 vs 수익률</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>X = 시총 ($B, 로그) · Y = 수익률 · 색 = 섹터 · 모양 = 연도</div>
+        <div id="chartPos" class="chart lg chart-readable"></div>
+        <!-- 호버 상세 패널 — 차트 아래에 배치하여 별자리(점·선)를 가리지 않음 -->
+        <div id="chartPosDetail" class="chart-detail-below" aria-live="polite">
+          <div class="detail-placeholder">점이나 연결선에 마우스를 올리면 종목 상세 정보가 여기 표시됩니다.</div>
+          <div class="detail-content" hidden>
+            <div class="detail-head">
+              <div class="detail-ticker"></div>
+              <div class="detail-sector"></div>
+            </div>
+            <div class="detail-body"></div>
+          </div>
+        </div>
+        <div class="chart-key" aria-label="섹터 색상 범례">
+          <span><i style="--swatch:#2bd4a4"></i>AI (LLM·엔터·솔루션)</span>
+          <span><i style="--swatch:#5aa7ff"></i>AI 인프라 · 반도체 · 데이터센터</span>
+          <span><i style="--swatch:#c489ff"></i>우주 · 로봇 · 양자</span>
+          <span><i style="--swatch:#ffb020"></i>방산 · 드론</span>
+        </div>
+        <p style="color:var(--text-2);font-size:13.5px;margin-top:10px">
+          <b>해석</b>: 위→아래로 이동한 종목은 사이클 정점 후 조정, 아래→위로 이동한 종목은 재가속 구간. 우측 메가캡(MSFT·GOOGL)은 변동이 작아 장기 보유 영역. <b>같은 섹터 색</b>이 좌→우로 흩어지면 그 섹터가 성숙해진다는 신호.
+        </p>
+        <p style="color:var(--text-3);font-size:10.5px;margin-top:6px;line-height:1.6">
+          <b>AS OF</b> 2026-05-29 · 한국 5/28 KRX 종가 · 미국 5/28 NYSE/NASDAQ 종가 · 환율 USD/KRW 1,501원. <b>일관성 규칙 (v3.3)</b>: 2026 시총·YTD는 verified anchor (Barchart). <b>2025 EOY 시총 = 2026 시총 ÷ (1 + 2026 YTD)</b> 백체인. <b>2025 연간 수익률 = (2025 EOY 시총 / 2024 EOY 시총) - 1</b>. 모든 점이 수학적으로 정합됨 (예: NVDA $3,400B → $4,509B → $5,180B, KTOS $3.4B → $14.2B → $12.2B). 신규상장은 IPO~5월 좌표만.
+        </p>
+      </div>
+
+      <h2 style="margin-top:48px;border-left:4px solid var(--accent);padding-left:14px">⑤ 그 해의 대장주 — 정량 검증</h2>
+      <p style="color:var(--text-3);font-size:12px;margin:6px 0 14px"><span style="color:var(--tier-gold)">황금=+300%↑</span> · <span style="color:#ff5fb0">핑크=+1,000%↑</span></p>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>2025 — 그 해의 대장주</div>
+          <div class="table-wrap">
+            <table class="leader-table" style="font-size:13.5px">
+              <thead><tr><th>종목</th><th>섹터</th><th class="num">수익률</th></tr></thead>
+              <tbody>
+                <tr class="row-gold"><td><span class="tk" title="D-Wave Quantum · NYSE:QBTS">QBTS</span></td><td>양자</td><td class="gold">+695%</td></tr>
+                <tr class="row-gold"><td><span class="tk" title="AST SpaceMobile · NASDAQ:ASTS">ASTS</span></td><td>우주</td><td class="gold">+326%</td></tr>
+                <tr class="row-gold"><td><span class="tk" title="SK하이닉스 · KRX:000660">SK하이닉스</span></td><td>반도체</td><td class="gold">+300%+</td></tr>
+                <tr><td><span class="tk" title="한화에어로스페이스 · KRX:012450">한화에어로</span></td><td>방산</td><td class="up">+260%</td></tr>
+                <tr><td><span class="tk" title="HD현대일렉트릭 · KRX:267260">HD현대일렉트릭</span></td><td>데이터센터</td><td class="up">+257%</td></tr>
+                <tr><td><span class="tk" title="현대로템 · KRX:064350">현대로템</span></td><td>방산</td><td class="up">+200%+</td></tr>
+                <tr><td><span class="tk" title="Kratos Defense · NASDAQ:KTOS">KTOS</span></td><td>드론</td><td class="up">+190%</td></tr>
+                <tr><td><span class="tk" title="Rocket Lab · NASDAQ:RKLB">RKLB</span></td><td>우주</td><td class="up">+174%</td></tr>
+                <tr><td><span class="tk" title="Palantir Technologies · NASDAQ:PLTR">PLTR</span></td><td>AI 솔루션</td><td class="up">+135%</td></tr>
+                <tr><td><span class="tk" title="삼성전자 · KRX:005930">삼성전자</span></td><td>반도체</td><td class="up">+125%</td></tr>
+                <tr><td><span class="tk" title="레인보우로보틱스 · KRX:277810 (삼성 자회사)">레인보우로보틱스</span></td><td>휴머노이드</td><td class="up">+100%+</td></tr>
+                <tr><td><span class="tk" title="International Business Machines · NYSE:IBM">IBM</span></td><td>AI 솔루션</td><td class="up">+35%</td></tr>
+                <tr><td><span class="tk" title="Alphabet (Google) · NASDAQ:GOOGL">GOOGL</span></td><td>AI LLM</td><td class="up">+30%</td></tr>
+                <tr><td><span class="tk" title="NVIDIA · NASDAQ:NVDA">NVDA</span></td><td>반도체</td><td class="up">+20%</td></tr>
+                <tr><td><span class="tk" title="Microsoft · NASDAQ:MSFT">MSFT</span></td><td>AI 인프라</td><td class="up">+15%</td></tr>
+                <tr><td><span class="tk" title="Adobe · NASDAQ:ADBE">ADBE</span></td><td>AI 솔루션</td><td class="down">-20%</td></tr>
+                <tr><td><span class="tk" title="Tesla · NASDAQ:TSLA">TSLA</span></td><td>로봇</td><td class="down">-30%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>2026 YTD 수익률 (USD 기준 · 5/28 vs 12/31/25) · <span class="as-of">AS OF 2026-05-29 · Barchart 실측</span></div>
+          <div class="table-wrap">
+            <table class="leader-table" style="font-size:13.5px">
+              <thead><tr><th>종목</th><th>섹터</th><th class="num">수익률</th></tr></thead>
+              <tbody>
+                <tr class="row-pink"><td><b><span class="tk" title="智谱AI · 2513.HK · IPO 공모가 HKD 116 → 5/29 HKD 1,758">Zhipu / 아틀라스</span></b> (2513.HK · IPO 1.8)</td><td>AI LLM</td><td class="pink"><b>+1,415%</b> <span style="color:var(--text-3);font-size:0.85em">(IPO누적)</span></td></tr>
+                <tr class="row-gold"><td><b><span class="tk" title="MiniMax · 0100.HK · IPO 공모가 HKD 165 → 5/29 HKD 858">MiniMax</span></b> (0100.HK · IPO 1.9)</td><td>AI 엔터</td><td class="gold"><b>+420%</b> <span style="color:var(--text-3);font-size:0.85em">(IPO누적)</span></td></tr>
+                <tr class="row-gold"><td><span class="tk" title="SK하이닉스 · 5/29 ₩2,337,000 · 시총 1,662조 ($1.11T) · 보도 KRW +250% → USD +232% FX 보정">SK하이닉스</span></td><td>반도체</td><td class="gold">+232%</td></tr>
+                <tr class="row-gold"><td><span class="tk" title="Micron · 5/28 $923.52 · $1T 신규 진입 · Barchart YTD">MU</span> (Micron, $1T 신규)</td><td>반도체</td><td class="gold">+224%</td></tr>
+                <tr><td><span class="tk" title="Iridium · 5/28 $51.26 · Barchart YTD">IRDM</span></td><td>우주</td><td class="up">+195%</td></tr>
+                <tr><td><span class="tk" title="Rocket Lab · 5/28 $148.03 · Barchart YTD">RKLB</span></td><td>우주</td><td class="up">+112%</td></tr>
+                <tr><td><b><span class="tk" title="SpaceX · 비상장 (2026.5 S-1 공시)">SpaceX</span></b> (SPCX · 6월 NASDAQ 예정)</td><td>우주</td><td class="num">5/20 <abbr data-term="S-1">S-1</abbr> 공개 · 평가 $1.75T</td></tr>
+                <tr><td><span class="tk" title="삼성전자 · 5/29 ₩313,500 · 시총 1,987조 ($1.32T) · 사용자 검증 KRW +100% → USD +96% FX 보정">삼성전자</span></td><td>반도체</td><td class="up">+96%</td></tr>
+                <tr><td><span class="tk" title="Vertiv · 5/28 $314.18 · Barchart YTD">VRT</span></td><td>데이터센터</td><td class="up">+94%</td></tr>
+                <tr><td><span class="tk" title="ASTS · 5/28 $133.09 · Barchart YTD">ASTS</span></td><td>우주</td><td class="up">+83%</td></tr>
+                <tr><td><span class="tk" title="IonQ · 5/28 $70.14 · Barchart YTD">IONQ</span></td><td>양자</td><td class="up">+56%</td></tr>
+                <tr><td><span class="tk" title="TSMC · 5/28 $424.86 · Barchart YTD">TSM</span></td><td>반도체</td><td class="up">+40%</td></tr>
+                <tr><td><span class="tk" title="HD현대일렉 · 5/29 ₩1,017,000 · USD +35% 추정 (정확값 추적)">HD현대일렉</span></td><td>데이터센터</td><td class="up">+35% 추정</td></tr>
+                <tr><td><span class="tk" title="두산에너빌 · 5/29 ₩103,200 · USD +30% 추정 (정확값 추적)">두산에너빌리티</span></td><td>데이터센터</td><td class="up">+30% 추정</td></tr>
+                <tr><td><span class="tk" title="Eaton · 5/28 $401.94 · Barchart YTD">ETN</span></td><td>데이터센터</td><td class="up">+26%</td></tr>
+                <tr><td><span class="tk" title="Alphabet · 5/28 $390.13 · Barchart YTD">GOOGL</span> (Gemini)</td><td>AI LLM</td><td class="up">+25%</td></tr>
+                <tr><td><span class="tk" title="Broadcom · 5/28 $426.58 · $2T 6번째 · Barchart YTD">AVGO</span></td><td>반도체</td><td class="up">+23%</td></tr>
+                <tr><td><span class="tk" title="Rigetti · 5/28 $27.03 · Barchart YTD">RGTI</span></td><td>양자</td><td class="up">+22%</td></tr>
+                <tr><td><span class="tk" title="Amazon · 5/28 $274 · Barchart YTD">AMZN</span></td><td>AI 인프라</td><td class="up">+19%</td></tr>
+                <tr><td><span class="tk" title="NVIDIA · 5/28 $214.25 · 시총 $5.18T · Barchart YTD">NVDA</span></td><td>반도체</td><td class="up">+15%</td></tr>
+                <tr><td><span class="tk" title="QBTS · 5/28 $29.49 · CHIPS Act LOI $100M · Barchart YTD">QBTS</span></td><td>양자</td><td class="up">+13%</td></tr>
+                <tr><td><span class="tk" title="현대로템 · 5/29 ₩198,900 · USD +10% 추정">현대로템</span></td><td>방산</td><td class="up">+10% 추정</td></tr>
+                <tr><td><span class="tk" title="SNOW · 5/28 $239.20 · Barchart YTD">SNOW</span></td><td>AI 솔루션</td><td class="up">+9%</td></tr>
+                <tr><td><span class="tk" title="레인보우로보틱스 · 5/29 ₩702,000 · YTD 추적 필요">레인보우로보</span></td><td>휴머노이드</td><td class="num">YTD 추적</td></tr>
+                <tr><td><span class="tk" title="TSLA · 5/28 $442.10 · Barchart YTD">TSLA</span></td><td>로봇</td><td class="down">-2%</td></tr>
+                <tr><td><span class="tk" title="META · 5/28 $635.29 · Barchart YTD">META</span></td><td>AI LLM</td><td class="down">-4%</td></tr>
+                <tr><td><span class="tk" title="OKLO · 5/28 $68.09 · Barchart YTD">OKLO</span></td><td>데이터센터</td><td class="down">-5%</td></tr>
+                <tr><td><span class="tk" title="DBX · 5/28 $26.19 · Barchart YTD">DBX</span></td><td>AI 솔루션</td><td class="down">-6%</td></tr>
+                <tr><td><span class="tk" title="한화에어로 · 5/29 ₩1,189,000 · 신고가 165.5만 후 -28% · USD -10% 추정">한화에어로</span></td><td>방산</td><td class="down">-10% 추정</td></tr>
+                <tr><td><span class="tk" title="IBM · 5/28 $264.22 · Barchart YTD">IBM</span></td><td>AI 솔루션</td><td class="down">-11%</td></tr>
+                <tr><td><span class="tk" title="AVAV · 5/28 $214.39 · Barchart YTD">AVAV</span></td><td>드론</td><td class="down">-11%</td></tr>
+                <tr><td><span class="tk" title="MSFT · 5/28 $426.99 · 고점 $555 -23% · Barchart YTD">MSFT</span></td><td>AI 인프라</td><td class="down">-12%</td></tr>
+                <tr><td><span class="tk" title="KTOS · 5/28 $65.19 · Barchart YTD · v2.13의 +425% 오류 정정">KTOS</span></td><td>드론</td><td class="down">-14%</td></tr>
+                <tr><td><span class="tk" title="CEG · 5/28 $286.31 · 원전 PPA · Barchart YTD">CEG</span></td><td>데이터센터</td><td class="down">-19%</td></tr>
+                <tr><td><span class="tk" title="PLTR · 5/28 $143.34 · 11년 계약(2035) · Barchart YTD">PLTR</span></td><td>AI 솔루션</td><td class="down">-19%</td></tr>
+                <tr><td><span class="tk" title="NOW · 5/28 $108.73 · 고점 $211 · Barchart YTD">NOW</span> (ServiceNow)</td><td>AI 솔루션</td><td class="down">-29%</td></tr>
+                <tr><td><span class="tk" title="ADBE · 5/28 $241.44 · Sora 압박 · Barchart YTD">ADBE</span></td><td>AI 솔루션</td><td class="down">-31%</td></tr>
+                <tr><td><span class="tk" title="CRM · 5/28 $176.17 · Agentforce · Barchart YTD">CRM</span></td><td>AI 솔루션</td><td class="down">-34%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p style="color:var(--text-3);font-size:11.5px;margin-top:-8px;margin-bottom:18px">
+        ※ <b>방법론 (v3.1)</b>: <b>2026 YTD = (5/28 종가 − 2025-12-31 종가) / 2025-12-31 종가</b>, 모두 USD 환산. 환율 USD/KRW 1,501원(5/29 investing.com) · USD/HKD 7.83(페그). US 종목 YTD 출처 = <b>Barchart Performance Report</b> 실측. 한국 종목 YTD = 보도/사용자 검증 KRW YTD × FX 보정 (2025 EOY FX 1,475 → 5/29 1,501 적용). 신규상장은 IPO 공모가 → 5/29 종가.<br>
+        ※ <span style="color:var(--tier-gold)">글자색 황금</span> = +300% 이상 · <span style="color:#ff5fb0">글자색 핑크</span> = +1,000% 이상.<br>
+        ※ <b>v3.1 정정 (v3.0의 "1년 LTM ≠ YTD" 혼동 수정)</b>: KTOS LTM +71% → <b>YTD -14.12%</b> · AVAV LTM +20% → <b>YTD -11.37%</b> · NVDA LTM +58% → <b>YTD +14.88%</b> · GOOGL LTM +126% → <b>YTD +24.64%</b> · TSM LTM +115% → <b>YTD +39.81%</b> · MU LTM +858% → <b>YTD +223.58%</b> · TSLA LTM +22% → <b>YTD -1.69%</b> · VRT LTM +186% → <b>YTD +93.93%</b> · RKLB LTM +415% → <b>YTD +112.20%</b> · ASTS LTM +436% → <b>YTD +83.24%</b> · IRDM LTM +95% → <b>YTD +194.94%</b> · PLTR LTM +16% → <b>YTD -19.36%</b> · IBM LTM +0.4% → <b>YTD -10.80%</b>.<br>
+        ※ <b>한국 종목 YTD (KRW 보도 + FX 보정)</b>: 삼성전자 KRW +100% → USD <b>+96%</b> · SK하이닉스 KRW +250% → USD <b>+232%</b> · HD현대일렉 USD <b>+35%</b> 추정 · 한화에어로 USD <b>-10%</b> 추정 (신고가 165.5만 후 -28%) · 두산에너빌 USD <b>+30%</b> 추정. <b>정확한 한국 종목 2025 EOY 종가는 추적 필요</b> — 보수적 추정값 사용.<br>
+        ※ <b>Zhipu</b> (2513.HK) HKD 116 → 1,758 = IPO +1,415% · <b>MiniMax</b> (0100.HK) HKD 165 → 858 = IPO +420% · <b>SpaceX</b>: 5/20 S-1, 6월 NASDAQ 예정.
+      </p>
+
+      <!-- ============================== -->
+      <!-- 6. 연도별 키워드 + 2026 카드 (정량 검증 다음으로 이동) -->
+      <!-- ============================== -->
+      <section class="cycle-section" aria-labelledby="yearly">
+      <div class="cycle-section-head">
+        <div>
+          <div class="section-kicker">Cycle evidence / 2019-2026</div>
+        <h2 id="yearly">⑥ 사이클 생존 지도 — 연도별 키워드</h2>
+        </div>
+      </div>
+      <p class="section-lede cycle-lede"><b>원칙 ②(실수요 있는 산업)</b>은 사후 검증이 가능합니다. 매년 어느 섹터가 실제로 돈을 끌어모았는지 — 대표 종목 수익률을 정량 기준으로 환산해 8년 흐름을 한 장에 압축합니다.</p>
+      <div class="card cycle-board">
+        <div class="cycle-board-head">
+          <div>
+            <div class="cycle-overline">Sector activation heatmap</div>
+            <div class="cycle-title">대표 종목 수익률을 0-4단계로 표준화한 사이클 지도</div>
+          </div>
+        </div>
+        <div id="chartHeat" class="chart lg cycle-heatmap"></div>
+        <div class="heatmap-scale" aria-label="섹터 활성도 색상 범례">
+          <div class="heatmap-scale-bar"></div>
+          <div class="heatmap-scale-labels">
+            <span>0 무관심</span><span>1 관심권</span><span>2 주도주</span><span>3 대장주</span><span>4 과열</span>
+          </div>
+        </div>
+        <div class="chart-caption">Viridis 순차 팔레트 — 보라(차분)에서 노랑(과열)으로 명도·온도가 함께 단조 증가. 강도 기준: <b style="color:var(--text-1)">0</b> 무관심(±10%) · <b style="color:var(--text-1)">1</b> 관심권(+10~30%) · <b style="color:var(--text-1)">2</b> 주도주(+30~80%) · <b style="color:var(--text-1)">3</b> 대장주(+80~200%) · <b style="color:var(--text-1)">4</b> 과열·정점(+200%↑).</div>
+      </div>
+
+      <h3 class="cycle-year-heading">2026 · 데이터센터 슈퍼사이클 + AI 구독경제</h3>
+      <div class="grid cols-2 cycle-notes">
+        <div class="card accent cycle-note-card">
+          <div class="card-title"><span class="dot"></span>키워드</div>
+          <p>데이터센터(전력·<abbr data-term="SMR">SMR</abbr>·변압기·냉각), 클로드 코드 등 <b>가치 구독 모델</b>, AI 엔터테인먼트 본격 매출화, 휴머노이드 양산 시도.</p>
+        </div>
+        <div class="card accent cycle-note-card">
+          <div class="card-title"><span class="dot"></span>핵심 이벤트</div>
+          <p>빅테크 <abbr data-term="CapEx">CapEx</abbr> <b>$725B (+77%, 보도 기준)</b>, SpaceX <abbr data-term="IPO">IPO</abbr> 6월 예정(평가 가이던스 $1.75~2T), Anthropic <abbr data-term="ARR">연환산 매출(run-rate)</abbr> <b>$30B+</b> 및 Q2 $40B+ 전망, 한화에어로 신고가 165.5만원(3.4), <b>NVDA $5.18T (1년 +58%) · GOOGL $4.70T (+126%) · AVGO $2.02T (+81%) · MU $1.04T (+858%, 5.26 신규)</b>, <b>SK하이닉스 1,662조 ÷1,501원 = $1.11T (1년 USD +959%) · 삼성전자 1,987조 ÷1,501원 = $1.32T (USD +418%)</b> 메모리 슈퍼사이클, <b>SpaceX × Anthropic 월 $1.2B 컴퓨트 계약(5.28 보도, 추적)</b>(<a href="./sectors/datacenter.html#spx-anthropic-deal">데이터센터 ↗</a>).</p>
+        </div>
+        <div class="card accent cycle-note-card">
+          <div class="card-title"><span class="dot"></span>이슈 / 경계감</div>
+          <p>AI "곡괭이 vs 금광" 분기 본격화 — 곡괭이(NVDA·SK·변압기)는 매출 폭증, 금광(OpenAI·Anthropic·xAI 비상장)은 적자 지속. 트럼프 관세 <abbr data-term="IEEPA">IEEPA</abbr> 위법(2.20) 후 정책 변동성.</p>
+        </div>
+        <div class="card accent cycle-note-card">
+          <div class="card-title"><span class="dot"></span>2020~2025 연도별 상세</div>
+          <p>코로나·메타버스·이차전지·우러전쟁·AI 원년·<abbr data-term="HBM">HBM</abbr>·휴머노이드까지 <b>연도별 트랙</b>은 <a href="./timeline.html">연도별 키워드 페이지</a>에서.</p>
+        </div>
+      </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- 7. 섹터별 분석 (포지셔닝 아래로 이동) -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--up);padding-left:14px">⑦ 섹터 깊이 들어가기 — 11편</h2>
+      <p class="section-lede">위 차트에서 시총·수익률·사이클 강도를 살폈다면, 여기서부터는 <b>섹터별로 11원칙을 어떻게 충족하는지</b> 매출·주가·리스크를 한 페이지씩 검증합니다.</p>
+
+      <h3>AI — 모델 · 엔터 · 솔루션</h3>
+      <div class="grid cols-3">
+        <a class='sector-card' href="./sectors/ai-llm.html">
+          <div class="sector-period">2026~ · 가치 구독 전환</div>
+          <div class="sector-name">AI LLM 사업방향</div>
+          <div class="sector-desc">컨슈머는 OpenAI(<abbr data-term="WAU">WAU</abbr> 9억) · 엔터프라이즈는 Anthropic(<abbr data-term="ARR">연환산 매출(run-rate)</abbr> $30B+, Q2 $40B+ 전망). 두 시장 분리 진화.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="Anthropic · 비상장 (2026.2 Series G $380B post)">ANTHROPIC*</span><span class="pill" title="OpenAI · 비상장">OPENAI*</span>
+            <span class="pill" title="Alphabet (Google) · NASDAQ:GOOGL">GOOGL</span><span class="pill" title="Meta Platforms · NASDAQ:META">META</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/ai-entertainment.html">
+          <div class="sector-period">2025~ · 월드모델 · 캐릭터 챗</div>
+          <div class="sector-name">AI 엔터테인먼트</div>
+          <div class="sector-desc">Genie 3 일반공개(2026.1), 스캐터랩 3분기 흑자, MiniMax 홍콩 <abbr data-term="IPO">IPO</abbr>(2026.1).</div>
+          <div class="sector-tickers">
+            <span class="pill" title="스캐터랩 (이루다) · 비상장">SCATTERLAB*</span><span class="pill" title="MiniMax · 0100.HK (2026.1.9 IPO)">MINIMAX*</span>
+            <span class="pill" title="Meta Platforms · NASDAQ:META">META</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/ai-solutions.html">
+          <div class="sector-period">2023~2026 · B2B 적용층</div>
+          <div class="sector-name">AI 솔루션</div>
+          <div class="sector-desc">팔란티어·MSFT·CRM·SNOW·DBX·NOW·VEEV·IBM 등 11개 종목 비교.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="Palantir Technologies · NASDAQ:PLTR">PLTR</span><span class="pill" title="Microsoft · NASDAQ:MSFT">MSFT</span>
+            <span class="pill" title="Salesforce · NYSE:CRM">CRM</span><span class="pill" title="Dropbox · NASDAQ:DBX (별표=비교 시점 표시)">DBX*</span>
+          </div>
+        </a>
+      </div>
+
+      <h3>AI 인프라 — 수요가 가장 가시적</h3>
+      <div class="grid cols-2">
+        <a class='sector-card' href="./sectors/semiconductors.html">
+          <div class="sector-period">2024~2026 · HBM 사이클</div>
+          <div class="sector-name">반도체 / HBM</div>
+          <div class="sector-desc">SK하이닉스 1,662조 ÷1,501원 = $1.11T (1년 USD +959%), 삼성전자 1,987조 ÷1,501원 = $1.32T (+418%), NVDA $5.18T (+58%), MU $1.04T (+858%, 5.26 신규).</div>
+          <div class="sector-tickers">
+            <span class="pill" title="SK하이닉스 · KRX:000660">000660</span><span class="pill" title="삼성전자 · KRX:005930">005930</span>
+            <span class="pill" title="Micron Technology · NASDAQ:MU">MU</span><span class="pill" title="NVIDIA · NASDAQ:NVDA">NVDA</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/datacenter.html">
+          <div class="sector-period">2026~ · 슈퍼사이클</div>
+          <div class="sector-name">데이터센터</div>
+          <div class="sector-desc">빅테크 <abbr data-term="CapEx">CapEx</abbr> $725B (+77%), 한국 변압기 3사 슈퍼사이클.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="Vertiv Holdings · NYSE:VRT">VRT</span><span class="pill" title="Constellation Energy · NASDAQ:CEG">CEG</span>
+            <span class="pill" title="HD현대일렉트릭 · KRX:267260">267260</span><span class="pill" title="Oklo (SMR) · NYSE:OKLO">OKLO</span>
+          </div>
+        </a>
+      </div>
+
+      <h3>우주 — 캐시카우와 새 비전</h3>
+      <div class="grid cols-1">
+        <a class='sector-card' href="./sectors/space.html">
+          <div class="sector-period">2020~ · 스타링크 + 우주 데이터센터</div>
+          <div class="sector-name">우주</div>
+          <div class="sector-desc">SpaceX 2026.5 <abbr data-term="S-1">S-1</abbr> 공개, 6월 Nasdaq 상장 예정(평가 가이던스 $1.75~2T). RKLB 2024 +360%, ASTS +1,000%. Google Suncatcher · Starcloud 우주 DC 첫 실증.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="SpaceX · 비상장 (2026.5 S-1 공시)">SPACEX*</span><span class="pill" title="Rocket Lab · NASDAQ:RKLB">RKLB</span>
+            <span class="pill" title="AST SpaceMobile · NASDAQ:ASTS">ASTS</span><span class="pill" title="Iridium Communications · NASDAQ:IRDM">IRDM</span>
+          </div>
+        </a>
+      </div>
+
+      <h3>프런티어 — 옵션성 베팅</h3>
+      <div class="grid cols-3">
+        <a class='sector-card' href="./sectors/quantum.html">
+          <div class="sector-period">2022~2026 · 전략자산 지정</div>
+          <div class="sector-name">양자컴퓨팅</div>
+          <div class="sector-desc">IonQ +237%(2024), Willow 발표 후 양자주 폭풍 → 2025 -40% 후 회복. NVIDIA NVQLink 표준 선점.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="IonQ · NYSE:IONQ">IONQ</span><span class="pill" title="Rigetti Computing · NASDAQ:RGTI">RGTI</span>
+            <span class="pill" title="D-Wave Quantum · NYSE:QBTS">QBTS</span><span class="pill" title="IBM · NYSE:IBM">IBM</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/ai-robot-future.html">
+          <div class="sector-period">2025~ · 휴머노이드 양산 시그널</div>
+          <div class="sector-name">AI · 로봇 · 미래사회</div>
+          <div class="sector-desc">Optimus 양산 7~8월, Figure 02 BMW Spartanburg 기여, 레인보우로보틱스 삼성 자회사.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="Tesla · NASDAQ:TSLA">TSLA</span><span class="pill" title="Figure AI · 비상장 (휴머노이드)">FIGURE*</span>
+            <span class="pill" title="레인보우로보틱스 · KRX:277810 (삼성 자회사)">277810</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/batteries.html">
+          <div class="sector-period">2022~2023 · 호황 후 케즘</div>
+          <div class="sector-name">이차전지</div>
+          <div class="sector-desc">LG엔솔 매출 33.7→23.7조 2년 연속 역성장. <abbr data-term="ESS">ESS</abbr>·전고체 모멘텀으로 회복 시도.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="LG에너지솔루션 · KRX:373220">373220</span><span class="pill" title="삼성SDI · KRX:006400">006400</span>
+            <span class="pill" title="에코프로비엠 · KRX:247540">247540</span>
+          </div>
+        </a>
+      </div>
+
+      <h3>지정학 · 국방 — 정책 사이클</h3>
+      <div class="grid cols-2">
+        <a class='sector-card' href="./sectors/defense.html">
+          <div class="sector-period">2021~2025 · K-방산 슈퍼사이클</div>
+          <div class="sector-name">방산</div>
+          <div class="sector-desc">한화에어로 시총 +226% (2025), 165.5만원 신고가(2026.3.4), 폴란드 K2 2차 9조 + 사우디·필리핀 확장.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="한화에어로스페이스 · KRX:012450">012450</span><span class="pill" title="현대로템 · KRX:064350">064350</span>
+            <span class="pill" title="LIG넥스원 · KRX:079550">079550</span><span class="pill" title="한국항공우주산업(KAI) · KRX:047810">047810</span>
+          </div>
+        </a>
+        <a class='sector-card' href="./sectors/drones.html">
+          <div class="sector-period">2021~2025 · FPV 드론 패러다임</div>
+          <div class="sector-name">드론</div>
+          <div class="sector-desc">$400 <abbr data-term="FPV">FPV</abbr>가 T-90 격파. KTOS +190%(2025), AVAV BlueHalo 인수. 한국 LIG MUCP·한화 천광 차세대.</div>
+          <div class="sector-tickers">
+            <span class="pill" title="AeroVironment · NASDAQ:AVAV">AVAV</span><span class="pill" title="Kratos Defense · NASDAQ:KTOS">KTOS</span>
+            <span class="pill" title="LIG넥스원 · KRX:079550">079550</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 8. 섹터 트리맵 -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--info);padding-left:14px">⑧ 같은 그림을 시총 면적으로 — 트리맵</h2>
+      <p class="section-lede">위 11편이 섹터 안쪽 이야기였다면, 트리맵은 한 발 뒤로 물러나 본 <b>면적=시총</b> 비교. AI 인프라(NVDA·TSM)와 메가캡 SW(MSFT·AMZN)가 얼마나 큰 덩어리인지, 한국 변압기·휴머노이드가 얼마나 작은 시드인지 가늠.</p>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2026.5 기준 시총 ($B) · 종목별 면적 = 시총</div>
+        <div id="chartTree" class="chart lg chart-tree-tall"></div>
+        <p style="color:var(--text-3);font-size:11px;margin-top:8px">
+          비상장(SPACEX*·ANTHROPIC*·OPENAI*·DBX*) 시총은 최근 텐더오퍼·사모라운드 기준. 한국 종목은 $1 = 1,370원 환산.
+          출처: companiesmarketcap.com, Bloomberg, Fortune(2025.12), TechCrunch(2026.4).
+        </p>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 9. 섹터별 11원칙 충족도 (평균점수 순) -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--up);padding-left:14px">⑨ 다시 11원칙으로 — 섹터별 충족도</h2>
+      <p class="section-lede">시총·수익률·사이클을 살핀 끝에는 다시 <b>11원칙으로 회귀</b>. 각 섹터가 진짜 <b>실수요·흑자·성장·시총 우호</b>를 동시에 만족하는지 4축 평균 점수로 줄 세웁니다.</p>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>각 섹터 4축 평균 (5점 만점) · 높은 순으로 정렬</div>
+        <div id="chartRules" class="chart lg"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          ② 수요 실재 · ③ 3년 매출 성장 · ⑤ 흑자 추세 · ⑧ 시총 우호 — 4축 평균. <b>데이터센터·반도체</b>가 종합 점수 최상위.
+        </p>
+      </div>
+
+      <!-- ============================== -->
+      <!-- 10. 한국 투자자 놓치기 쉬운 3가지 -->
+      <!-- ============================== -->
+      <h2 style="margin-top:48px;border-left:4px solid var(--info);padding-left:14px">⑩ 한국 투자자가 놓치기 쉬운 3가지 (재검증)</h2>
+      <p class="section-lede">앞 점수표가 "어디가 좋다"였다면, 이 세 가지는 <b>한국에서 작성하는 메모이기에 특별히 점검할 사각지대</b>. 환율·곡괭이금광 분기·변압기 3사.</p>
+      <div class="grid cols-3">
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>① 환율 1,500원 시대 — 진입 종료, 보유로 전환</div>
+          <p>2026.5 원·달러 <b>이미 1,500원대</b> 돌파(2025말~2026 고환율 사태 누적). 미국 우량주는 <b>시세차익 + 환차익</b> 이중 레버리지로 굴러왔으나, 1,500원대에서는 신규 진입의 환차익 여지가 거의 사라진 구간.
+          <br><b>현재 입장</b>: 신규 매수는 보수적, 보유 포지션은 유지. <b>코스피 리밸런싱은 보류</b> — 코스피가 이미 큰 폭으로 급등(2025 +75.6% · 2026 YTD 추가 강세)해 환차익을 받아 코스피로 옮길 매력이 줄었음. 1,400원대 회귀 시 비중 재조정 검토.
+          <br><span style="color:var(--text-3);font-size:11px">출처: 한국은행, 2025-2026 원화 고환율 사태(나무위키) · 코스피 +75.6% (2025 KRX)</span></p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>② AI "곡괭이 vs 금광" 분기</div>
+          <p>NVDA·TSM·SK하이닉스·변압기 3사는 매출 폭증, OpenAI·Anthropic·xAI는 적자 지속.
+          신한證 2026.4 "사실상 버블 인정 리포트" — <abbr data-term="ROI">ROI</abbr> 가시화 2026~27 추론 수익화 본격화 시점.
+          <br><b>관전</b>: 4Q26 빅테크 추론 매출 공개 시 재평가.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>③ 한국 변압기 3사 누락 가능성</div>
+          <p><b>HD현대일렉트릭·LS ELECTRIC·효성중공업</b> — AI DC 전력 인프라 직접 수혜. 빅3 수주잔고 합산 33조 = 5~6년치.
+          <br><a href="./sectors/datacenter.html">데이터센터 페이지</a>에서 <abbr data-term="SST">SST</abbr>(반도체변압기)·<abbr data-term="SiC">SiC</abbr> 등 정밀 검증.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">
+          본 사이트는 개인 학습·검증 메모용입니다. 자본시장법상 투자권유·자문에 해당하지 않으며,
+          기재된 수치는 공개 자료에 기초한 추정으로 오차가 있을 수 있습니다.
+          모든 투자 책임은 본인에게 있습니다. <a href="./methodology.html">자세한 방법론·면책</a>.
+        </div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="./methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/js/main.js?v=3.3"></script>
+  <script>
+    // ============================================================
+    // 섹터 활성도 히트맵 (팩트 기반)
+    // ============================================================
+    const sectors = ["AI LLM","AI 엔터","AI 솔루션","반도체/HBM","데이터센터","우주","로봇","양자","방산","드론","이차전지","메타버스"];
+    const years   = ["2019","2020","2021","2022","2023","2024","2025","2026"];
+    const levelLabels = ["무관심", "관심권", "주도주", "대장주", "과열·정점"];
+    const heatPalette = window.HEATMAP_FOCUS_PALETTE || ["#440154", "#482878", "#3e4989", "#31688e", "#26828e", "#1f9e89", "#35b779", "#6ece58", "#fde725"];
+    const heatmapFocusPoint = point => {
+      if (window.heatmapFocusPoint) return window.heatmapFocusPoint(point);
+      return { value: point, itemStyle: { borderWidth: 0, borderRadius: 0 } };
+    };
+    const heatRows = {
+      // v2.2 — 팩트 재검증 후 9건 수정 (대표 종목 수익률 + 시장 이벤트 기준)
+      //  - AI LLM 2022: 2→1 (ChatGPT 11.30 출시, 시장 본격 반응은 2023)
+      //  - AI LLM 2024: 4→3 (GPT-4o·Claude 3.5는 진보지만 +200% 단독 종목 없음)
+      //  - 데이터센터 2025: 3→4 (HD현대일렉 +257% · VRT +154% — 명확히 +200%↑)
+      //  - 양자 2025: 3→4 (QBTS +695% · IONQ 3년 +755% — 명확히 +200%↑)
+      //  - 드론 2024: 1→2 (AVAV $646M 계약 · KTOS 상승 · Replicator 시작)
+      //  - 이차전지 2022: 2→3 (LG엔솔 2022.1 상장 · 에코프로비엠 강세)
+      //  - 이차전지 2026: 2→1 (IRA 후퇴·케즘 지속 · LG엔솔 매출 -24%)
+      //  - 메타버스 2021: 3→4 (Meta 리브랜드 광풍 · RBLX +300%↑)
+      "AI LLM":     [[3,1],[4,3],[5,3],[6,4],[7,4]],
+      "AI 엔터":    [[3,1],[4,2],[5,3],[6,3],[7,3]],
+      "AI 솔루션":  [[1,1],[4,3],[5,4],[6,4],[7,2]],
+      "반도체/HBM": [[0,1],[1,2],[2,3],[3,1],[4,3],[5,4],[6,4],[7,4]],
+      "데이터센터": [[4,2],[5,3],[6,4],[7,4]],
+      "우주":       [[2,1],[3,1],[4,1],[5,4],[6,3],[7,3]],
+      "로봇":       [[4,1],[5,2],[6,3],[7,3]],
+      "양자":       [[3,1],[4,1],[5,4],[6,4],[7,2]],
+      "방산":       [[3,2],[4,2],[5,3],[6,4],[7,3]],
+      "드론":       [[3,2],[4,2],[5,2],[6,3],[7,2]],
+      "이차전지":   [[1,2],[2,3],[3,3],[4,4],[5,1],[6,1],[7,1]],
+      "메타버스":   [[2,4],[3,1]],
+    };
+    const heatData = sectors.flatMap((sector, y) => (heatRows[sector] || []).map(([x, level]) => [x, y, level]));
+    const heatCell = (point, focus) => {
+      const cell = heatmapFocusPoint(point);
+      const sameRow = !focus || point[1] === focus[1];
+      const sameCell = focus && point[0] === focus[0] && point[1] === focus[1];
+      cell.itemStyle = Object.assign({}, cell.itemStyle || {}, {
+        opacity: sameRow ? 1 : 0.16,
+        borderWidth: sameCell ? 1.6 : 0,
+        borderColor: "#d6f4fb"
+      });
+      cell.label = {
+        color: sameRow ? "#ffffff" : "rgba(255,255,255,0.24)"
+      };
+      return cell;
+    };
+    const heatDataFor = focus => heatData.map(point => heatCell(point, focus));
+
+    const mobile = window.isMobile && window.isMobile();
+    const chartHeat = mkChart("chartHeat", {
+      animation: false,
+      // v2.5 세련화 — 툴팁: 글래스 모피즘 (블러 + 옐로 액센트)
+      tooltip: {
+        position: "top",
+        formatter: p => `<b style="font-family:Pretendard Variable, Inter, sans-serif;letter-spacing:0.01em">${years[p.value[0]]} · ${sectors[p.value[1]]}</b><br/><span style="opacity:0.7">강도</span> <b>${p.value[2]}</b> · ${levelLabels[p.value[2]]}`,
+        backgroundColor: "rgba(13, 22, 40, 0.95)",
+        borderColor: "rgba(253, 231, 37, 0.25)",
+        borderWidth: 1,
+        padding: [8, 12],
+        textStyle: { color: "#f0f4fa", fontSize: 12, fontFamily: "Pretendard Variable, Inter, sans-serif" },
+        extraCssText: "border-radius:6px;backdrop-filter:blur(4px);box-shadow:0 4px 18px rgba(0,0,0,0.4)"
+      },
+      grid: { left: mobile ? 78 : 110, right: mobile ? 24 : 30, top: 30, bottom: mobile ? 22 : 32 },
+      xAxis: {
+        type: "category", data: years, splitArea: { show: false },
+        axisLabel: {
+          color: "#a8b4c5",
+          fontSize: mobile ? 10.5 : 11.5,
+          fontWeight: 500,
+          fontFamily: "Pretendard Variable, Inter, sans-serif",
+          interval: 0,
+          formatter: v => mobile ? "'" + String(v).slice(2) : v
+        },
+        axisLine: { show: false }, axisTick: { show: false }
+      },
+      yAxis: {
+        type: "category", data: sectors, inverse: true, splitArea: { show: false },
+        axisLabel: {
+          color: "#c3cdd9",
+          fontSize: mobile ? 10.5 : 12,
+          fontWeight: 500,
+          fontFamily: "Pretendard Variable, Inter, sans-serif"
+        },
+        axisLine: { show: false }, axisTick: { show: false }
+      },
+      visualMap: {
+        show: false,
+        min: 0, max: 4,
+        calculable: false,
+        inRange: { color: heatPalette }
+      },
+      series: [{
+        id: "cycleHeat", name: "활성도", type: "heatmap", z: 2, data: heatDataFor(null),
+        label: {
+          show: true,
+          // v2.5: sans 폰트 + 살짝 가벼운 무게 (mono의 stiff 느낌 제거)
+          formatter: p => p.value[2] >= 3 ? p.value[2] : "",
+          color: p => p.value[2] >= 4 ? "#1a0e2e" : "#ffffff",
+          fontWeight: 600,
+          fontSize: mobile ? 10.5 : 12,
+          fontFamily: "Pretendard Variable, Inter, sans-serif",
+          textBorderColor: p => p.value[2] >= 4 ? "rgba(255, 255, 255, 0.4)" : "rgba(13, 22, 40, 0.7)",
+          textBorderWidth: 1,
+          textShadowBlur: 0
+        },
+        // v2.5 셀: 미세한 라운드 + 다크 갭 = "타일이 떠 있는" 세련된 느낌
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: "#0a0e14",
+          borderRadius: 3
+        },
+        progressive: 0,
+        emphasis: {
+          // 호버: 노랑 글로우 + 가독성 강화
+          itemStyle: {
+            borderColor: "#fde725",
+            borderWidth: 2,
+            shadowColor: "rgba(253, 231, 37, 0.45)",
+            shadowBlur: 14,
+            shadowOffsetY: 1
+          },
+          label: { fontWeight: 700 }
+        }
+      }]
+    });
+    if (chartHeat) {
+      let activeHeatKey = "";
+      const clearHeatFocus = () => {
+        if (!activeHeatKey) return;
+        activeHeatKey = "";
+        chartHeat.setOption({ series: [{ id: "cycleHeat", data: heatDataFor(null) }] }, false);
+      };
+      chartHeat.on("mouseover", params => {
+        if (!params || params.seriesType !== "heatmap" || !Array.isArray(params.value)) return;
+        const key = params.value[0] + ":" + params.value[1];
+        if (key === activeHeatKey) return;
+        activeHeatKey = key;
+        chartHeat.setOption({ series: [{ id: "cycleHeat", data: heatDataFor(params.value) }] }, false);
+      });
+      chartHeat.on("globalout", clearHeatFocus);
+    }
+
+    // ============================================================
+    // 4분면 매트릭스: 리스크 vs 보상
+    // ============================================================
+    const quadGroups = [
+      { name: "지정학·국방", color: "#ffb020", points: [[3.5, 6.5, 8, "방산"], [4.0, 6.0, 7, "드론"]] },
+      { name: "AI", color: "#2bd4a4", points: [[6.0, 7.0, 9, "AI 솔루션"], [6.5, 8.0, 9, "AI LLM"], [5.5, 6.5, 7, "AI 엔터"]] },
+      { name: "AI 인프라", color: "#5aa7ff", points: [[4.5, 8.0, 9, "반도체/HBM"], [3.0, 8.5, 9, "데이터센터"]] },
+      { name: "우주·로봇·양자", color: "#c489ff", points: [[8.5, 9.0, 6, "양자"], [7.5, 9.0, 7, "우주"], [8.0, 9.0, 6, "로봇"]] },
+    ];
+
+    const quadLabelPosition = name => ({
+      "양자": "right",
+      "우주": "top",
+      "로봇": "bottom",
+      "데이터센터": "top",
+      "반도체/HBM": "bottom",
+      "AI LLM": "top",
+      "AI 솔루션": "right",
+      "AI 엔터": "bottom",
+      "방산": "top",
+      "드론": "bottom"
+    }[name] || "top");
+
+    mkChart("chartQuad", {
+      tooltip: {
+        formatter: p => {
+          const v = p.data.value;
+          return `<b>${v[3]}</b> · ${v[4]}<br/>리스크: ${v[0]}/10<br/>잠재 보상: ${v[1]}/10<br/>사이클 강도: ${v[2]}/10`;
+        }
+      },
+      legend: {
+        show: false
+      },
+      grid: { left: mobile ? 42 : 60, right: mobile ? 24 : 30, top: mobile ? 36 : 50, bottom: mobile ? 52 : 60 },
+      xAxis: { type: "value", name: "리스크 →", min: mobile ? 2 : 0, max: mobile ? 9.5 : 10, splitLine: { lineStyle: { color: "#1f2632", type: "dashed" } } },
+      yAxis: { type: "value", name: "잠재 보상 →", min: mobile ? 4 : 0, max: 10, splitLine: { lineStyle: { color: "#1f2632", type: "dashed" } } },
+      series: quadGroups.map(g => ({
+        name: g.name,
+        type: "scatter",
+        symbolSize: d => mobile ? d[2] * 4.2 : d[2] * 8,
+        data: g.points.map(p => ({
+          value: [...p, g.name],
+          label: { position: quadLabelPosition(p[3]), distance: mobile ? 8 : 7 }
+        })),
+        itemStyle: { color: g.color, opacity: 0.9, borderColor: "rgba(255,255,255,0.55)", borderWidth: 1.5 },
+        label: {
+          show: true,
+          formatter: p => p.data.value[3],
+          color: "#f0f4fa",
+          fontSize: mobile ? 10 : 11,
+          fontWeight: 700,
+          position: "top",
+          textBorderColor: "#0a0e14",
+          textBorderWidth: 2
+        },
+        labelLayout: { hideOverlap: mobile, moveOverlap: "shiftY" },
+        emphasis: { focus: "series", scale: 1.16 }
+      })).concat([{
+        name: "기준선",
+        type: "scatter",
+        data: [],
+        silent: true,
+        tooltip: { show: false },
+        markLine: { silent: true, symbol: "none", label: { show: false }, lineStyle: { color: "#3a4555", type: "dashed" }, data: [{ xAxis: 5 }, { yAxis: 5 }] }
+      }])
+    });
+
+    // ============================================================
+    // 종목 포지셔닝 — X=시총 ($B 로그스케일), Y=수익률, 색=섹터
+    //   범례로 2025·2026·전체 토글
+    //   같은 종목의 2025→2026 좌표 변화가 사이클 시그널
+    // ============================================================
+    // v3.3 — 시총 일관성 통일 (하나의 룰: 백체인 chain rule)
+    //   ★ 규칙: mcap_year_n = mcap_year_n+1 ÷ (1 + return_year_n+1 / 100)
+    //   ★ 앵커: data2026 (5/28 verified) → data2025 = data2026 / (1+YTD)
+    //   ★ data2024는 2024 EOY 보도 mcap을 기본 유지, 2025 return은 정합되도록 재계산
+    //   ★ 사용자 지적 (NVDA $3,400B 두 해 동일 / KTOS $4B → $12B 급등 불일치) 완전 해소
+    // [mcap $B at EOY, annual return %, ticker, sector, tooltip]
+    const data2024 = [
+      // mcap = 2024-12-31 시점 시가총액 (보도/공시 기준) · return = 2024 연간 USD 수익률
+      [1.7,  237, "QBTS",        "양자",       "D-Wave Quantum · NYSE:QBTS · 2024 EOY 시총 $1.7B · 2024 +237%"],
+      [5.8,  1000,"ASTS",        "우주",       "AST SpaceMobile · NASDAQ:ASTS · 2024 EOY $5.8B · 2024 +1,000%"],
+      [8,    360, "RKLB",        "우주",       "Rocket Lab · NASDAQ:RKLB · 2024 EOY $8B · 2024 +360%"],
+      [80,   340, "PLTR",        "AI 솔루션",  "Palantir · NASDAQ:PLTR · 2024 EOY $80B · 2024 +340% (S&P 1위)"],
+      [70,   45,  "SK하이닉스",   "반도체",     "SK하이닉스 · KRX:000660 · 2024 EOY $70B"],
+      [240,  -32, "삼성전자",     "반도체",     "삼성전자 · KRX:005930 · 2024 EOY $240B · 2024 -31.8% (HBM3E 지연)"],
+      [21,   174, "한화에어로",   "방산",       "한화에어로스페이스 · KRX:012450 · 2024 EOY $21B"],
+      [3.4,  90,  "KTOS",        "드론",       "Kratos · NASDAQ:KTOS · 2024 EOY $3.4B · v3.3 정정 (이전 $2.1B 과소 표기) · Valkyrie 수혜"],
+      [178,  37,  "IBM",         "AI 솔루션",  "IBM · NYSE:IBM · 2024 EOY $178B"],
+      [2100, 36,  "GOOGL",       "AI LLM",     "Alphabet · NASDAQ:GOOGL · 2024 EOY $2,100B"],
+      [3400, 171, "NVDA",        "반도체",     "NVIDIA · NASDAQ:NVDA · 2024 EOY $3,400B · 2024 +171% (HBM/Blackwell)"],
+      [3100, 12,  "MSFT",        "AI 인프라",  "Microsoft · NASDAQ:MSFT · 2024 EOY $3,100B"],
+      [220,  -25, "ADBE",        "AI 솔루션",  "Adobe · NASDAQ:ADBE · 2024 EOY $220B (Sora 등장)"],
+      [1300, 63,  "TSLA",        "로봇",       "Tesla · NASDAQ:TSLA · 2024 EOY $1,300B"],
+    ];
+    // v3.3 — data2025: mcap = data2026 ÷ (1 + 2026 YTD), return = (new_mcap_2025 / data2024_mcap) - 1
+    //   백체인으로 chartPos의 모든 점이 수학적으로 일관됨
+    const data2025 = [
+      // 백체인 적용: [mcap $B at 2025-12-31, 2025 annual return %, ticker, sector, tooltip]
+      [9.7,  471, "QBTS",          "양자",       "D-Wave · QBTS · 2025 EOY $9.7B = 2026 $10.9B ÷ 1.1277 · 2025 +471% ($1.7B → $9.7B)"],
+      [28.4, 390, "ASTS",          "우주",       "AST SpaceMobile · ASTS · 2025 EOY $28.4B = 2026 $52B ÷ 1.8324 · 2025 +390% ($5.8B → $28.4B)"],
+      [333,  376, "SK하이닉스",     "반도체",     "SK하이닉스 · 000660 · 2025 EOY $333B = 2026 $1,107B ÷ 3.32 · 2025 +376% ($70B → $333B)"],
+      [45,   115, "한화에어로",     "방산",       "한화에어로 · 012450 · 2025 EOY $45B = 2026 $40.8B ÷ 0.9 · 2025 +115% ($21B → $45B)"],
+      [18.1, 0,   "HD현대일렉",    "데이터센터", "HD현대일렉 · 267260 · 2025 EOY $18.1B = 2026 $24.5B ÷ 1.35 · 2024 데이터 부재로 2025 return 추적 필요"],
+      [13.2, 0,   "현대로템",       "방산",       "현대로템 · 064350 · 2025 EOY $13.2B = 2026 $14.5B ÷ 1.10 · 2024 데이터 부재"],
+      [14.2, 318, "KTOS",          "드론",       "Kratos · KTOS · 2025 EOY $14.2B = 2026 $12.2B ÷ 0.8588 · 2025 +318% ($3.4B → $14.2B) · v3.3 정정"],
+      [40.5, 406, "RKLB",          "우주",       "Rocket Lab · RKLB · 2025 EOY $40.5B = 2026 $86B ÷ 2.122 · 2025 +406% ($8B → $40.5B)"],
+      [426,  433, "PLTR",          "AI 솔루션",  "Palantir · PLTR · 2025 EOY $426B = 2026 $344B ÷ 0.8064 · 2025 +433% ($80B → $426B)"],
+      [676,  181, "삼성전자",       "반도체",     "삼성전자 · 005930 · 2025 EOY $676B = 2026 $1,324B ÷ 1.96 · 2025 +181% ($240B → $676B)"],
+      [9.0,  0,   "레인보우로보",   "로봇",       "레인보우로보 · 277810 · 2025 EOY $9.0B = 2026 $9.0B (YTD 0% 추정) · 2024 데이터 부재"],
+      [278,  56,  "IBM",           "AI 솔루션",  "IBM · 2025 EOY $278B = 2026 $248B ÷ 0.892 · 2025 +56% ($178B → $278B)"],
+      [3771, 80,  "GOOGL",         "AI LLM",     "Alphabet · GOOGL · 2025 EOY $3,771B = 2026 $4,700B ÷ 1.2464 · 2025 +80% ($2,100B → $3,771B)"],
+      [4509, 33,  "NVDA",          "반도체",     "NVIDIA · NVDA · 2025 EOY $4,509B = 2026 $5,180B ÷ 1.1488 · 2025 +33% ($3,400B → $4,509B) · v3.3 정정"],
+      [3591, 16,  "MSFT",          "AI 인프라",  "Microsoft · MSFT · 2025 EOY $3,591B = 2026 $3,170B ÷ 0.8829 · 2025 +16% ($3,100B → $3,591B)"],
+      [142,  -35, "ADBE",          "AI 솔루션",  "Adobe · ADBE · 2025 EOY $142B = 2026 $98B ÷ 0.6898 · 2025 -35% ($220B → $142B)"],
+      [1414, 9,   "TSLA",          "로봇",       "Tesla · TSLA · 2025 EOY $1,414B = 2026 $1,390B ÷ 0.9831 · 2025 +9% ($1,300B → $1,414B)"],
+    ];
+    // ============================================================
+    // v3.1 — 2026 YTD (5/28 vs 2025-12-31) · 실측 검증 완료
+    // ★ v3.0의 "1년 LTM ≠ YTD" 혼동 수정 — Barchart YTD = 진짜 2026 YTD
+    // 환율: USD/KRW = 1,501원 (5/29 investing.com) · USD/HKD = 7.83 (페그)
+    // 한국 종목 YTD = 보도/사용자 검증 KRW YTD × FX 보정 (2025 EOY FX 1,475 → 5/29 1,501)
+    // 신규상장(Zhipu·MiniMax): IPO 공모가 → 5/29 종가 (HKD 페그)
+    // 출처: Barchart Performance Report (US), 사용자/한경/머투 보도 (한국)
+    // ============================================================
+    const data2026 = [
+      // 신규상장 (★) — IPO 이후 수익률
+      [97.9, 1415, "Zhipu★",       "신규상장 AI LLM",  "智谱AI · 2513.HK · IPO 2026.1.8 공모가 HKD 116 · 5/29 HKD 1,758 · 시총 766.85B HKD ($97.9B) · IPO +1,415%", { ipoStart: [6.9, 0], ipoDate: "2026.1.8" }],
+      [34.6, 420,  "MiniMax★",     "신규상장 AI 엔터", "MiniMax · 0100.HK · IPO 2026.1.9 공모가 HKD 165 · 5/29 HKD 858 · 시총 270.67B HKD ($34.6B) · IPO +420%", { ipoStart: [6.5, 0], ipoDate: "2026.1.9" }],
+      // 한국 종목 — 5/29 KRX 실측 · 시총 ÷1,501원 · USD LTM (FX 보정)
+      // 한국 종목 — 5/29 KRX 실측 · 시총 ÷1,501원 · 2026 YTD USD
+      [1324, 96,   "삼성전자",     "반도체",       "삼성전자 · KRX:005930 · 5/29 ₩313,500 · 1,987조 ÷1,501원 = $1.32T · 2026 YTD ≈ +96% USD (KRW +100% 사용자 검증, FX 1,475→1,501 보정)"],
+      [1107, 232,  "SK하이닉스",   "반도체",       "SK하이닉스 · KRX:000660 · 5/29 ₩2,337,000 · 1,662조 ÷1,501원 = $1.11T · 2026 YTD ≈ +232% USD (KRW ≈ +250% 한경/머투 보도, FX 보정)"],
+      [40.8, -10,  "한화에어로",   "방산",         "한화에어로스페이스 · KRX:012450 · 5/29 ₩1,189,000 · 61.31조 ÷1,501원 = $40.8B · 2026 YTD ≈ -10% 추정 (신고가 165.5만 후 -28% 조정 · 정확값 추적 필요)"],
+      [24.5, 35,   "HD현대일렉",   "데이터센터",   "HD현대일렉트릭 · KRX:267260 · 5/29 ₩1,017,000 · 36.73조 ÷1,501원 = $24.5B · 2026 YTD ≈ +35% USD 추정 (1Y KRW +171%, YTD 정확값 추적 필요)"],
+      [14.5, 10,   "현대로템",     "방산",         "현대로템 · KRX:064350 · 5/29 ₩198,900 · 21.71조 ÷1,501원 = $14.5B · 2026 YTD ≈ +10% 추정 (정확값 추적 필요)"],
+      [9.0,  0,    "레인보우로보", "로봇",         "레인보우로보틱스 · KRX:277810 · 5/29 ₩702,000 · 약 13.5조 ÷1,501원 = $9.0B · YTD 추적 필요 · 삼성 자회사"],
+      [44.0, 30,   "두산에너빌리티","데이터센터",  "두산에너빌리티 · KRX:034020 · 5/29 ₩103,200 · 66.11조 ÷1,501원 = $44.0B · 2026 YTD ≈ +30% USD 추정 (1Y +163%, SMR+변압기)"],
+      // 미국 종목 — 2026 YTD (Barchart Performance Report = 5/28 vs 2025-12-31)
+      [5180, 14.88, "NVDA",        "반도체",       "NVIDIA · NASDAQ:NVDA · 5/28 $214.25 · 시총 $5.18T · 2026 YTD +14.88% (Barchart)"],
+      [4700, 24.64, "GOOGL",       "AI LLM",       "Alphabet · NASDAQ:GOOGL · 5/28 $390.13 · 시총 $4.70T · 2026 YTD +24.64%"],
+      [3170, -11.71,"MSFT",        "AI 인프라",    "Microsoft · NASDAQ:MSFT · 5/28 $426.99 · 시총 $3.17T · 2026 YTD -11.71% (고점 $555 -23%)"],
+      [2950, 18.71, "AMZN",        "AI 인프라",    "Amazon · NASDAQ:AMZN · 5/28 $274.00 · 시총 $2.95T · 2026 YTD +18.71%"],
+      [2020, 23.25, "AVGO",        "반도체",       "Broadcom · NASDAQ:AVGO · 5/28 $426.58 · 시총 $2.02T · 2026 YTD +23.25% · $2T 클럽"],
+      [1910, 39.81, "TSM",         "반도체",       "TSMC · NYSE:TSM · 5/28 $424.86 · 시총 $1.91T · 2026 YTD +39.81% · 파운드리 70%"],
+      [1610, -3.76, "META",        "AI LLM",       "Meta · NASDAQ:META · 5/28 $635.29 · 시총 $1.61T · 2026 YTD -3.76%"],
+      [1390, -1.69, "TSLA",        "로봇",         "Tesla · NASDAQ:TSLA · 5/28 $442.10 · 시총 $1.39T · 2026 YTD -1.69%"],
+      [1040, 223.58,"MU",          "반도체",       "Micron · NASDAQ:MU · 5/28 $923.52 · 시총 $1.04T · 2026 YTD +223.58% · 5/26 $1T 클럽 신규"],
+      [344,  -19.36,"PLTR",        "AI 솔루션",    "Palantir · NASDAQ:PLTR · 5/28 $143.34 · 시총 $344B · 2026 YTD -19.36% · 11년 계약(2035)"],
+      [248,  -10.80,"IBM",         "AI 솔루션",    "IBM · NYSE:IBM · 5/28 $264.22 · 시총 $248B · 2026 YTD -10.80%"],
+      [156,  26.19, "ETN",         "데이터센터",   "Eaton · NYSE:ETN · 5/28 $401.94 · 시총 $156B · 2026 YTD +26.19% · AI DC 전력"],
+      [144,  -33.50,"CRM",         "AI 솔루션",    "Salesforce · NYSE:CRM · 5/28 $176.17 · 시총 $144B · 2026 YTD -33.50% · Agentforce"],
+      [121,  93.93, "VRT",         "데이터센터",   "Vertiv · NYSE:VRT · 5/28 $314.18 · 시총 $121B · 2026 YTD +93.93%"],
+      [112,  -29.02,"NOW",         "AI 솔루션",    "ServiceNow · NYSE:NOW · 5/28 $108.73 · 시총 $112B · 2026 YTD -29.02% (고점 $211)"],
+      [103,  -18.95,"CEG",         "데이터센터",   "Constellation · NASDAQ:CEG · 5/28 $286.31 · 시총 $103B · 2026 YTD -18.95% · 원전 PPA"],
+      [98,   -31.02,"ADBE",        "AI 솔루션",    "Adobe · NASDAQ:ADBE · 5/28 $241.44 · 시총 $98B · 2026 YTD -31.02% · Sora 압박"],
+      [86,   112.20,"RKLB",        "우주",         "Rocket Lab · NASDAQ:RKLB · 5/28 $148.03 · 시총 $86B · 2026 YTD +112.20% · Neutron"],
+      [83,   9.04,  "SNOW",        "AI 솔루션",    "Snowflake · NYSE:SNOW · 5/28 $239.20 · 시총 $83B · 2026 YTD +9.04% · AWS AI"],
+      [52,   83.24, "ASTS",        "우주",         "AST SpaceMobile · NASDAQ:ASTS · 5/28 $133.09 · 시총 $52B · 2026 YTD +83.24% · D2D"],
+      [26,   56.32, "IONQ",        "양자",         "IonQ · NYSE:IONQ · 5/28 $70.14 · 시총 $26B · 2026 YTD +56.32% · 트랩이온"],
+      [12.2, -14.12,"KTOS",        "드론",         "Kratos · NASDAQ:KTOS · 5/28 $65.19 · 시총 $12.2B · 2026 YTD -14.12% (Barchart · v2.13의 +425% 및 v3.0의 +71% LTM 정정)"],
+      [11.9, -5.11, "OKLO",        "데이터센터",   "Oklo · NYSE:OKLO · 5/28 $68.09 · 시총 $11.9B · 2026 YTD -5.11% · SMR Aurora · DOE 플루토늄"],
+      [10.9, 12.77, "QBTS",        "양자",         "D-Wave · NYSE:QBTS · 5/28 $29.49 · 시총 $10.9B · 2026 YTD +12.77% · CHIPS Act $100M LOI"],
+      [10.9, -11.37,"AVAV",        "드론",         "AeroVironment · NASDAQ:AVAV · 5/28 $214.39 · 시총 $10.9B · 2026 YTD -11.37% · BlueHalo"],
+      [9.0,  22.03, "RGTI",        "양자",         "Rigetti · NASDAQ:RGTI · 5/28 $27.03 · 시총 $9.0B · 2026 YTD +22.03% · 양자 게이트"],
+      [5.4,  194.94,"IRDM",        "우주",         "Iridium · NASDAQ:IRDM · 5/28 $51.26 · 시총 $5.4B · 2026 YTD +194.94% · 위성통신"],
+      [5.9,  -5.79, "DBX",         "AI 솔루션",    "Dropbox · NASDAQ:DBX · 5/28 $26.19 · 시총 $5.9B · 2026 YTD -5.79%"],
+    ];
+
+    // 섹터별 색상 (4분면 차트와 통일)
+    const sectorColorFn = window.sectorColor || (s => "#ffb020");
+    const stockKey = d => String(d[2]).replace("★", "");
+    const representativeTickers = new Set(["QBTS", "RKLB", "PLTR", "SK하이닉스", "삼성전자", "한화에어로", "KTOS", "GOOGL", "NVDA", "TSLA", "Zhipu", "MiniMax"]);
+    const isRepresentative = d => representativeTickers.has(stockKey(d));
+    const posData2024 = data2024.filter(isRepresentative);
+    const posData2025 = data2025.filter(isRepresentative);
+    const posData2026 = data2026.filter(isRepresentative);
+    const byKey = arr => new Map(arr.map(d => [stockKey(d), d]));
+    const data2024ByTicker = byKey(posData2024);
+    const data2025ByTicker = byKey(posData2025);
+    const data2026ByTicker = byKey(posData2026);
+    const data2026Existing = posData2026.filter(d => !d[5]?.ipoStart);
+    const data2026Ipo = posData2026.filter(d => d[5]?.ipoStart);
+    // 라벨 위치 — 우측 메가캡(시총 $1T+)은 라벨을 좌측에 놓아 잘림 방지
+    const labelPosition = (ticker, year) => {
+      const positions = {
+        // 우측 끝(메가캡) — 라벨 왼쪽
+        MSFT:        { 2024: "left",   2025: "left",   2026: "left" },
+        NVDA:        { 2024: "left",   2025: "top",    2026: "top" },
+        GOOGL:       { 2024: "top",    2025: "top",    2026: "top" },
+        TSLA:        { 2024: "bottom", 2025: "bottom", 2026: "left" },
+        "삼성전자":  { 2024: "top",    2025: "top",    2026: "top" },
+        // 중앙
+        IBM:         { 2026: "right" },
+        ADBE:        { 2026: "left" },
+        PLTR:        { 2026: "bottom" },
+        NOW:         { 2026: "right" },
+        "한화에어로": { 2026: "bottom" },
+        "SK하이닉스": { 2026: "top" },
+        // 좌측 (소형주)
+        QBTS:        { 2024: "top",    2025: "top",    2026: "left" },
+        ASTS:        { 2024: "right",  2025: "right",  2026: "right" },
+        RKLB:        { 2024: "bottom", 2025: "right",  2026: "top" },
+        KTOS:        { 2024: "bottom", 2025: "right",  2026: "bottom" },
+        "레인보우로보": { 2026: "bottom" },
+        // 신규상장
+        "Zhipu★":    { 2026: "right" },
+        "MiniMax★":  { 2026: "right" }
+      };
+      return positions[ticker]?.[year] || (year === 2026 ? "right" : "top");
+    };
+
+    function posPoint(d, year) {
+      const c = sectorColorFn(d[3]);
+      // 색 = 섹터만. 연도는 외곽선·크기·심볼로 구분 (글로우 없음).
+      const yearStyle = year === 2024 ? { opacity: 0.42, borderColor: "transparent", borderWidth: 0 }
+                       : year === 2025 ? { opacity: 0.72, borderColor: "transparent", borderWidth: 0 }
+                       :                  { opacity: 1.0,  borderColor: "rgba(255,255,255,0.85)", borderWidth: 1.6 };
+      return {
+        name: d[2] || d[4] || "확인 필요",
+        value: d,
+        itemStyle: Object.assign({ color: c }, yearStyle),
+        label: Object.assign({ position: labelPosition(d[2], year), distance: 6 }, labelOverrides[d[2]] || {}),
+        _year: year,
+      };
+    }
+
+    const buildCycleLines = (fromData, toMap, style) => fromData
+      .filter(d => toMap.has(stockKey(d)))
+      .map(d => {
+        const next = toMap.get(stockKey(d));
+        const c = sectorColorFn(d[3]);
+        return {
+          name: d[2],
+          fromYear: style.fromYear,
+          toYear: style.toYear,
+          from: d[1],
+          to: next[1],
+          coords: [[d[0], d[1]], [next[0], next[1]]],
+          lineStyle: { color: c, opacity: style.opacity, width: style.width, type: style.type }
+        };
+      });
+    // 시계열 연결선 — 2024→2025는 옅은 점선, 2025→2026은 보통 실선 (둘 다 옅게 — 시각 부담 감소)
+    const cycleLines2425 = buildCycleLines(posData2024, data2025ByTicker, { fromYear: 2024, toYear: 2025, opacity: 0.22, width: 1.0, type: "dashed" });
+    const cycleLines2526 = buildCycleLines(posData2025, data2026ByTicker, { fromYear: 2025, toYear: 2026, opacity: 0.75, width: 1.8, type: "solid" });
+    const ipoLines = data2026Ipo.map(d => {
+      const c = sectorColorFn(d[3]);
+      return {
+        name: String(d[2]).replace("★", ""),
+        fromYear: "IPO",
+        toYear: 2026,
+        from: 0,
+        to: d[1],
+        coords: [d[5].ipoStart, [d[0], d[1]]],
+        lineStyle: { color: c, opacity: 0.78, width: 1.8, type: "solid" }
+      };
+    });
+    const ipoStartPoints = data2026Ipo.map(d => {
+      const c = sectorColorFn(d[3]);
+      const clean = String(d[2]).replace("★", "");
+      return {
+        name: clean + " IPO",
+        value: [d[5].ipoStart[0], d[5].ipoStart[1], clean + " IPO", d[3], d[4]],
+        itemStyle: { color: c, opacity: 0.88, borderColor: "rgba(255,255,255,0.72)", borderWidth: 1 }
+      };
+    });
+    const endpointLabelTickers = new Set(mobile
+      ? ["Zhipu★", "MiniMax★", "SK하이닉스", "삼성전자", "RKLB", "GOOGL", "TSLA"]
+      : ["Zhipu★", "MiniMax★", "SK하이닉스", "삼성전자", "QBTS", "RKLB", "PLTR", "KTOS", "GOOGL", "TSLA"]
+    );
+    const labelOverrides = {
+      // QBTS는 차트 좌측 끝(시총 $1.7B~$12B)에 위치 — "left"면 화면 밖으로 잘림. "right"로 변경해 라벨을 차트 안쪽에 표시.
+      QBTS: { position: "right", offset: [6, 0] },
+      RKLB: { position: "top", offset: [0, -8] },
+      "레인보우로보": { position: "bottom", offset: [0, 14] },
+      KTOS: { position: "bottom", offset: [0, 14] },
+      GOOGL: { position: "top", offset: [0, -6] },
+      TSLA: { position: "bottom", offset: [0, 14] },
+      "삼성전자": { position: "right", offset: [6, -8] },
+      "SK하이닉스": { position: "top", offset: [0, -6] }
+    };
+
+    const chartPos = mkChart("chartPos", {
+      tooltip: {
+        confine: true,
+        triggerOn: "click",
+        position: function(point, params, dom, rect, size) {
+          const gap = 12;
+          const view = size.viewSize || [window.innerWidth, 320];
+          const box = size.contentSize || [240, 120];
+          const left = point[0] > view[0] / 2 ? gap : Math.max(gap, view[0] - box[0] - gap);
+          const topCandidate = point[1] > view[1] / 2 ? gap : point[1] + gap;
+          const top = Math.max(gap, Math.min(view[1] - box[1] - gap, topCandidate));
+          return [left, top];
+        },
+        formatter: p => {
+          const fmtR = r => (r > 0 ? "+" : "") + Math.round(r).toLocaleString() + "%";
+          const fmtM = m => m >= 1000 ? "$" + (m/1000).toFixed(2) + "T" : "$" + (m < 10 ? m.toFixed(1) : Math.round(m)) + "B";
+          if (p.seriesType === "lines") {
+            const d = p.data;
+            if (!d) return "";
+            return `<b style="color:#ffffff">${d.name}</b><br/>${d.fromYear}: ${fmtR(d.from)} → ${d.toYear}: ${fmtR(d.to)}`;
+          }
+          const v = (p && p.data && p.data.value) || (p && p.value) || null;
+          if (!v || !Array.isArray(v)) return "";
+          const name = v[2] || p.data?.name || "이름 확인 필요";
+          const sect = v[3] || "섹터 확인 필요";
+          const tip = v[4] || "";
+          return `<b style="color:#ffffff">${name}</b> · ${sect}<br/>${tip ? tip + "<br/>" : ""}시총: ${fmtM(v[0])}<br/>${p.seriesName}: ${fmtR(v[1])}`;
+        }
+      },
+      legend: {
+        show: false
+      },
+      grid: { left: mobile ? 30 : 56, right: mobile ? 32 : 92, top: mobile ? 48 : 50, bottom: mobile ? 42 : 56, containLabel: true },
+      xAxis: {
+        type: "log", name: mobile ? "" : "시총($B, 로그)",
+        nameTextStyle: { color: "#a8b4c5", fontSize: mobile ? 10 : 12 },
+        min: 1, max: 5000,
+        logBase: 10,
+        splitLine: { lineStyle: { color: "#1f2632", type: "dashed" } },
+        axisLabel: { formatter: v => "$" + (v >= 1000 ? (v/1000)+"T" : v+"B"), fontSize: mobile ? 9.5 : 11.5 }
+      },
+      yAxis: {
+        type: "value", name: mobile ? "" : "수익률(%)",
+        nameTextStyle: { color: "#a8b4c5", fontSize: mobile ? 10 : 12 },
+        // v3.2 — 사용자 요청: 최저 -100% (총 손실 한계), 최대 +1,500% (Zhipu +1,415% 등 신규상장 포함 가시 영역)
+        min: -100, max: 1500,
+        splitLine: { lineStyle: { color: "#1f2632", type: "dashed" } },
+        axisLabel: { formatter: "{value}%", fontSize: mobile ? 9.5 : 11.5 }
+      },
+      // 단순 안내 — 색=섹터 / 크기·심볼=연도
+      graphic: [{
+        type: "text",
+        left: "center", top: mobile ? 10 : 20,
+        style: { text: mobile ? "색=섹터 · 점=24/25 · ◆=26 · ■=신규" : "색=섹터 · 점=2024/2025 · ◆=2026 · ■=신규상장 · x=IPO", fill: "#a8b4c5", font: (mobile ? "10px " : "12px ") + window.FONT_SANS_KR }
+      }],
+      series: [
+        {
+          name: "2024→2025 이동", type: "lines", coordinateSystem: "cartesian2d",
+          data: cycleLines2425,
+          symbol: ["none", "arrow"],
+          symbolSize: mobile ? 4 : 6,
+          lineStyle: { curveness: 0.08 },
+          emphasis: { focus: "none", lineStyle: { opacity: 1, width: mobile ? 2.6 : 3.2 } },
+          tooltip: { show: true },
+          z: 1
+        },
+        {
+          name: "2025→2026 이동", type: "lines", coordinateSystem: "cartesian2d",
+          data: cycleLines2526,
+          symbol: ["none", "arrow"],
+          symbolSize: mobile ? 5 : 7,
+          lineStyle: { curveness: 0.08 },
+          emphasis: { focus: "none", lineStyle: { opacity: 1, width: mobile ? 3 : 3.6 } },
+          tooltip: { show: true },
+          z: 2
+        },
+        {
+          name: "IPO→2026 이동", type: "lines", coordinateSystem: "cartesian2d",
+          data: ipoLines,
+          symbol: ["none", "arrow"],
+          symbolSize: mobile ? 5 : 7,
+          lineStyle: { curveness: 0.08 },
+          emphasis: { focus: "none", lineStyle: { opacity: 1, width: mobile ? 3 : 3.6 } },
+          tooltip: { show: true },
+          z: 3
+        },
+        {
+          name: "신규상장 시작", type: "scatter", symbolSize: mobile ? 9 : 11,
+          symbol: "path://M-5,-5L5,5M5,-5L-5,5",
+          data: ipoStartPoints,
+          label: { show: false },
+          tooltip: { formatter: p => `<b>${p.data.value[2]}</b><br/>공모가 기준 시작점: 0%` },
+          z: 4
+        },
+        {
+          name: "2024", type: "scatter", symbolSize: mobile ? 5 : 6, symbol: "circle",
+          data: posData2024.map(d => posPoint(d, 2024)),
+          label: { show: false },
+          labelLayout: { hideOverlap: true },
+          emphasis: { focus: "none", scale: 2.0, label: { show: true, formatter: p => p.data.value[2] + " · " + p.data.value[3] + " · 2024 (" + (p.data.value[1] > 0 ? "+" : "") + p.data.value[1] + "%)", position: "top", fontSize: 11, color: "#ffffff", fontWeight: 700, backgroundColor: "rgba(10,14,20,0.92)", padding: [4,7], borderRadius: 4 } }
+        },
+        {
+          name: "2025", type: "scatter", symbolSize: mobile ? 8 : 10, symbol: "circle",
+          data: posData2025.map(d => posPoint(d, 2025)),
+          label: { show: false },
+          labelLayout: { hideOverlap: true },
+          emphasis: { focus: "none", scale: 1.7, label: { show: true, formatter: p => p.data.value[2] + " · " + p.data.value[3] + " · 2025 (" + (p.data.value[1] > 0 ? "+" : "") + p.data.value[1] + "%)", position: "top", fontSize: 11, color: "#ffffff", fontWeight: 700, backgroundColor: "rgba(10,14,20,0.92)", padding: [4,7], borderRadius: 4 } }
+        },
+        {
+          name: "2026", type: "scatter", symbolSize: mobile ? 11 : 14, symbol: "diamond",
+          data: data2026Existing.map(d => posPoint(d, 2026)),
+          label: {
+            show: true,
+            // 모바일: ticker만 (라벨 겹침/잘림 방지) · 데스크톱: ticker + 섹터
+            formatter: p => {
+              const v = p.data.value;
+              if (!endpointLabelTickers.has(v[2])) return "";
+              return mobile ? v[2] : (v[2] + " · " + v[3]);
+            },
+            color: "#ffffff",
+            fontSize: mobile ? 9.5 : 10.5,
+            fontWeight: 600,
+            textBorderColor: "rgba(10,14,20,0.8)",
+            textBorderWidth: 2
+          },
+          labelLayout: { hideOverlap: true, moveOverlap: "shiftY" },
+          emphasis: { focus: "none", scale: 1.5, label: { show: true, fontSize: 12, fontWeight: 700, color: "#ffffff", backgroundColor: "rgba(10,14,20,0.92)", padding: [4,7], borderRadius: 4 } },
+          markLine: {
+            silent: true, symbol: "none", label: { show: false },
+            lineStyle: { color: "#3a4555", type: "dashed" },
+            data: [{ yAxis: 0 }]
+          }
+        },
+        {
+          name: "신규상장 2026", type: "scatter", symbolSize: mobile ? 11 : 14, symbol: "rect",
+          data: data2026Ipo.map(d => {
+            const c = sectorColorFn(d[3]);
+            return {
+              value: d,
+              itemStyle: { color: c, borderColor: "rgba(255,255,255,0.85)", borderWidth: 1.6 }
+            };
+          }),
+          label: {
+            show: true,
+            // 신규상장 — 모바일은 ticker만, 데스크톱은 ticker + 섹터
+            formatter: p => {
+              const v = p.data.value;
+              const cleanTicker = String(v[2]).replace("★", "");
+              return mobile ? cleanTicker : (cleanTicker + " · " + v[3].replace("신규상장 ", ""));
+            },
+            position: "right",
+            color: "#ffffff",
+            fontSize: mobile ? 9.5 : 10.5,
+            fontWeight: 700,
+            textBorderColor: "rgba(10,14,20,0.8)",
+            textBorderWidth: 2
+          },
+          emphasis: { focus: "none", scale: 1.5, label: { show: true, fontSize: 12, fontWeight: 700, color: "#ffffff", backgroundColor: "rgba(10,14,20,0.92)", padding: [4,7], borderRadius: 4 } },
+          z: 5
+        },
+        {
+          // v1.8 별자리 호버 — animation 속도 2배 빠르게
+          id: "hoverLine2425", name: "호버 2024→2025", type: "lines", coordinateSystem: "cartesian2d",
+          data: [],
+          silent: true,
+          symbol: ["circle", "arrow"],
+          symbolSize: mobile ? 6 : 8,
+          effect: {
+            show: true,
+            period: 3,                  // 3초마다 빛 흐름 (이전 4.5초 → 더 활기있게)
+            trailLength: 0.55,
+            symbol: "circle",
+            symbolSize: mobile ? 3.5 : 4.5,
+            color: "rgba(255, 255, 255, 0.85)"
+          },
+          lineStyle: { color: "rgba(255,255,255,0.85)", opacity: 1, width: mobile ? 2.2 : 2.6, type: "dashed", curveness: 0.08 },
+          animation: true,
+          animationDuration: 450,       // 900 → 450 (2배 빠르게)
+          animationDurationUpdate: 0,
+          animationEasing: "cubicOut",
+          z: 50,
+          tooltip: { show: false }
+        },
+        {
+          id: "hoverLine2526", name: "호버 2025→2026", type: "lines", coordinateSystem: "cartesian2d",
+          data: [],
+          silent: true,
+          symbol: ["circle", "arrow"],
+          symbolSize: mobile ? 6 : 8,
+          effect: {
+            show: true,
+            period: 2.8,
+            trailLength: 0.55,
+            symbol: "circle",
+            symbolSize: mobile ? 3.5 : 4.5,
+            color: "rgba(246, 251, 255, 0.95)"
+          },
+          lineStyle: { color: "#f6fbff", opacity: 0.98, width: mobile ? 2.4 : 2.8, type: "solid", curveness: 0.08 },
+          animation: true,
+          animationDuration: 450,
+          animationDurationUpdate: 0,
+          animationEasing: "cubicOut",
+          z: 51,
+          tooltip: { show: false }
+        },
+        {
+          id: "hoverLineIpo", name: "호버 IPO→2026", type: "lines", coordinateSystem: "cartesian2d",
+          data: [],
+          silent: true,
+          symbol: ["circle", "arrow"],
+          symbolSize: mobile ? 6 : 8,
+          effect: {
+            show: true,
+            period: 2.8,
+            trailLength: 0.55,
+            symbol: "circle",
+            symbolSize: mobile ? 3.5 : 4.5,
+            color: "rgba(255, 255, 255, 0.95)"
+          },
+          lineStyle: { color: "#ffffff", opacity: 0.98, width: mobile ? 2.4 : 2.8, type: "solid", curveness: 0.08 },
+          animation: true,
+          animationDuration: 450,
+          animationDurationUpdate: 0,
+          animationEasing: "cubicOut",
+          z: 52,
+          tooltip: { show: false }
+        },
+        {
+          id: "hoverPoints", name: "호버 좌표", type: "effectScatter",
+          data: [],
+          silent: false,
+          symbolSize: mobile ? 16 : 19,
+          rippleEffect: {
+            scale: 2.3,
+            brushType: "stroke",
+            period: 3,                    // 4.5 → 3 (별빛 더 활기차게)
+            color: "rgba(255,255,255,0.55)"
+          },
+          itemStyle: { color: "rgba(255,255,255,0.10)", borderColor: "#ffffff", borderWidth: 2.4 },
+          label: {
+            show: true,
+            formatter: p => p.data?._label || "",
+            position: "top",
+            distance: 5,
+            color: "#ffffff",
+            fontSize: mobile ? 9.5 : 10.5,
+            fontWeight: 700,
+            backgroundColor: "rgba(10,14,20,0.78)",
+            padding: [2, 5],
+            borderRadius: 3
+          },
+          labelLayout: { hideOverlap: true, moveOverlap: "shiftY" },
+          animation: true,
+          animationDuration: 250,         // 500 → 250 (2배 빠르게)
+          animationDurationUpdate: 0,
+          animationEasing: "elasticOut",
+          z: 53,
+          tooltip: {
+            show: true,
+            formatter: p => {
+              const v = p.data?.value;
+              if (!Array.isArray(v)) return "";
+              const ret = v[1];
+              const retStr = (ret > 0 ? "+" : "") + Math.round(ret).toLocaleString() + "%";
+              const mc = v[0] >= 1000 ? "$" + (v[0]/1000).toFixed(2) + "T" : "$" + Math.round(v[0]) + "B";
+              return `<b style="color:#ffffff">${p.data?._label || v[2] || "이름 확인 필요"}</b><br/>${v[3] || "섹터 확인 필요"}<br/>시총: ${mc}<br/>수익률: ${retStr}`;
+            }
+          }
+        }
+      ]
+    });
+
+    // ============================================================
+    // chartPos 종목별 상세 데이터 (호버 패널용)
+    // ============================================================
+    // v3.1 — 호버 프로필: 2026 YTD USD (Barchart 출처) · 환율 1,501원
+    const tickerProfiles = {
+      "SK하이닉스":   { sector: "반도체 / HBM", info: "5/29 ₩2,337,000 · 시총 1,662조 ÷1,501원 = $1.11T · 2026 YTD ≈ +232% USD (KRW +250% 보도, FX 보정). 2025 매출 97.15조 영익 47.21조.", link: "./sectors/semiconductors.html" },
+      "삼성전자":     { sector: "반도체 / HBM", info: "5/29 ₩313,500 · 시총 1,987조 ÷1,501원 = $1.32T · 2026 YTD ≈ +96% USD (KRW +100% 사용자 검증). HBM4 슈퍼사이클.", link: "./sectors/semiconductors.html" },
+      "한화에어로":   { sector: "방산",         info: "5/29 ₩1,189,000 · 시총 61.31조 ÷1,501원 = $40.8B · 2026 YTD ≈ -10% 추정 (신고가 165.5만 후 -28%).", link: "./sectors/defense.html" },
+      "현대로템":     { sector: "방산",         info: "5/29 ₩198,900 · 시총 21.71조 ÷1,501원 = $14.5B · 2026 YTD ≈ +10% 추정.", link: "./sectors/defense.html" },
+      "PLTR":         { sector: "AI 솔루션",    info: "5/28 $143.34 · 시총 $344B · 2026 YTD -19.36% (Barchart). 11년 계약(2035).", link: "./sectors/ai-solutions.html" },
+      "QBTS":         { sector: "양자",         info: "D-Wave · 5/28 $29.49 · 시총 $10.9B · 2026 YTD +12.77% (Barchart). CHIPS Act $100M LOI.", link: "./sectors/quantum.html" },
+      "RKLB":         { sector: "우주",         info: "Rocket Lab · 5/28 $148.03 · 시총 $86B · 2026 YTD +112.20% (Barchart). Neutron 개발.", link: "./sectors/space.html" },
+      "ASTS":         { sector: "우주",         info: "AST SpaceMobile · 5/28 $133.09 · 시총 $52B · 2026 YTD +83.24% (Barchart). D2D 위성.", link: "./sectors/space.html" },
+      "KTOS":         { sector: "드론",         info: "Kratos · 5/28 $65.19 · 시총 $12.2B · 2026 YTD -14.12% (Barchart · v2.13/v3.0 정정). Valkyrie.", link: "./sectors/drones.html" },
+      "AVAV":         { sector: "드론",         info: "AeroVironment · 5/28 $214.39 · 시총 $10.9B · 2026 YTD -11.37% (Barchart). BlueHalo + Switchblade.", link: "./sectors/drones.html" },
+      "GOOGL":        { sector: "AI LLM",       info: "Alphabet · 5/28 $390.13 · 시총 $4.70T · 2026 YTD +24.64% (Barchart). Gemini.", link: "./sectors/ai-llm.html" },
+      "MSFT":         { sector: "AI 인프라",    info: "Microsoft · 5/28 $426.99 · 시총 $3.17T · 2026 YTD -11.71% (고점 $555 -23%).", link: "./sectors/ai-llm.html" },
+      "NVDA":         { sector: "반도체",       info: "NVIDIA · 5/28 $214.25 · 시총 $5.18T · 2026 YTD +14.88% (Barchart). AI GPU 표준.", link: "./sectors/semiconductors.html" },
+      "AMZN":         { sector: "AI 인프라",    info: "Amazon · 5/28 $274 · 시총 $2.95T · 2026 YTD +18.71%. AWS + Anthropic.", link: "./sectors/ai-llm.html" },
+      "META":         { sector: "AI LLM",       info: "Meta · 5/28 $635.29 · 시총 $1.61T · 2026 YTD -3.76% (고점 $796 -20%).", link: "./sectors/ai-llm.html" },
+      "AVGO":         { sector: "반도체",       info: "Broadcom · 5/28 $426.58 · 시총 $2.02T · 2026 YTD +23.25%. $2T 6번째.", link: "./sectors/semiconductors.html" },
+      "TSM":          { sector: "반도체",       info: "TSMC · 5/28 $424.86 · 시총 $1.91T · 2026 YTD +39.81%. 파운드리 70%.", link: "./sectors/semiconductors.html" },
+      "MU":           { sector: "반도체",       info: "Micron · 5/28 $923.52 · 시총 $1.04T · 2026 YTD +223.58%. 5/26 $1T 클럽 신규.", link: "./sectors/semiconductors.html" },
+      "TSLA":         { sector: "로봇·AI",      info: "Tesla · 5/28 $442.10 · 시총 $1.39T · 2026 YTD -1.69%. Optimus 7~8월 양산.", link: "./sectors/ai-robot-future.html" },
+      "레인보우로보": { sector: "휴머노이드",   info: "5/29 ₩702,000 · 시총 약 13.5조 ÷1,501원 = $9.0B · YTD 추적 필요. 삼성 자회사.", link: "./sectors/ai-robot-future.html" },
+      "레인보우로보틱스": { sector: "휴머노이드", info: "5/29 ₩702,000 · 시총 약 13.5조 ÷1,501원 = $9.0B · YTD 추적 필요. 삼성 자회사.", link: "./sectors/ai-robot-future.html" },
+      "IBM":          { sector: "AI 솔루션",    info: "5/28 $264.22 · 시총 $248B · 2026 YTD -10.80%. watsonx.", link: "./sectors/ai-solutions.html" },
+      "HD현대일렉":   { sector: "데이터센터",   info: "5/29 ₩1,017,000 · 시총 36.73조 ÷1,501원 = $24.5B · 2026 YTD ≈ +35% USD 추정. 변압기.", link: "./sectors/datacenter.html" },
+      "HD현대일렉트릭": { sector: "데이터센터", info: "5/29 ₩1,017,000 · 시총 36.73조 ÷1,501원 = $24.5B · 2026 YTD ≈ +35% USD 추정. 변압기.", link: "./sectors/datacenter.html" },
+      "Zhipu":        { sector: "AI LLM (신규)", info: "智谱AI · 2513.HK · 5/29 HKD 1,758 · 시총 766.85B HKD ($97.9B) · IPO 공모가 HKD 116 → +1,415%.", link: "./sectors/ai-llm.html" },
+      "MiniMax":      { sector: "AI 엔터 (신규)", info: "0100.HK · 5/29 HKD 858 · 시총 270.67B HKD ($34.6B) · IPO 공모가 HKD 165 → +420%.", link: "./sectors/ai-entertainment.html" },
+      "ADBE":         { sector: "AI 솔루션",    info: "Adobe · 5/28 $241.44 · 시총 $98B · 2026 YTD -31.02%. Sora 압박.", link: "./sectors/ai-solutions.html" },
+      "NOW":          { sector: "AI 솔루션",    info: "ServiceNow · 5/28 $108.73 · 시총 $112B · 2026 YTD -29.02% (고점 $211).", link: "./sectors/ai-solutions.html" },
+      "두산에너빌리티": { sector: "데이터센터", info: "5/29 ₩103,200 · 시총 66.11조 ÷1,501원 = $44.0B · 2026 YTD ≈ +30% USD 추정. SMR + 변압기.", link: "./sectors/datacenter.html" },
+      "CRM":          { sector: "AI 솔루션",    info: "Salesforce · 5/28 $176.17 · 시총 $144B · 2026 YTD -33.50%. Agentforce.", link: "./sectors/ai-solutions.html" },
+      "SNOW":         { sector: "AI 솔루션",    info: "Snowflake · 5/28 $239.20 · 시총 $83B · 2026 YTD +9.04%. AWS AI.", link: "./sectors/ai-solutions.html" },
+      "DBX":          { sector: "AI 솔루션",    info: "Dropbox · 5/28 $26.19 · 시총 $5.9B · 2026 YTD -5.79%.", link: "./sectors/ai-solutions.html" },
+      "CEG":          { sector: "데이터센터",   info: "Constellation · 5/28 $286.31 · 시총 $103B · 2026 YTD -18.95%. 원전 PPA.", link: "./sectors/datacenter.html" },
+      "VRT":          { sector: "데이터센터",   info: "Vertiv · 5/28 $314.18 · 시총 $121B · 2026 YTD +93.93%. Q1 매출 +137% YoY.", link: "./sectors/datacenter.html" },
+      "ETN":          { sector: "데이터센터",   info: "Eaton · 5/28 $401.94 · 시총 $156B · 2026 YTD +26.19%. AI DC 전력.", link: "./sectors/datacenter.html" },
+      "OKLO":         { sector: "데이터센터",   info: "Oklo · 5/28 $68.09 · 시총 $11.9B · 2026 YTD -5.11%. SMR Aurora.", link: "./sectors/datacenter.html" },
+      "IONQ":         { sector: "양자",         info: "5/28 $70.14 · 시총 $26B · 2026 YTD +56.32%. 트랩이온.", link: "./sectors/quantum.html" },
+      "RGTI":         { sector: "양자",         info: "Rigetti · 5/28 $27.03 · 시총 $9.0B · 2026 YTD +22.03%. 양자 게이트.", link: "./sectors/quantum.html" },
+      "IRDM":         { sector: "우주",         info: "Iridium · 5/28 $51.26 · 시총 $5.4B · 2026 YTD +194.94%. 위성통신.", link: "./sectors/space.html" }
+    };
+
+    // 수익률 포맷 통일 — 정수 % (+ 부호) · 1,000% 이상은 천단위 구분
+    function fmtRet(r) {
+      if (r === null || r === undefined || r === "—" || isNaN(Number(r))) return "—";
+      const n = Math.round(Number(r));
+      return (n > 0 ? "+" : "") + n.toLocaleString() + "%";
+    }
+    // 시총 포맷 — $B 단위, 1000 이상은 $T 환산
+    function fmtMcap(m) {
+      if (m === null || m === undefined || m === "—" || isNaN(Number(m))) return "—";
+      const n = Number(m);
+      if (n >= 1000) return "$" + (n / 1000).toFixed(2) + "T";
+      if (n >= 100) return "$" + Math.round(n) + "B";
+      return "$" + n.toFixed(1) + "B";
+    }
+    // v1.8 — 패널은 종목의 모든 연도(IPO/2024/2025/2026) 좌표를 미니 표로 한꺼번에 표시
+    //         호버 ticker만 받으면 윈도우 스코프의 pointSources/tickerProfiles에서 데이터 수집
+    function showPosDetail(ticker /*, year, mcap, ret  ← 옛 시그니처 호환 무시 */) {
+      const panel = document.getElementById("chartPosDetail");
+      if (!panel) return;
+      const placeholder = panel.querySelector(".detail-placeholder");
+      const content = panel.querySelector(".detail-content");
+      if (!content) return;
+      const clean = String(ticker || "").replace("★", "").replace(" IPO", "");
+      const profile = (typeof tickerProfiles !== "undefined" && tickerProfiles[clean]) || { sector: "—", info: "공개 자료 추적 중." };
+      // 간략 설명 — profile.info에서 첫 한 문장만 (마침표 기준)
+      const briefInfo = String(profile.info || "").split(/\.\s/)[0] + (profile.info.includes(".") ? "." : "");
+
+      // 종목의 모든 연도 좌표 수집 (window.__posSources에서 — 아래 IIFE에서 노출)
+      const allYears = (window.__posSources || [])
+        .filter(({ d }) => String(d[2] || "").replace("★", "").replace(" IPO", "") === clean)
+        .map(({ d, year, isIpoStart }) => ({
+          year: isIpoStart ? "IPO" : year,
+          mcap: d[0],
+          ret: d[1],
+          _order: isIpoStart ? 0 : (year === 2024 ? 1 : year === 2025 ? 2 : 3)
+        }))
+        .sort((a, b) => a._order - b._order);
+
+      // 미니 표 HTML — 빈 경우 fallback
+      const rowsHtml = allYears.length
+        ? allYears.map(y => {
+            const rn = Number(y.ret);
+            const rc = rn > 1000 ? "pink" : rn > 300 ? "gold" : rn > 0 ? "up" : "down";
+            return `<tr>
+              <td class="yr">${y.year}</td>
+              <td class="mc">${fmtMcap(y.mcap)}</td>
+              <td class="rt ${rc}">${fmtRet(y.ret)}</td>
+            </tr>`;
+          }).join("")
+        : `<tr><td colspan="3" style="color:var(--text-3);text-align:center">좌표 추적 중</td></tr>`;
+
+      content.querySelector(".detail-ticker").textContent = clean;
+      content.querySelector(".detail-sector").textContent = profile.sector;
+      content.querySelector(".detail-body").innerHTML = `
+        <table class="detail-years">
+          <thead><tr><th>연도</th><th>시총</th><th>수익률</th></tr></thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+        <p>${briefInfo}</p>
+      `;
+      if (placeholder) placeholder.hidden = true;
+      content.hidden = false;
+    }
+    function hidePosDetail() {
+      const panel = document.getElementById("chartPosDetail");
+      if (!panel) return;
+      const placeholder = panel.querySelector(".detail-placeholder");
+      const content = panel.querySelector(".detail-content");
+      if (content) content.hidden = true;
+      if (placeholder) placeholder.hidden = false;
+    }
+
+    // ============================================================
+    // chartPos 호버 연동 — 같은 ticker의 2024·2025·2026 점을 동시에 강조
+    // ============================================================
+    (() => {
+      const chart = chartPos;
+      if (!chart) return;
+      const yearSeries = ["2024", "2025", "2026", "신규상장 2026"];
+      const dataByYear = { "2024": posData2024, "2025": posData2025, "2026": data2026Existing, "신규상장 2026": data2026Ipo };
+      const lineSeries = ["2024→2025 이동", "2025→2026 이동", "IPO→2026 이동"];
+      const dataByLine = { "2024→2025 이동": cycleLines2425, "2025→2026 이동": cycleLines2526, "IPO→2026 이동": ipoLines };
+      const cleanTicker = value => String(value || "").replace("★", "").replace(" IPO", "");
+      const pointSources = [
+        ...posData2024.map(d => ({ year: 2024, d })),
+        ...posData2025.map(d => ({ year: 2025, d })),
+        ...data2026Existing.map(d => ({ year: 2026, d })),
+        ...ipoStartPoints.map(p => ({ year: "IPO", d: p.value, isIpoStart: true })),
+        ...data2026Ipo.map(d => ({ year: 2026, d }))
+      ];
+      // showPosDetail이 IIFE 밖에서 호출되므로 window에 공유
+      window.__posSources = pointSources;
+
+      function findByTicker(ticker) {
+        const t = cleanTicker(ticker);
+        const hits = [];
+        yearSeries.forEach(sName => {
+          const arr = dataByYear[sName] || [];
+          arr.forEach((d, i) => {
+            if (cleanTicker(d[2]) === t) {
+              hits.push({ seriesName: sName, dataIndex: i });
+            }
+          });
+        });
+        lineSeries.forEach(sName => {
+          const arr = dataByLine[sName] || [];
+          arr.forEach((d, i) => {
+            if (cleanTicker(d.name) === t) {
+              hits.push({ seriesName: sName, dataIndex: i });
+            }
+          });
+        });
+        return hits;
+      }
+
+      let hoverTimers = [];
+      function clearHoverTimers() {
+        hoverTimers.forEach(timer => window.clearTimeout(timer));
+        hoverTimers = [];
+      }
+      function queueHoverStep(delay, series) {
+        const timer = window.setTimeout(() => {
+          chart.setOption({ series });
+        }, delay);
+        hoverTimers.push(timer);
+      }
+
+      // 산점도 / 라인의 기본 데이터를 비대상은 거의 투명, 대상만 강조로 재빌드
+      function dimBaseSeries(t) {
+        const dimItem = (point, isTarget) => {
+          if (isTarget) return point;
+          const out = Object.assign({}, point);
+          out.itemStyle = Object.assign({}, point.itemStyle || {}, { opacity: 0.08 });
+          out.label = Object.assign({}, point.label || {}, { show: false });
+          return out;
+        };
+        const dimLine = (line) => {
+          if (cleanTicker(line.name) === t) return line;
+          return Object.assign({}, line, {
+            lineStyle: Object.assign({}, line.lineStyle || {}, { opacity: 0.05 })
+          });
+        };
+        // 신규상장 사각형의 기본 itemStyle을 복원하면서 비대상만 투명화
+        const data2024 = posData2024.map(d => dimItem(posPoint(d, 2024), cleanTicker(d[2]) === t));
+        const data2025 = posData2025.map(d => dimItem(posPoint(d, 2025), cleanTicker(d[2]) === t));
+        const data2026 = data2026Existing.map(d => dimItem(posPoint(d, 2026), cleanTicker(d[2]) === t));
+        const dataIpoSc = data2026Ipo.map(d => {
+          const c = sectorColorFn(d[3]);
+          const base = { value: d, itemStyle: { color: c, borderColor: "rgba(255,255,255,0.85)", borderWidth: 1.6 } };
+          return dimItem(base, cleanTicker(d[2]) === t);
+        });
+        const dataIpoStart = ipoStartPoints.map(p => dimItem(p, cleanTicker(p.value[2]) === t));
+        return {
+          series: [
+            { name: "2024→2025 이동", data: cycleLines2425.map(dimLine) },
+            { name: "2025→2026 이동", data: cycleLines2526.map(dimLine) },
+            { name: "IPO→2026 이동", data: ipoLines.map(dimLine) },
+            { name: "신규상장 시작", data: dataIpoStart },
+            { name: "2024", data: data2024 },
+            { name: "2025", data: data2025 },
+            { name: "2026", data: data2026 },
+            { name: "신규상장 2026", data: dataIpoSc }
+          ]
+        };
+      }
+      function restoreBaseSeries() {
+        return {
+          series: [
+            { name: "2024→2025 이동", data: cycleLines2425 },
+            { name: "2025→2026 이동", data: cycleLines2526 },
+            { name: "IPO→2026 이동", data: ipoLines },
+            { name: "신규상장 시작", data: ipoStartPoints },
+            { name: "2024", data: posData2024.map(d => posPoint(d, 2024)) },
+            { name: "2025", data: posData2025.map(d => posPoint(d, 2025)) },
+            { name: "2026", data: data2026Existing.map(d => posPoint(d, 2026)) },
+            { name: "신규상장 2026", data: data2026Ipo.map(d => {
+              const c = sectorColorFn(d[3]);
+              return { value: d, itemStyle: { color: c, borderColor: "rgba(255,255,255,0.85)", borderWidth: 1.6 } };
+            })}
+          ]
+        };
+      }
+
+      function setHoverOverlay(ticker) {
+        clearHoverTimers();
+        const t = cleanTicker(ticker);
+        // 1. 비대상 점·선은 즉시 투명화
+        chart.setOption(dimBaseSeries(t));
+        // 2. 호버 시리즈를 깨끗이 초기화 — 잔상(ghost) 방지의 핵심
+        chart.setOption({
+          series: [
+            { id: "hoverLine2425", data: [] },
+            { id: "hoverLine2526", data: [] },
+            { id: "hoverLineIpo",  data: [] },
+            { id: "hoverPoints",   data: [] }
+          ]
+        });
+
+        const liftLine = (line, style) => ({
+          ...line,
+          lineStyle: Object.assign({}, line.lineStyle || {}, style)
+        });
+        const lines2425 = cycleLines2425
+          .filter(d => cleanTicker(d.name) === t)
+          .map(d => liftLine(d, { color: "rgba(255,255,255,0.85)", opacity: 1, width: mobile ? 2.2 : 2.6, type: "dashed" }));
+        const lines2526 = cycleLines2526
+          .filter(d => cleanTicker(d.name) === t)
+          .map(d => liftLine(d, { color: "#f6fbff", opacity: 1, width: mobile ? 2.4 : 2.8, type: "solid" }));
+        const linesIpo = ipoLines
+          .filter(d => cleanTicker(d.name) === t)
+          .map(d => liftLine(d, { color: "#ffffff", opacity: 1, width: mobile ? 2.4 : 2.8, type: "solid" }));
+        const allPoints = pointSources
+          .filter(({ d }) => cleanTicker(d[2]) === t)
+          .map(({ d, year, isIpoStart }) => {
+            const order = isIpoStart ? 0 : (year === 2024 ? 1 : year === 2025 ? 2 : 3);
+            const name = cleanTicker(d[2]) || "이름 확인 필요";
+            const label = `${name} ${isIpoStart ? "IPO" : year}`;
+            return {
+              name: label,
+              value: d,
+              _label: label,
+              _order: order,
+              label: {
+                position: isIpoStart ? "bottom" : (year === 2024 ? "bottom" : year === 2025 ? "top" : "right"),
+                distance: isIpoStart ? 7 : 6,
+                offset: year === 2026 && !isIpoStart ? [4, 0] : [0, 0]
+              },
+              symbol: isIpoStart ? "path://M-5,-5L5,5M5,-5L-5,5" : (year === 2026 ? "diamond" : "circle"),
+              symbolSize: isIpoStart ? (mobile ? 13 : 15) : (mobile ? 16 : 19),
+              itemStyle: {
+                color: "rgba(255,255,255,0.08)",
+                borderColor: sectorColorFn(d[3]) || "#ffffff",
+                borderWidth: 3
+              }
+            };
+          })
+          .sort((a, b) => a._order - b._order);
+
+        // 3. 별자리 순차 등장 — v1.8 속도 2배 (총 ~0.95초 안에 완료)
+        //    리듬: 첫 점(75ms) → 첫 라인(225ms) → 다음 라인(400ms) → 2025점(575ms) → 2025→2026(750ms) → 2026점(925ms)
+        const upto = order => allPoints.filter(p => p._order <= order);
+        const hasIpoLink = linesIpo.length > 0;
+        const has25 = lines2425.length > 0;
+        const has26 = lines2526.length > 0;
+
+        // Step 1 — 첫 별 (75ms)
+        queueHoverStep(75, [{ id: "hoverPoints", data: upto(1) }]);
+
+        // Step 2 — 첫 라인
+        let nextDelay = 225;
+        if (hasIpoLink) {
+          queueHoverStep(nextDelay, [{ id: "hoverLineIpo", data: linesIpo }]);
+          nextDelay += 175;             // 350 → 175
+        }
+        if (has25) {
+          queueHoverStep(nextDelay, [{ id: "hoverLine2425", data: lines2425 }]);
+          nextDelay += 175;
+        }
+
+        // Step 3 — 2025 점
+        if (allPoints.some(p => p._order === 2)) {
+          queueHoverStep(nextDelay, [{ id: "hoverPoints", data: upto(2) }]);
+          nextDelay += 175;
+        }
+
+        // Step 4 — 2025→2026 라인
+        if (has26) {
+          queueHoverStep(nextDelay, [{ id: "hoverLine2526", data: lines2526 }]);
+          nextDelay += 175;
+        }
+
+        // Step 5 — 2026 점 (모든 별)
+        if (allPoints.some(p => p._order === 3)) {
+          queueHoverStep(nextDelay, [{ id: "hoverPoints", data: allPoints }]);
+        }
+      }
+
+      function clearHoverOverlay() {
+        clearHoverTimers();
+        // 호버 시리즈를 먼저 비워 잔상 차단 → 그 다음 기본 시리즈 복구
+        chart.setOption({
+          series: [
+            { id: "hoverLine2425", data: [] },
+            { id: "hoverLine2526", data: [] },
+            { id: "hoverLineIpo", data: [] },
+            { id: "hoverPoints", data: [] }
+          ]
+        });
+        chart.setOption(restoreBaseSeries());
+      }
+
+      let lastTicker = null;
+      function tickerFromParams(params) {
+        if (!params || !params.data) return "";
+        const lineTicker = params.seriesType === "lines" ? params.data.name : "";
+        const v = params.data.value || params.data;
+        return lineTicker || (Array.isArray(v) ? v[2] : "");
+      }
+      function activateTicker(ticker, params) {
+        if (!ticker || ticker === lastTicker) return;
+        lastTicker = ticker;
+        setHoverOverlay(ticker);
+        // 호버 상세 패널 갱신 — 가능하면 현재 호버한 좌표값으로
+        try {
+          const v = params && params.data && params.data.value;
+          if (Array.isArray(v)) {
+            // v = [mcap, return%, name, sector, ...]
+            const year = params.seriesName && /\d{4}/.test(params.seriesName)
+              ? params.seriesName.match(/\d{4}/)[0]
+              : (params.seriesName && params.seriesName.indexOf("신규") >= 0 ? "2026" : "—");
+            showPosDetail(v[2] || ticker, year, v[0], v[1]);
+          } else if (params && params.seriesType === "lines" && params.data) {
+            const d = params.data;
+            // 라인 호버는 toYear 좌표로
+            const toYear = d.toYear || 2026;
+            const co = d.coords ? d.coords[1] : null;
+            if (co) showPosDetail(ticker, toYear, co[0], co[1]);
+            else showPosDetail(ticker, toYear, "—", d.to || 0);
+          }
+        } catch (e) { /* no-op */ }
+      }
+      chart.on("mouseover", function(params) {
+        activateTicker(tickerFromParams(params), params);
+      });
+      chart.on("click", function(params) {
+        activateTicker(tickerFromParams(params), params);
+      });
+      chart.on("globalout", function() {
+        if (!lastTicker) return;
+        clearHoverOverlay();
+        hidePosDetail();
+        lastTicker = null;
+      });
+      window.__qaChartPosHover = function(ticker) {
+        lastTicker = ticker;
+        setHoverOverlay(ticker);
+      };
+      window.__qaChartPosHoverClear = function() {
+        clearHoverOverlay();
+        lastTicker = null;
+      };
+    })();
+
+    // ============================================================
+    // 시총 트리맵 (2026.5 기준 $B · $1 = 1,370원 환산)
+    // 한국 종목은 라벨에 조원 병기
+    // ============================================================
+    // 모바일에서는 이름의 시총 단위 부분(\n$XXXB)을 제거해 작은 셀에서도 ticker만 표시
+    const tickerOnlyOnMobile = (data) => {
+      if (!mobile) return data;
+      return data.map(node => {
+        if (node.children) {
+          return Object.assign({}, node, { children: tickerOnlyOnMobile(node.children) });
+        }
+        // 첫 줄(\n 앞)만 — 시총 표기 제거
+        const shortName = String(node.name || "").split("\n")[0]
+          // 그룹 라벨도 압축 ("프런티어 (우주·로봇·양자)" → "프런티어")
+          .replace(/\s*\([^)]+\)\s*$/, "")
+          .trim();
+        return Object.assign({}, node, { name: shortName, _fullName: node.name });
+      });
+    };
+    const treemapDataRaw = [
+      // ↓ 실제 data 배열은 아래 분리 정의 (mobile 변환을 위해)
+    ];
+    mkChart("chartTree", {
+      tooltip: { formatter: p => {
+        const original = (p.data && p.data._fullName) || p.name;
+        return `<b>${String(original).split("\n")[0]}</b><br/>시총: $${p.value}B${p.data && p.data.krw ? ` (약 ${p.data.krw}조원)` : ""}`;
+      } },
+      series: [{
+        type: "treemap",
+        roam: false, nodeClick: false, breadcrumb: { show: false },
+        // 모바일: 작은 셀은 라벨 잘림 방지 — visibleMin으로 너무 작은 셀 제거 + label 압축
+        visibleMin: mobile ? 200 : 0,
+        label: {
+          color: "#ffffff",
+          fontWeight: 700,
+          fontFamily: window.FONT_SANS_KR,
+          fontSize: mobile ? 10.5 : 13,
+          textBorderColor: "rgba(10,14,20,0.7)",
+          textBorderWidth: 2,
+          overflow: "truncate"        // 셀 폭 초과 시 자름 (줄바꿈 X — 모바일 라벨이 너무 작아지는 것 방지)
+        },
+        upperLabel: {
+          show: true,
+          color: "#fff",
+          fontWeight: 700,
+          height: mobile ? 18 : 22,
+          fontSize: mobile ? 11 : 13,
+          overflow: "truncate"
+        },
+        levels: [
+          { itemStyle: { borderColor: "#0a0e14", borderWidth: 2, gapWidth: 2 } },
+          { itemStyle: { borderColor: "#0a0e14", borderWidth: 1, gapWidth: 1 } }
+        ],
+        // v3.0 — 시총 2026-05-29 11:00 KST 실측 · USD/KRW 1,501원 (한국 종목 KRW 시총 ÷1,501)
+        data: tickerOnlyOnMobile([
+          { name: "AI · 소프트웨어", itemStyle: { color: "#1a6a4a" }, children: [
+            { name: "GOOGL\n$4,700B",  value: 4700, itemStyle: { color: "#2bd4a4" } },
+            { name: "MSFT\n$3,170B",   value: 3170, itemStyle: { color: "#5fdfb9" } },
+            { name: "AMZN\n$2,950B",   value: 2950, itemStyle: { color: "#88e9c9" } },
+            { name: "META\n$1,610B",   value: 1610, itemStyle: { color: "#a8f0d5" } },
+            { name: "OPENAI*\n~$500B", value: 500,  itemStyle: { color: "#a4d8ff" } },
+            { name: "ANTHROPIC*\n$380B", value: 380, itemStyle: { color: "#7afff2" } },
+            { name: "PLTR\n$344B",     value: 344,  itemStyle: { color: "#c8f5e1" } },
+            { name: "IBM\n$248B",      value: 248,  itemStyle: { color: "#bfddf5" } },
+            { name: "CRM\n$144B",      value: 144,  itemStyle: { color: "#d5a8ff" } },
+            { name: "NOW\n$112B",      value: 112,  itemStyle: { color: "#ffb020" } },
+            { name: "ADBE\n$98B",      value: 98,   itemStyle: { color: "#ffc24d" } },
+            { name: "Zhipu\n2513.HK ($97.9B)", value: 97.9, itemStyle: { color: "#ff385c" } },
+            { name: "SNOW\n$83B",      value: 83,   itemStyle: { color: "#ffd57f" } },
+            { name: "MiniMax\n0100.HK ($34.6B)", value: 34.6, itemStyle: { color: "#ff7a00" } },
+            { name: "DBX*\n$5.9B",     value: 5.9,  itemStyle: { color: "#c489ff" } },
+          ]},
+          { name: "AI 인프라 · 반도체 · DC", itemStyle: { color: "#1a4a85" }, children: [
+            { name: "NVDA\n$5,180B",   value: 5180, itemStyle: { color: "#5aa7ff" } },
+            { name: "AVGO\n$2,020B",   value: 2020, itemStyle: { color: "#7fc4ff" } },
+            { name: "TSM\n$1,910B",    value: 1910, itemStyle: { color: "#a4d8ff" } },
+            { name: "삼성전자\n1,987조 ÷1,501원 = $1.32T", value: 1324, krw: 1987, itemStyle: { color: "#ffb020" } },
+            { name: "SK하이닉스\n1,662조 ÷1,501원 = $1.11T", value: 1107, krw: 1662, itemStyle: { color: "#ffc24d" } },
+            { name: "MU\n$1,040B",     value: 1040, itemStyle: { color: "#cdeaff" } },
+            { name: "ETN\n$156B",      value: 156,  itemStyle: { color: "#9fc8ed" } },
+            { name: "VRT\n$121B",      value: 121,  itemStyle: { color: "#bfddf5" } },
+            { name: "CEG\n$103B",      value: 103,  itemStyle: { color: "#9fc8ed" } },
+            { name: "두산에너빌\n66조 ÷1,501원 = $44B", value: 44.0, krw: 66, itemStyle: { color: "#ffd57f" } },
+            { name: "HD현대일렉\n37조 ÷1,501원 = $24.5B", value: 24.5, krw: 37, itemStyle: { color: "#ffd57f" } },
+            { name: "한미반도체\n26.6조 ÷1,501원 = $17.7B", value: 17.7, krw: 26.6, itemStyle: { color: "#ffe4a0" } },
+            { name: "OKLO\n$11.9B",    value: 11.9, itemStyle: { color: "#cdeaff" } },
+          ]},
+          { name: "프런티어 (우주·로봇·양자)", itemStyle: { color: "#5a2a7a" }, children: [
+            { name: "SPACEX*\n$1,750B (S-1)", value: 1750, itemStyle: { color: "#d5a8ff" } },
+            { name: "TSLA\n$1,390B",   value: 1390, itemStyle: { color: "#c489ff" } },
+            { name: "RKLB\n$86B",       value: 86,   itemStyle: { color: "#e2c4ff" } },
+            { name: "ASTS\n$52B",       value: 52,   itemStyle: { color: "#ecd9ff" } },
+            { name: "IONQ\n$26B",       value: 26,   itemStyle: { color: "#7afff2" } },
+            { name: "QBTS\n$10.9B",     value: 10.9, itemStyle: { color: "#a4d8ff" } },
+            { name: "AVAV\n$10.9B",     value: 10.9, itemStyle: { color: "#bfddf5" } },
+            { name: "RGTI\n$9.0B",      value: 9.0,  itemStyle: { color: "#bfddf5" } },
+            { name: "레인보우로보\n13.5조 ÷1,501원 = $9.0B", value: 9.0, krw: 13.5, itemStyle: { color: "#ffd57f" } },
+            { name: "IRDM\n$5.4B",      value: 5.4,  itemStyle: { color: "#ecd9ff" } },
+          ]},
+          { name: "방산·드론", itemStyle: { color: "#7a5a10" }, children: [
+            { name: "RTX\n$180B",       value: 180,  itemStyle: { color: "#ffb020" } },
+            { name: "Lockheed\n$170B",  value: 170,  itemStyle: { color: "#ffc24d" } },
+            { name: "한화에어로\n61.3조 ÷1,501원 = $40.8B", value: 40.8, krw: 61, itemStyle: { color: "#5aa7ff" } },
+            { name: "현대로템\n21.7조 ÷1,501원 = $14.5B", value: 14.5, krw: 22, itemStyle: { color: "#7fc4ff" } },
+            { name: "KTOS\n$12.2B",     value: 12.2, itemStyle: { color: "#ffc24d" } },
+            { name: "LIG넥스원\n17.9조 ÷1,501원 = $11.9B", value: 11.9, krw: 18, itemStyle: { color: "#ffe4a0" } },
+            { name: "KAI\n16.6조 ÷1,501원 = $11.0B", value: 11.0, krw: 17, itemStyle: { color: "#a4d8ff" } },
+            { name: "AVAV\n$10.9B",     value: 10.9, itemStyle: { color: "#bfddf5" } },
+          ]},
+          { name: "에너지·소재 (이차전지)", itemStyle: { color: "#7a2a30" }, children: [
+            { name: "LG엔솔\n105조 ÷1,501원 = $70.2B",  value: 70.2, krw: 105, itemStyle: { color: "#ff5d6c" } },
+            { name: "삼성SDI\n55조 ÷1,501원 = $36.7B", value: 36.7, krw: 55, itemStyle: { color: "#ff8090" } },
+            { name: "에코프로비엠\n22조 ÷1,501원 = $14.3B", value: 14.3, krw: 22, itemStyle: { color: "#ffa8a8" } },
+          ]},
+        ])
+      }]
+    });
+
+    // ============================================================
+    // 11원칙 충족도 — 평균점수 순 내림차순 정렬
+    // ============================================================
+    // 4축 평균 점수 계산: ③ 3년 매출·영익 성장, ⑧ 시총 우호, ⑤ 흑자, ② 실수요
+    const rulesRaw = [
+      { sector: "방산",          growth: 4.5, mcap: 2.0, profit: 5.0, demand: 5.0 },
+      { sector: "드론",          growth: 4.0, mcap: 3.0, profit: 4.0, demand: 4.5 },
+      { sector: "AI솔루션",      growth: 5.0, mcap: 1.0, profit: 4.5, demand: 5.0 },
+      { sector: "AI LLM",         growth: 4.5, mcap: 2.0, profit: 4.0, demand: 5.0 },
+      { sector: "AI엔터",         growth: 4.0, mcap: 3.0, profit: 3.5, demand: 4.0 },
+      { sector: "반도체",        growth: 4.5, mcap: 2.5, profit: 5.0, demand: 5.0 },
+      { sector: "이차전지",      growth: 1.5, mcap: 4.5, profit: 2.0, demand: 3.0 },
+      { sector: "양자",          growth: 3.0, mcap: 2.5, profit: 1.5, demand: 2.5 },
+      { sector: "우주",          growth: 4.5, mcap: 2.0, profit: 4.0, demand: 4.5 },
+      { sector: "데이터센터",    growth: 5.0, mcap: 2.0, profit: 5.0, demand: 5.0 },
+      { sector: "로봇",          growth: 3.0, mcap: 2.0, profit: 2.0, demand: 3.5 },
+    ];
+    // 평균 계산 + 내림차순 정렬
+    rulesRaw.forEach(r => r.avg = (r.growth + r.mcap + r.profit + r.demand) / 4);
+    rulesRaw.sort((a, b) => b.avg - a.avg);
+
+    mkChart("chartRules", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
+      legend: {
+        data: ["3년 성장(③)","시총 우호(⑧)","흑자(⑤)","수요 실재(②)", "평균"],
+        top: 0,
+        textStyle: { fontSize: mobile ? 10 : 12 },
+        itemGap: mobile ? 6 : 10,
+        itemWidth: mobile ? 14 : 25
+      },
+      grid: { left: mobile ? 36 : 50, right: mobile ? 14 : 30, top: mobile ? 60 : 50, bottom: mobile ? 64 : 40, containLabel: true },
+      xAxis: { type: "category", data: rulesRaw.map(r => r.sector), axisLabel: { fontSize: mobile ? 9.5 : 11, rotate: mobile ? 35 : 20, interval: 0 } },
+      yAxis: { type: "value", min: 0, max: 5, name: "점수", nameTextStyle: { fontSize: mobile ? 10 : 12 } },
+      // 서로 다른 의미축은 서로 다른 색상군으로 분리하고, 평균만 선으로 강조
+      series: [
+        { name: "3년 성장(③)",   type: "bar", data: rulesRaw.map(r => r.growth), itemStyle: { color: "#2fbf9a" }, barMaxWidth: mobile ? 8 : undefined },
+        { name: "시총 우호(⑧)",  type: "bar", data: rulesRaw.map(r => r.mcap),   itemStyle: { color: "#f0c35d" }, barMaxWidth: mobile ? 8 : undefined },
+        { name: "흑자(⑤)",        type: "bar", data: rulesRaw.map(r => r.profit), itemStyle: { color: "#9b8cff" }, barMaxWidth: mobile ? 8 : undefined },
+        { name: "수요 실재(②)",  type: "bar", data: rulesRaw.map(r => r.demand), itemStyle: { color: "#ff8b62" }, barMaxWidth: mobile ? 8 : undefined },
+        {
+          name: "평균", type: "line", smooth: true,
+          data: rulesRaw.map(r => r.avg.toFixed(2)),
+          lineStyle: { width: mobile ? 2 : 3, color: "#fff0b8" }, itemStyle: { color: "#fff0b8", borderColor: "#0a0e14", borderWidth: 2 }, symbolSize: mobile ? 7 : 10,
+          label: { show: !mobile, position: "top", color: "#fff0b8", textBorderColor: "#0a0e14", textBorderWidth: 2, fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: 12 }
+        }
+      ]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터센터 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="datacenter">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / 데이터센터</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터센터 · 슈퍼사이클</h1>
+          <p class="subtitle">빅테크 2026 CapEx 합산 $725B · 전력·SMR·변압기·냉각의 동시 호황</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">VRT · ETN · OKLO · 267260 · 298040</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>빅테크 4사(MS·Alphabet·Meta·Amazon) 2026 <abbr title="Capital Expenditure — 설비 투자 지출">CapEx</abbr> 합산 <b>$725B</b> 전망 — 메가 사이클.
+        AI 사용자 16%, 유료 침투율 0.4%로 <b>아직 침투율 1% 미만</b> → 성장 여력 충분.
+        병목은 <b>전력·변압기·냉각</b>으로 이동, <abbr title="Small Modular Reactor — 소형모듈원자로. 데이터센터 전용 안정 전력원으로 부상">SMR</abbr>(소형원전)과 한국 변압기 빅3가 수혜.</p>
+      </div>
+
+      <!-- 2026-05-28 신규 — SpaceX × Anthropic 컴퓨트 계약 -->
+      <div class="callout fact" id="spx-anthropic-deal">
+        <div class="head">🛰️ 2026-05-28 신규 — SpaceX의 컴퓨트 레이어 진입 (보도 추적 · as of 2026-05-29 00:30 KST)</div>
+        <p>
+          <b>SpaceX가 데이터센터 시설을 인수</b>한 후, 2026-05-28 <b>Anthropic과 월 12억 달러(연환산 약 $14.4B+) 규모 컴퓨트 계약</b>을 체결했다는 보도가 나왔습니다.
+          <span class="data-tag track">추적</span> 계약 기간·시설 위치·정확한 인수 대상은 추가 공시 대기.
+        </p>
+        <p style="margin-top:8px">
+          <b>시사점</b> — SpaceX가 발사(Starship)·통신(Starlink)에 이어 <b>AI 컴퓨트 인프라까지 수직 통합</b>하는 트랙으로 확장.
+          Anthropic 입장에서는 기존 Google·AWS·Broadcom 외 <b>네 번째 거대 컴퓨트 공급자</b>가 추가되는 셈.
+          연환산 $14.4B+ 단일 계약은 Anthropic 2026.4 run-rate $30B+의 약 절반에 해당하는 컴퓨트 지출 → AI run-rate가 곧 인프라 CapEx로 환류되는 흐름이 더 선명해짐.
+        </p>
+        <p style="color:var(--text-3);font-size:11.5px;margin-top:6px">
+          <b>5/29 00:30 KST 시점</b>: 정식 공시(SEC S-1 SpaceX 갱신 또는 Anthropic 공식 보도자료) <b>아직 미확인</b>. 5/28 보도 직후 후속 보도/논평 추적 중. 본 정보는 「추적 필요」로 분류 — 확정 공시 시 본 콜아웃을 「공식」으로 격상 예정.
+        </p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">📊 이 영역의 핵심 데이터 — CapEx 사이즈와 침투율</div>
+        <p><b>① 빅테크 CapEx 규모</b>: 2025년 4사 합산 약 $410B(566조원) → 2026년 <b>$725B(약 1,000조원, +77% YoY)</b> 가이던스. 2025~2027 누계로 보면 약 <b>$2~2.4T(2,700~3,300조원)</b> 규모 — "3천조원" 체감과 일치하는 메가 사이클 (Tom's Hardware, Futurum 2026.4).</p>
+        <p><b>② AI 유료 침투율</b>: 글로벌 80억 인구 대비 OpenAI 유료 ~3,500만 = <b>0.44%</b>. 전체 AI 사용자(무료 포함)는 약 16.3%. <b>유료 침투율 1% 미만</b>이라는 점이 핵심 — 성장 여력이 폭발적이라는 직관 그대로. AI CapEx의 정당성을 가르는 가장 중요한 지표.</p>
+      </div>
+
+      <h2>핵심 지표</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">2026E 빅테크 CapEx 합산</div>
+          <div class="value">$725<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">+77% YoY · 약 1,000조원</div>
+        </div>
+        <div class="kpi">
+          <div class="label">AI 유료 구독 침투율</div>
+          <div class="value">~0.4<span style="font-size:0.6em">%</span></div>
+          <div class="delta up">전체 AI 사용자는 16.3%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">DC 전력 (IEA 전망)</div>
+          <div class="value">2배</div>
+          <div class="delta up">2024 415 TWh → 2030 945 TWh</div>
+        </div>
+        <div class="kpi">
+          <div class="label">한국 변압기 빅3 수주잔액</div>
+          <div class="value">33<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">5~6년치 일감</div>
+        </div>
+      </div>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="kpi" style="border-left:3px solid var(--accent)">
+          <div class="label">🛰️ SpaceX × Anthropic 월 컴퓨트 계약 <span class="data-tag track">추적</span></div>
+          <div class="value">$1.2<span style="font-size:0.6em">B/월</span></div>
+          <div class="delta up">연환산 $14.4B+ · 2026-05-28 보도</div>
+        </div>
+        <div class="kpi">
+          <div class="label">컴퓨트 공급자 다변화 (Anthropic)</div>
+          <div class="value">4<span style="font-size:0.6em">곳</span></div>
+          <div class="delta up">Google · AWS · Broadcom · SpaceX(신규)</div>
+        </div>
+      </div>
+
+      <h2>빅테크 4사 CapEx 추이</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2023→2026E · 단위 $B · 실제 가이던스 기준</div>
+        <div id="chartCapex" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          2026 가이던스: <b>Microsoft $190B · Alphabet $175~185B · Meta $125~145B · Amazon 4사 중 최대</b>.
+          "데이터 버블"은 시장에서도 활발히 논의 중 (감가상각 vs AI 매출 회수 속도).
+        </p>
+      </div>
+
+      <h2>데이터센터 전력 수요 (IEA)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>글로벌 DC 전력 소비 · 단위 TWh</div>
+        <div id="chartPower" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          IEA 기준 글로벌 데이터센터 전력 소비는 2024년 약 415TWh에서 2030년 약 945TWh로 두 배 이상 확대되는 Base Case입니다.
+          2035년은 약 1,200TWh까지 상승하는 장기 시나리오로 분리해서 봅니다.
+        </p>
+      </div>
+
+      <h2>SMR — 데이터센터 전력원으로 부상</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>SMR 회사</th><th>고객</th><th>규모</th><th>일정</th></tr></thead>
+          <tbody>
+            <tr><td><b>Constellation Energy</b></td><td>Microsoft</td><td class="num">837 MW</td><td>TMI 재가동 · 20년 PPA · 2028 가동</td></tr>
+            <tr><td><b>Oklo</b></td><td>Meta</td><td class="num">1.2 GW</td><td>2026.1 오하이오 원자력 캠퍼스 계약</td></tr>
+            <tr><td><b>Oklo</b></td><td>Equinix · Switch</td><td>—</td><td>데이터센터 첫 상용 첨단원자력 계약</td></tr>
+            <tr><td><b>NuScale</b></td><td>TVA · ENTRA1</td><td class="num">최대 6 GW</td><td>2025.9 배치 계약</td></tr>
+            <tr><td><b>두산에너빌리티</b></td><td>NuScale 협력</td><td>—</td><td>한국 SMR 대장주, 제작·공급</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>SMR 계약 규모 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>SMR 회사별 빅테크 PPA 규모 (MW · GW)</div>
+        <div id="chartSmr" class="chart"></div>
+      </div>
+
+      <h2>데이터센터 비용 구조 (대표 사례)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>$1B 데이터센터 비용 분해 (정성)</div>
+        <div id="chartCost" class="chart sm"></div>
+      </div>
+
+      <h2>한국 변압기 슈퍼사이클</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>빅3 2025 Q1 사상 최대 실적 동시 달성</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>회사</th><th class="num">2025 Q1 매출</th><th class="num">YoY</th><th class="num">영업이익</th><th class="num">YoY</th></tr></thead>
+            <tbody>
+              <tr><td><b>LS ELECTRIC</b></td><td class="num">1조 3,766억</td><td class="up">+33%</td><td class="num">1,266억</td><td class="up">+45%</td></tr>
+              <tr><td><b>효성중공업</b></td><td class="num">1조 3,582억</td><td class="up">+26%</td><td class="num">1,523억</td><td class="up">+49%</td></tr>
+              <tr><td><b>HD현대일렉트릭</b></td><td colspan="4">호실적</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
+          <b>빅3 + 일진전기 수주잔액 합산 33조원 = 5~6년치 일감</b>.
+          효성중공업 멤피스 / HD현대일렉트릭 앨라배마 공장 +50% 증설.
+        </p>
+      </div>
+
+      <h2>한국 변압기 빅3 매출 — 2024 vs 2025 Q1 연환산</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>매출 폭증 (단위 조원)</div>
+        <div id="chartKor" class="chart sm"></div>
+      </div>
+
+      <h2>데이터센터 인프라 핵심 종목</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>전력 관리</div>
+          <p><b>Vertiv (VRT)</b>: 2025 가이던스 상향 $250M, 백로그 +25%, 2026.초 Barclays 업그레이드 +8.4%.<br>
+          <b>Eaton (ETN)</b>: 전력관리, Vertiv 최대 경쟁사.<br>
+          <b>Schneider Electric</b>: 변압기·전력관리 글로벌 강자.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>코로케이션</div>
+          <p><b>Equinix (EQIX) · Digital Realty (DLR)</b>: 코로케이션. 단, 전력비 상승 부담으로 마진 압박.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>한국 (변압기·전력)</div>
+          <p><b>HD현대일렉트릭(267260)</b>, <b>효성중공업(298040)</b>, <b>LS ELECTRIC(010120)</b>.
+          <b>두산에너빌리티</b>(SMR 협력).</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>SMR (원전)</div>
+          <p><b>Constellation (CEG)</b>, <b>Oklo (OKLO)</b>, <b>NuScale (SMR)</b>.
+          핵심 모멘텀: 빅테크 PPA 체결 시 강한 상승.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>냉각</div>
+          <p>액체 냉각, 직접 냉각(direct-to-chip) 시장. Vertiv 우위.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>인접 (HBM·서버)</div>
+          <p><a href="./semiconductors.html">반도체 페이지</a> 참조 — HBM·서버 칩이 데이터센터 수요의 원천.</p>
+        </div>
+      </div>
+
+      <h2>한국 변압기 3사 — 누락하면 안 되는 슈퍼사이클</h2>
+      <div class="callout fact">
+        <div class="head">왜 한국 변압기인가</div>
+        <p>하이퍼스케일 DC 100MW+ 부하 → 송전선로 대용량화(HVDC) + 지능형 배전반 필수.
+        한국 빅3는 <b>북미 BIG3(GE Vernova·Eaton·Siemens) 다음 4~6번째 위치</b>로 미국 노후 변압기 교체 슈퍼사이클의 직접 수혜. 수주잔고 합산 33조 = 5~6년치.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span>HD현대일렉트릭 (267260)</div>
+          <p><b>5/29 ₩1,017,000 · 시총 36.73조 ($26.2B) · YTD +104%</b>. 북미 대형 변압기 수주 본격화, 앨라배마 공장 +50% 증설. 1Q25 사상최대 실적.</p>
+          <p style="font-size:12px;color:var(--text-3);margin-top:6px"><b>핵심</b>: 빅테크 DC 변압기 직납.</p>
+        </div>
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span>LS ELECTRIC (010120)</div>
+          <p><b>345kV 초고압 변압기 미국 빅테크 DC 납품 확정</b>. 데이터센터 3,189억 투자. 1Q25 매출 1.38조(+33%), 영익 1,266억(+45%).</p>
+          <p style="font-size:12px;color:var(--text-3);margin-top:6px"><b>핵심</b>: 구글·MS 직거래.</p>
+        </div>
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span>효성중공업 (298040)</div>
+          <p><b>SST(반도체변압기) 차세대 솔루션</b>. AC/DC 통합으로 효율 +20%. 멤피스 공장 증설. 1Q25 매출 1.36조(+26%), 영익 1,523억(+49%).</p>
+          <p style="font-size:12px;color:var(--text-3);margin-top:6px"><b>핵심</b>: SST·SiC가 다음 분기 모멘텀.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:32px">미국 DC 핵심 종목 시총 (5/29 10:30 KST 실측)</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Vertiv VRT</div>
+          <div class="value">$121<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$314.18 · Q1 매출 $2.65B (+137% YoY)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Eaton ETN</div>
+          <div class="value">$156<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$401.94 · AI DC 전력 솔루션</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Constellation CEG</div>
+          <div class="value">$103<span style="font-size:0.6em">B</span></div>
+          <div class="delta down">$286.31 · 고점 $412 -30%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Oklo OKLO</div>
+          <div class="value">$11.9<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$68.09 · SMR · DOE 플루토늄 LOI</div>
+        </div>
+      </div>
+      <p style="color:var(--text-3);font-size:11.5px;margin-top:6px">한국 변압기 3사: HD현대일렉 36.73조 ($26.2B) · 효성중공업 추적 · LS ELECTRIC 추적. 두산에너빌리티 66.11조 ($47.2B · YTD +56%, SMR + 변압기). 출처: Google Finance.</p>
+
+      <h2>AI "곡괭이 vs 금광" 분기 — 한국 투자자가 알아야 할 핵심</h2>
+      <div class="callout warn">
+        <div class="head">통찰</div>
+        <p>2026 빅테크 CapEx 합산 $725B → 2027 $1T+ 전망. <b>"곡괭이 파는 자(NVDA·TSM·SK하이닉스·변압기 3사)는 벌고 있고, 금을 캐는 자(OpenAI·Anthropic·xAI)는 아직 못 벌고 있음"</b>(신한證 2026.4).
+        ROI 가시화 시점은 2026~2027 추론 수익화 본격화. 그 전까지는 <b>곡괭이 비중 우위</b>가 합리적.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">곡괭이</span> 매출 폭증 중</div>
+          <p><b>NVDA</b> Blackwell $11B/분기 · <b>SK하이닉스</b> OPM 49% · <b>TSM</b> OPM 50.8% · <b>변압기 3사</b> 수주잔고 33조 · <b>Constellation</b> MS PPA · <b>Oklo·NuScale</b> SMR 진행.</p>
+        </div>
+        <div class="card down">
+          <div class="card-title"><span class="dot"></span><span class="pill down">금광</span> 여전히 적자/소진</div>
+          <p><b>OpenAI</b> 연환산 매출(run-rate) $25B vs 현금소진 $50B · <b>Anthropic</b> 연환산 매출(run-rate) $30B+에도 흑자 아님 · <b>xAI</b> 마이너스 · <b>Palantir</b> PER 154배 거품 영역.</p>
+        </div>
+      </div>
+
+      <h2>AI 버블 vs 진짜 수요 — 2026년 핵심 논쟁</h2>
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">강세론</span></div>
+          <p>IEA 전력 두 배 전망(2030), 유료 침투율 1% 미만 → <b>성장 여지 충분</b>.
+          AI 사용자 16.3% vs 유료 0.4% = 40배 격차.
+          기업 채택 확산(Claude Code · 팔란티어 AIP).</p>
+        </div>
+        <div class="card down">
+          <div class="card-title"><span class="dot"></span><span class="pill down">약세론</span></div>
+          <p>$725B 단년 CapEx vs AI 매출 회수 시간 미스매치.
+          감가상각 압박: Meta -6%, MSFT -2.5% 어닝 반응.
+          Sora 종료(2026.3): 컴퓨트 비용/매출 불균형 단서.</p>
+        </div>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>Vertiv</th>
+                <th>Constellation</th>
+                <th>HD현대일렉</th>
+                <th>LS ELECTRIC</th>
+                <th>효성중공업</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진</td>
+                <td data-label="Vertiv"><span class="pill up">NYSE</span></td>
+                <td data-label="Constellation"><span class="pill up">NASDAQ</span></td>
+                <td data-label="HD현대일렉"><span class="pill up">코스피</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill up">코스피</span></td>
+                <td data-label="효성중공업"><span class="pill up">코스피</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요</td>
+                <td data-label="Vertiv"><span class="pill up">DC CapEx</span></td>
+                <td data-label="Constellation"><span class="pill up">SMR·재가동</span></td>
+                <td data-label="HD현대일렉"><span class="pill up">북미 변압기</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill up">초고압</span></td>
+                <td data-label="효성중공업"><span class="pill up">SST</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3개년 매출</td>
+                <td data-label="Vertiv"><span class="pill up">YES</span></td>
+                <td data-label="Constellation"><span class="pill up">YES</span></td>
+                <td data-label="HD현대일렉"><span class="pill up">YES</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill up">YES</span></td>
+                <td data-label="효성중공업"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="Vertiv"><span class="pill up">백로그 +25%</span></td>
+                <td data-label="Constellation"><span class="pill up">PPA 폭증</span></td>
+                <td data-label="HD현대일렉"><span class="pill up">앨라배마 +50%</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill up">+33% Q1</span></td>
+                <td data-label="효성중공업"><span class="pill up">+26% Q1</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="Vertiv"><span class="pill up">YES</span></td>
+                <td data-label="Constellation"><span class="pill up">YES</span></td>
+                <td data-label="HD현대일렉"><span class="pill up">YES</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill up">YES</span></td>
+                <td data-label="효성중공업"><span class="pill up">+49%</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="Vertiv">빅테크 CapEx</td>
+                <td data-label="Constellation">MS PPA 20년</td>
+                <td data-label="HD현대일렉">북미 BIG3</td>
+                <td data-label="LS ELECTRIC">구글 TPU</td>
+                <td data-label="효성중공업">SST·SiC</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총</td>
+                <td data-label="Vertiv"><span class="pill warn">고평가</span></td>
+                <td data-label="Constellation"><span class="pill warn">고평가</span></td>
+                <td data-label="HD현대일렉"><span class="pill warn">고평가</span></td>
+                <td data-label="LS ELECTRIC"><span class="pill warn">고평가</span></td>
+                <td data-label="효성중공업"><span class="pill warn">고평가</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 5종목 공통: 수주잔액 5~6년치 = 가시성 高. 단기 조정 시 가격 관찰 구간 (⑩ 위기 대응은 전체 시장 충격에만 적용).</p>
+      </div>
+
+      <h2>11원칙 충족도 — 데이터센터 5종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 5종 모두 ②③④⑤는 강력하나 ⑧(시총 우호)이 일관된 약점.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>RULE 09(수요 실재) + RULE 04(발전) 모두 압도적으로 충족. 다만 <b>RULE 02(낮은 시총) 미충족</b>이 신규 진입의 장벽.
+        2024~2025년 진입자에겐 RULE 07 적용기 — 일부 매도로 차익 실현.</p>
+        <p>위험-보상 관점:</p>
+        <ul>
+          <li><b>가장 안전</b>: 한국 변압기 빅3 (수주잔액 5~6년치 = 가시성)</li>
+          <li><b>고위험 고수익</b>: SMR (OKLO·SMR·CEG) — 빅테크 PPA 발표에 따라 -20~+50% 변동</li>
+          <li><b>안정 성장</b>: VRT·ETN (전력관리) — 빅테크 CapEx 비례</li>
+        </ul>
+        <p>리스크 시나리오: AI 버블 우려 현실화 시 빅테크 CapEx 가이던스 하향 → 데이터센터 인프라주 -30~50% 조정 가능 → 섹터 자체 훼손 여부 재검증 구간 (전체 시장 충격이 동반되어야 ⑩ 적용).</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>빅테크 CapEx 가이던스 하향</b>: 단일 어닝 콜에 섹터 전체 -10~20% 변동.<br>
+        ② <b>전력 인프라 병목</b>: 미국 송전 인프라 부족으로 데이터센터 건설 지연 가능.<br>
+        ③ <b>SMR 인허가</b>: NRC 인허가가 핵심 변수. 지연 시 가동 일정 후퇴.<br>
+        ④ <b>중국 추격</b>: Huawei Ascend 등 자체 AI 칩 + DC 인프라 자급 추진.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion">Big Tech $725B Capex 2026 · Tom's Hardware</a></li>
+          <li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA · Energy and AI 리포트</a></li>
+          <li><a href="https://www.sec.gov/Archives/edgar/data/0001849056/000110465925027276/tm2510004d1_ex99-1.htm">Oklo SEC Filings · Meta 1.2GW</a></li>
+          <li><a href="https://www.investchosun.com/site/data/html_dir/2026/04/27/2026042780117.html">HD현대일렉트릭/효성중공업/LS 1Q 최대실적 · 인베스트조선</a></li>
+          <li><b>SpaceX × Anthropic 월 $1.2B 컴퓨트 계약 (2026-05-28 보도)</b> · <span style="color:var(--accent)">추적</span> · 정식 공시(SEC S-1 또는 Anthropic·SpaceX 공식 자료) 확보 시 본 항목 갱신 예정</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    mkChart("chartCapex", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["Microsoft", "Alphabet", "Meta", "Amazon"], top: 0 },
+      xAxis: { type: "category", data: ["2023","2024","2025","2026E"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [
+        { name: "Microsoft", type: "bar", stack: "total", data: [30, 56, 88, 190], itemStyle:{color:"#5aa7ff"} },
+        { name: "Alphabet",  type: "bar", stack: "total", data: [32, 52, 78, 180], itemStyle:{color:"#2bd4a4"} },
+        { name: "Meta",      type: "bar", stack: "total", data: [28, 39, 80, 135], itemStyle:{color:"#c489ff"} },
+        { name: "Amazon",    type: "bar", stack: "total", data: [50, 78, 164, 220], itemStyle:{color:"#ffb020"} },
+      ]
+    });
+
+    mkChart("chartSmr", {
+      tooltip: { trigger: "axis" },
+      grid: { left: 160, right: 40, top: 30, bottom: 30 },
+      xAxis: { type: "value", name: "MW" },
+      yAxis: { type: "category", data: ["Constellation (MS, TMI)","Oklo (Meta)","NuScale (TVA/ENTRA1)","Oklo (Equinix/Switch)","SMR (X-Energy / Amazon)"] },
+      series: [{
+        type: "bar",
+        data: [837, 1200, 6000, 300, 320],
+        itemStyle: { color: p => ["#5aa7ff","#2bd4a4","#ffb020","#c489ff","#ff7a00"][p.dataIndex] },
+        label: { show: true, position: "right", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => p.value >= 1000 ? (p.value/1000) + " GW" : p.value + " MW" }
+      }]
+    });
+
+    mkChart("chartCost", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}% ({d}%)" },
+      legend: { bottom: 0, type: "scroll" },
+      series: [{
+        type: "pie", radius: ["38%", "70%"], center: ["50%", "45%"],
+        data: [
+          { value: 45, name: "AI 가속기 (GPU·TPU)",     itemStyle: { color: "#ffb020" } },
+          { value: 12, name: "서버·CPU·메모리",         itemStyle: { color: "#5aa7ff" } },
+          { value: 14, name: "전력 인프라 (변압기·UPS)", itemStyle: { color: "#2bd4a4" } },
+          { value: 10, name: "냉각 (액체·공조)",         itemStyle: { color: "#c489ff" } },
+          { value:  9, name: "건물·토지",                itemStyle: { color: "#ff7a00" } },
+          { value: 10, name: "네트워킹·기타",            itemStyle: { color: "#5b6776" } },
+        ],
+        label: { color: "#c3cdd9", formatter: "{b}\n{d}%" }
+      }]
+    });
+
+    mkChart("chartKor", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["2024 전체", "2025 Q1 연환산"], top: 0 },
+      xAxis: { type: "category", data: ["LS ELECTRIC","효성중공업","HD현대일렉트릭"] },
+      yAxis: { type: "value", name: "조원" },
+      series: [
+        { name: "2024 전체",    type: "bar", data: [4.1, 4.6, 3.4], itemStyle: { color: "#5b6776" } },
+        { name: "2025 Q1 연환산", type: "bar", data: [5.5, 5.4, 4.7], itemStyle: { color: "#ffb020" }, label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}조" } }
+      ]
+    });
+
+    mkChart("chartPower", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>${p[0].value} TWh` },
+      xAxis: { type: "category", data: ["2020","2022","2024","2030E","2035E"] },
+      yAxis: { type: "value", name: "TWh" },
+      series: [{
+        type: "line", smooth: true,
+        data: [200, 280, 415, 945, 1200],
+        lineStyle: { width: 3, color: "#ffb020" },
+        itemStyle: { color: "#ffb020" },
+        areaStyle: { color: "rgba(255,176,32,0.15)" },
+        symbolSize: 8,
+        markLine: { data: [{ yAxis: 415, label: { formatter: "현재 기준 (2024)" }, lineStyle: { color: "#2bd4a4" } }] }
+      }]
+    });
+
+    // 11원칙 레이더 — 데이터센터 5종
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["Vertiv", "Constellation", "HD현대일렉", "LS ELECTRIC", "효성중공업"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 5, 5, 5, 2], name: "Vertiv",        lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.15)" } },
+          { value: [5, 5, 5, 5, 2], name: "Constellation", lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.18)" } },
+          { value: [5, 5, 5, 5, 2], name: "HD현대일렉",    lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.15)" } },
+          { value: [5, 5, 5, 4, 2], name: "LS ELECTRIC",   lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } },
+          { value: [5, 5, 5, 4, 2], name: "효성중공업",     lineStyle: { color: "#ff7a00" }, areaStyle: { color: "rgba(255,122,0,0.15)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

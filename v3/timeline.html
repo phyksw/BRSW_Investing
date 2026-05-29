@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>연도별 키워드 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="./assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="timeline">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="./index.html">대시보드</a> / 연도별 키워드</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>연도별 키워드 · 이슈</h1>
+          <p class="subtitle">시장이 매년 만들어낸 테마와 그 해의 충격 이벤트</p>
+        </div>
+        <div class="meta">
+          <div>TIME-SERIES</div>
+          <div>2019 → 2026</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="card cycle-board">
+        <div class="cycle-board-head">
+          <div>
+            <div class="cycle-overline">Sector activation heatmap</div>
+            <div class="cycle-title">연도별 섹터 열기를 연속 그라데이션으로 표시</div>
+          </div>
+          <div class="cycle-chip-set" aria-label="활성도 단계 요약">
+            <span class="cycle-chip" style="--chip-color:var(--cycle-0)">0 무관심</span>
+            <span class="cycle-chip" style="--chip-color:var(--cycle-2)">2 주도주</span>
+            <span class="cycle-chip is-hot" style="--chip-color:var(--cycle-4)">4 과열</span>
+          </div>
+        </div>
+        <div id="chartHeat" class="chart lg cycle-heatmap"></div>
+        <div class="heatmap-scale" aria-label="섹터 활성도 색상 범례">
+          <div class="heatmap-scale-bar"></div>
+          <div class="heatmap-scale-labels">
+            <span>0 무관심</span><span>1 관심권</span><span>2 주도주</span><span>3 대장주</span><span>4 과열</span>
+          </div>
+        </div>
+        <div class="chart-caption">
+          Viridis 순차 팔레트 — 보라(차분)에서 노랑(과열)으로 명도·온도가 함께 단조 증가. 강도 기준: <b style="color:var(--text-1)">0</b> 무관심(±10%) · <b style="color:var(--text-1)">1</b> 관심권(+10~30%) · <b style="color:var(--text-1)">2</b> 주도주(+30~80%) · <b style="color:var(--text-1)">3</b> 대장주(+80~200%) · <b style="color:var(--text-1)">4</b> 과열·정점(+200%↑).
+        </div>
+      </div>
+
+      <h2>코스피 · S&amp;P 500 연도별 수익률</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 수익률 (%) · 위기와 유동성을 시각화</div>
+        <div id="chartIdx" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          빨간 막대는 두 자릿수 하락 — <b>⑩ 위기 대응 적용 구간</b> (전 시장 충격 시). 2020 코로나·2022 인플레/우러전쟁이 대표.
+        </p>
+      </div>
+
+      <h2>위기 이벤트 → 시장 반응 (정성 강도)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>코로나 · SVB · 우러전쟁 · 트럼프 관세 · DeepSeek 쇼크</div>
+        <div id="chartShock" class="chart"></div>
+      </div>
+
+      <h2>연도별 트랙</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="date">2019 · 폭풍 전야</div>
+          <div class="desc">
+            <b>키워드:</b> 미중 무역분쟁, 일본 화이트리스트 배제. <br>
+            <b>이벤트:</b> 미국 연준 금리인하 사이클 시작(7월), 코스피 7~8월 급락 후 반등.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2020 · 코로나 충격과 V자</div>
+          <div class="desc">
+            <b>키워드:</b> 언택트, 바이오·진단키트, 2차전지(테슬라 폭등). <br>
+            <b>이벤트:</b> 코로나 팬데믹(3월), 코스피 3월 저점 1,439 → 연말 2,873. 동학개미. <br>
+            <span class="pill warn">⑩ 위기 대응 사례</span>: -50% 하락 구간에서 11원칙 ⑩ 적용 가능 시점이었음.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2021 · 유동성 정점, 테마 폭주</div>
+          <div class="desc">
+            <b>키워드:</b> 메타버스(페이스북→Meta 리브랜드), NFT, 친환경, 수소. <br>
+            <b>이벤트:</b> 코스피 사상 첫 3,000 돌파(1월), 6월 3,316 고점.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2022 · 금리 폭등과 우러전쟁</div>
+          <div class="desc">
+            <b>키워드:</b> 인플레, 방산, 원자재, 태조이방원(태양광·조선·이차전지·원자력). <br>
+            <b>이벤트:</b> 러시아의 우크라이나 침공(2월 24일), 미 연준 75bp 자이언트스텝 4회 연속, 코스피 -25%.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2023 · AI 원년 + 이차전지 광풍</div>
+          <div class="desc">
+            <b>키워드:</b> 생성형 AI(ChatGPT), 이차전지(에코프로 10배), 초전도(LK-99 해프닝). <br>
+            <b>이벤트:</b> ChatGPT API/플러그인 개방(3월), 엔비디아 AI 가이던스 쇼크(5월),
+            SVB·Credit Suisse 위기(3월), 미국 양자기술 전략자산화.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2024 · AI 인프라 슈퍼사이클</div>
+          <div class="desc">
+            <b>키워드:</b> NVDA +171%(시총 3조달러 돌파 6월), <b>PLTR +340% S&amp;P 1위</b>, IonQ +237%, RKLB +360%, 우주·휴머노이드 부상.<br>
+            <b>이벤트:</b> 구글 양자칩 Willow 공개(12월), Google-Character.AI $2.7B 딜, 트럼프 재선(11월).<br>
+            <b>한화에어로 +174% / KOSPI -9.6%</b> 대비 압도적 초과수익.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2025 · K-방산 정점, 휴머노이드, 양자 광풍-조정</div>
+          <div class="desc">
+            <b>키워드:</b> <b>한화에어로 시총 +226%, 방산 3사 +207%</b>, K2 2차 9조원(8월). SK하이닉스 +4배, 삼성 +125%, <b>KOSPI +76% 역대 3대 강세</b>.<br>
+            QBTS +695%, RKLB +174%, ASTS +326%. 1월 젠슨황 양자 발언 후 -40% 폭락 회복.<br>
+            <b>이벤트:</b> DeepSeek 충격(1월), Stargate 발표(1월), Genie 3 공개(8월).
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2026 · 데이터센터 슈퍼사이클 + 6월 SpaceX IPO 예정 <span style="color:var(--text-3);font-size:11px;font-weight:400">· as of 2026-05-29 10:30 KST</span></div>
+          <div class="desc">
+            <b>키워드:</b> 빅테크 CapEx <b>$725B (+77% YoY, 보도 기준)</b>, SMR 본격화, Anthropic 연환산 매출(run-rate) $30B+ (4월), <b>NVDA $5.18T · GOOGL $4.70T · MU $1T 클럽 합류(5.26) · 삼성전자 1,987조 ($1.42T · YTD +100%) · SK하이닉스 1,662조 ($1.19T · YTD +197%)</b> 메모리 슈퍼사이클, <b>SpaceX 데이터센터 인수 → Anthropic 월 $1.2B 컴퓨트 계약(5.28 보도 · 5/29 정식 공시 추적 중)</b>.<br>
+            <b>이벤트:</b> 한화에어로 신고가 <b>165.5만원(2026.3.4)</b>, 트럼프 관세 IEEPA 위법 판결(2.20), SpaceX S-1 공개(5.20) 및 6월 Nasdaq 상장 예정(평가 가이던스 $1.75~2T), <b>SpaceX×Anthropic 월 $1.2B 계약(5.28 보도, 추적)</b>.<br>
+            <b>이슈:</b> AI "곡괭이 vs 금광" 분기 본격화 — 곡괭이는 매출 폭증, 금광(LLM 비상장)은 적자 지속. SpaceX의 컴퓨트 레이어 진입으로 <b>Anthropic 컴퓨트 공급자가 4곳(Google·AWS·Broadcom·SpaceX)</b>으로 확대.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout fact" style="margin-top:30px">
+        <div class="head">관전 포인트</div>
+        <p>매년 등장하는 키워드의 절반은 <b>1년 안에 사라지거나 조정</b>받는다.
+        그래서 <b>③ (3개년 매출·영익 상승)</b>이 진짜 테마와 단발 테마를 구분해 준다.
+        2023의 이차전지가 좋은 반례 — 1년 만에 케즘에 빠짐.</p>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">출처: 본 문서는 공개된 시장 데이터·언론 보도·기업 IR에 근거한 메모입니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="./methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/js/main.js?v=3.3"></script>
+  <script>
+    // Sector × Year heatmap
+    const sectors = ["AI LLM","AI 엔터","AI 솔루션","반도체/HBM","데이터센터","우주","로봇","양자","방산","드론","이차전지","메타버스"];
+    const years   = ["2019","2020","2021","2022","2023","2024","2025","2026"];
+    // 팩트 기반 5단계 (대표 종목 수익률·매출 성장 정량 기준)
+    //  0 무관심(±10%) · 1 관심권(+10~30%) · 2 주도주(+30~80%) · 3 대장주(+80~200%) · 4 과열·정점(+200%↑)
+    const levelLabels = ["무관심", "관심권", "주도주", "대장주", "과열·정점"];
+    const heatPalette = window.HEATMAP_FOCUS_PALETTE || ["#440154", "#482878", "#3e4989", "#31688e", "#26828e", "#1f9e89", "#35b779", "#6ece58", "#fde725"];
+    const heatmapFocusPoint = point => {
+      if (window.heatmapFocusPoint) return window.heatmapFocusPoint(point);
+      return { value: point, itemStyle: { borderWidth: 0, borderRadius: 0 } };
+    };
+    // v2.2 — index.html과 동기화 (9건 팩트 재검증 후 수정)
+    const heatRows = {
+      "AI LLM":     [[3,1],[4,3],[5,3],[6,4],[7,4]],
+      "AI 엔터":    [[3,1],[4,2],[5,3],[6,3],[7,3]],
+      "AI 솔루션":  [[1,1],[4,3],[5,4],[6,4],[7,2]],
+      "반도체/HBM": [[0,1],[1,2],[2,3],[3,1],[4,3],[5,4],[6,4],[7,4]],
+      "데이터센터": [[4,2],[5,3],[6,4],[7,4]],
+      "우주":       [[2,1],[3,1],[4,1],[5,4],[6,3],[7,3]],
+      "로봇":       [[4,1],[5,2],[6,3],[7,3]],
+      "양자":       [[3,1],[4,1],[5,4],[6,4],[7,2]],
+      "방산":       [[3,2],[4,2],[5,3],[6,4],[7,3]],
+      "드론":       [[3,2],[4,2],[5,2],[6,3],[7,2]],
+      "이차전지":   [[1,2],[2,3],[3,3],[4,4],[5,1],[6,1],[7,1]],
+      "메타버스":   [[2,4],[3,1]],
+    };
+    const data = sectors.flatMap((sector, y) => (heatRows[sector] || []).map(([x, level]) => [x, y, level]));
+    const heatCell = (point, focus) => {
+      const cell = heatmapFocusPoint(point);
+      const sameRow = !focus || point[1] === focus[1];
+      const sameCell = focus && point[0] === focus[0] && point[1] === focus[1];
+      cell.itemStyle = Object.assign({}, cell.itemStyle || {}, {
+        opacity: sameRow ? 1 : 0.16,
+        borderWidth: sameCell ? 1.6 : 0,
+        borderColor: "#d6f4fb"
+      });
+      cell.label = { color: sameRow ? "#ffffff" : "rgba(255,255,255,0.24)" };
+      return cell;
+    };
+    const heatDataFor = focus => data.map(point => heatCell(point, focus));
+
+    // ---- KOSPI vs S&P 500 연도별 수익률 ----
+    // 색상은 legend와 동일하게 고정 (음수는 막대 방향으로 구분)
+    mkChart("chartIdx", {
+      tooltip: { trigger: "axis", formatter: p => p.map(x => `${x.seriesName}: ${x.value > 0 ? "+" : ""}${x.value}%`).join("<br/>") },
+      legend: { data: ["KOSPI", "S&P 500"], top: 0 },
+      xAxis: { type: "category", data: ["2019","2020","2021","2022","2023","2024","2025","2026 YTD"] },
+      yAxis: { type: "value", name: "%" },
+      series: [
+        {
+          name: "KOSPI", type: "bar",
+          // 2019 +7.7 / 2020 +30.8 / 2021 +3.6 / 2022 -24.9 / 2023 +18.7 / 2024 -9.6 / 2025 +76 (역대 3대 강세) / 2026 YTD +5
+          data: [7.7, 30.8, 3.6, -24.9, 18.7, -9.6, 76.0, 5.0],
+          itemStyle: { color: "#ffb020" },
+          label: { show: !(window.isMobile && window.isMobile()), position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => (p.value > 0 ? "+" : "") + p.value + "%" }
+        },
+        {
+          name: "S&P 500", type: "bar",
+          // 2019 +28.9 / 2020 +16.3 / 2021 +26.9 / 2022 -19.4 / 2023 +24.2 / 2024 +25.0 / 2025 +17.0 / 2026 YTD +5
+          data: [28.9, 16.3, 26.9, -19.4, 24.2, 25.0, 17.0, 5.0],
+          itemStyle: { color: "#5aa7ff" },
+          label: { show: !(window.isMobile && window.isMobile()), position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => (p.value > 0 ? "+" : "") + p.value + "%" }
+        }
+      ]
+    });
+
+    // ---- 위기 이벤트 → 시장 반응 (시간순) ----
+    mkChart("chartShock", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["충격 강도 (정성)", "회복 기간 (개월)"], top: 0 },
+      grid: { left: 60, right: 60, top: 50, bottom: 30 },
+      xAxis: { type: "category", data: ["코로나\n2020.3","우러전쟁\n2022.2","연준 인상\n2022","SVB·CS\n2023.3","DeepSeek\n2025.1","트럼프 관세\n2025"], axisLabel: { fontSize: 10, interval: 0, lineHeight: 14 } },
+      yAxis: [
+        { type: "value", name: "충격 (1~10)", min: 0, max: 10, position: "left" },
+        { type: "value", name: "회복 (월)", min: 0, max: 24, position: "right" }
+      ],
+      series: [
+        { name: "충격 강도 (정성)", type: "bar", data: [10, 8, 9, 5, 4, 6], itemStyle: { color: "#ff5d6c" }, label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono" } },
+        { name: "회복 기간 (개월)", type: "line", yAxisIndex: 1, smooth: true, data: [5, 18, 12, 2, 1, 9], lineStyle: { width: 3, color: "#2bd4a4" }, itemStyle: { color: "#2bd4a4" }, symbolSize: 9 }
+      ]
+    });
+
+    const mobile = window.isMobile && window.isMobile();
+    const chartHeat = mkChart("chartHeat", {
+      animation: false,
+      // v2.5 세련화 — 글래스 모피즘 툴팁
+      tooltip: {
+        position: "top",
+        formatter: p => `<b style="font-family:Pretendard Variable, Inter, sans-serif;letter-spacing:0.01em">${years[p.value[0]]} · ${sectors[p.value[1]]}</b><br/><span style="opacity:0.7">강도</span> <b>${p.value[2]}</b> · ${levelLabels[p.value[2]]}`,
+        backgroundColor: "rgba(13, 22, 40, 0.95)",
+        borderColor: "rgba(253, 231, 37, 0.25)",
+        borderWidth: 1,
+        padding: [8, 12],
+        textStyle: { color: "#f0f4fa", fontSize: 12, fontFamily: "Pretendard Variable, Inter, sans-serif" },
+        extraCssText: "border-radius:6px;backdrop-filter:blur(4px);box-shadow:0 4px 18px rgba(0,0,0,0.4)"
+      },
+      grid: { left: mobile ? 78 : 110, right: mobile ? 24 : 20, top: 30, bottom: mobile ? 22 : 32 },
+      xAxis: {
+        type: "category", data: years, splitArea: { show: false },
+        axisLabel: {
+          color: "#a8b4c5", fontSize: mobile ? 10.5 : 11.5, fontWeight: 500,
+          fontFamily: "Pretendard Variable, Inter, sans-serif",
+          interval: 0,
+          formatter: v => mobile ? "'" + String(v).slice(2) : v
+        },
+        axisLine: { show: false }, axisTick: { show: false }
+      },
+      yAxis: {
+        type: "category", data: sectors, inverse: true, splitArea: { show: false },
+        axisLabel: {
+          color: "#c3cdd9", fontSize: mobile ? 10 : 12, fontWeight: 500,
+          fontFamily: "Pretendard Variable, Inter, sans-serif"
+        },
+        axisLine: { show: false }, axisTick: { show: false }
+      },
+      visualMap: {
+        show: false, min: 0, max: 4, calculable: false,
+        inRange: { color: heatPalette }
+      },
+      series: [{
+        id: "cycleHeat", name: "활성도", type: "heatmap", z: 2, data: heatDataFor(null),
+        label: {
+          show: true,
+          formatter: p => p.value[2] >= 3 ? p.value[2] : "",
+          color: p => p.value[2] >= 4 ? "#1a0e2e" : "#ffffff",
+          fontWeight: 600, fontSize: mobile ? 10.5 : 12,
+          fontFamily: "Pretendard Variable, Inter, sans-serif",
+          textBorderColor: p => p.value[2] >= 4 ? "rgba(255, 255, 255, 0.4)" : "rgba(13, 22, 40, 0.7)",
+          textBorderWidth: 1, textShadowBlur: 0
+        },
+        itemStyle: { borderWidth: 2, borderColor: "#0a0e14", borderRadius: 3 },
+        emphasis: {
+          itemStyle: {
+            borderColor: "#fde725", borderWidth: 2,
+            shadowColor: "rgba(253, 231, 37, 0.45)", shadowBlur: 14, shadowOffsetY: 1
+          },
+          label: { fontWeight: 700 }
+        }
+      }]
+    });
+    if (chartHeat) {
+      let activeHeatKey = "";
+      const clearHeatFocus = () => {
+        if (!activeHeatKey) return;
+        activeHeatKey = "";
+        chartHeat.setOption({ series: [{ id: "cycleHeat", data: heatDataFor(null) }] }, false);
+      };
+      chartHeat.on("mouseover", params => {
+        if (!params || params.seriesType !== "heatmap" || !Array.isArray(params.value)) return;
+        const key = params.value[0] + ":" + params.value[1];
+        if (key === activeHeatKey) return;
+        activeHeatKey = key;
+        chartHeat.setOption({ series: [{ id: "cycleHeat", data: heatDataFor(params.value) }] }, false);
+      });
+      chartHeat.on("globalout", clearHeatFocus);
+    }
+  </script>
+</body>
+</html>

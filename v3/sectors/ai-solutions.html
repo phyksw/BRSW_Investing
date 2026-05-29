@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 솔루션 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-solutions">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / AI 솔루션</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI 솔루션 · 팔란티어 (PLTR)</h1>
+          <p class="subtitle">온톨로지+<abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr>의 B2B 폭주 — 2024 +29%, 2025 +56%, 2026 Q1 <b style="color:var(--up)">+85%</b></p>
+        </div>
+        <div class="meta">
+          <div class="ticker">PLTR</div>
+          <div>PERIOD · 2023–2026</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>"B2B AI 솔루션 = 팔란티어"는 흔한 오해. 팔란티어는 <b>정부·온톨로지 영역의 정점</b>이지만,
+        워크플로우 AI(ServiceNow·Salesforce), 데이터 플랫폼(Snowflake·Databricks), 도메인 SaaS(Veeva·NICE),
+        메가캡 통합(MSFT Copilot·IBM watsonx) 각 카테고리에 고유 해자가 있다.
+        본 페이지는 팔란티어 외 9개 종목까지 비교한다.</p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">검증 핵심</div>
+        <p>사용자 메모의 명제 ("온톨로지 + B2B + 매해 성장")는 <b>전부 사실</b>. 다만 "매해 성장" 수준이 아니라 <b>2024년부터 가속, 2025~2026년 폭발</b>이 더 정확.
+        2024 +29% → 2025 +56% → 2026 Q1 +85% YoY (역대 최고 분기 성장).</p>
+      </div>
+
+      <h2>PLTR 핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">PLTR 시총</div>
+          <div class="value">$344<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$143.34 · 11년 계약 연장(2035)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2025 매출</div>
+          <div class="value">$4.47<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">+56% YoY</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2026 Q1 매출</div>
+          <div class="value">$1.63<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">+85% YoY · 사상 최고</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2026E 매출 가이던스</div>
+          <div class="value">$7.66<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">+71% 가이던스</div>
+        </div>
+      </div>
+
+      <h2>AI 솔루션 동종업계 시총 (5/29 실측)</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">IBM 시총</div>
+          <div class="value">$248<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$264.22 · watsonx</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Salesforce CRM 시총</div>
+          <div class="value">$144<span style="font-size:0.6em">B</span></div>
+          <div class="delta down">$176.17 · 고점 -36%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">ServiceNow 시총</div>
+          <div class="value">$112<span style="font-size:0.6em">B</span></div>
+          <div class="delta down">$108.73 · 고점 $211 -48%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Adobe 시총</div>
+          <div class="value">$98<span style="font-size:0.6em">B</span></div>
+          <div class="delta down">$241.44 · Sora 압박 -43%</div>
+        </div>
+      </div>
+
+      <h2>매출·영업이익 추이</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 매출 (단위 $B) · YoY 가속 중</div>
+        <div id="chartRev" class="chart"></div>
+      </div>
+
+      <h2>분기별 YoY 성장률 — 가속 가시화</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2024 Q1 → 2026 Q1 · YoY %</div>
+        <div id="chartGrowth" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          <abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr> 출시(2023.4) 이후 1년부터 본격 가속. <b>"Boot Camp" 영업 전략</b>이 미국 상업 부문 폭발 견인.
+        </p>
+      </div>
+
+      <h2>정부 vs 상업 매출 구성</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>2024</div>
+          <div id="chartMix24" class="chart sm"></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>2025</div>
+          <div id="chartMix25" class="chart sm"></div>
+        </div>
+      </div>
+      <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+        상업 비중이 정부보다 더 빠르게 성장. <b>US 상업 매출 2025 Q3 +121% YoY → 2026 Q1 +104% YoY</b>.
+      </p>
+
+      <h2>Maven 계약 누적 — 정부 부문 모멘텀</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2024.5 $480M → 2025.5 $1B+ (워터폴)</div>
+        <div id="chartMaven" class="chart"></div>
+      </div>
+
+      <h2>PLTR vs S&amp;P 500 상대 성과</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2022~2026 누적 수익률 비교</div>
+        <div id="chartVsSpx" class="chart"></div>
+      </div>
+
+      <h2>PLTR 11원칙 — 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5점 만점 · 시총(⑧)만 미충족, 나머지 모두 우수</div>
+        <div id="chartRadar" class="chart"></div>
+      </div>
+
+      <h2>팔란티어 핵심 사실 검증</h2>
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">FACT</span> 온톨로지(Ontology) 검증</div>
+          <p>팔란티어 공식 문서/마케팅에서 핵심 아키텍처로 명시. 데이터·로직·액션을 매핑하는 시맨틱 레이어.
+          <b><abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr>는 LLM을 온톨로지 위에 안전하게 결합하는 구조</b>.</p>
+        </div>
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">FACT</span> <abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr> 출시 효과</div>
+          <p>2023년 4월 공식 출시. 이후 미국 상업 부문 폭발. 2024년 +54%, 2025년 Q3 +121% YoY.
+          "Boot Camp" 영업으로 고객 PoC 시간 압축.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span><span class="pill info">FACT</span> Maven Smart System 누적 $1.275B</div>
+          <p>2024.5 $480M, 5년 IDIQ → 2024.9 $99.8M 확장(전군) → <b>2025.5 $795M 수정</b> → 2026.3 펜타곤 역할 확대. 만료 2029.5.28.</p>
+        </div>
+        <div class="card warn">
+          <div class="card-title"><span class="dot"></span><span class="pill warn">리스크</span> 밸류에이션 부담</div>
+          <p>PER 300배 이상, 매출배수 80배 이상. 성장 가속에 의존하는 밸류. 시장 컨센서스 미스 한 번이면 큰 조정 위험.</p>
+        </div>
+      </div>
+
+      <h2>주요 마일스톤 타임라인</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2020.9</div>
+          <div class="desc">NYSE 직상장 (DPO). 초기 시총 ~$20B.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2023.4</div>
+          <div class="desc"><b><abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr> (Artificial Intelligence Platform) 공식 출시</b>. LLM과 온톨로지 결합.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024.5</div>
+          <div class="desc">미 육군 Maven Smart System <b>$480M, 5년 IDIQ</b> 계약.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024.9</div>
+          <div class="desc"><b>S&amp;P 500 편입</b>. 패시브 자금 유입 시작. 연간 +340% (S&amp;P 1위).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.5</div>
+          <div class="desc">Maven 계약 <b>$795M 추가</b>. 누적 $1B 돌파.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025 연간</div>
+          <div class="desc">매출 $4.47B (+56% YoY), 주가 +89~175%. 첫 GAAP 연속 흑자 정착.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.5 잠정</div>
+          <div class="desc">Q1 매출 $1.63B, YoY <b>+85%</b> (역대 최고). 주가 $135~144 변동.</div>
+        </div>
+      </div>
+
+      <!-- =============== B2B AI 시장 전체상 (확장) =============== -->
+      <h2 style="margin-top:50px;border-top:2px solid var(--accent);padding-top:30px">B2B AI 시장 전체상 — 팔란티어 외 10개 종목</h2>
+      <div class="callout fact">
+        <div class="head">왜 비교가 필요한가</div>
+        <p>팔란티어만 보면 시장 전체상이 왜곡된다. <b>워크플로우(NOW·CRM) · 데이터 플랫폼(SNOW·DBX) · 도메인 SaaS(VEEV·NICE) · 메가캡 통합(MSFT·IBM)</b> 각 카테고리가 고유 해자를 가지고 있고, 팔란티어 프리미엄(PSR 65x)이 합리화되려면 5~7년 미래 성장이 미리 가격에 들어가야 한다. 분산 포트폴리오 관점에서 본 비교.</p>
+      </div>
+
+      <h2>핵심 비교 — 매출·시총·OPM·11원칙</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2026.5 기준 · B2B AI 11개 종목</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>종목</th>
+                <th class="mono" style="text-align:right">시총<br/>($B)</th>
+                <th class="mono" style="text-align:right">FY25 매출</th>
+                <th class="mono" style="text-align:right">AI 매출/<abbr title="Annual Recurring Revenue — 연간 환산 매출">ARR</abbr></th>
+                <th class="mono" style="text-align:right"><abbr title="Operating Profit Margin — 영업이익률 (영업이익 ÷ 매출)">OPM</abbr></th>
+                <th>강점 한 줄</th>
+                <th>11원칙</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:rgba(255,176,32,0.08)">
+                <td><b>PLTR · Palantir</b></td>
+                <td class="num">328</td>
+                <td class="num">$4.0B+</td>
+                <td class="num">전체 (<abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr>)</td>
+                <td class="num">~20%</td>
+                <td>정부+상용 온톨로지 독점</td>
+                <td><span class="pill up">상</span></td>
+              </tr>
+              <tr>
+                <td><b>MSFT · Microsoft</b></td>
+                <td class="num">3,110</td>
+                <td class="num">$281.7B</td>
+                <td class="num">$37B 런레이트</td>
+                <td class="num">~45%</td>
+                <td>Azure+Copilot 전선 장악</td>
+                <td><span class="pill up">상</span></td>
+              </tr>
+              <tr>
+                <td><b>IBM</b></td>
+                <td class="num">238.6</td>
+                <td class="num">~$67B</td>
+                <td class="num">GenAI $12B+ 부킹</td>
+                <td class="num">18.2%</td>
+                <td>컨설팅+watsonx 결합</td>
+                <td><span class="pill up">중상</span></td>
+              </tr>
+              <tr>
+                <td><b>CRM · Salesforce</b></td>
+                <td class="num">145</td>
+                <td class="num">$41.5B</td>
+                <td class="num">Agentforce $1.4B ARR</td>
+                <td class="num">34.1%</td>
+                <td>CRM+Agentforce 60만 고객</td>
+                <td><span class="pill up">상</span></td>
+              </tr>
+              <tr>
+                <td><b>DBX* · Databricks</b></td>
+                <td class="num">134 <span style="color:var(--text-3);font-size:11px">(사모)</span></td>
+                <td class="num">$3.7B</td>
+                <td class="num">$1.4B (26%)</td>
+                <td class="num">n/a</td>
+                <td>데이터+AI 통합, IPO 임박</td>
+                <td><span class="pill warn">IPO 대기</span></td>
+              </tr>
+              <tr>
+                <td><b>NOW · ServiceNow</b></td>
+                <td class="num">103.7</td>
+                <td class="num">$13.4B</td>
+                <td class="num">Now Assist $1.5B 목표</td>
+                <td class="num">~30%</td>
+                <td>워크플로우 AI 에이전트</td>
+                <td><span class="pill up">상</span></td>
+              </tr>
+              <tr>
+                <td><b>ADBE · Adobe</b></td>
+                <td class="num">98.9</td>
+                <td class="num">$23.8B</td>
+                <td class="num">Firefly $400M+</td>
+                <td class="num">~36%</td>
+                <td>Creative+Firefly 통합</td>
+                <td><span class="pill warn">중상</span></td>
+              </tr>
+              <tr>
+                <td><b>SNOW · Snowflake</b></td>
+                <td class="num">60.7</td>
+                <td class="num">$3.6B</td>
+                <td class="num">Cortex 견인</td>
+                <td class="num">-28%</td>
+                <td>데이터 클라우드</td>
+                <td><span class="pill warn">중하 (적자)</span></td>
+              </tr>
+              <tr>
+                <td><b>VEEV · Veeva</b></td>
+                <td class="num">24.7</td>
+                <td class="num">$2.99B</td>
+                <td class="num">Veeva AI (2025.12)</td>
+                <td class="num">28.7%</td>
+                <td>라이프사이언스 SaaS 독점</td>
+                <td><span class="pill up">상</span></td>
+              </tr>
+              <tr>
+                <td><b>NICE · NICE</b></td>
+                <td class="num">5.4</td>
+                <td class="num">$2.95B</td>
+                <td class="num">$328M (+66%)</td>
+                <td class="num">21%</td>
+                <td>콘택트센터+Cognigy</td>
+                <td><span class="pill">중</span></td>
+              </tr>
+              <tr style="background:rgba(255,93,108,0.08)">
+                <td><b>AI · C3.ai</b></td>
+                <td class="num">1.25</td>
+                <td class="num">$389M</td>
+                <td class="num">FY26 -36% 역성장</td>
+                <td class="num">적자</td>
+                <td>반면교사 (티커가 AI라도 부진)</td>
+                <td><span class="pill down">하</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-3);font-size:11px;margin-top:8px">
+          * Databricks는 비상장이며 사모 라운드 밸류. AI 매출/ARR은 회사 공개 또는 추정. ARR = Annual Recurring Revenue (연간 환산 매출).
+        </p>
+      </div>
+
+      <h2>시총 비교 (트리맵)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>면적이 곧 시총 — MSFT가 압도</div>
+        <div id="chartTree" class="chart"></div>
+      </div>
+
+      <h2>PSR (주가매출배수) 비교 — PLTR 프리미엄 시각화</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>시총 ÷ 연 매출 = PSR · 로그 스케일</div>
+        <div id="chartPsr" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          PLTR <abbr title="Price-to-Sales Ratio: 시총을 연 매출로 나눈 배수">PSR</abbr> ~65배는 SNOW(13배)·MSFT(11배)·CRM(3.5배) 대비 <b>5~20배 프리미엄</b>.
+          정당화되려면 향후 5~7년 매출이 미리 가격에 반영. RULE 08(상대 시총)에서 가장 비싼 위치.
+        </p>
+      </div>
+
+      <h2>주가 성과 비교 (2024 → 2025 → 2026 YTD)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>PLTR 압도적 / NOW·ADBE는 AI 압박 우려로 조정</div>
+        <div id="chartReturns" class="chart"></div>
+      </div>
+
+      <h2>카테고리별 분류 — 팔란티어 vs 다른 회사들의 우위 영역</h2>
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span>PLTR 우위 — 정부·미션크리티컬</div>
+          <p><b>온톨로지 + 보안 인증(IL6)</b> 기반 의사결정 자동화. Maven 누적 $1B+. 다른 회사들이 따라오기 어려운 진입장벽.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>SNOW · DBX — 데이터 플랫폼</div>
+          <p>Snowflake Cortex, Databricks 데이터+AI 통합. 데이터 가공·웨어하우스 영역. DBX는 +65% 성장으로 PLTR(+67%) 대등.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>NOW · CRM — 워크플로우 AI 에이전트</div>
+          <p>NOW Now Assist (IT/HR/CSM), CRM Agentforce (영업/서비스). 일반 사무 자동화에 강점. NOW는 2026 YTD -32%로 관찰 구간.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>VEEV · NICE · ADBE — 도메인 SaaS</div>
+          <p>제약(VEEV) · 콘택트센터(NICE) · 크리에이티브(ADBE). 도메인 락인. ADBE는 Sora 등 영상 AI 경쟁으로 12개월 -40%.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>MSFT · IBM — 메가캡 인프라+생산성</div>
+          <p>MSFT AI $37B 런레이트, Copilot 유료 2,000만 (M365 침투율 3.3%). IBM watsonx + 컨설팅, 2025 +35%로 다우 아웃퍼폼.</p>
+        </div>
+        <div class="card down">
+          <div class="card-title"><span class="dot"></span>C3.ai — 반면교사</div>
+          <p>티커가 "AI"라고 실적 보장 안 됨. FY26 매출 -36% 역성장, 시총 $1.25B로 IPO 대비 1/10. <b>RULE 03(3년 성장) 명백히 위반</b>.</p>
+        </div>
+      </div>
+
+      <h2>한국 상장 B2B AI</h2>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>종목</th><th>2025 매출</th><th>특기</th><th>11원칙 평가</th></tr></thead>
+            <tbody>
+              <tr><td><b>루닛 (328130)</b></td><td>2025.3Q 누적 567억 (+66%)</td><td>의료영상 AI(흉부·유방). 해외 매출 97%. 시총 ~5,242억</td><td><span class="pill warn">흑자 전환 미달 · 모니터링</span></td></tr>
+              <tr><td><b>솔트룩스 (304100)</b></td><td>전년 수준</td><td>정부 LLM/RAG 파이프라인 600억</td><td><span class="pill warn">2026~2027 재도약 신호</span></td></tr>
+              <tr><td><b>코난테크놀로지 (402030)</b></td><td>매출 2배</td><td>국방·공공 도메인 sLLM</td><td><span class="pill down">적자 지속</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
+          <b>한국 AI 3사 모두 11원칙 미충족 (흑자 전환 미달·시총 1조 미만)</b>. 다만 루닛은 글로벌 매출 비중 97%로 검증 진행 중 → 모니터링 가치.
+        </p>
+      </div>
+
+      <h2>분산 포트폴리오 제안 (저자 시각)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>PLTR 비중 축소 + 4개 카테고리 분산 예시</div>
+        <div id="chartPort" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          PLTR 100% 집중 → 분산 시 변동성 완화. MSFT(메가캡 안정)·NOW 또는 CRM(에이전트)·VEEV(도메인 SaaS) 추가 권고.
+          매수 트리거: NOW <abbr title="Annual Contract Value: 연간 계약 가치">ACV</abbr> $1B 분기 가시화, MSFT Copilot 침투율 두자릿수 도달, DBX IPO 가격.
+        </p>
+      </div>
+
+      <h2>PLTR 11원칙 상세 채점표</h2>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>원칙</th><th>판정</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr><td>① 본진 (미국)</td><td><span class="pill up">YES</span></td><td>NYSE 상장, S&amp;P 500 편입</td></tr>
+              <tr><td>② 실수요</td><td><span class="pill up">YES</span></td><td><abbr title="Artificial Intelligence Platform — 팔란티어가 LLM을 온톨로지 위에 결합한 AI 제품">AIP</abbr> Boot Camp 채택 가속</td></tr>
+              <tr><td>③ 3개년 매출·영익 상승</td><td><span class="pill up">YES</span></td><td>4년 연속 가속 (+29%→+56%→+85% YoY)</td></tr>
+              <tr><td>④ 발전 (정체 아님)</td><td><span class="pill up">YES</span></td><td>성장률이 점점 빨라지는 가속 구간</td></tr>
+              <tr><td>⑤ 흑자 추세</td><td><span class="pill up">YES</span></td><td>2023 첫 흑자 → 2024 GAAP 흑자 정착</td></tr>
+              <tr><td>⑥ 매출=시장, 이익=점유</td><td><span class="pill warn">시장 작음</span></td><td>B2B AI 솔루션 TAM 큰 편이나 초기 단계</td></tr>
+              <tr><td>⑦ 연결고리</td><td><span class="pill up">분산</span></td><td>국방·금융·헬스케어·제조 다각화</td></tr>
+              <tr><td>⑧ 시총 우호</td><td><span class="pill down">NO</span></td><td>PSR ~65배, 섹터 평균 대비 5~20배 프리미엄</td></tr>
+              <tr><td>⑨ 일부 매도 사이클</td><td><span class="pill up">적용기</span></td><td>2023~24 진입자는 일부 매도로 수익 실현 구간</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>밸류에이션 정점 위험</b>: PER 300배, PSR 65배. 성장 모멘텀 한 번 꺾이면 -40~50% 조정 가능.<br>
+        ② <b>정부 매출 의존</b>: 53.7%가 정부. 정권 교체·예산 우선순위 변동 위험.<br>
+        ③ <b>경쟁 격화</b>: MS Fabric, Databricks, Snowflake 등 데이터 플랫폼 경쟁.<br>
+        ④ <b>S&amp;P 편입 패시브 효과 소진</b>: 2024.9 편입 효과가 큰 일회성 상승 동력이었음.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>②(실수요) + ③(매출·영익 상승) 모두 만족하지만 <b>⑧(상대 시총) 미충족</b>이 결정적 부담.
+        2023~2024년 진입자에겐 ⑨(일부 매도) 적용기 — 일부 매도로 차익 실현, 일부 보유로 추가 업사이드 노릴 구간.
+        신규 진입은 <b>⑧(상대 시총) 개선 구간을 관찰</b>. ⑩ 위기 대응은 <b>코로나·리만급 전체 시장 충격</b>에서만 발동 — 개별 종목·섹터 조정에는 적용되지 않습니다.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://www.sec.gov/Archives/edgar/data/0001321655/000132165525000007/a2024q4ex991earningsrelease.htm">Palantir Q4 2024 8-K · SEC</a></li>
+          <li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-palantir-q1-2026-earnings-beat-stock-drops-93CH-4674795">Palantir Q1 2026 Earnings · Investing.com</a></li>
+          <li><a href="https://www.fool.com/investing/2025/01/12/how-palantir-technologies-stock-surged-340-in-2024/">Palantir +340% 2024 · Motley Fool</a></li>
+          <li><a href="https://defensescoop.com/2025/05/23/dod-palantir-maven-smart-system-contract-increase/">DOD Palantir Maven $1B+ · DefenseScoop</a></li>
+          <li><a href="https://www.supplychaintoday.com/palantir-ontology-overview/">Palantir Ontology Overview</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    mkChart("chartRev", {
+      tooltip: { trigger: "axis" },
+      xAxis: { type: "category", data: ["2021","2022","2023","2024","2025","2026E"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [{
+        type: "bar", data: [1.54, 1.91, 2.23, 2.87, 4.47, 7.66],
+        itemStyle: { color: (p) => p.dataIndex===5 ? "#2bd4a4" : "#ffb020" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}B" }
+      }]
+    });
+
+    mkChart("chartGrowth", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>YoY +${p[0].value}%` },
+      xAxis: { type: "category", data: ["24Q1","24Q2","24Q3","24Q4","25Q1","25Q2","25Q3","25Q4","26Q1"] },
+      yAxis: { type: "value", name: "%" },
+      series: [{
+        type: "line", smooth: true,
+        data: [21, 27, 30, 36, 39, 48, 63, 75, 85],
+        lineStyle: { width: 3, color: "#ffb020" },
+        itemStyle: { color: "#ffb020" },
+        areaStyle: { color: "rgba(255,176,32,0.15)" },
+        symbolSize: 8,
+        markLine: { data: [{ type: "average", name: "Avg" }], lineStyle: { color: "#5aa7ff" } }
+      }]
+    });
+
+    const pieColors = ["#ffb020", "#2bd4a4"];
+    // Maven 워터폴
+    mkChart("chartMaven", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
+      legend: { data: ["Placeholder", "누적"], top: 0, selected: { "Placeholder": false } },
+      xAxis: { type: "category", data: ["기본\n2024.5","확장\n2024.9","수정\n2025.5","추가\n2026.3"] },
+      yAxis: { type: "value", name: "$M" },
+      series: [
+        { name: "Placeholder", type: "bar", stack: "총", silent: true, itemStyle: { color: "transparent" }, data: [0, 480, 579.8, 1374.8] },
+        { name: "누적",         type: "bar", stack: "총", data: [480, 99.8, 795, 200], itemStyle: { color: p => ["#ffb020","#5aa7ff","#2bd4a4","#c489ff"][p.dataIndex] }, label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => "$"+p.value+"M" } }
+      ]
+    });
+
+    mkChart("chartVsSpx", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["PLTR", "S&P 500"], top: 0 },
+      xAxis: { type: "category", data: ["2022","2023","2024","2025","2026 YTD"] },
+      yAxis: { type: "value", name: "%" },
+      series: [
+        { name: "PLTR",   type: "line", smooth: true, data: [-65, 167, 340, 89, 12], lineStyle: { width: 3, color: "#ffb020" }, itemStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.15)" }, symbolSize: 9, label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}%" } },
+        { name: "S&P 500", type: "line", smooth: true, data: [-19, 24, 23, 18, 6], lineStyle: { width: 3, color: "#5aa7ff" }, itemStyle: { color: "#5aa7ff" }, symbolSize: 8 }
+      ]
+    });
+
+    mkChart("chartRadar", {
+      tooltip: {},
+      radar: {
+        indicator: [
+          { name: "3년 매출↑", max: 5 },
+          { name: "시총 우호", max: 5 },
+          { name: "흑자 추세", max: 5 },
+          { name: "발전성", max: 5 },
+          { name: "연결고리", max: 5 },
+          { name: "수요 실재", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } }
+      },
+      series: [{
+        type: "radar",
+        data: [{ value: [5, 1, 4.5, 5, 4, 5], name: "Palantir", lineStyle: { color: "#ffb020", width: 2 }, itemStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.3)" } }]
+      }]
+    });
+
+    // ============ 새 차트 (B2B AI 시장 확장) ============
+
+    // 시총 트리맵
+    mkChart("chartTree", {
+      tooltip: { formatter: p => `<b>${p.name}</b><br/>시총: $${p.value}B` },
+      series: [{
+        type: "treemap",
+        roam: false, nodeClick: false, breadcrumb: { show: false },
+        label: { color: "#ffffff", fontWeight: 700, fontFamily: window.FONT_SANS_KR, fontSize: 13, textBorderColor: "rgba(10,14,20,0.85)", textBorderWidth: 2 },
+        levels: [
+          { itemStyle: { borderColor: "#0a0e14", borderWidth: 2, gapWidth: 2 } }
+        ],
+        data: [
+          { name: "MSFT\n$3,110B",   value: 3110, itemStyle: { color: "#5aa7ff" } },
+          { name: "IBM\n$239B",      value: 239,  itemStyle: { color: "#7fc4ff" } },
+          { name: "CRM\n$145B",      value: 145,  itemStyle: { color: "#2bd4a4" } },
+          { name: "DBX*\n$134B",     value: 134,  itemStyle: { color: "#88e9c9" } },
+          { name: "NOW\n$104B",      value: 104,  itemStyle: { color: "#c489ff" } },
+          { name: "ADBE\n$99B",      value: 99,   itemStyle: { color: "#d5a8ff" } },
+          { name: "SNOW\n$61B",      value: 61,   itemStyle: { color: "#7afff2" } },
+          { name: "PLTR\n$328B",     value: 328,  itemStyle: { color: "#ffb020" } },
+          { name: "VEEV\n$25B",      value: 25,   itemStyle: { color: "#ffc24d" } },
+          { name: "NICE\n$5.4B",     value: 5.4,  itemStyle: { color: "#ff9966" } },
+          { name: "AI\n$1.3B",       value: 1.3,  itemStyle: { color: "#ff5d6c" } }
+        ]
+      }]
+    });
+
+    // PSR 비교
+    mkChart("chartPsr", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>PSR: ${p[0].value}배` },
+      xAxis: { type: "category", data: ["CRM","MSFT","SNOW","NOW","ADBE","IBM","VEEV","PLTR","DBX*","NICE","AI"] },
+      yAxis: { type: "log", name: "PSR (배, 로그)", logBase: 10 },
+      series: [{
+        type: "bar",
+        data: [3.5, 11, 17, 7.8, 4.2, 3.6, 8.3, 65, 36, 1.8, 3.2],
+        itemStyle: { color: p => p.dataIndex===7 ? "#ff5d6c" : "#ffb020" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}x" }
+      }]
+    });
+
+    // 주가 성과 비교
+    mkChart("chartReturns", {
+      tooltip: { trigger: "axis", formatter: p => p.map(x => `${x.seriesName}: ${x.value > 0 ? "+" : ""}${x.value}%`).join("<br/>") },
+      legend: { data: ["2024 수익률", "2025 수익률", "2026 YTD"], top: 0 },
+      xAxis: { type: "category", data: ["PLTR","NOW","ADBE","IBM","MSFT","CRM","SNOW","NICE","AI"] },
+      yAxis: { type: "value", name: "%" },
+      series: [
+        { name: "2024 수익률", type: "bar", data: [340, 30, -25, 15, 12, 22, 12, 15, -60], itemStyle: { color: "#5aa7ff" } },
+        { name: "2025 수익률", type: "bar", data: [135, -8, -20, 35, 15, 8, -10, 10, -45], itemStyle: { color: "#ffb020" } },
+        { name: "2026 YTD",   type: "bar", data: [-14, -32, -40, 5, -1, -5, -8, -3, -30], itemStyle: { color: "#ff5d6c" } }
+      ]
+    });
+
+    // 분산 포트폴리오 도넛
+    mkChart("chartPort", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}%" },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" }, type: "scroll" },
+      series: [{
+        type: "pie", radius: ["45%", "72%"], center: ["50%", "45%"],
+        data: [
+          { value: 30, name: "PLTR (정부+온톨로지)",       itemStyle: { color: "#ffb020" } },
+          { value: 25, name: "MSFT (메가캡 안정)",          itemStyle: { color: "#5aa7ff" } },
+          { value: 20, name: "NOW/CRM (에이전트)",          itemStyle: { color: "#2bd4a4" } },
+          { value: 15, name: "VEEV (도메인 SaaS)",          itemStyle: { color: "#c489ff" } },
+          { value: 10, name: "현금 / DBX IPO 대기",         itemStyle: { color: "#5b6776" } }
+        ],
+        label: { color: "#c3cdd9", formatter: "{b}\n{d}%" }
+      }]
+    });
+
+    mkChart("chartMix24", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}% ({d}%)" },
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["45%", "70%"], center: ["50%", "45%"],
+        data: [
+          { value: 54.8, name: "정부", itemStyle: { color: pieColors[0] } },
+          { value: 45.2, name: "상업", itemStyle: { color: pieColors[1] } },
+        ],
+        label: { color: "#c3cdd9" }
+      }]
+    });
+    mkChart("chartMix25", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}% ({d}%)" },
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["45%", "70%"], center: ["50%", "45%"],
+        data: [
+          { value: 53.7, name: "정부", itemStyle: { color: pieColors[0] } },
+          { value: 46.3, name: "상업", itemStyle: { color: pieColors[1] } },
+        ],
+        label: { color: "#c3cdd9" }
+      }]
+    });
+  </script>
+</body>
+</html>

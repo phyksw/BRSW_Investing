@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>방법론·면책 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="./assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="methodology">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="./index.html">대시보드</a> / 방법론·면책</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>방법론·면책</h1>
+          <p class="subtitle">이 리포트가 어떻게 만들어졌고, 어떤 한계가 있는지</p>
+        </div>
+        <div class="meta">
+          <div>META</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <h2>편집 원칙</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>3-Layer 분리</div>
+          <p>각 섹터 페이지는 세 종류의 정보를 명확히 라벨링합니다:</p>
+          <ul>
+            <li><span class="pill info">FACT</span> 공개 데이터·공시·언론 보도 기반의 검증된 사실</li>
+            <li><span class="pill warn">REVIEW</span> 초기 메모 중 검증·보완·정정한 부분</li>
+            <li><span class="pill" style="background:rgba(196,137,255,0.1);color:#c489ff;border-color:rgba(196,137,255,0.3)">OPINION</span> 저자(사용자)의 주관적 해석·전망</li>
+          </ul>
+          <p>독자가 사실과 의견을 구분할 수 있도록 색·태그로 분리했습니다.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>숫자의 한계</div>
+          <p>매출·영업이익·주가 데이터는 다음 우선순위로 수집했습니다:</p>
+          <ol>
+            <li>기업 IR(분기/연간) 공시</li>
+            <li>주요 언론(블룸버그·로이터·연합·매경) 보도</li>
+            <li>Wikipedia/공개 데이터베이스 (대조 검증용)</li>
+          </ol>
+          <p>분기별 수치는 <b>자릿수·추세는 정확</b>하지만 소수점 단위는 검증 필요할 수 있습니다.
+          페이지 내 차트는 시각적 비교를 위한 도구이며, 매매 근거로 쓰지 마세요.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>검증 우선순위</div>
+          <p>초기 메모에서 <b>특히 검증이 중요했던 주장</b>:</p>
+          <ul>
+            <li>AI 구독 마켓쉐어(앤트로픽 33%, OpenAI 27%) 진위 → 매출 점유율 vs 사용자 점유율 분리</li>
+            <li>"AI 유료 구독자 전세계 0.7%" 통계의 출처 → 분모(전체 인터넷 사용자 vs 챗봇 MAU) 명시</li>
+            <li>스페이스X 시총 약 2천조원 수치 → 2025.12 텐더 $800B, 2026.5 S-1 평가 가이던스 $1.75~2T</li>
+            <li>피터 디아만디스의 "스타쉽 연간 8만회" 발언 → 메가톤 페이로드 비전 계산 결과는 <b>연 8,000회</b> (한 자릿수 오인)</li>
+            <li>젠슨황의 양자 컴퓨팅 발언과 그 이후 행보 → 2025.1 "20년" → 3월 Mea Culpa → 10월 NVQLink → 2026.3 CUDA-Q</li>
+            <li>한국 방산 vs 미국 방산 시총 비교 → 2021 50배 → 2026.5 3배 좁혀짐</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>데이터 컷오프</div>
+          <p>본 리포트의 데이터 컷오프는 <b>2026년 5월 29일 00:30 KST 기준</b>입니다 (v2.0). 한국 시장은 5/28 KRX 종가, 미국 시장은 5/28 NYSE/NASDAQ 정규장 종가 기준 (5/29 KST 0:30 시점 기준).</p>
+          <p>2026년 진행 중인 분기 실적, 진행 중 협상(M&amp;A, 수주), 미발표 정책 등은 반영되지 않았을 수 있습니다. <b>SpaceX×Anthropic 5/28 보도</b>처럼 발표 직후 시점의 정보는 「추적」 라벨로 분리.</p>
+          <p>또한 모델의 학습 데이터 기준점이 2026년 1월이라, 그 이후의 사건은 누락 가능성이 큽니다 — 이런 부분은 본문에 명시했습니다.</p>
+        </div>
+      </div>
+
+      <h2>관심사 영역의 시장 데이터 비교 — 7건</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>SNS·뉴스에서 자주 회자되는 수치 vs 공식 자료 (로그 스케일)</div>
+        <div id="chartCorrect" class="chart lg"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          긴 막대일수록 회자되던 수치와 공식 자료 사이 자릿수 차이가 큰 항목. 두 값 모두 그 영역의 관심도를 반영하며,
+          본 리포트는 두 출처를 모두 명시해 독자가 판단하도록 합니다.
+        </p>
+      </div>
+
+      <h2>섹터별 검증 깊이 (페이지당 출처 수·차트 수)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>섹터 페이지별 검증 자산</div>
+        <div id="chartDepth" class="chart"></div>
+      </div>
+
+      <h2>FACT vs REVIEW vs OPINION — 콘텐츠 비율</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>각 섹터 페이지 평균 (정성)</div>
+        <div id="chartLayer" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          공개 자료 검증된 사실(FACT)이 절반 이상, 사용자 검증·정정(REVIEW)이 약 25%, 저자 해석(OPINION)이 약 20%.
+        </p>
+      </div>
+
+      <h2>11원칙과 데이터 매핑</h2>
+      <div class="card">
+        <p>각 섹터 페이지의 "11원칙 적용 점수"는 다음 매핑으로 산출합니다(저자 주관):</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>계명</th><th>측정 데이터</th><th>판정 기준</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>① 3개년 매출·영익 상승</td><td>최근 3개 연간 손익</td><td>둘 다 YoY+ → ✓</td></tr>
+              <tr><td>② 시총 대비 우호</td><td>섹터 평균 PER·PSR</td><td>섹터 중간값 이하 → ✓</td></tr>
+              <tr><td>③ 흑자/흑자 개선</td><td>영업이익률 추세</td><td>OPM 기울기 + → ✓</td></tr>
+              <tr><td>④ 정체 아님</td><td>YoY 성장률</td><td>3년 평균 &gt; 10% → ✓</td></tr>
+              <tr><td>⑤ 연결고리 파악</td><td>주요 고객·납품처 공시</td><td>본문 명시 → ✓</td></tr>
+              <tr><td>⑨ 시장 수요 실재</td><td>업종 글로벌 TAM 추세</td><td>확장 중 → ✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>면책 (Disclaimer)</h2>
+      <div class="callout risk">
+        <div class="head">법적 고지</div>
+        <p>본 사이트의 모든 콘텐츠는 <b>개인 학습·메모용</b>이며, 자본시장법상 투자권유·투자자문·매매중개에 해당하지 않습니다.</p>
+        <p>특정 종목의 매수·매도를 권유하는 것이 아니며, 기재된 수치는 작성 시점의 공개 정보에 기초한 추정으로 오차가 있을 수 있습니다.</p>
+        <p>모든 투자 판단과 그에 따른 손익은 전적으로 투자자 본인의 책임이며, 본 사이트 및 저자는 어떠한 책임도 지지 않습니다.</p>
+      </div>
+
+      <h2 id="copyright">저작권 (Copyright &amp; License)</h2>
+      <div class="callout opinion" aria-labelledby="copyright">
+        <div class="head">© 2026 상보그룹 (BRSW · Sangbo Group) — All Rights Reserved</div>
+        <p><b>저작권자</b> — 상보그룹 (<b>BRSW</b>) · <b>Kim Sangwoo (김상우)</b> &amp; <b>Won Bora (원보라)</b> 공동 운영.
+        그룹명 <b>BRSW</b>는 두 멤버의 이름 — <b>Bora Won</b> · <b>SangWoo Kim</b> — 에서 유래.
+        문의 · 라이선스 협의는 Instagram <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer"><b>@phyksw</b></a> DM으로 받습니다.</p>
+        <p>본 사이트(<i>Investing Memo</i>) 내 모든 콘텐츠 — 데이터 정리·시각화·해석·11원칙 프레임을 포함하되 이에 한정되지 않는 일체의 텍스트·도표·차트·코드·디자인 — 의 저작권은 <b>상보그룹(BRSW)</b>에 귀속됩니다.</p>
+        <p><b>✓ 허용 (Permitted Use)</b> — 비영리·공공·교육 목적의 열람, 학습, 연구, 인용. 출처(상보그룹 BRSW · 본 사이트 URL · 인용 일자)를 명시한 비영리 재배포·발췌·교육 자료 활용은 별도 허락 없이 가능합니다.</p>
+        <p><b>✗ 금지 (Prohibited Use)</b> — <b>상업적 목적의 일체 활용</b>은 사전 서면 동의 없이 금지됩니다.
+        구체적으로 (i) 유료 보고서·뉴스레터·구독 콘텐츠로의 재게재, (ii) 영리 출판물·강의·세미나 자료에의 포함, (iii) 자동화 크롤링·대량 추출 후 별도 데이터 제품으로의 재패키징·재판매, (iv) 광고·트래픽 수익이 발생하는 매체에서의 무단 전재, (v) 저작권 표기의 제거·변경·은닉을 포함합니다.</p>
+        <p><b>라이선스 준거</b> — 본 이용 조건은 <abbr title="Creative Commons Attribution-NonCommercial 4.0 International">CC BY-NC 4.0</abbr>에 준합니다. 상업적 활용을 원하시는 경우 사전에 상보그룹(BRSW) 운영진에게 서면 동의를 받아야 하며 (Instagram <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> DM), 무단 상업적 이용 적발 시 저작권법 및 부정경쟁방지법에 따른 민·형사상 책임이 따를 수 있습니다.</p>
+        <p style="color:var(--text-3);font-size:12px;margin-top:8px">※ 본 저작권 고지는 본 사이트의 콘텐츠 자체에 한정되며, 인용된 제3자 자료(회사 IR·SEC 공시·언론 보도·정부 통계 등)의 저작권은 각 원 출처에 귀속됩니다.</p>
+      </div>
+
+      <!-- v2.11 — 변경 이력 섹션은 공개 페이지에서 제거. 버전 히스토리는 로컬 CLAUDE.md/methodology.md에서만 관리. -->
+
+      <div class="footer">
+        <div class="disclaimer">
+          본 문서는 공개된 시장 데이터·언론 보도·기업 IR에 근거한 개인 메모로,
+          투자 권유가 아닙니다. 모든 투자 책임은 본인에게 있습니다.
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/js/main.js?v=3.3"></script>
+  <script>
+    // ---- 정정 항목 격차 (워터폴 스타일) ----
+    mkChart("chartCorrect", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
+      legend: { data: ["회자되던 수치", "실측"], top: 0 },
+      grid: { left: 200, right: 30, top: 50, bottom: 30 },
+      xAxis: { type: "log", name: "값 (로그 스케일)", logBase: 10 },
+      yAxis: {
+        type: "category",
+        data: [
+          "스페이스X 시총 ($B)",
+          "디아만디스 발사 횟수 (회/년)",
+          "GPT 유료 구독자 (만명)",
+          "GPT ARPU ($/월)",
+          "AI 챗봇 점유 1위 (%, Anthropic 주장)",
+          "AI 유료 침투율 (%)",
+          "빅테크 단년 CapEx ($B)"
+        ],
+        axisLabel: { fontSize: 11 }
+      },
+      series: [
+        { name: "회자되던 수치", type: "bar", data: [2000, 80000, 800, 2.2, 33, 0.7, 3000],
+          itemStyle: { color: "#ff5d6c" },
+          label: { show: true, position: "right", color: "#ff5d6c", fontFamily: "JetBrains Mono", formatter: "{c}" } },
+        { name: "실측",         type: "bar", data: [800,  8000,  5000, 35,  10, 0.4, 725],
+          itemStyle: { color: "#2bd4a4" },
+          label: { show: true, position: "right", color: "#2bd4a4", fontFamily: "JetBrains Mono", formatter: "{c}" } }
+      ]
+    });
+
+    // ---- 섹터별 검증 깊이 ----
+    mkChart("chartDepth", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["출처(개)", "차트(개)", "테이블(개)"], top: 0 },
+      xAxis: { type: "category", data: ["방산","드론","AI솔루션","AI LLM","AI엔터","반도체","이차전지","양자","우주","DC","로봇"], axisLabel: { fontSize: 10, rotate: 25 } },
+      yAxis: { type: "value" },
+      series: [
+        { name: "출처(개)",    type: "bar", data: [13, 9, 5, 7, 6, 8, 9, 8, 6, 4, 6], itemStyle: { color: "#ffb020" } },
+        { name: "차트(개)",    type: "bar", data: [4, 3, 4, 2, 2, 4, 4, 2, 2, 2, 2], itemStyle: { color: "#5aa7ff" } },
+        { name: "테이블(개)",  type: "bar", data: [3, 2, 1, 2, 1, 4, 2, 2, 2, 2, 2], itemStyle: { color: "#2bd4a4" } },
+      ]
+    });
+
+    // ---- 콘텐츠 3 Layer 비율 ----
+    mkChart("chartLayer", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}%" },
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["48%", "75%"], center: ["50%", "45%"],
+        data: [
+          { value: 55, name: "FACT (검증된 사실)",   itemStyle: { color: "#5aa7ff" } },
+          { value: 25, name: "REVIEW (검증·정정)",   itemStyle: { color: "#ffb020" } },
+          { value: 20, name: "OPINION (저자 해석)", itemStyle: { color: "#c489ff" } }
+        ],
+        label: { color: "#c3cdd9", formatter: "{b}\n{d}%" }
+      }]
+    });
+  </script>
+</body>
+</html>

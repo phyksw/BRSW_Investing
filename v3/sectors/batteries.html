@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이차전지 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="batteries">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 에너지·소재 / 이차전지</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>이차전지 · 호황에서 케즘으로</h1>
+          <p class="subtitle">2022~2023 호황 → 리튬 폭락 + 트럼프 IRA 후퇴 → ESS·전고체로 재시동</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">373220 · 006400 · 247540 · 086520 · 003670</div>
+          <div>PERIOD · 2022–2023 호황 / 2024~ 케즘</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>2022 전기차 폭주 + 원자재 급등 → 2023 이차전지 광풍 → 2024~2025 <abbr title="Chasm — 초기 수용자에서 대중 수용 사이의 수요 절벽 구간">케즘</abbr>(Chasm, 수요 절벽)으로 주가 -50~80% 하락.
+        한국 셀 3사는 미국 <abbr title="Inflation Reduction Act — 미국 인플레이션 감축법(2022.8). EV·청정에너지 세액공제 포함">IRA</abbr> 후퇴(2025.9 EV 세액공제 종료)로 가동률 부담.
+        새 모멘텀: <b><abbr title="Energy Storage System — 에너지 저장 장치. 신재생·전력망 안정용 대용량 배터리">ESS</abbr></b> 시장 폭증 + <b>전고체 양산 목표 2027</b>. 다만 섹터 자체 훼손 여부를 먼저 재검증해야 하는 영역.</p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">검증 핵심</div>
+        <p>큰 그림은 정확. 다만 <b>"전쟁 → 원자재 급등 → 매출 상승" 인과는 2022 한 해</b>에 가장 들어맞고,
+        2023부터는 오히려 <b>리튬 폭락으로 양극재·셀 메이커 매출 하락</b>이 시작됨. 사용자 메모에 <b>ESS·전고체 모멘텀 누락</b>.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">LG엔솔 시총 (373220)</div>
+          <div class="value">105.3<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">₩451,000 ($75.2B)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">삼성SDI 시총 (006400)</div>
+          <div class="value">55.1<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">₩676,000 ($39.3B) · 1년 +307%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">에코프로비엠 시총 (247540)</div>
+          <div class="value">~21.5<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">₩211,500 ($15.4B)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">3사 합산 시총</div>
+          <div class="value">$129<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">5/29 실측 · 2024말 대비 회복</div>
+        </div>
+      </div>
+
+      <h2>매출·영익 (2024~2025)</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">LG엔솔 2024 매출</div>
+          <div class="value">25.6<span style="font-size:0.6em">조</span></div>
+          <div class="delta down">2023 33.7조에서 -24%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">삼성SDI 2025 매출</div>
+          <div class="value">13.27<span style="font-size:0.6em">조</span></div>
+          <div class="delta down">-20% YoY · 영업적자 전환</div>
+        </div>
+        <div class="kpi">
+          <div class="label">SK이노 2025 순손실</div>
+          <div class="value">-5.41<span style="font-size:0.6em">조</span></div>
+          <div class="delta down">SK On 영업적자 932억</div>
+        </div>
+        <div class="kpi">
+          <div class="label">에코프로비엠 2024 매출</div>
+          <div class="value">2.77<span style="font-size:0.6em">조</span></div>
+          <div class="delta down">2023 6.90조 → <b>-60%</b></div>
+        </div>
+      </div>
+
+      <h2>셀 3사 매출 추이</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 매출 (단위 조원) · 2024년 정점에서 하락</div>
+        <div id="chartCell" class="chart"></div>
+      </div>
+
+      <h2>양극재 3사 매출</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>리튬 폭락 직격 · 2024년 -60% 충격</div>
+        <div id="chartCathode" class="chart"></div>
+      </div>
+
+      <h2>리튬 가격 폭락 (2023.12 → 2025.2)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>탄산리튬 · $/t · 양극재 매출과 동조</div>
+        <div id="chartLi" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          탄산리튬 $17,711 → &lt;$10,000 (4년 저점) → 2025.11 ~$13,401로 반등 시작.
+        </p>
+      </div>
+
+      <h2>중국 vs 한국 — 글로벌 EV 배터리 점유율 (2025)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>중국 6사 합산 70.4% · 한국 격차 추격</div>
+        <div id="chartShare" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          CATL 39.2% (단독 30%+ 유일), BYD 16.4%. 한국 3사 합산 점유율 지속 하락 중.
+        </p>
+      </div>
+
+      <h2>5종목 주가 하락폭 — 섹터 훼손 신호</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>고점 대비 (%) · 개별 섹터 탈락/재검증 구간</div>
+        <div id="chartDrop" class="chart"></div>
+        <p class="term-note">RULE 10은 전체 시장 충격에서만 적용합니다. 이 차트는 이차전지 섹터 자체의 훼손 여부를 확인하는 용도입니다.</p>
+      </div>
+
+      <h2>ESS 시장 성장 — 새 모멘텀</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>글로벌 BESS 시장 ($B) · CAGR 15.8%</div>
+        <div id="chartEss" class="chart sm"></div>
+      </div>
+
+      <h2>전고체 로드맵 — 양산 목표 2027</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>주요 업체별 단계</div>
+        <div id="chartSolid" class="chart"></div>
+      </div>
+
+      <h2>주가 위치 — 고점 대비</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>종목</th><th>고점 시기</th><th class="num">고점</th><th class="num">현재</th><th class="num">하락폭</th></tr></thead>
+          <tbody>
+            <tr><td>LG에너지솔루션</td><td>2022.1 상장 직후</td><td class="num">~60만원</td><td class="num">~30만원</td><td class="down">-50%대</td></tr>
+            <tr><td>삼성SDI</td><td>2021.8</td><td class="num">~85만원</td><td class="num">~20만원</td><td class="down">-70%</td></tr>
+            <tr><td>에코프로비엠</td><td>2023.7</td><td class="num">~58만원</td><td class="num">10만원 초반</td><td class="down">-75%</td></tr>
+            <tr><td>에코프로</td><td>2023.7</td><td class="num">~153만원</td><td class="num">8~9만원대</td><td class="down">-80%대</td></tr>
+            <tr><td>포스코퓨처엠</td><td>2023.7</td><td class="num">~69만원</td><td class="num">10만원대</td><td class="down">-80%대</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>새로운 모멘텀</h2>
+      <div class="grid cols-2">
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>ESS (에너지저장장치)</div>
+          <p>2025 글로벌 BESS 시장 $50.8B → 2030 $106B (CAGR 15.8%).
+          2025 글로벌 유틸리티 ESS 셀 출하 <b>556.74 GWh (+96.7% YoY)</b>.
+          LG엔솔 2025.4 GM JV 미시건 공장 $20억 인수해 ESS 전환.
+          단, <b>비중국 톱10에 LG엔솔만(9위)</b> — 중국이 점유 64%.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>전고체 (Solid-State)</div>
+          <p>삼성SDI Suwon S-Line 파일럿(2023) → 2024말~2025초 샘플 출하 → <b>양산 목표 2027</b>, 에너지 밀도 900Wh/L.
+          도요타 2027~2028 첫 전고체 BEV (1세대 1,000km, 10~80% 10분 충전).
+          <b>2027이 모두 양산 목표선</b> — 그 이전엔 모멘텀성 뉴스 위주.</p>
+        </div>
+      </div>
+
+      <h2>트럼프 2기 IRA 후퇴</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2022.8</div>
+          <div class="desc">IRA(인플레감축법) 통과. 한국 셀 3사 미국 현지 투자 + AMPC($35/kWh) 수혜.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.6</div>
+          <div class="desc">공화당 주도 세제개편안 — EV 세액공제 $7,500 종료 추진.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.9.30</div>
+          <div class="desc"><b>EV 세액공제 $7,500 종료</b>(신차·중고·리스). 단, AMPC(셀당 $35/kWh)는 일부 유지.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025~</div>
+          <div class="desc">한국 셀메이커 미국 공장 가동률 부담. <b>21명의 공화당 하원의원이 IRA 일부 유지 의견</b>.</div>
+        </div>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>LG엔솔</th>
+                <th>삼성SDI</th>
+                <th>에코프로비엠</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진 (코스피)</td>
+                <td data-label="LG엔솔"><span class="pill up">YES</span></td>
+                <td data-label="삼성SDI"><span class="pill up">YES</span></td>
+                <td data-label="에코프로비엠"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요 (EV·ESS)</td>
+                <td data-label="LG엔솔"><span class="pill warn">케즘</span></td>
+                <td data-label="삼성SDI"><span class="pill warn">케즘</span></td>
+                <td data-label="에코프로비엠"><span class="pill warn">케즘</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3개년 매출·영익 상승</td>
+                <td data-label="LG엔솔"><span class="pill down">NO (역성장)</span></td>
+                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
+                <td data-label="에코프로비엠"><span class="pill down">NO (-63%)</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="LG엔솔"><span class="pill down">NO</span></td>
+                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
+                <td data-label="에코프로비엠"><span class="pill down">NO</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="LG엔솔"><span class="pill warn">감소</span></td>
+                <td data-label="삼성SDI"><span class="pill down">적자 전환</span></td>
+                <td data-label="에코프로비엠"><span class="pill warn">흑자 전환</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="LG엔솔">GM·테슬라·현대차</td>
+                <td data-label="삼성SDI">BMW·아우디</td>
+                <td data-label="에코프로비엠">SK온·삼성SDI</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="LG엔솔"><span class="pill up">-50% 조정</span></td>
+                <td data-label="삼성SDI"><span class="pill up">-70% 조정</span></td>
+                <td data-label="에코프로비엠"><span class="pill up">-75% 조정</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑩ 위기 대응 — 3종목 공통: 전체 시장 충격이 아니라 섹터 수요·마진 훼손. ③ 위반이라 "성장 베팅"으로 보기 어렵고, 재검증이 먼저 필요.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 이차전지 3종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 3종 모두 ③④⑤ 약점, ⑧만 케즘 조정으로 일시적 강점.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>전기차 케즘 장기화</b>: 트럼프 IRA 후퇴로 미국 EV 수요 부진. 유럽 2025 EV 판매 둔화.<br>
+        ② <b>중국 점유 확대</b>: CATL·BYD가 가격경쟁력으로 비중국 시장 잠식.<br>
+        ③ <b>리튬 가격 변동성</b>: 2025.11 반등 시작했으나 추가 하락 시 양극재 마진 추가 압박.<br>
+        ④ <b>전고체 상용화 지연</b>: 2027 양산 목표 미달 시 모멘텀 소진.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>고점 대비 -50~80% 조정은 가격만 보면 강한 되돌림 구간처럼 보이지만, 이 경우는 전체 시장 충격이 아니라 <b>섹터 수요·마진 훼손</b>이 동반된 사례.
+        RULE 01(3년 매출 상승)을 충족하지 못하므로 먼저 성장성 회복과 재무 개선을 확인해야 합니다.</p>
+        <p>2026~2027년 트리거:</p>
+        <ul>
+          <li>ESS 전환 성공 → LG엔솔 우선 수혜</li>
+          <li>전고체 2027 양산 시작 → 삼성SDI 모멘텀</li>
+          <li>리튬 가격 안정 → 양극재 3사 흑자 회복</li>
+          <li>트럼프 정책 일부 후퇴 / 다음 정권 IRA 복귀</li>
+        </ul>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://news.lgensol.com/company-news/press-releases/3587/">LGES 2024 financial results</a></li>
+          <li><a href="https://www.samsungsdi.com/sdi-now/sdi-news/4562.html">Samsung SDI Q3 2025</a></li>
+          <li><a href="https://www.koreaherald.com/article/10701541">SK On restructuring · Korea Herald</a></li>
+          <li><a href="https://newsroom.posco.com/en/posco-future-m-announces-2024-financial-results/">POSCO Future M 2024</a></li>
+          <li><a href="https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025/">CnEVPost - CATL/BYD 2025 share</a></li>
+          <li><a href="https://www.spglobal.com/energy/en/news-research/latest-news/metals/010625-lithium-and-nickel-salts-price-recovery-faces-uncertainty-amid-weak-fundamentals-in-q1">S&amp;P Global · 리튬 가격</a></li>
+          <li><a href="https://www.npr.org/2025/06/03/nx-s1-5414604/ev-tax-credits-republican-bill">NPR · EV 세액공제 종료</a></li>
+          <li><a href="https://www.koreatimes.co.kr/business/companies/20251231/canceled-ev-battery-orders-push-korean-firms-to-double-down-on-ess">한국 ESS 전환 · Korea Times</a></li>
+          <li><a href="https://news.metal.com/newscontent/103633667">Toyota 전고체 2027-2028 · SMM</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    const yrs = ["2022","2023","2024","2025"];
+
+    mkChart("chartCell", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["LG에너지솔루션", "삼성SDI", "SK이노 (배터리)"], top: 0 },
+      xAxis: { type: "category", data: yrs },
+      yAxis: { type: "value", name: "조원" },
+      series: [
+        { name: "LG에너지솔루션", type: "line", smooth: true, data: [25.6, 33.7, 25.6, 23.7], lineStyle:{width:3, color:"#ffb020"}, itemStyle:{color:"#ffb020"}, symbolSize:8 },
+        { name: "삼성SDI", type: "line", smooth: true, data: [20.1, 22.7, 16.59, 13.27], lineStyle:{width:3, color:"#5aa7ff"}, itemStyle:{color:"#5aa7ff"}, symbolSize:8 },
+        { name: "SK이노 (배터리)", type: "line", smooth: true, data: [7.6, 12.8, 8.0, 7.0], lineStyle:{width:3, color:"#c489ff"}, itemStyle:{color:"#c489ff"}, symbolSize:8 },
+      ]
+    });
+
+    mkChart("chartCathode", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["에코프로비엠", "에코프로", "포스코퓨처엠"], top: 0 },
+      xAxis: { type: "category", data: yrs },
+      yAxis: { type: "value", name: "조원" },
+      series: [
+        { name: "에코프로비엠", type: "bar", data: [5.36, 6.90, 2.77, 2.5], itemStyle:{color:"#ffb020"} },
+        { name: "에코프로", type: "bar", data: [5.62, 7.27, 3.0, 2.8], itemStyle:{color:"#2bd4a4"} },
+        { name: "포스코퓨처엠", type: "bar", data: [3.31, 4.77, 3.70, 3.5], itemStyle:{color:"#5aa7ff"} },
+      ]
+    });
+
+    mkChart("chartLi", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value.toLocaleString()}/t` },
+      xAxis: { type: "category", data: ["2023.12","2024.6","2024.12","2025.2","2025.6","2025.11"] },
+      yAxis: { type: "value", name: "$/t" },
+      series: [{
+        type: "line", smooth: true,
+        data: [17711, 14200, 10555, 9800, 10500, 13401],
+        lineStyle: { width: 3, color: "#ff5d6c" },
+        itemStyle: { color: "#ff5d6c" },
+        areaStyle: { color: "rgba(255,93,108,0.18)" },
+        symbolSize: 8,
+        markPoint: { data: [{ type: "min", name: "최저점" }] }
+      }]
+    });
+
+    mkChart("chartDrop", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>${p[0].value}%` },
+      grid: { left: 130, right: 40, top: 30, bottom: 30 },
+      xAxis: { type: "value", name: "%", min: -100, max: 0 },
+      yAxis: { type: "category", data: ["LG에너지솔루션","삼성SDI","에코프로비엠","에코프로","포스코퓨처엠"] },
+      series: [{
+        type: "bar",
+        data: [-50, -70, -75, -82, -82],
+        itemStyle: { color: p => p.value <= -70 ? "#ff5d6c" : "#ff7a00" },
+        label: { show: true, position: "right", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}%" },
+        markLine: { silent: true, lineStyle: { color: "#8693a5", type: "dashed" }, label: { formatter: "섹터 훼손 -50%", color: "#c3cdd9" }, data: [{ xAxis: -50 }] }
+      }]
+    });
+
+    mkChart("chartEss", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}B` },
+      xAxis: { type: "category", data: ["2023","2024","2025","2026E","2027E","2028E","2030E"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [{
+        type: "line", smooth: true,
+        data: [30, 40, 50.8, 62, 74, 88, 106],
+        lineStyle: { width: 3, color: "#2bd4a4" },
+        itemStyle: { color: "#2bd4a4" },
+        areaStyle: { color: "rgba(43,212,164,0.2)" },
+        symbolSize: 9
+      }]
+    });
+
+    // 전고체 간트 (커스텀 막대)
+    mkChart("chartSolid", {
+      tooltip: { formatter: p => { const d = p && p.data; if (!Array.isArray(d)) return ""; const years = ["2023","2024","2025","2026","2027","2028","2029","2030"]; return `<b style="color:#ffffff">${d[3] || ""}</b><br/>${years[d[1]] || d[1]} → ${years[d[2]] || d[2]}`; } },
+      grid: { left: 130, right: 40, top: 30, bottom: 30 },
+      xAxis: { type: "category", data: ["2023","2024","2025","2026","2027","2028","2029","2030"] },
+      yAxis: { type: "category", data: ["삼성SDI", "도요타", "QuantumScape", "CATL", "POSCO퓨처엠"] },
+      series: [{
+        type: "custom",
+        renderItem: (params, api) => {
+          const yIdx = api.value(0);
+          const xStart = api.value(1);
+          const xEnd = api.value(2);
+          const start = api.coord([xStart, yIdx]);
+          const end = api.coord([xEnd, yIdx]);
+          const height = api.size([0, 1])[1] * 0.5;
+          return {
+            type: "rect",
+            shape: { x: start[0], y: start[1] - height/2, width: end[0]-start[0], height },
+            style: { fill: api.value(4) }
+          };
+        },
+        encode: { x: [1, 2], y: 0, tooltip: [0, 3] },
+        data: [
+          [0, 0, 2, "삼성SDI",     "Suwon S-Line 파일럿",     "#5b6776"],
+          [0, 2, 4, "삼성SDI",     "샘플 출하",                "#ffb020"],
+          [0, 4, 7, "삼성SDI",     "양산 (목표)",              "#2bd4a4"],
+          [1, 0, 4, "도요타",      "기술 개발 / 황화리튬",     "#5b6776"],
+          [1, 4, 5, "도요타",      "첫 전고체 BEV 출시",       "#2bd4a4"],
+          [2, 0, 5, "QuantumScape","연구개발",                 "#5b6776"],
+          [2, 5, 7, "QuantumScape","파일럿 양산",              "#ffb020"],
+          [3, 1, 5, "CATL",        "응축 배터리 (semi-solid)", "#ffb020"],
+          [3, 5, 7, "CATL",        "전고체 시범 양산",         "#2bd4a4"],
+          [4, 0, 6, "POSCO퓨처엠", "황화물계 양극재 개발",     "#5b6776"]
+        ]
+      }]
+    });
+
+    mkChart("chartShare", {
+      tooltip: { trigger: "item", formatter: "{b}: {c}%" },
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["40%", "70%"], center: ["50%", "45%"],
+        data: [
+          { value: 39.2, name: "CATL (중국)", itemStyle: { color: "#ff5d6c" } },
+          { value: 16.4, name: "BYD (중국)",  itemStyle: { color: "#ff7a00" } },
+          { value: 14.8, name: "중국 기타",   itemStyle: { color: "#ffb020" } },
+          { value: 12.5, name: "LG엔솔",      itemStyle: { color: "#5aa7ff" } },
+          { value:  6.0, name: "SK On",       itemStyle: { color: "#2bd4a4" } },
+          { value:  4.5, name: "삼성SDI",     itemStyle: { color: "#c489ff" } },
+          { value:  6.6, name: "Panasonic 외", itemStyle: { color: "#5b6776" } },
+        ],
+        label: { color: "#c3cdd9", formatter: "{b}\n{d}%" }
+      }]
+    });
+
+    // 11원칙 레이더 — 이차전지 3종
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["LG엔솔", "삼성SDI", "에코프로비엠"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [1, 3, 2, 1, 4], name: "LG엔솔",      lineStyle: { color: "#ff7a00" }, areaStyle: { color: "rgba(255,122,0,0.18)" } },
+          { value: [1, 2, 2, 1, 5], name: "삼성SDI",     lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.15)" } },
+          { value: [1, 3, 2, 1, 5], name: "에코프로비엠", lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.15)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

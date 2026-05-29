@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>반도체 · HBM · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="semiconductors">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / 반도체·HBM</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>반도체 · HBM</h1>
+          <p class="subtitle">LLM 학습이 메모리 대역폭을 잠식 — 2025 SK하이닉스 OPM 49% 사상 최대</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">000660 · 005930 · MU · NVDA</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>LLM 시대의 진짜 병목은 연산이 아닌 <b>메모리 대역폭</b>. <abbr title="High Bandwidth Memory — GPU 옆에 적층된 고대역폭 메모리. 대역폭이 핵심 지표">HBM</abbr>3E(1.2TB/s) → HBM4(~2TB/s)로 세대 진화.
+        NVIDIA GPU 메모리 용량도 H100 80GB → B200 192GB → Rubin Ultra 384GB까지 확장.
+        로봇·엣지 AI까지 본격화되면 메모리+연산칩 동반 수요. <b>SK하이닉스 2025 <abbr title="Operating Profit Margin — 영업이익률 (영업이익 ÷ 매출)">OPM</abbr> 49% 사상 최대</b>가 사이클 입증.</p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">검증 핵심</div>
+        <p>사용자 메모는 <b>핵심 트렌드를 정확히 짚음</b>. HBM3E 1.2TB/s → HBM4 ~2TB/s, GPU VRAM 192GB(B200)→288GB(Rubin Ultra)로 확장 중.
+        놓친 부분: <b>CXL(Compute Express Link) 메모리</b> — 2025 $1.3B → 2034 $11.8B (CAGR 28.7%). 다만 매출 기여는 아직 미미.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">SK하이닉스 시총</div>
+          <div class="value">$1.19<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">1,662조 · YTD +197%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">삼성전자 시총</div>
+          <div class="value">$1.42<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">1,987조 · YTD +100%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">NVIDIA 시총</div>
+          <div class="value">$5.18<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">5조달러 클럽 · 1년 +25%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Micron 시총 (5.26 신규)</div>
+          <div class="value">$1.04<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">HBM 수요 폭증 · 1년 +900%</div>
+        </div>
+      </div>
+
+      <h2>매출·영익 핵심 지표</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">SK하이닉스 2025 매출</div>
+          <div class="value">97.15<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">사상 최대 · OPM 49%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">SK하이닉스 2025 영익</div>
+          <div class="value">47.21<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">2024 23.47조 → 2배</div>
+        </div>
+        <div class="kpi">
+          <div class="label">NVIDIA FY25 매출</div>
+          <div class="value">$130.5<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">FY24 $60.9B → 2배+</div>
+        </div>
+        <div class="kpi">
+          <div class="label">한미반도체</div>
+          <div class="value">26.6<span style="font-size:0.6em">조</span></div>
+          <div class="delta up">시총 ($19B) · TC 본더 71%</div>
+        </div>
+      </div>
+
+      <h2>SK하이닉스 vs 삼성 DS(반도체 부문) — 매출 · 영업이익</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>막대 = 매출(조원) · 라인 = 영업이익(조원) · 삼성은 DS(반도체) 부문만</div>
+        <div id="chartKor" class="chart" style="height:420px"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          SK하이닉스: <b>2023 적자(-7.7조) → 2025 영익 47.21조 / OPM 49%</b> 사상 최대.
+          삼성 DS는 2022 23.8조 → 2023 -14.9조 적자 → 2024 흑자전환(15.1조) → 2025 잠정 약 13조 (메모리 회복 vs 파운드리 부진 혼재).
+          삼성은 전사 매출(약 305조)이 아니라 <b>반도체 사업부만 분리</b>해 직접 비교.
+        </p>
+        <p style="color:var(--text-3);font-size:11.5px;margin-top:4px">
+          출처: SK하이닉스 IR FY22~FY25, 삼성전자 사업부문별 실적(DS). 2025는 일부 잠정/추정.
+        </p>
+      </div>
+
+      <h2>SK하이닉스 영업이익 · OPM 변화</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>HBM 비중 확대로 마진율 급등 · 2025 OPM 49%</div>
+        <div id="chartOpm" class="chart"></div>
+      </div>
+
+      <h2>마이크론 · NVIDIA (글로벌 비교)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>회계연도 매출 (단위 $B)</div>
+        <div id="chartGlobal" class="chart"></div>
+      </div>
+
+      <h2>HBM 세대별 대역폭 진화</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>스택당 대역폭 (GB/s · TB/s)</div>
+        <div id="chartBw" class="chart"></div>
+      </div>
+
+      <h2>NVIDIA GPU 메모리 용량 (GB) — VRAM 확장 사이클</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>HBM 수요 견인 지표</div>
+        <div id="chartVram" class="chart sm"></div>
+      </div>
+
+      <h2>HBM 로드맵 &amp; NVIDIA 공급 구도</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>세대</th><th>대역폭</th><th>출하 시기</th><th>NVIDIA 공급사</th></tr></thead>
+          <tbody>
+            <tr><td>HBM3</td><td class="num">819 GB/s</td><td>2022~2023</td><td><b>SK하이닉스 단독</b> (H100)</td></tr>
+            <tr><td>HBM3E 8H</td><td class="num">1.2 TB/s</td><td>2024~</td><td>SK하이닉스 우선 + 마이크론 합류. 삼성 12단은 <b>2025.9 퀄 통과</b>(18개월 지연)</td></tr>
+            <tr><td>HBM4</td><td class="num">~2 TB/s</td><td>2025 하반기~2026 Q1</td><td><b>SK하이닉스 ~70%</b> 확보(TrendForce, 2026.1), 삼성·마이크론 잔여</td></tr>
+            <tr><td>HBM4 16-Hi · HBM5</td><td class="num">차세대</td><td>2H26~</td><td>NVIDIA 추가 요청, 한미반도체 Wide TC 본더 대응</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn">
+        <div class="head">"SK하이닉스 NVIDIA 독점" 표현 보정</div>
+        <p>이 표현은 <b>HBM3E까지의 이야기</b>. HBM4부터는 삼성·마이크론 합류로 다변화 시작. 2027년 이후 공급 과잉 우려는 현실적 시나리오.</p>
+      </div>
+
+      <h2>한미반도체 (042700) — HBM 본더 시장</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 매출 (억원) · TC Bonder 글로벌 71%</div>
+        <div id="chartHanmi" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          2025 매출 5,767억원으로 <b>사상 최대</b>이나, 원래 가이던스 1.2조원에는 크게 미달.
+          2026 가이던스 2조원은 <b>시장 컨센서스 대비 과도</b>로 평가.
+        </p>
+      </div>
+
+      <h2>2025~2026 HBM 공급 논쟁</h2>
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">공급 부족 지속</span> 2026까지</div>
+          <p>NVIDIA가 16-Hi HBM4까지 2H26 추가 요청. SK하이닉스 HBM 매출 YoY 2배+, DRAM 내 비중 40% 돌파.</p>
+        </div>
+        <div class="card warn">
+          <div class="card-title"><span class="dot"></span><span class="pill warn">2027~2028 과잉 우려</span></div>
+          <p>삼성 본격 공급 + 마이크론 advanced packaging US 투자. 사이클 반전 가능.</p>
+        </div>
+      </div>
+
+      <h2>엣지 AI 칩 — TOPS 성능 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>전력 vs 성능 산점도</div>
+        <div id="chartEdge" class="chart"></div>
+      </div>
+
+      <h2>엣지 AI 칩 — 로봇·자율주행으로 확장</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>제품</th><th class="num">TOPS</th><th>전력</th><th>용도</th></tr></thead>
+          <tbody>
+            <tr><td>NVIDIA Jetson Orin</td><td class="num">275</td><td class="num">15~60W</td><td>로봇 · 자율주행</td></tr>
+            <tr><td><b>NVIDIA Jetson Thor</b> (2025.6)</td><td class="num"><b>2,000</b></td><td class="num">&lt;100W</td><td>L4 자율주행</td></tr>
+            <tr><td>Qualcomm Hexagon NPU</td><td class="num">45</td><td class="num">~10W</td><td>플래그십 안드로이드</td></tr>
+            <tr><td>Apple ANE (M4)</td><td class="num">38</td><td class="num">~8W</td><td>Mac · iPad</td></tr>
+            <tr><td>Tenstorrent (RISC-V)</td><td class="num">변동</td><td class="num">변동</td><td>대안 AI 칩</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
+          엣지 AI에는 메모리(LPDDR5X·향후 LPDDR6) + NPU 결합이 표준. 휴머노이드·자율주행 본격화 시 수요 폭증.
+        </p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>SK하이닉스</th>
+                <th>삼성전자</th>
+                <th>마이크론</th>
+                <th>한미반도체</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진</td>
+                <td data-label="SK하이닉스"><span class="pill up">코스피</span></td>
+                <td data-label="삼성전자"><span class="pill up">코스피</span></td>
+                <td data-label="마이크론"><span class="pill up">NASDAQ</span></td>
+                <td data-label="한미반도체"><span class="pill up">코스피</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요</td>
+                <td data-label="SK하이닉스"><span class="pill up">YES</span></td>
+                <td data-label="삼성전자"><span class="pill up">YES</span></td>
+                <td data-label="마이크론"><span class="pill up">YES</span></td>
+                <td data-label="한미반도체"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3개년 매출·영익</td>
+                <td data-label="SK하이닉스"><span class="pill up">YES</span></td>
+                <td data-label="삼성전자"><span class="pill warn">정체</span></td>
+                <td data-label="마이크론"><span class="pill up">YES</span></td>
+                <td data-label="한미반도체"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="SK하이닉스"><span class="pill up">가속</span></td>
+                <td data-label="삼성전자"><span class="pill warn">파운드리 부진</span></td>
+                <td data-label="마이크론"><span class="pill up">YES</span></td>
+                <td data-label="한미반도체"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="SK하이닉스"><span class="pill up">OPM 49%</span></td>
+                <td data-label="삼성전자"><span class="pill up">YES</span></td>
+                <td data-label="마이크론"><span class="pill up">YES</span></td>
+                <td data-label="한미반도체"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="SK하이닉스">NVDA HBM 의존</td>
+                <td data-label="삼성전자">다각화</td>
+                <td data-label="마이크론">NVDA·AMD HBM</td>
+                <td data-label="한미반도체">SK·MU TC 본더</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="SK하이닉스"><span class="pill warn">고평가</span></td>
+                <td data-label="삼성전자"><span class="pill up">상대 저평가</span></td>
+                <td data-label="마이크론"><span class="pill">중립</span></td>
+                <td data-label="한미반도체"><span class="pill warn">기대 高</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 4종목 공통: 2023~24 진입자는 일부 매도 검토, 신규 진입은 ⑧(시총 우호) 개선까지 관찰 구간 (⑩ 위기 대응은 전체 시장 충격 한정).</p>
+      </div>
+
+      <h2>11원칙 충족도 — 반도체 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧)</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>HBM 공급 다변화</b>: 삼성 12단 HBM3E 퀄 통과(2025.9), HBM4 다변화 → SK 점유 하락 가능.<br>
+        ② <b>NVIDIA CapEx 사이클</b>: 빅테크 데이터센터 CapEx 정점 논쟁 — 2027 이후 둔화 시 HBM도 동조 하락.<br>
+        ③ <b>한미반도체 가이던스 미스</b>: 2025 1.2조원 가이던스 미달 사례. 신뢰도 부담.<br>
+        ④ <b>중국 메모리 자급</b>: CXMT·YMTC 진척 시 범용 DRAM/NAND 가격 압박.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>RULE 09(수요 실재) + RULE 01(3년 성장)을 가장 명확히 만족하는 섹터. 다만 <b>2025년 진입자는 고점권이라 ⑧(시총 우호) 약점</b> — 전체 시장 위기(⑩) 발동까지는 관찰 구간.
+        한미반도체는 <b>RULE 02(낮은 시총)</b> 측면에서 SK하이닉스·삼성 대비 작은 시총으로 더 폭발적인 수익률 가능했으나 변동성도 큼.
+        <b>CXL은 옵션성 베팅 차원</b>으로만 포트 한쪽에 둠.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://news.skhynix.com/sk-hynix-announces-fy25-financial-results/">SK hynix FY25 Annual Results · 공식</a></li>
+          <li><a href="https://news.skhynix.com/sk-hynix-announces-4q24-financial-results/">SK hynix 4Q24 결과 · 공식</a></li>
+          <li><a href="https://www.kedglobal.com/korean-chipmakers/newsView/ked202509190008">Samsung clears Nvidia hurdle 12-layer HBM3E · KED Global</a></li>
+          <li><a href="https://www.trendforce.com/news/2026/01/28/news-sk-hynix-reportedly-to-supply-about-two-thirds-of-nvidia-hbm4-samsung-targets-early-delivery/">TrendForce SK hynix 2/3 HBM4 · 2026.1</a></li>
+          <li><a href="https://www.trendforce.com/news/2025/07/22/news-hbm4-reportedly-set-to-end-sk-hynixs-exclusive-run-with-nvidia-as-market-diversifies-by-2026/">HBM4 ends SK exclusive · TrendForce</a></li>
+          <li><a href="https://cm.asiae.co.kr/en/article/2025122209224722092">Hanmi TC Bonder 71% share · Asiae</a></li>
+          <li><a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581025000021/q4fy25cfocommentary.htm">NVIDIA 8-K Q4 FY25 · SEC</a></li>
+          <li><a href="https://www.kedglobal.com/korean-chipmakers/newsView/ked202504230005">SK Hynix CXL strides · KED Global</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    const yrs = ["2022","2023","2024","2025"];
+
+    // SK하이닉스 vs 삼성전자 DS(반도체 부문) — 매출 + 영업이익
+    // 삼성전자 DS 부문만 분리 (전체 매출 X, 반도체 사업부만)
+    mkChart("chartKor", {
+      tooltip: {
+        trigger: "axis",
+        formatter: p => {
+          const yr = p[0].axisValue;
+          let html = `<b>${yr}년</b><br/>`;
+          p.forEach(s => {
+            html += `<span style="display:inline-block;width:8px;height:8px;background:${s.color};border-radius:50%;margin-right:6px"></span>${s.seriesName}: <b>${s.value}조</b><br/>`;
+          });
+          return html;
+        }
+      },
+      legend: { data: ["SK하이닉스 매출", "삼성 DS 매출", "SK하이닉스 영익", "삼성 DS 영익"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      xAxis: { type: "category", data: yrs },
+      yAxis: [
+        { type: "value", name: "매출 (조원)", position: "left", axisLabel: { formatter: "{value}" } },
+        { type: "value", name: "영익 (조원)", position: "right", axisLabel: { formatter: "{value}" } }
+      ],
+      series: [
+        // v2.6 — 정신없음 해소: 막대는 차분한 2색(SK 강조 + 삼성 슬레이트), 라인은 직선(smooth X), 영익 0 기준선 붉은 점선
+        // 막대 — 매출 비교
+        { name: "SK하이닉스 매출", type: "bar", barGap: 0,
+          data: [44.6, 32.8, 66.19, 97.15],
+          itemStyle:{ color: "#5aa7ff" },                                   // 차분한 인포 블루 = SK 강조
+          label: { show: true, position: "top", color: "#d7dee8", fontFamily: "JetBrains Mono", fontSize: 10.5 }
+        },
+        { name: "삼성 DS 매출", type: "bar",
+          // 삼성전자 DS(반도체) 부문 매출 (전체 매출 X) — 회사 사업부문 공시 기준
+          // 2022: 98.4 / 2023: 66.6 / 2024: 111.1 / 2025: 113.6 (잠정·추정)
+          data: [98.4, 66.6, 111.1, 113.6],
+          itemStyle:{ color: "#3a4555" },                                   // 슬레이트 — 배경 컨텍스트로 후퇴
+          label: { show: true, position: "top", color: "#8693a5", fontFamily: "JetBrains Mono", fontSize: 10.5 }
+        },
+        // 라인 — 영업이익 (직선·뚜렷한 강조색)
+        { name: "SK하이닉스 영익", type: "line", yAxisIndex: 1, smooth: false,
+          data: [7.0, -7.7, 23.47, 47.21],
+          lineStyle: { width: 3, color: "#ffb020" },                        // 앰버 = 주력 라인
+          itemStyle: { color: "#ffb020", borderColor: "#0a0e14", borderWidth: 2 },
+          symbol: "circle", symbolSize: 9,
+          label: { show: true, position: "top", color: "#ffb020", fontFamily: "JetBrains Mono", fontSize: 10.5, fontWeight: 700, formatter: "{c}", textBorderColor: "#0a0e14", textBorderWidth: 2 },
+          // 영익 0 기준선 — 붉은 점선
+          markLine: {
+            silent: true, symbol: "none",
+            lineStyle: { color: "#ff5d6c", type: "dashed", width: 1.5, opacity: 0.85 },
+            label: { show: true, position: "insideEndTop", color: "#ff5d6c", fontFamily: "JetBrains Mono", fontSize: 10.5, fontWeight: 700, formatter: "영익 0" },
+            data: [{ yAxis: 0 }]
+          }
+        },
+        { name: "삼성 DS 영익", type: "line", yAxisIndex: 1, smooth: false,
+          // 삼성 DS 영업이익: 2022 23.8 / 2023 -14.9 (적자) / 2024 15.1 / 2025 약 13 (잠정)
+          data: [23.8, -14.9, 15.1, 13.0],
+          lineStyle: { width: 2.5, color: "#c489ff", type: "dashed" },      // 라벤더 점선 = 보조 라인
+          itemStyle: { color: "#c489ff", borderColor: "#0a0e14", borderWidth: 2 },
+          symbol: "circle", symbolSize: 8,
+          label: { show: true, position: "bottom", color: "#c489ff", fontFamily: "JetBrains Mono", fontSize: 10.5, fontWeight: 700, formatter: "{c}", textBorderColor: "#0a0e14", textBorderWidth: 2 }
+        }
+      ]
+    });
+
+    mkChart("chartOpm", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["영업이익(조)", "OPM(%)"], top: 0 },
+      xAxis: { type: "category", data: yrs },
+      yAxis: [
+        { type: "value", name: "조원", position: "left" },
+        { type: "value", name: "%", position: "right", min: -30, max: 60 }
+      ],
+      series: [
+        { name: "영업이익(조)", type: "bar", data: [7.0, -7.7, 23.47, 47.21], itemStyle: { color: (p) => p.data < 0 ? "#ff5d6c" : "#ffb020" } },
+        { name: "OPM(%)", yAxisIndex: 1, type: "line", smooth: true, data: [15.7, -23.5, 35.5, 48.6], lineStyle:{width:3, color:"#2bd4a4"}, itemStyle:{color:"#2bd4a4"}, symbolSize:8 },
+      ]
+    });
+
+    mkChart("chartGlobal", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["Micron (회계연도)", "NVIDIA (회계연도)"], top: 0 },
+      xAxis: { type: "category", data: ["FY22","FY23","FY24","FY25"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [
+        { name: "Micron (회계연도)", type: "bar", data: [30.76, 15.54, 25.11, 36.0], itemStyle:{color:"#5aa7ff"} },
+        { name: "NVIDIA (회계연도)", type: "line", smooth: true, data: [26.97, 26.97, 60.92, 130.5], lineStyle:{width:3, color:"#2bd4a4"}, itemStyle:{color:"#2bd4a4"}, symbolSize:9 },
+      ]
+    });
+
+    mkChart("chartBw", {
+      tooltip: { trigger: "axis" },
+      xAxis: { type: "category", data: ["HBM1","HBM2","HBM2E","HBM3","HBM3E 8H","HBM3E 12H","HBM4","HBM4 16H"] },
+      yAxis: { type: "value", name: "GB/s" },
+      series: [{
+        type: "bar",
+        data: [128, 256, 460, 819, 1230, 1370, 2000, 2500],
+        itemStyle: { color: p => p.dataIndex < 4 ? "#5b6776" : p.dataIndex < 6 ? "#ffb020" : "#2bd4a4" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => p.value >= 1000 ? (p.value/1000).toFixed(1)+"TB/s" : p.value+"GB/s" }
+      }]
+    });
+
+    mkChart("chartVram", {
+      tooltip: { trigger: "axis" },
+      xAxis: { type: "category", data: ["V100\n(2017)","A100\n(2020)","H100\n(2022)","H200\n(2024)","B100\n(2024)","B200\n(2024)","Rubin\n(2026)","Rubin Ultra"] },
+      yAxis: { type: "value", name: "GB" },
+      series: [{
+        type: "line", smooth: true,
+        data: [32, 80, 80, 141, 192, 192, 288, 384],
+        lineStyle: { width: 3, color: "#5aa7ff" },
+        itemStyle: { color: "#5aa7ff" },
+        areaStyle: { color: "rgba(90,167,255,0.18)" },
+        symbolSize: 9,
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "{c}GB" }
+      }]
+    });
+
+    mkChart("chartEdge", {
+      tooltip: { formatter: p => { const v = (p&&p.data&&p.data.value) || p.value || null; if (!v||!Array.isArray(v)) return ""; return `<b style="color:#ffffff">${v[2]}</b><br/>전력: ${v[0]}W<br/>성능: ${v[1]} TOPS`; } },
+      grid: { left: 60, right: 30, top: 30, bottom: 50 },
+      xAxis: { type: "log", name: "전력 (W)" },
+      yAxis: { type: "log", name: "성능 (TOPS)" },
+      series: [{
+        type: "scatter", symbolSize: 18,
+        data: [
+          { value: [10, 38, "Apple M4 ANE"],       itemStyle: { color: "#ffb020" } },
+          { value: [10, 45, "Qualcomm Hexagon"],    itemStyle: { color: "#5aa7ff" } },
+          { value: [20, 100, "Coral Edge TPU"],     itemStyle: { color: "#2bd4a4" } },
+          { value: [40, 275, "Jetson Orin"],        itemStyle: { color: "#c489ff" } },
+          { value: [90, 2000, "Jetson Thor"],       itemStyle: { color: "#ff5d6c" } },
+          { value: [60, 700, "Tenstorrent Grayskull"], itemStyle: { color: "#7afff2" } }
+        ],
+        label: { show: true, formatter: p => p.data.value[2], position: "right", color: "#f0f4fa", fontSize: 11 }
+      }]
+    });
+
+    mkChart("chartHanmi", {
+      tooltip: { trigger: "axis" },
+      xAxis: { type: "category", data: ["2022","2023","2024","2025","2026G"] },
+      yAxis: { type: "value", name: "억원" },
+      series: [{
+        type: "bar", data: [3270, 1500, 5500, 5767, 20000],
+        itemStyle: { color: (p) => p.dataIndex===4 ? "#5b6776" : "#ffb020" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono" }
+      }]
+    });
+
+    // 11원칙 레이더 — 반도체 4종
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["SK하이닉스", "삼성전자", "마이크론", "한미반도체"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 5, 5, 5, 2], name: "SK하이닉스", lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.2)" } },
+          { value: [3, 4, 5, 2, 4], name: "삼성전자",   lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.15)" } },
+          { value: [4, 4, 5, 4, 3], name: "마이크론",   lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.15)" } },
+          { value: [4, 4, 5, 4, 2], name: "한미반도체", lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

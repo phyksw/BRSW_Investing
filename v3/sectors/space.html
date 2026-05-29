@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우주 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="space">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 프런티어 / 우주</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>우주 · 스타링크 캐시카우와 IPO</h1>
+          <p class="subtitle">스페이스X $800B → 2026 S-1 공개, IPO 평가 가이던스 $1.75~2T. Rocket Lab 5년 40배. 우주 데이터센터 첫 시도.</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SPACEX · RKLB · ASTS · IRDM · LUNR</div>
+          <div>PERIOD · 2020–</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>스페이스X는 <b>스타링크 캐시카우</b>(2025 매출 $11.4B, 가입자 890만)로 수익화 입증.
+        2025.11 Google Project Suncatcher · Starcloud-1(H100 첫 궤도 진입)로 <b>우주 데이터센터 시대 개막</b>.
+        2025.12 텐더오퍼 $800B → <b>2026.5 S-1 공개, 6월 IPO 예정(평가 가이던스 $1.75~2T)</b>. 디아만디스는 연 8,000회 발사 필요 계산(8만이 아님).
+        <br/><b>2026-05-28 신규(보도·추적)</b>: SpaceX가 데이터센터 인수 후 <b>Anthropic과 월 $1.2B(연환산 $14.4B+) 컴퓨트 계약</b> — 발사·통신에 이은 <b>지상 컴퓨트 레이어 진입</b> 시그널. 자세한 내용은 <a href="./datacenter.html#spx-anthropic-deal">데이터센터 페이지 ↗</a>.</p>
+      </div>
+
+      <!-- 핵심 정정 -->
+      <div class="callout fact">
+        <div class="head">📊 이 영역의 시장 데이터 — 3가지 핵심 시그널</div>
+        <p>이 섹터에서 자주 회자되는 세 가지 영역에 대한 공개 데이터를 정리합니다:</p>
+        <p><b>① 스페이스X 가치 변동</b>: 2025.12 텐더오퍼에서 <b>$800B</b> (약 1,100조원) 평가. 2026.5 <b>S-1 공개</b>, 6월 IPO 예정 및 평가 가이던스 $1.75~2T (약 2,415~2,760조원). 즉 "1경원 시총"은 IPO 후 4~5배 추가 상승 시나리오에 가까움.</p>
+        <p><b>② 우주 발사 필요량 (디아만디스 계산)</b>: Starlink V3 50만기 + 수십 GW 우주 데이터센터를 위해서는 <b>연간 8,000회 발사 필요</b>로 계산. 머스크는 "연간 10,000회가 합리적" 응답. 현재 연 100회 미만에서 이 규모로 가려면 <b>비용 1/10 + 스타쉽 안정화 + 우주 DC 수요 폭증</b> 모두 맞물려야 함 (Diamandis Metatrends).</p>
+        <p><b>③ 우주 데이터센터 첫 실증</b>: <b>Google Project Suncatcher</b>(2025.11.5, Trillium TPU 위성 81기 구성, 2027 시범 발사), <b>Starcloud-1</b>(2025.11.2, 세계 최초 H100 GPU 궤도 진입, 2026.3 $170M Series A). NVIDIA "Space Computing" 사업부 출범. Tesla/xAI 우주 DC 발표는 미확인이지만 동향 가시화.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">SpaceX (비상장 · S-1)</div>
+          <div class="value">$1.75~2<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">2026.5 S-1 공개 · 6월 IPO 예정</div>
+        </div>
+        <div class="kpi">
+          <div class="label">RKLB 시총</div>
+          <div class="value">$86<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$148.03 · 1년 +486%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">ASTS 시총</div>
+          <div class="value">$52<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$133.09 · 1년 +492% (D2D)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">IRDM 시총</div>
+          <div class="value">$5.4<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$51.26 · 1년 +227%</div>
+        </div>
+      </div>
+
+      <h2>매출·가입자 지표</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">스타링크 가입자 (2025)</div>
+          <div class="value">890<span style="font-size:0.6em">만</span></div>
+          <div class="delta up">2023 230만 → 2년 4배</div>
+        </div>
+        <div class="kpi">
+          <div class="label">스타링크 2025 매출</div>
+          <div class="value">$11.4<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">스페이스X 총매출의 ~60%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">SpaceX 시총 (2025.12 텐더)</div>
+          <div class="value">$800<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">2025.7 $400B → 2배</div>
+        </div>
+        <div class="kpi">
+          <div class="label">RKLB 2025 매출</div>
+          <div class="value">$602<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">2024 $436M → +38%</div>
+        </div>
+      </div>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="kpi" style="border-left:3px solid var(--up)">
+          <div class="label">스타쉽 IFT 누적 (Flight 4~12)</div>
+          <div class="value">12<span style="font-size:0.6em">회 · 8승 4패</span></div>
+          <div class="delta up">2026.1 Flight 12 — V3 첫 비행 성공</div>
+        </div>
+        <div class="kpi" style="border-left:3px solid var(--info)">
+          <div class="label">V3 (Block 3) 라인 진입</div>
+          <div class="value">2026.1~</div>
+          <div class="delta up">Raptor 3 본격 적용 · 100톤급 페이로드 목표</div>
+        </div>
+      </div>
+
+      <h2>스타링크 매출 폭증</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>매출($B)·가입자(만명) · 캐시카우 입증</div>
+        <div id="chartStarlink" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          영업이익 <b>$4.42B (+120% YoY)</b>, 조정 EBITDA $7.17B (마진 63%).
+          ARPU $99→$81 (-18%) — 신흥국 진출로 단가 낮아졌지만 볼륨으로 상쇄.
+        </p>
+      </div>
+
+      <h2>스타쉽 발사 기록</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2024.6~2026.1 누적 <b>12회 · 8승 4패</b> (Flight 4~12 IFT 기준 · as of 2026-05-29)</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>플라이트</th><th>일시</th><th>결과</th><th>특기</th></tr></thead>
+            <tbody>
+              <tr><td>Flight 4</td><td>2024.6</td><td><span class="pill up">SUCCESS</span></td><td>부스터 연착륙</td></tr>
+              <tr><td>Flight 5</td><td>2024.10</td><td><span class="pill up">SUCCESS</span></td><td><b>슈퍼헤비 첫 메카질라 캐치</b></td></tr>
+              <tr><td>Flight 6</td><td>2024.11</td><td><span class="pill up">SUCCESS</span></td><td>—</td></tr>
+              <tr><td>Flight 7</td><td>2025.1</td><td><span class="pill down">FAIL</span></td><td>Block 2 V2 첫 비행, 상단 파괴</td></tr>
+              <tr><td>Flight 8</td><td>2025.3</td><td><span class="pill down">FAIL</span></td><td>V2 두 번째 실패, 폭발</td></tr>
+              <tr><td>Flight 9</td><td>2025.5</td><td><span class="pill down">FAIL</span></td><td>V2 세 번째 실패, 부스터 캐치 실패 + 상단 통제 잃음</td></tr>
+              <tr><td>Flight 10</td><td>2025.8</td><td><span class="pill up">SUCCESS</span></td><td><b>첫 페이로드 배치 성공 (Starlink 시뮬레이터)</b></td></tr>
+              <tr><td>Flight 11</td><td>2025.10</td><td><span class="pill up">SUCCESS</span></td><td><b>V2 마지막 비행</b> · 6개 페이로드 배치</td></tr>
+              <tr><td>Flight 12</td><td>2026.1</td><td><span class="pill up">SUCCESS</span></td><td><b>V3 첫 비행</b> · Raptor 3 본격 적용 · 연착륙 성공</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">
+          <b>해석</b>: V2 라인은 3패 + 1성공 (Flight 7~10)으로 안정화에 1년 가까이 소요. <b>V2 마지막 Flight 11 성공 → V3 Flight 12 첫 비행 성공</b>으로 Block 3 V3 라인이 본격 가동.
+          2026 하반기 본격 캐치/회수 운용·100톤급 페이로드 진입 예상.
+        </p>
+      </div>
+
+      <h2>스타쉽 발사 성공률 게이지</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>누적 12회 · 8승 4패 (66.7%) · V3 1/1 (100%)</div>
+        <div id="chartGauge" class="chart sm"></div>
+      </div>
+
+      <h2>스페이스X 가치 변천 — 2018 → 2026 IPO 목표</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>단위 $B · 약 8년간 33배</div>
+        <div id="chartVal" class="chart"></div>
+      </div>
+
+      <h2>발사체 회사 비교 — 매출 vs 시총</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>가로=2025 매출($M, 로그) / 세로=시총($B)</div>
+        <div id="chartLaunch" class="chart"></div>
+      </div>
+
+      <h2>우주 데이터센터 — 2025.11 분수령</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2025.11.2</div>
+          <div class="desc"><b>Starcloud-1 발사</b>. 스페이스X 로켓으로 <b>세계 최초 H100 GPU 궤도 진입</b>. Karpathy nanoGPT 훈련 + Gemma 추론 성공.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.11.5</div>
+          <div class="desc"><b>Google Project Suncatcher 공식 발표</b>. Trillium TPU 위성 81기 구성, Planet Labs 협력, 2027년 초 시범위성 2기 발사 예정.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025 말</div>
+          <div class="desc"><b>NVIDIA "Space Computing" 사업부 공식 출범</b>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.3</div>
+          <div class="desc">Starcloud <b>$170M Series A</b> 조달.</div>
+        </div>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">왜 우주 데이터센터?</div>
+        <p>① <b>무한 태양광</b>: 24/7 발전, 지구 대비 효율 ~8배. ② <b>자연 방열</b>: 진공으로 방열 용이.
+        ③ <b>전력망 제약 회피</b>: 지상 데이터센터의 그리드/송전 부담 없음.
+        ④ <b>지정학 회피</b>: 특정국 영토 의존 없음. <b>단점</b>: 발사 비용·유지보수·대역폭이 결정적 제약.</p>
+      </div>
+
+      <h2>우주 발사체 / 종목 비교</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>종목</th><th>2022 매출</th><th>2023</th><th>2024</th><th class="num">2025</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td><b>Rocket Lab (RKLB)</b></td><td>$211M</td><td>$245M</td><td>$436M</td><td class="num"><b>$602M</b></td><td>주가 2024.4 $3.47 → 2026.5 ~$135 (40배)</td></tr>
+            <tr><td><b>AST SpaceMobile (ASTS)</b></td><td>—</td><td>—</td><td>—</td><td class="num">—</td><td>2026년 45기 위성 발사 목표, 변동성 큰 종목</td></tr>
+            <tr><td><b>Intuitive Machines (LUNR)</b></td><td>—</td><td>—</td><td>—</td><td class="num">Q4 $44.8M</td><td>2025 두 번째 달 착륙 미션</td></tr>
+            <tr><td><b>Iridium (IRDM)</b></td><td>안정 캐시플로우</td><td>—</td><td>—</td><td class="num">—</td><td>D2D(direct-to-device) 수혜</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Rocket Lab 매출 추이 — RULE 04(발전) 모범 사례</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 매출 (단위 $M)</div>
+        <div id="chartRkl" class="chart sm"></div>
+      </div>
+
+      <h2>스타링크 항공 / 해운 계약</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>United Airlines · 1,000+ 기재</div>
+          <p>2024년 말 계약, 역대 최대 규모. 2025.5 첫 상용 운항(E-175), 2025.10 보잉 737-800 첫 운항.
+          MileagePlus 회원 무료, <b>속도 50배</b>, 2027년 말 완전 도입 예정.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>해운 · 무인도 · 신흥국 확장</div>
+          <p>Hawaiian Airlines, qatar Airways, 글로벌 해운사 도입. 신흥국 ARPU 낮지만 볼륨 확보.
+          스타링크 가입자의 80% 이상이 가정용, 항공/해운/엔터프라이즈가 향후 성장 동력.</p>
+        </div>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>SpaceX*</th>
+                <th>Rocket Lab</th>
+                <th>AST SpaceMobile</th>
+                <th>Iridium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요 실재</td>
+                <td data-label="SpaceX*"><span class="pill up">YES</span></td>
+                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill warn">검증 중</span></td>
+                <td data-label="Iridium"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="SpaceX*"><span class="pill up">YES (Starlink)</span></td>
+                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill warn">초기</span></td>
+                <td data-label="Iridium"><span class="pill up">YES (안정)</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="SpaceX*"><span class="pill up">Starlink 흑자</span></td>
+                <td data-label="Rocket Lab"><span class="pill warn">개선 중</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill down">적자</span></td>
+                <td data-label="Iridium"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="SpaceX*">NASA·국방·자체</td>
+                <td data-label="Rocket Lab">NASA·상업</td>
+                <td data-label="AST SpaceMobile">D2D 통신사</td>
+                <td data-label="Iridium">D2D·국방</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="SpaceX*"><span class="pill warn">$800B 부담</span></td>
+                <td data-label="Rocket Lab"><span class="pill warn">고평가 (40배)</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill">변동성</span></td>
+                <td data-label="Iridium"><span class="pill up">상대 저평가</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑨ 보유 시나리오</td>
+                <td data-label="SpaceX*">IPO 후 5~10년</td>
+                <td data-label="Rocket Lab">⑨ 적용기</td>
+                <td data-label="AST SpaceMobile">장기 관전</td>
+                <td data-label="Iridium">안정형</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>11원칙 충족도 — 우주 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). Iridium이 5축 균형 — Rocket Lab은 ④ 강하지만 ⑧ 약점.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각 — 시총 부담 vs 우주 운송 독점</div>
+        <p>사용자의 "2천조원짜리가 1경원 되봤자 5배" 우려는 <b>합리적</b>. 단, 현재 $800B 기준이면 1경원까지 12배.
+        피터 디아만디스의 8,000회/연간(정정값)이 현실이 되려면 스타쉽 안정화 + 비용 1/10 수준 + 우주 데이터센터 수요 폭증이 모두 맞아야 함.</p>
+        <p>일반 투자자 관점:</p>
+        <ul>
+          <li><b>스페이스X IPO 대기</b>: 2026 IPO 시 진입 기회 (단 IPO 직후 변동성 큼)</li>
+          <li><b>Rocket Lab</b>: 5년 40배 후 추가 상승 여지 — ⑧(상대 시총 우호)는 이미 소진</li>
+          <li><b>Iridium·AST SpaceMobile</b>: D2D 시장 베팅, 안정 vs 모멘텀 선택</li>
+          <li><b>한국 우주주</b>: 한화에어로(나로호·누리호 협력), 켄코아에어로스페이스, 컨텍 등 — <a href="./defense.html">방산 페이지</a> 참조</li>
+        </ul>
+        <p>"우주 + AI"는 <b>10~20년 시간축</b>으로 접근. ⑨(일부 매도) 적용 보유 기간을 5~10년으로 늘려야 함.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>스페이스X IPO 가격 부담</b>: $1~1.5T 진입 가격이면 향후 5배도 어려움.<br>
+        ② <b>스타쉽 안정화 지연</b>: 7승 5패 → 안정화에 추가 시간 필요. 1년 8,000회는 5년+ 시간축.<br>
+        ③ <b>경쟁 위성통신</b>: Amazon Project Kuiper, OneWeb 등 스타링크 점유 잠식 가능.<br>
+        ④ <b>우주 데이터센터 ROI 미지</b>: Starcloud·Suncatcher 모두 PoC 단계, 상용화 시점 불명.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://fortune.com/2025/12/13/spacex-ipo-plan-2026-secondary-offering-insider-share-sale-800-billion-valuation/">SpaceX $800B Valuation · Fortune 2025.12</a></li>
+          <li><a href="https://metatrends.substack.com/p/data-centers-in-orbit">Diamandis "Data Centers in Orbit"</a></li>
+          <li><a href="https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/">Google Project Suncatcher Research Blog</a></li>
+          <li><a href="https://blogs.nvidia.com/blog/starcloud/">Starcloud NVIDIA H100 in Space · NVIDIA Blog</a></li>
+          <li><a href="https://www.nbcnews.com/business/travel/united-airlines-partners-elon-musks-starlink-offer-free-flight-wi-fi-rcna195367">Starlink United Airlines 1,000대 · NBC News</a></li>
+          <li><a href="https://x.com/wallstengine/status/2051020929640317433">Starlink ARPU · Wall St Engine</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    mkChart("chartStarlink", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["매출($B)", "가입자(만)"], top: 0 },
+      xAxis: { type: "category", data: ["2022","2023","2024","2025"] },
+      yAxis: [
+        { type: "value", name: "$B", position: "left" },
+        { type: "value", name: "만명", position: "right" }
+      ],
+      series: [
+        { name: "매출($B)", type: "bar", data: [1.4, 3.9, 7.7, 11.4], itemStyle:{color:"#ffb020"}, label:{show:true, position:"top", color:"#c3cdd9", fontFamily:"JetBrains Mono", formatter:"${c}B"} },
+        { name: "가입자(만)", type: "line", yAxisIndex: 1, smooth: true, data: [100, 230, 440, 890], lineStyle:{width:3, color:"#2bd4a4"}, itemStyle:{color:"#2bd4a4"}, symbolSize:8 },
+      ]
+    });
+
+    mkChart("chartGauge", {
+      tooltip: { formatter: "성공률 {c}%" },
+      series: [{
+        type: "gauge",
+        center: ["50%", "60%"],
+        radius: "90%",
+        min: 0, max: 100, splitNumber: 10,
+        // 8/12 = 66.7% 영역까지 success-green, 나머지는 회색
+        axisLine: { lineStyle: { width: 20, color: [[0.667, "#2bd4a4"], [1, "#3a4555"]] } },
+        pointer: { itemStyle: { color: "#f0f4fa" }, length: "70%", width: 5 },
+        axisTick: { distance: -20, length: 4, lineStyle: { color: "#0a0e14" } },
+        splitLine: { distance: -20, length: 20, lineStyle: { color: "#0a0e14", width: 2 } },
+        axisLabel: { color: "#8693a5", distance: -30, fontSize: 10, formatter: "{value}%" },
+        detail: { formatter: "{value}%", color: "#f0f4fa", fontSize: 28, fontFamily: "JetBrains Mono", offsetCenter: [0, "78%"] },
+        // 8승 / 12회 = 66.7% (Flight 11·12 추가 반영)
+        data: [{ value: 67, name: "성공률" }]
+      }]
+    });
+
+    mkChart("chartVal", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}B` },
+      xAxis: { type: "category", data: ["2018","2020","2021","2022","2023","2024","2025.7","2025.12","2026.5 S-1","2026 IPO E"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [{
+        type: "line", smooth: true,
+        data: [28, 46, 100, 127, 180, 350, 400, 800, 1500, 1750],
+        lineStyle: { width: 3, color: "#ffb020" },
+        itemStyle: { color: "#ffb020" },
+        areaStyle: { color: "rgba(255,176,32,0.2)" },
+        symbolSize: 9,
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "${c}B" },
+        markPoint: { data: [
+          { name: "IPO 목표", coord: ["2026 IPO E", 1750], itemStyle: { color: "#2bd4a4" }, label: { color: "#ffffff", fontWeight: 700, formatter: "$1.75T 추정" } }
+        ]}
+      }]
+    });
+
+    mkChart("chartLaunch", {
+      tooltip: { formatter: p => { const v = (p&&p.data&&p.data.value) || p.value || null; if (!v||!Array.isArray(v)) return ""; return `<b style="color:#ffffff">${v[2]}</b><br/>매출: $${v[0]}M<br/>시총: $${v[1]}B`; } },
+      grid: { left: 60, right: 30, top: 30, bottom: 50 },
+      xAxis: { type: "log", name: "2025 매출 ($M)" },
+      yAxis: { type: "value", name: "시총 ($B)" },
+      series: [{
+        type: "scatter", symbolSize: 22,
+        data: [
+          { value: [18700, 800, "SpaceX*"],   itemStyle: { color: "#ffb020" } },
+          { value: [602, 30, "Rocket Lab"],   itemStyle: { color: "#5aa7ff" } },
+          { value: [120, 12, "AST SpaceMobile"], itemStyle: { color: "#c489ff" } },
+          { value: [800, 2.5, "Iridium"],     itemStyle: { color: "#2bd4a4" } },
+          { value: [220, 1.5, "Intuitive Machines"], itemStyle: { color: "#7afff2" } },
+          { value: [4000, 60, "ULA (Boeing/LM 합작)"], itemStyle: { color: "#5b6776" } }
+        ],
+        label: { show: true, formatter: p => p.data.value[2], position: "right", color: "#f0f4fa", fontSize: 11 }
+      }]
+    });
+
+    mkChart("chartRkl", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}M` },
+      xAxis: { type: "category", data: ["2021","2022","2023","2024","2025"] },
+      yAxis: { type: "value", name: "$M" },
+      series: [{
+        type: "bar", data: [62, 211, 245, 436, 602],
+        itemStyle: { color: "#ffb020" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "${c}M" }
+      }]
+    });
+
+    // 11원칙 레이더 — 우주 4종
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["SpaceX*", "Rocket Lab", "AST SpaceMobile", "Iridium"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 4, 5, 5, 2], name: "SpaceX*",         lineStyle: { color: "#c489ff", type: "dashed" }, areaStyle: { color: "rgba(196,137,255,0.10)" } },
+          { value: [5, 3, 5, 5, 2], name: "Rocket Lab",      lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.18)" } },
+          { value: [2, 1, 3, 5, 3], name: "AST SpaceMobile", lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.15)" } },
+          { value: [5, 5, 5, 5, 4], name: "Iridium",         lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.18)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

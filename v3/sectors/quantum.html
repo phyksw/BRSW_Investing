@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>양자컴퓨팅 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="quantum">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 프런티어 / 양자컴퓨팅</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>양자컴퓨팅 · PoC 경쟁과 광풍-조정 사이클</h1>
+          <p class="subtitle">초전도·이온·광자 노선 다툼. 젠슨황 발언 후 14개월간 NVIDIA의 입장 변화</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">IONQ · RGTI · QBTS · QUBT</div>
+          <div>PERIOD · 2022–2026</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>양자컴퓨팅은 초전도·이온·광자·중성원자 등 노선이 분산된 <b>PoC 단계</b>. 매출 미미, 변동성 극심.
+        미국은 NSM-10(2022.5)·CHIPS Act(2022.8)로 전략자산화. NVIDIA가 2025.1 회의적 발언 후 14개월간 점진 입장 변경(2025.10 NVQLink 공개, 2026.3 CUDA-Q 일반 출시).
+        <b>옵션성 베팅 영역</b> — 포트 5% 이하, ⑨(일부 매도) 적용 보유 기간을 5~10년으로 늘려야 함.</p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">📊 NVIDIA의 양자 행보 — 14개월 전체 타임라인</div>
+        <p>SNS에서 "젠슨황이 발언 일주일 만에 입장 바꿨다"가 회자되는데, 실제로는 <b>14개월에 걸친 점진적 행보</b>가 더 정확. 이 흐름 자체가 양자가 NVIDIA에 얼마나 전략적으로 중요한지 보여줍니다:</p>
+        <ul>
+          <li><b>2025.1.7 CES</b>: "유용한 양자컴 20년이 합리적" 발언 → 양자주 -40~60% 폭락</li>
+          <li><b>2025.1.13</b>: The Quantum Insider 등 "NVIDIA 양자 100M$+ 약속" 보도. 양자 엔지니어 채용은 발언 이전부터 상시 게재 중</li>
+          <li><b>2025.3.20 GTC Quantum Day</b>: "내가 틀렸다(Mea Culpa)" 공개 입장 변경 + 보스턴 양자 연구소 발표</li>
+          <li><b>2025.10.28 GTC DC</b>: <b>NVQLink 정식 공개</b>(GPU↔QPU 직결), 17개 QPU 벤더·9개 미 국립연구소 채택</li>
+          <li><b>2026.3 GTC</b>: CUDA-Q 0.14 `cudaq-realtime` API 일반 출시</li>
+        </ul>
+        <p><b>시사점</b>: NVIDIA가 양자를 "가볍게 본다"는 인상과 달리 — <b>NVQLink 표준을 선점하며 GPU+양자 하이브리드 생태계의 게이트키퍼 자리를 확보</b>한 흐름. 양자 자체의 상용화 시점이 늦더라도, 인프라 표준은 이미 형성 중. 이 영역의 지정학적 중요도를 보여주는 신호로 읽힘.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">IonQ 시총</div>
+          <div class="value">$26<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$70.14 · YTD +175%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">D-Wave 시총</div>
+          <div class="value">$10.9<span style="font-size:0.6em">B</span></div>
+          <div class="delta neutral">$29.49 · CHIPS Act $100M LOI</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Rigetti 시총</div>
+          <div class="value">$9.0<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$27.03 · 1년 +162%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">IBM 시총</div>
+          <div class="value">$248<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$264.22 · 양자 100큐비트 로드맵</div>
+        </div>
+      </div>
+
+      <h2>매출·진척 지표</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">IonQ 2025 매출</div>
+          <div class="value">$100<span style="font-size:0.6em">M+</span></div>
+          <div class="delta up">사상 첫 9자리 돌파</div>
+        </div>
+        <div class="kpi">
+          <div class="label">IonQ Q1 2026 매출</div>
+          <div class="value">$64.67<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">+755% YoY</div>
+        </div>
+        <div class="kpi">
+          <div class="label">D-Wave 2025 매출</div>
+          <div class="value">$24.59<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">+178.5% YoY · GAAP 마진 83%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2026 양자주 성과 (YTD)</div>
+          <div class="value">IONQ<span style="font-size:0.6em"> +175%</span></div>
+          <div class="delta up">RGTI +155% · QBTS -10%</div>
+        </div>
+      </div>
+
+      <h2>주요 양자주 매출 추이</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연간 매출 (단위 $M) · IonQ가 가장 빠르게 적자 폭 축소</div>
+        <div id="chartRev" class="chart"></div>
+      </div>
+
+      <h2>주요 양자주 비교</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>티커</th><th>기술 노선</th><th class="num">2024 매출</th><th class="num">2025 매출</th><th>특기 사항</th></tr></thead>
+          <tbody>
+            <tr><td><b>IONQ</b></td><td>이온 트랩</td><td class="num">$43M</td><td class="num">$100M+</td><td>Q1 2026 +755% YoY, FY26 가이던스 $260~270M</td></tr>
+            <tr><td><b>RGTI</b></td><td>초전도</td><td class="num">$11M</td><td class="num">$10M</td><td>12개월 +4,000%, 2026 YTD -10%</td></tr>
+            <tr><td><b>QBTS</b></td><td>양자 어닐링</td><td class="num">$8.83M</td><td class="num">$24.59M</td><td>+178.5% YoY · GAAP 마진 83%</td></tr>
+            <tr><td><b>QUBT</b></td><td>광자</td><td class="num">&lt;$1M</td><td class="num">한 자릿수 $M</td><td>변동성 매우 큼</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>양자 기술 노선 비교 (레이더)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>속도·확장성·에러율·상용화·자본효율 (정성, 5점)</div>
+        <div id="chartTech" class="chart"></div>
+      </div>
+
+      <h2>큐빗 수 진화 — 주요 양자칩</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2018→2025 (로그 스케일)</div>
+        <div id="chartQubits" class="chart"></div>
+      </div>
+
+      <h2>각국 양자 정부 투자 — 누적</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2018~2025 누적 ($B 추정)</div>
+        <div id="chartGov" class="chart sm"></div>
+      </div>
+
+      <h2>광풍-조정 사이클 (2024.12 → 2026.5)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>구글 Willow → 젠슨황 한마디 → NVQLink → 회복 (정성)</div>
+        <div id="chartCycle" class="chart"></div>
+      </div>
+
+      <h2>NVIDIA의 양자 행보 — 정확한 타임라인</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2024.12.9</div>
+          <div class="desc"><b>Google Willow (105 큐빗)</b> Nature 발표. RCS 벤치마크 5분 = 슈퍼컴 10^25년. <b>표면코드 임계점 이하 양자오류정정 첫 시연</b>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024.12 ~ 2025.1.6</div>
+          <div class="desc">양자주 광풍 — IONQ 3개월 +450%, RGTI/QBTS 한 달 +300% 수준. QTUM ETF 사상 최고.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.1.7</div>
+          <div class="desc"><b>젠슨황 CES 발언</b> — "유용한 양자컴 20년" → 양자주 -40~60% 폭락.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.1.13</div>
+          <div class="desc">The Quantum Insider 등 "NVIDIA가 양자 100M$+ 투자 의지" 보도 — 채용은 상시 게재 중이었음.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.3.20</div>
+          <div class="desc"><b>GTC Quantum Day · Mea Culpa</b>. 젠슨황 "내가 틀렸다" 공개 입장 변경 + 보스턴 양자 연구소 설립 발표.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.10.28</div>
+          <div class="desc"><b>GTC DC · NVQLink 정식 공개</b> (GPU↔QPU 직결). 17개 QPU 벤더·9개 미 국립연구소 채택.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.3</div>
+          <div class="desc"><b>GTC · CUDA-Q 0.14</b> · `cudaq-realtime` API 일반 출시. NVIDIA가 사실상 양자+클래식 하이브리드 표준 점유.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.4~5</div>
+          <div class="desc">"양자 슈퍼사이클" 표현 재등장. IONQ만 YTD 양수, RGTI/QBTS는 흐름 약함.</div>
+        </div>
+      </div>
+
+      <h2>미국 정책 — 사용자 핵심 사실 검증</h2>
+      <div class="card">
+        <p>사용자 "23년경 미국 양자기술 전략자산 채택" → <b>명시적 단일 법령은 아님</b>:</p>
+        <ul>
+          <li><b>National Quantum Initiative Act</b>: 2018.12 트럼프 1기 제정 — 사용자 메모는 연도 약간 부정확하지만 큰 흐름은 맞음</li>
+          <li><b>NSM-10</b> (국가안보각서 10호): 2022.5 "양자 정보과학에 대한 미국 리더십 진흥" — <b>가장 가까운 근거</b></li>
+          <li><b>CHIPS and Science Act</b>: 2022.8 통과, 과학편(Sci 편)에 양자 R&amp;D 항목 포함</li>
+          <li><b>NQI Reauthorization Act</b>: 2024~2025 의회 논의, 통과 확인 필요</li>
+        </ul>
+        <p>즉 <b>시점은 2022 후반~2023</b>이 맞으나 단일 "전략자산 채택"으로 부르긴 모호. 그래도 사용자가 본 큰 그림(미국이 양자를 안보 자산으로 본다)은 정확.</p>
+      </div>
+
+      <h2>한국 양자</h2>
+      <div class="card">
+        <ul>
+          <li><b>KAIST·ETRI</b> (2024): 8광자 실리콘 포토닉 칩으로 6큐빗 얽힘. 위성/선박/드론용 양자통신 기술 시연.</li>
+          <li><b>SDT</b>: 한국 대표 양자 HW 스타트업. 2024 신한벤처투자 ~$7.5M pre-IPO. <b>2026 64큐빗 초전도 양자컴 출시 계획</b>, 2027 광 PIC.</li>
+          <li><b>Qunova Computing</b>: KAIST 이준구 교수 2021 창업, 누적 ~$13.6M 조달.</li>
+          <li><b>정부</b>: 5개년 양자 전략 + 2030년까지 KRW <b>3조원+</b> 투자 약속.</li>
+          <li><b>상장 노출</b>: 순수 양자주 없음. KT·LG유플러스(양자암호), 우리로 등이 대용 노출.</li>
+        </ul>
+      </div>
+
+      <h2>11원칙 적용 점검 — 양자주는 RULE 위반 다수</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>IONQ</th>
+                <th>RGTI</th>
+                <th>QBTS</th>
+                <th>IBM (대안)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진</td>
+                <td data-label="IONQ"><span class="pill up">NYSE</span></td>
+                <td data-label="RGTI"><span class="pill up">NASDAQ</span></td>
+                <td data-label="QBTS"><span class="pill up">NYSE</span></td>
+                <td data-label="IBM"><span class="pill up">NYSE</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요</td>
+                <td data-label="IONQ"><span class="pill warn">PoC</span></td>
+                <td data-label="RGTI"><span class="pill warn">PoC</span></td>
+                <td data-label="QBTS"><span class="pill warn">PoC</span></td>
+                <td data-label="IBM"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출</td>
+                <td data-label="IONQ"><span class="pill up">+755%</span></td>
+                <td data-label="RGTI"><span class="pill warn">정체</span></td>
+                <td data-label="QBTS"><span class="pill up">+178%</span></td>
+                <td data-label="IBM"><span class="pill warn">완만</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="IONQ"><span class="pill up">가속</span></td>
+                <td data-label="RGTI"><span class="pill warn">불확실</span></td>
+                <td data-label="QBTS"><span class="pill up">YES</span></td>
+                <td data-label="IBM"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="IONQ"><span class="pill down">적자 (축소)</span></td>
+                <td data-label="RGTI"><span class="pill down">적자</span></td>
+                <td data-label="QBTS"><span class="pill down">적자</span></td>
+                <td data-label="IBM"><span class="pill up">YES + 배당</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="IONQ"><span class="pill warn">광풍 후 조정</span></td>
+                <td data-label="RGTI"><span class="pill warn">변동성</span></td>
+                <td data-label="QBTS"><span class="pill warn">변동성</span></td>
+                <td data-label="IBM"><span class="pill up">상대 저평가</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 5~10년 옵션성 베팅 영역. 포트 1~2% 한정 시나리오. IBM 핵심 + IONQ 위성 조합으로 검토.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 양자 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadarRules" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 양자 3종은 ⑤(흑자) 모두 0~1점, IBM이 유일하게 5축 균형.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>상용화 시점 미정</b>: 젠슨황 "20년" 발언이 시장 컨센서스에 가깝다는 평가. 단기 매출 한계.<br>
+        ② <b>광풍-조정 변동성</b>: 정책·발언 한 마디에 -40~60% 폭락 반복.<br>
+        ③ <b>경쟁 노선 다각화</b>: 초전도·이온·광자·중성원자 등 누가 승자가 될지 불투명.<br>
+        ④ <b>NVIDIA 표준화</b>: NVQLink가 표준이 되면 양자 HW 회사들이 GPU 종속 베어메탈 공급자로 전락 가능.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>11원칙 다수 위반 — <b>"옵션성 관찰" 영역</b>. 비중 확대보다 검증 우선, 광풍 후 -40~50% 조정 시에도 가격보다 실수요 확인이 먼저.
+        IonQ가 매출 가속(+755%)으로 가장 현실적 후보. RGTI·QBTS는 변동성 큼.
+        <b>⑨ (일부 매도) 적용 보유 기간을 5~10년으로 늘려야 함</b> — 양자는 "1년 뒤"가 아닌 "10년 뒤" 시간 축이 적절.</p>
+        <p>대안 베팅: <b>NVDA</b>(NVQLink 표준 점유), <b>GOOGL</b>(Willow), <b>IBM</b>(Heron/Condor) — 거대 모회사 일부로 양자 노출.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://www.cnbc.com/2025/03/20/nvidia-ceo-huang-says-was-wrong-about-timeline-for-quantum-computing.html">CNBC · 젠슨황 양자 Mea Culpa</a></li>
+          <li><a href="https://thequantuminsider.com/2025/01/13/although-quantum-is-decades-away-for-nvidia-the-company-is-investing-in-quantum-talent-today/">The Quantum Insider · NVIDIA 양자 채용</a></li>
+          <li><a href="https://www.hpcwire.com/2025/03/25/gtc-quantum-day-jensens-mea-culpa-nvidias-growing-quantum-bet/">HPCwire · GTC Quantum Day Mea Culpa</a></li>
+          <li><a href="https://www.hpcwire.com/2025/10/28/nvidia-introduces-nvqlink-to-connect-quantum-processors-with-gpu-supercomputers/">HPCwire · NVQLink 공개</a></li>
+          <li><a href="https://nvidia.github.io/cuda-quantum/blogs/blog/2026/03/16/cudaq-GTC-26/">NVIDIA · CUDA-Q at GTC 2026</a></li>
+          <li><a href="https://blog.google/technology/research/google-willow-quantum-chip/">Google Willow 발표 (2024.12.9)</a></li>
+          <li><a href="https://247wallst.com/investing/2026/05/06/which-quantum-computing-stock-has-dominated-in-2026-ionq-rigetti-or-d-wave/">24/7 Wall St · 2026 양자주 성과</a></li>
+          <li><a href="https://thequantuminsider.com/2026/01/26/quantum-world-tour-returns-with-south-korea-showcasing-a-nation-at-the-beginning-of-quantum-scale-up/">Quantum World Tour · 한국</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    mkChart("chartRev", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["IONQ", "RGTI", "QBTS"], top: 0 },
+      xAxis: { type: "category", data: ["2022","2023","2024","2025","2026E"] },
+      yAxis: { type: "value", name: "$M" },
+      series: [
+        { name: "IONQ", type: "line", smooth: true, data: [11, 22, 43, 100, 265], lineStyle:{width:3, color:"#ffb020"}, itemStyle:{color:"#ffb020"}, symbolSize:8, areaStyle:{color:"rgba(255,176,32,0.15)"} },
+        { name: "RGTI", type: "line", smooth: true, data: [13, 12, 11, 10, 14], lineStyle:{width:3, color:"#5aa7ff"}, itemStyle:{color:"#5aa7ff"}, symbolSize:8 },
+        { name: "QBTS", type: "line", smooth: true, data: [7.2, 8.8, 8.83, 24.59, 40], lineStyle:{width:3, color:"#2bd4a4"}, itemStyle:{color:"#2bd4a4"}, symbolSize:8 },
+      ]
+    });
+
+    mkChart("chartTech", {
+      tooltip: {},
+      legend: { data: ["초전도 (IBM·Google·RGTI)","이온 트랩 (IONQ·Quantinuum)","광자 (PsiQ·QUBT)","중성원자 (QuEra·Atom Computing)","어닐링 (D-Wave)"], top: 0, type: "scroll" },
+      radar: {
+        indicator: [
+          { name: "속도", max: 5 },
+          { name: "확장성", max: 5 },
+          { name: "에러율 (낮을수록↑)", max: 5 },
+          { name: "상용화 진척", max: 5 },
+          { name: "자본효율", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 4, 3, 4, 2], name: "초전도 (IBM·Google·RGTI)", lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.18)" } },
+          { value: [4, 3, 5, 4, 4], name: "이온 트랩 (IONQ·Quantinuum)", lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.18)" } },
+          { value: [3, 5, 4, 2, 3], name: "광자 (PsiQ·QUBT)", lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } },
+          { value: [3, 4, 4, 3, 3], name: "중성원자 (QuEra·Atom Computing)", lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.15)" } },
+          { value: [4, 5, 2, 5, 4], name: "어닐링 (D-Wave)", lineStyle: { color: "#ff5d6c" }, areaStyle: { color: "rgba(255,93,108,0.12)" } }
+        ]
+      }]
+    });
+
+    mkChart("chartQubits", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["IBM","Google","IonQ","Quantinuum","Atom Computing"], top: 0 },
+      xAxis: { type: "category", data: ["2018","2019","2020","2021","2022","2023","2024","2025"] },
+      yAxis: { type: "log", name: "큐빗 수 (로그)" },
+      series: [
+        { name: "IBM",            type: "line", smooth: true, data: [20, 53, 65, 127, 433, 1121, 1121, 1386], lineStyle: { width: 3, color: "#5aa7ff" }, itemStyle: { color: "#5aa7ff" } },
+        { name: "Google",         type: "line", smooth: true, data: [72, 72, 72, 72, 72, 70, 105, 105], lineStyle: { width: 3, color: "#2bd4a4" }, itemStyle: { color: "#2bd4a4" }, markPoint: { data: [{ name: "Willow", coord: ["2024", 105], itemStyle: { color: "#2bd4a4" }, label: { color: "#ffffff", fontWeight: 700 } }] } },
+        { name: "IonQ",           type: "line", smooth: true, data: [11, 11, 32, 32, 32, 36, 64, 79], lineStyle: { width: 3, color: "#ffb020" }, itemStyle: { color: "#ffb020" } },
+        { name: "Quantinuum",     type: "line", smooth: true, data: [10, 10, 12, 20, 32, 56, 56, 96], lineStyle: { width: 3, color: "#c489ff" }, itemStyle: { color: "#c489ff" } },
+        { name: "Atom Computing", type: "line", smooth: true, data: [null, null, null, 100, 100, 1180, 1180, 1180], lineStyle: { width: 3, color: "#ff7a00" }, itemStyle: { color: "#ff7a00" } }
+      ]
+    });
+
+    mkChart("chartGov", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}B` },
+      grid: { left: 100, right: 60, top: 30, bottom: 30 },
+      xAxis: { type: "value", name: "$B" },
+      yAxis: { type: "category", data: ["미국","중국","유럽 (EU)","영국","독일","일본","한국"] },
+      series: [{
+        type: "bar",
+        data: [3.8, 15.0, 7.2, 2.5, 2.0, 1.8, 2.4],
+        itemStyle: { color: p => ["#5aa7ff","#ff5d6c","#ffb020","#c489ff","#2bd4a4","#7afff2","#ff9966"][p.dataIndex] },
+        label: { show: true, position: "right", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "${c}B" }
+      }]
+    });
+
+    mkChart("chartCycle", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>대표 양자주 지수(정성): ${p[0].value}` },
+      xAxis: { type: "category", data: ["2024.11","2024.12 Willow","2025.1.7 발언","2025.3 GTC","2025.10 NVQLink","2026.3 CUDA-Q","2026.5"] },
+      yAxis: { type: "value", name: "지수 (100=베이스)" },
+      series: [{
+        type: "line", smooth: true,
+        data: [100, 280, 130, 200, 240, 220, 230],
+        lineStyle: { width: 3, color: "#c489ff" },
+        itemStyle: { color: "#c489ff" },
+        areaStyle: { color: "rgba(196,137,255,0.18)" },
+        symbolSize: 9,
+        markPoint: { data: [
+          { name: "Willow", coord: ["2024.12 Willow", 280], itemStyle:{color:"#2bd4a4"}, label: { color: "#ffffff", fontWeight: 700 } },
+          { name: "젠슨황 발언", coord: ["2025.1.7 발언", 130], itemStyle:{color:"#ff5d6c"}, label: { color: "#ffffff", fontWeight: 700 } },
+        ]}
+      }]
+    });
+
+    // 11원칙 레이더 — 양자 4종 (IBM 포함)
+    mkChart("chartRadarRules", {
+      tooltip: {},
+      legend: { data: ["IONQ", "RGTI", "QBTS", "IBM"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 1, 2, 4, 2], name: "IONQ", lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.18)" } },
+          { value: [2, 1, 2, 2, 2], name: "RGTI", lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.15)" } },
+          { value: [4, 1, 2, 4, 2], name: "QBTS", lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } },
+          { value: [3, 5, 5, 4, 4], name: "IBM",  lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.18)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

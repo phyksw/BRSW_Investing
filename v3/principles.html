@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>11원칙 · Investing Memo</title>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="./assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="principles">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="./index.html">대시보드</a> / 11원칙</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>11원칙 <span style="color:var(--text-3);font-family:var(--font-mono);font-size:0.5em;letter-spacing:0.08em;">// INVESTING RULES</span></h1>
+          <p class="subtitle">시장 선정 → 종목 발굴 → 기업 분석 → 매수·보유·매도 → 위기 대응</p>
+        </div>
+        <div class="meta">
+          <div>RULES — v1.1</div>
+          <div class="as-of">UPDATED 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">전제</div>
+        <p>"하락장에도 펀드는 분기별 수익을 내야 한다"는 압박이 그 해의 키워드를 만든다.
+        태조이방원·메타버스·HBM·AI·데이터센터·반도체 — 사이클은 매년 돌고, 그 위에 글로벌 이슈(코로나·우러·이란·관세·은행 파산)가 겹쳐진다.
+        미국이 <b>전략자산</b>으로 분류하는 영역(반도체·AI·우주·방산·양자)을 우선 보라.</p>
+      </div>
+
+      <!-- ============== Stage 1: 시장 선정 ============== -->
+      <h2>1단계 · 시장 선정</h2>
+      <div class="grid cols-2">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 01 — 본진 시장</div>
+          <p><b>코스피·미국 시장</b>을 본진으로 운영. 변두리 시장은 정보·유동성 비용이 크다.
+          <span class="pill" style="margin-left:6px">옛 ⑧</span></p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 02 — 실수요 있는 산업</div>
+          <p>지금 <b>시장 수요가 실재하는 산업</b>을 우선. 비전만 있고 매출이 안 나는 회사는 후순위.
+          <span class="pill" style="margin-left:6px">옛 ⑨</span></p>
+        </div>
+      </div>
+
+      <!-- ============== Stage 2: 기업 분석 ============== -->
+      <h2>2단계 · 기업 분석 (5가지)</h2>
+      <div class="grid cols-2">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 03 — 3개년 성장</div>
+          <p>최근 <b>3개년 매출·영업이익이 지속 상승</b>할 것. 한 해만 좋은 기업은 사이클 산물이다.
+          <span class="pill" style="margin-left:6px">옛 ①</span></p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 04 — 정체는 매수 X</div>
+          <p>매출·영익이 좋아도 <b>3개년 같은 수준이면 매수하지 않는다</b>. 발전이 없는 것이다.
+          <span class="pill" style="margin-left:6px">옛 ④</span></p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 05 — 흑자 확인</div>
+          <p>흑자 전환을 확인한다. 적자라도 <b>개선 추세가 명확</b>해야 한다 (영업이익률·OPM 기울기).
+          <span class="pill" style="margin-left:6px">옛 ③</span></p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 06 — 매출=시장, 이익=점유</div>
+          <p>매출은 <b>시장 규모</b>, 이익은 <b>회사 크기·시장 포션</b>으로 이해하면 PER·PSR을 다르게 보게 된다.
+          <span class="pill" style="margin-left:6px">옛 ⑥</span></p>
+        </div>
+        <div class="card accent" style="grid-column: span 2">
+          <div class="card-title"><span class="dot"></span>RULE 07 — 연결고리 파악</div>
+          <p>매출·영익이 단독인지 <b>서로 연결되는 업체가 있는지</b> 알 것 (제조업 이슈, B2B 의존성·고객 집중도).
+          <span class="pill" style="margin-left:6px">옛 ⑤</span></p>
+        </div>
+      </div>
+
+      <!-- ============== Stage 3: 매수 시점 ============== -->
+      <h2>3단계 · 매수 시점</h2>
+      <div class="grid cols-1">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 08 — 상대 시총 우호</div>
+          <p>종목의 시총이 <b>시장 시총·섹터 시총 대비 낮을 것</b>. 같은 펀더멘털이면 작은 시총이 위로 갈 여지가 크다.
+          <span class="pill" style="margin-left:6px">옛 ②</span></p>
+        </div>
+      </div>
+
+      <!-- ============== Stage 4: 보유·매도 ============== -->
+      <h2>4단계 · 보유·매도</h2>
+      <div class="grid cols-1">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 09 — 일부 매도 · 사이클 점검</div>
+          <p>일정 보유 사이클이 지나면 <b>전량 매도하지 말고 일부 매도로 현금화·재투자</b>. 비율(예: 1/3)은 본인 상황에 맞춰 정한다.
+          <span class="pill" style="margin-left:6px">옛 ⑦</span></p>
+        </div>
+      </div>
+
+      <!-- ============== Stage 5: 위기 대응 ============== -->
+      <h2>5단계 · 위기 대응</h2>
+      <div class="grid cols-2">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 10 — 전체 시장 위기 대응</div>
+          <p><b>⑩은 글로벌 시장 전체가 위기에 빠질 때만 발동합니다</b> (코로나·리만·관세보복 등). 개별 종목·섹터의 -20~50% 조정에는 적용되지 않음:
+          <br>전 시장 고점 대비 <span class="pill warn">-20~30%</span> 단계적 대응,
+          <span class="pill down">-50% 이하</span>는 11원칙 ⑩의 과감 대응 구간.
+          <span class="pill" style="margin-left:6px">옛 ⑩</span></p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>RULE 11 — 하락장 리밸런싱</div>
+          <p>시장 전체 하락 시 <b>리밸런싱 시도</b> — 기존 보유 비중 조절과 신규 종목 매수를 동시에.
+          <span class="pill" style="margin-left:6px">옛 ⑪</span></p>
+        </div>
+      </div>
+
+      <!-- ============== 시각화 ============== -->
+      <h2>11원칙 시각화 — 종목 채점표</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>11원칙 충족도 레이더 (예시 비교)</div>
+          <div id="chartRadar" class="chart"></div>
+          <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+            "지금 보유 종목"을 9축에 점수화 (5점 만점). 외곽 가까울수록 11원칙 정합도가 높음.
+            <b>9축 모두 충족 → 1차 검증 통과, 8 이하 → 재검토 영역</b>.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>RULE 10 위기 대응 단계 (원리)</div>
+          <div id="chartStages" class="chart"></div>
+          <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+            <b>이건 "현재 시장 상태"가 아니라 원리 설명</b>입니다.
+            <b>전 시장</b>이 고점 대비 얼마나 빠졌느냐에 따라 행동이 달라진다는 매뉴얼 — 평소는 RULE 03~08로 종목 단위 검증, <b>전체 시장 위기 때만</b> RULE 10 대응 적용. 섹터·개별 종목 하락은 ⑧(시총 우호) 관찰 영역.
+          </p>
+        </div>
+      </div>
+
+      <h2>11원칙 의사결정 플로우</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>매수~매도 사이클</div>
+        <div id="chartSankey" class="chart lg"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          관찰 → 9개 충족 확인 → 매수 → 보유 사이클 점검 → 일부 매도 → 현금화/재투자.
+          위기 시그널이 켜지면 별도 트랙(분할 매수)이 동시 발동.
+        </p>
+      </div>
+
+      <h2>참고사항</h2>
+      <div class="grid cols-3">
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>해마다의 키워드</div>
+          <p>하락장에도 펀드는 분기별 수익을 내야 한다. 그래서 <b>매년 키워드가 만들어진다</b> — 태조이방원, 메타버스, HBM, AI, 데이터센터, 반도체. 자세히는 <a href='/#yearly'>대시보드 연도별 키워드</a> 참고.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>매해 터지는 이슈</div>
+          <p>코로나, 우러전쟁, 이란-미국, 미국 관세, 글로벌 채권발 은행 파산 ··· 매해 한 번씩 터진다. <b>위기는 이벤트가 아니라 상수</b>로 본다.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>미국의 전략자산</div>
+          <p>반도체·AI·우주·방산·양자컴퓨팅. <b>미국이 안보 자산으로 분류한 분야</b>는 정책·재정·관세가 함께 움직인다 — 그 흐름을 우선 본다.</p>
+        </div>
+      </div>
+
+      <div class="callout warn" style="margin-top:30px">
+        <div class="head">자기점검 체크리스트</div>
+        <p>
+        ① 본진(코스피·미국)? <span class="pill">YES</span>
+        ② 실수요? <span class="pill">YES</span>
+        ③ 3년 매출·영익 상승? <span class="pill">YES</span>
+        ④ 정체 아니라 발전? <span class="pill">YES</span> <br>
+        ⑤ 흑자 또는 흑자 전환 개선? <span class="pill">YES</span>
+        ⑥ 매출=시장, 이익=점유로 본 PER 적정? <span class="pill">YES</span>
+        ⑦ 연결 업체·B2B 의존성 파악? <span class="pill">YES</span> <br>
+        ⑧ 시장·섹터 대비 시총 우호? <span class="pill">YES</span>
+        ⑨ 일부 매도 시점 인지? <span class="pill">YES</span>
+        <br>9개 다 YES면 <b>비중 결정</b>, 8개 이하면 패스. (⑩·⑪은 매수 후 운영 룰)</p>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">
+          본 문서는 개인 학습/메모용입니다. 투자 권유가 아니며, 특정 종목 추천이 아닙니다.
+          모든 투자 책임은 본인에게 있습니다.
+        </div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="./methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/js/main.js?v=3.3"></script>
+  <script>
+    // ---- 11원칙 레이더 차트 ----
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["가상 종목 A (좋음)", "가상 종목 B (나쁨)"], top: 0, textStyle: { color: "#c3cdd9" } },
+      radar: {
+        indicator: [
+          { name: "①본진", max: 5 },
+          { name: "②실수요", max: 5 },
+          { name: "③3년 성장", max: 5 },
+          { name: "④발전성", max: 5 },
+          { name: "⑤흑자", max: 5 },
+          { name: "⑥매출×점유", max: 5 },
+          { name: "⑦연결고리", max: 5 },
+          { name: "⑧상대 시총", max: 5 },
+          { name: "⑨매도 인지", max: 5 },
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,176,32,0.03)", "rgba(255,176,32,0.06)"] } },
+        axisLine: { lineStyle: { color: "#2a3340" } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 5, 5, 4, 5, 4, 5, 4, 5], name: "가상 종목 A (좋음)", lineStyle: { color: "#ffb020", width: 2 }, itemStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.25)" } },
+          { value: [5, 2, 2, 1, 1, 2, 3, 5, 3], name: "가상 종목 B (나쁨)", lineStyle: { color: "#ff5d6c", width: 2 }, itemStyle: { color: "#ff5d6c" }, areaStyle: { color: "rgba(255,93,108,0.15)" } },
+        ]
+      }]
+    });
+
+    // ---- RULE 10 단계 다이어그램 (게이지 대체) ----
+    mkChart("chartStages", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>${p[0].data.tip}` },
+      grid: { left: 130, right: 30, top: 30, bottom: 30 },
+      xAxis: { type: "value", name: "행동 강도", max: 100, axisLabel: { show: false } },
+      yAxis: { type: "category", data: ["고점 ~ -20% (평소)", "-20% ~ -30% (1차 대응)", "-30% ~ -50% (강한 대응)", "-50% 이하 (위기 대응)"] },
+      series: [{
+        type: "bar",
+        data: [
+          { value: 15, itemStyle: { color: "#2a3340" }, tip: "평소 운영. RULE 03~08로 종목 단위 검증" },
+          { value: 45, itemStyle: { color: "#ffb020" }, tip: "전체 시장 충격인지, 개별 섹터 훼손인지 먼저 구분" },
+          { value: 75, itemStyle: { color: "#ff7a00" }, tip: "시장 충격이면 현금 대응, 섹터 훼손이면 재검증 우선" },
+          { value: 100, itemStyle: { color: "#ff5d6c" }, tip: "10년에 1~2번 수준의 위기 대응 영역. 투자권유 아님" }
+        ],
+        label: { show: true, position: "right", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: p => p.value + "%" }
+      }]
+    });
+
+    // ---- 의사결정 Sankey ----
+    mkChart("chartSankey", {
+      tooltip: { trigger: "item", triggerOn: "mousemove" },
+      series: [{
+        type: "sankey",
+        layout: "none",
+        left: 30, right: 100, top: 20, bottom: 20,
+        nodeAlign: "left",
+        emphasis: { focus: "adjacency" },
+        lineStyle: { color: "gradient", curveness: 0.5 },
+        label: { color: "#d7dee8", fontFamily: window.FONT_SANS_KR, fontSize: 12 },
+        data: [
+          { name: "관찰 종목" },
+          { name: "11원칙 충족" }, { name: "11원칙 미충족" },
+          { name: "매수 (비중 결정)" },
+          { name: "보유 사이클" },
+          { name: "일부 매도 (⑨)" },
+          { name: "패스" },
+          { name: "위기 시그널" },
+          { name: "⑩ 위기 대응" },
+          { name: "현금화" }, { name: "신규 종목" }, { name: "기존 추가" }
+        ],
+        links: [
+          { source: "관찰 종목", target: "11원칙 충족", value: 35 },
+          { source: "관찰 종목", target: "11원칙 미충족", value: 65 },
+          { source: "11원칙 미충족", target: "패스", value: 65 },
+          { source: "11원칙 충족", target: "매수 (비중 결정)", value: 35 },
+          { source: "매수 (비중 결정)", target: "보유 사이클", value: 35 },
+          { source: "보유 사이클", target: "일부 매도 (⑨)", value: 35 },
+          { source: "일부 매도 (⑨)", target: "현금화", value: 14 },
+          { source: "일부 매도 (⑨)", target: "신규 종목", value: 14 },
+          { source: "일부 매도 (⑨)", target: "기존 추가", value: 7 },
+          { source: "관찰 종목", target: "위기 시그널", value: 20 },
+          { source: "위기 시그널", target: "⑩ 위기 대응", value: 20 },
+          { source: "⑩ 위기 대응", target: "기존 추가", value: 20 },
+        ]
+      }]
+    });
+
+  </script>
+</body>
+</html>

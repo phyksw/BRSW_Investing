@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI LLM 사업방향 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-llm">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / AI LLM 사업방향</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI LLM 사업방향 · 치킨게임에서 가치 구독으로</h1>
+          <p class="subtitle">컨슈머 스케일(OpenAI)과 엔터프라이즈 연환산 매출(run-rate)의 분기</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">ANTHROPIC · OPENAI · GOOGL · META · XAI</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>2025년 생성형 영상 AI 가격 치킨게임 후 <b>2026년에는 "가치 구독" 모델로 무게중심 이동</b>.
+        앤트로픽이 Claude Code(2025.5 GA)를 발판으로 연환산 매출(run-rate) 폭증 — 컨슈머 시장은 여전히 OpenAI 압도(WAU 9억), B2B/엔터프라이즈 시장에선 앤트로픽이 빠르게 추격. <b>두 시장이 분리 진화 중</b>이라는 점이 핵심.
+        <br/><b>2026-05-28 신규 (보도·추적)</b>: Anthropic의 컴퓨트 공급자가 기존 Google·AWS·Broadcom에 더해 <b>SpaceX까지 4곳으로 확대</b>됨 — SpaceX가 데이터센터 인수 후 <b>월 $1.2B(연환산 $14.4B+) 컴퓨트 계약</b> 체결. 이는 Anthropic 2026.4 run-rate $30B+의 약 절반에 해당하는 컴퓨트 지출 → AI run-rate가 인프라 CapEx로 환류되는 흐름이 더 선명해짐. 자세한 내용은 <a href="./datacenter.html#spx-anthropic-deal">데이터센터 페이지 ↗</a>.</p>
+      </div>
+
+      <!-- 시장 데이터 확장 -->
+      <div class="callout fact">
+        <div class="head">📊 이 영역의 시장 데이터 — 컨슈머 vs 엔터프라이즈 분기</div>
+        <p>"AI 마켓쉐어 1위가 누구냐"는 자주 회자되는 질문. 공개 자료를 보면 답이 <b>두 시장으로 분리</b>됩니다:</p>
+        <ul>
+          <li><b>컨슈머 시장 (웹·모바일 AI 챗봇 점유율)</b>: First Page Sage 2026.5 기준 ChatGPT 60.6%, Gemini 15.1%, Copilot 12.5%, Claude 5.0%, Grok 0.6% — OpenAI가 여전히 압도적 1위.</li>
+          <li><b>엔터프라이즈/개발자 시장 (연환산 매출 run-rate)</b>: Anthropic $30B+ vs OpenAI $25B+ — Q2 $40B+는 전망치로 분리 표기.</li>
+        </ul>
+        <p>두 시장이 다른 게임이라는 점이 핵심 — 하나의 "전체 1위"로 묶지 말고 사용자 점유율과 매출 축을 분리해서 봐야 합니다.</p>
+      </div>
+
+      <h2>핵심 — 사용자/유료/ARPU 정밀 비교</h2>
+      <p class="section-lede">6개 회사를 한 표에서 동시에 비교. <b>"누가 1위"는 컨슈머냐 엔터프라이즈냐에 따라 답이 달라집니다.</b></p>
+
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2026.5 기준 · 한 표로 비교</div>
+
+        <!-- 핵심 한 줄 -->
+        <div class="signal-bars">
+          <div class="signal-bar up">
+            <span class="signal-label">사용자 규모</span>
+            <span class="signal-main">ChatGPT 9억 WAU</span>
+            <span class="signal-note">컨슈머 스케일 1위</span>
+          </div>
+          <div class="signal-bar warn">
+            <span class="signal-label">수익화 밀도</span>
+            <span class="signal-main">Claude ARPU $400+/월 추정</span>
+            <span class="signal-note">엔터프라이즈/API 가중</span>
+          </div>
+          <div class="signal-bar hot">
+            <span class="signal-label">연환산 매출</span>
+            <span class="signal-main">Anthropic $30B+ run-rate</span>
+            <span class="signal-note">Q2 $40B+는 전망치</span>
+          </div>
+        </div>
+
+        <div class="table-wrap rule-matrix arpu-precision" style="margin-top:14px">
+          <table>
+            <thead>
+              <tr>
+                <th>지표</th>
+                <th><span class="dot-mini" style="background:#2bd4a4"></span>OpenAI<br/><small>ChatGPT</small></th>
+                <th><span class="dot-mini" style="background:#ffb020"></span>Anthropic<br/><small>Claude</small></th>
+                <th><span class="dot-mini" style="background:#5aa7ff"></span>Google<br/><small>Gemini</small></th>
+                <th><span class="dot-mini" style="background:#9b8cff"></span>xAI<br/><small>Grok</small></th>
+                <th><span class="dot-mini" style="background:#ff5fb0"></span>Meta<br/><small>Llama</small></th>
+                <th><span class="dot-mini" style="background:#7fd6e8"></span>Alibaba<br/><small>Qwen</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="지표">사용자 <small>(MAU/WAU)</small></td>
+                <td data-label="OpenAI"><b style="color:#fff">9억 WAU</b></td>
+                <td data-label="Anthropic"><b style="color:#fff">0.18~0.3억 MAU</b></td>
+                <td data-label="Google">5억+ MAU</td>
+                <td data-label="xAI">6억 (X 통합)</td>
+                <td data-label="Meta">30억 (Meta 앱)</td>
+                <td data-label="Alibaba">2.03억 MAU</td>
+              </tr>
+              <tr>
+                <td data-label="지표">유료 사용자</td>
+                <td data-label="OpenAI">5,000만+ <br/><small>비즈 900만</small></td>
+                <td data-label="Anthropic">수백만+ <br/><small>비즈 30만+</small></td>
+                <td data-label="Google">수천만 추정</td>
+                <td data-label="xAI">수백만 추정</td>
+                <td data-label="Meta">없음 <small>(광고)</small></td>
+                <td data-label="Alibaba">미공개</td>
+              </tr>
+              <tr>
+                <td data-label="지표"><abbr data-term="ARPU">ARPU</abbr> <small>($/월)</small></td>
+                <td data-label="OpenAI"><b>$35~40</b></td>
+                <td data-label="Anthropic"><b style="color:#ffcb47">$400+</b></td>
+                <td data-label="Google">$20~250</td>
+                <td data-label="xAI">$10~300</td>
+                <td data-label="Meta">—</td>
+                <td data-label="Alibaba">미공개</td>
+              </tr>
+              <tr>
+                <td data-label="지표">Run-rate <small>($B)</small></td>
+                <td data-label="OpenAI"><b style="color:#fff">$25B</b> <small>(2026.2)</small></td>
+                <td data-label="Anthropic"><b style="color:#ffcb47">$30B+</b> <small>(Q2 $40B+ 전망)</small></td>
+                <td data-label="Google">미공개</td>
+                <td data-label="xAI">미공개</td>
+                <td data-label="Meta">—</td>
+                <td data-label="Alibaba">미공개</td>
+              </tr>
+              <tr>
+                <td data-label="지표">특기</td>
+                <td data-label="OpenAI"><span class="badge badge-up">컨슈머 1위</span></td>
+                <td data-label="Anthropic"><span class="badge badge-warn">B2B/API 효율 1위</span></td>
+                <td data-label="Google">생태계 번들</td>
+                <td data-label="xAI">X 무료 + 저가</td>
+                <td data-label="Meta">오픈소스 + 소셜</td>
+                <td data-label="Alibaba">중국 오픈소스 30%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout fact" style="margin-top:14px">
+          <div class="head">읽는 법 — 두 가지 1위가 공존</div>
+          <p>
+            <b>① 컨슈머 스케일</b>: ChatGPT 9억 WAU + 유료 5,900만. 평균 ARPU는 ~$35로 낮지만 절대 규모가 압도적.<br>
+            <b>② 수익화 밀도</b>: Anthropic은 비즈니스 30만 + API 매출 가중 → 1인당 ~$400/월. ChatGPT의 약 10배.<br>
+            연환산 매출(run-rate $30B+)이 ChatGPT($25B)를 추월한 게 그 결과 — "1위"는 어떤 축으로 보느냐의 문제.
+          </p>
+        </div>
+      </div>
+
+      <h2>유료 전환율·ARPU — 규모와 결제 밀도 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>전체 사용자 대비 유료 전환율 + 유료 사용자당 평균 매출</div>
+        <div id="chartFunnel" class="chart ai-funnel-chart"></div>
+        <p class="term-note"><b>ARPU</b>: Average Revenue Per User. 월 매출을 유료 사용자 수로 나눈 평균값이며, 플랜 정가와 다릅니다.</p>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          앤트로픽은 <b>적은 사용자 → 높은 유료 전환율 → 높은 ARPU</b>로 매출 효율성 최강.
+          OpenAI는 <b>방대한 사용자 → 낮은 전환율 → 낮은 ARPU</b>지만 절대 규모로 승부.
+        </p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Alphabet GOOGL 시총</div>
+          <div class="value">$4.70<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">$390.13 · 1년 +141% (Gemini)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Meta 시총</div>
+          <div class="value">$1.61<span style="font-size:0.6em">T</span></div>
+          <div class="delta down">$635.29 · 고점 $796 -20%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Zhipu 2513.HK 시총</div>
+          <div class="value">$97.8<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">HKD 1,758 · IPO +1,415%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">앤트로픽 (비상장)</div>
+          <div class="value">$380<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">2026.2 Series G · 5월 $900B 협상</div>
+        </div>
+      </div>
+
+      <h2>매출·사용자 지표 (2026.5 잠정)</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">앤트로픽 run-rate (2026.4)</div>
+          <div class="value">$30<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">Q2 $40B+는 전망치로 분리</div>
+        </div>
+        <div class="kpi">
+          <div class="label">OpenAI run-rate (2026.4)</div>
+          <div class="value">$25<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">텐더 ~$500B (2026.1)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Claude Code run-rate</div>
+          <div class="value">$2.5<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">출시 9개월 만 (역대 최고 램프업)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">ChatGPT 유료 + 비즈니스</div>
+          <div class="value">5,900<span style="font-size:0.6em">만</span></div>
+          <div class="delta up">WAU 9억 (2026.2)</div>
+        </div>
+      </div>
+
+      <h2>앤트로픽 연환산 매출(run-rate) 폭증 (2024.12 → 2026.5)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>"가장 빠른 SaaS 램프업" 평가 · 단위 $B</div>
+        <div id="chartArr" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          12개월간 $1B → $30B+로 급증. <b>Claude Code(2025.5 GA)</b>와 기업/API 사용량이 폭증의 주 동력이며, $40B+는 Q2 전망치로 따로 봅니다.
+        </p>
+      </div>
+
+      <h2>AI 챗봇 유료 사용자 점유율과 매출 점유율 (2026.5)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>왼쪽=공개 확인분 기준 유료 사용자 점유율 / 오른쪽=공개 확인분 기준 매출 점유율 (도넛)</div>
+        <div class="ai-duo">
+          <div>
+            <div id="chartPaidShare" class="chart"></div>
+            <p class="term-note"><b>유료 사용자 점유율</b>: OpenAI 5,900만+ (Plus·Team·Pro·Enterprise·Edu, 2026.2 OpenAI/언론 보도), Anthropic ~600만 (Pro·Max·Team·Enterprise, 보도 추정), Microsoft Copilot 200만 (2026.2 보도), Perplexity Pro ~150만 (보도 추정) — 공개 확인분만 분모. Gemini Advanced·SuperGrok은 단독 유료 구독자 수 미공개로 제외.</p>
+          </div>
+          <div>
+            <div id="chartRevenue" class="chart"></div>
+            <p class="term-note"><b>매출 점유율</b>: OpenAI·Anthropic처럼 공개/보도 확인 가능한 AI run-rate만 분모에 넣은 비교입니다. Google·Microsoft·xAI는 단독 AI 챗봇 매출이 미공개라 제외합니다.</p>
+          </div>
+        </div>
+        <div style="margin-top:16px;border-top:1px solid var(--border-2);padding-top:14px">
+          <div class="card-title"><span class="dot"></span>보조 지표 — 전체 사용자 점유율 (웹·모바일 종합, 무료 포함)</div>
+          <div id="chartShare" class="chart sm"></div>
+          <p class="term-note"><b>전체 사용자 점유율</b>: First Page Sage 2026.5 웹·모바일 AI 챗봇 종합 점유율. <b>무료 사용자 포함</b>이므로 위 두 차트(유료 사용자·매출 점유율)와 분모가 다릅니다. ChatGPT가 60.6%로 압도적이지만, 매출 점유율에서는 Anthropic이 54.5%로 역전되는 점이 핵심 시그널.</p>
+        </div>
+      </div>
+
+      <h2>플레이어별 ARPU — 진짜 계산 (월매출 ÷ 유료 구독자)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2026.4 기준 · 연환산 매출(run-rate) ÷ 12 ÷ 유료 구독자 수 (단위 $/월, 로그)</div>
+        <div id="chartArpu" class="chart ai-arpu-chart"></div>
+        <p class="term-note"><b>ARPU</b>: 유료 사용자당 월평균 매출입니다. API·기업 계약 비중이 큰 회사는 소비자 구독 정가보다 크게 보일 수 있습니다.</p>
+        <div class="table-wrap compact-matrix arpu-calc-table" style="margin-top:14px">
+          <table>
+            <thead><tr><th>계산 축</th><th>OpenAI · ChatGPT</th><th>Anthropic · Claude</th><th>Google · Gemini</th><th>xAI · Grok</th></tr></thead>
+            <tbody>
+              <tr><td>연환산 매출</td><td><b>$25B</b></td><td><b style="color:var(--accent)">$30B+</b><br/><small>Q2E $40B+</small></td><td>미공개</td><td>미공개</td></tr>
+              <tr><td>월 매출 환산</td><td>$2.08B</td><td>$2.5B+</td><td>미공개</td><td>미공개</td></tr>
+              <tr><td>유료 구독자</td><td>~5,900만</td><td>~500~600만 추정</td><td>미공개</td><td>미공개</td></tr>
+              <tr><td>ARPU</td><td><b>~$35/월</b></td><td><b style="color:var(--accent)">$400+/월</b></td><td>참고만</td><td>참고만</td></tr>
+              <tr><td>해석</td><td>컨슈머 스케일</td><td>엔터프라이즈+API 가중평균</td><td>광고+클라우드 번들</td><td>X 사용자 무료 번들</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">
+          <b>왜 격차가 10배 이상인가</b>: Anthropic은 비즈니스 구독자 30만+ 이외에 <b>API 매출 비중이 매우 큼</b> (개발자·기업이 토큰 단위로 결제). 사용자 1명당 단가 단순 환산 시 엔터프라이즈 가중평균이 컨슈머 ARPU와 자릿수 차이.<br>
+          <b>출처</b>: OpenAI run-rate <a href="https://finance.yahoo.com/news/openai-tops-25-billion-annualized-033836274.html">Yahoo Finance / The Information 보도(2026.2)</a>, 유료 구독자 <a href="https://techcrunch.com/2026/02/27/chatgpt-reaches-900m-weekly-active-users/">TechCrunch</a>. Anthropic run-rate <a href="https://www.anthropic.com/news/google-broadcom-partnership-compute">Anthropic 공식 발표(2026.4)</a>. 유료 구독자는 비공개로 추정값.
+        </p>
+      </div>
+
+      <h2>구독 플랜별 월 가격 (참고)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>각 플랜의 정가 — ARPU와는 다른 개념</div>
+        <div id="chartPlans" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          <b>주의:</b> 위 가격은 <abbr title="Average Revenue Per User — 모든 유료 사용자의 평균 결제액">ARPU</abbr>가 아닌 <b>플랜별 정가</b>입니다. ARPU는 다양한 플랜 가입자가 섞인 가중평균.
+        </p>
+      </div>
+
+      <h2>사용자 점유율 vs 연환산 매출 — LLM 4분면</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>가로=웹·모바일 사용자 점유율 / 세로=연환산 매출(run-rate)</div>
+        <div id="chartQuad" class="chart chart-readable"></div>
+        <p class="term-note"><b>Run-rate</b>: 실제 누적 총매출이 아니라, 현재 월 매출 흐름을 12개월로 환산한 값입니다. 미공개 회사는 차트 안에서 추정/보조값임을 별도 표기합니다.</p>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          OpenAI는 컨슈머 압도, 앤트로픽은 엔터프라이즈 폭증. <b>두 모델이 다른 시장에서 1위</b>.
+        </p>
+      </div>
+
+      <h2>가격 전쟁 타임라인</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>월 구독료 변화 ($)</div>
+        <div id="chartPrice" class="chart"></div>
+      </div>
+
+      <h2>핵심 사건 타임라인</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2024.2</div>
+          <div class="desc">Claude Code 연구 프리뷰.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2024.12</div>
+          <div class="desc">앤트로픽 연환산 매출(run-rate) <b>$1B</b> 돌파.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.2</div>
+          <div class="desc">xAI Grok 3 출시 + X 사용자 전원 무료(제한). <b>치킨게임 본격화</b>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.5</div>
+          <div class="desc"><b>Claude Code GA 출시</b>. 바이브 코딩 패러다임.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.12</div>
+          <div class="desc">앤트로픽 연환산 매출(run-rate) <b>$9B</b>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.2</div>
+          <div class="desc">앤트로픽 연환산 매출(run-rate) <b>$14B</b> → 2026.3 $19B → 2026.4 $30B.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.3.24</div>
+          <div class="desc"><b>OpenAI Sora 서비스 종료 발표</b> (웹/앱 4.26, API 9.24). 일 컴퓨트 비용 $15M, 누적 매출 $2.1M.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.3.25</div>
+          <div class="desc">xAI <b>SuperGrok Lite $10/월</b> 신설 (저가 공세).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.5</div>
+          <div class="desc">앤트로픽 run-rate <b>$30B+</b> 확인 — Q2 $40B+ 전망. Claude Code와 API 사용량이 성장의 핵심 동력.</div>
+        </div>
+      </div>
+
+      <h2>주요 플레이어 포지셔닝</h2>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>회사</th>
+                <th>전략 라벨</th>
+                <th>가격대</th>
+                <th>한 줄 포지션</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#2bd4a4"></span><b>OpenAI</b></td>
+                <td data-label="전략 라벨">컨슈머 스케일</td>
+                <td data-label="가격대">Plus $20 / Pro $200 / Team $25</td>
+                <td data-label="한 줄 포지션">WAU 9억. 절대 규모 1위. Sora 종료 → 비용 통제 모드.</td>
+              </tr>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#ffb020"></span><b>Anthropic</b></td>
+                <td data-label="전략 라벨">엔터프라이즈·개발자</td>
+                <td data-label="가격대">Pro $20 / Max $200 / Team $30 / Enterprise 협의</td>
+                <td data-label="한 줄 포지션">run-rate $30B+. Claude Code 견인. B2B/API 가중.</td>
+              </tr>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#5aa7ff"></span><b>Google</b></td>
+                <td data-label="전략 라벨">통합 생태계</td>
+                <td data-label="가격대">AI Pro / AI Ultra $250 (Genie·Veo)</td>
+                <td data-label="한 줄 포지션">웹 점유 15.1%. Search·Workspace 번들 강점.</td>
+              </tr>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#9b8cff"></span><b>xAI (Grok)</b></td>
+                <td data-label="전략 라벨">저가·X 번들</td>
+                <td data-label="가격대">Lite $10 / SuperGrok $30 / Heavy $300</td>
+                <td data-label="한 줄 포지션">웹 점유 0.6%. X 무료 접근 + 엔터테인먼트.</td>
+              </tr>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#ff5fb0"></span><b>Meta</b></td>
+                <td data-label="전략 라벨">오픈소스 + 소셜</td>
+                <td data-label="가격대">광고 모델 (직접 구독 없음)</td>
+                <td data-label="한 줄 포지션">Llama 오픈소스 + 인스타·왓츠앱 통합 회수.</td>
+              </tr>
+              <tr>
+                <td data-label="회사"><span class="dot-mini" style="background:#7fd6e8"></span><b>중국 진영</b></td>
+                <td data-label="전략 라벨">오픈소스 + 저가</td>
+                <td data-label="가격대">Qwen 무료 / DeepSeek 저가</td>
+                <td data-label="한 줄 포지션">Qwen 누적 ~10억 DL. DeepSeek 밸류 $20B+. 점유 30%.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <div class="head">사용자 메모 "아틀라스놀리지(중국)" 표기</div>
+        <p>동일 명칭 중국 LLM 회사는 검색되지 않습니다. 사용자가 의도한 회사는 다음 중 하나로 추정됩니다:
+        <b>Zhipu AI(智谱)</b> · <b>Moonshot AI (Kimi)</b> · <b>01.AI(零一万物)</b> · <b>MiniMax</b>. 추후 확인 부탁드립니다.</p>
+      </div>
+
+      <h2>사용자 결론 재해석</h2>
+      <div class="card">
+        <h3 style="margin-top:0">"싸게보다 비싼 구독료가 답"</h3>
+        <p><b>방향성은 옳음</b>. 앤트로픽 컨슈머 1인당 ~$211/월 vs OpenAI ~$25/월 = <b>8배 수익성 격차</b>라는 분석 존재.
+        다만 OpenAI도 절대 사용자 수에서 압도적이라 두 모델 다 유효함:</p>
+        <ul>
+          <li><b>컨슈머 스케일</b>: OpenAI · Google · xAI — 점유율 우위, ARPU는 낮지만 광고/번들로 회수</li>
+          <li><b>엔터프라이즈 정밀</b>: 앤트로픽 · 팔란티어 — 연환산 매출 급증, 높은 ARPU, 충성도</li>
+        </ul>
+        <p>핵심은 <b>두 시장이 분리 진화</b> 중이라는 점. 사용자 메모의 "1위" 표현은 엔터프라이즈 한정으로 재진술하면 정확.</p>
+      </div>
+
+      <h2>11원칙 적용 — 우회 베팅 종목</h2>
+      <p style="color:var(--text-2)">주요 LLM 기업(OpenAI·Anthropic·xAI)이 비상장이라 <b>모회사/지분 보유사로 우회 베팅</b>이 현실적.</p>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>GOOGL</th>
+                <th>META</th>
+                <th>MSFT</th>
+                <th>AMZN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요 실재</td>
+                <td data-label="GOOGL"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="MSFT"><span class="pill up">YES</span></td>
+                <td data-label="AMZN"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="GOOGL"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="MSFT"><span class="pill up">YES</span></td>
+                <td data-label="AMZN"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="GOOGL"><span class="pill up">강세</span></td>
+                <td data-label="META"><span class="pill up">강세</span></td>
+                <td data-label="MSFT"><span class="pill up">강세</span></td>
+                <td data-label="AMZN"><span class="pill up">강세</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="GOOGL">Search·Cloud·Android</td>
+                <td data-label="META">Reels·광고</td>
+                <td data-label="MSFT">OpenAI·Azure</td>
+                <td data-label="AMZN">Anthropic·AWS</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="GOOGL"><span class="pill warn">고평가</span></td>
+                <td data-label="META"><span class="pill warn">고평가</span></td>
+                <td data-label="MSFT"><span class="pill warn">고평가</span></td>
+                <td data-label="AMZN"><span class="pill">중립</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:20px">11원칙 충족도 — LLM 우회 베팅 4종 레이더</h3>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 4종 모두 ②③④⑤ 강력, AMZN만 ⑧ 중립.</p>
+        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
+          <b>전부 11원칙 5/9 충족 (③⑤⑦⑧② 중 ⑧만 미충족)</b>. ⑧(시총 우호) 개선까지는 관찰 구간 — 개별 종목 조정이 아닌 <b>전체 시장 위기(⑩ 적용 구간)</b>에서 ⑩이 자동 발동.
+          순수 LLM 베팅보단 <a href="./ai-solutions.html">AI 솔루션(PLTR)</a>이나 <a href="./semiconductors.html">반도체/HBM</a> 같은 인프라/적용층이 더 깨끗한 노출.
+        </p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>앤트로픽 비상장</b>: 직접 투자 불가, 아마존(AMZN)·구글(GOOGL) 지분 투자로 우회 가능.<br>
+        ② <b>연환산 매출 ≠ 수익성</b>: 컴퓨트 비용 폭증 — OpenAI Sora 종료가 예시.<br>
+        ③ <b>모델 상품성 빠르게 변화</b>: 12개월 단위로 우위가 바뀜.<br>
+        ④ <b>중국 진영 추격</b>: DeepSeek·Qwen이 오픈소스로 가격 압박. 2025.1 DeepSeek 쇼크 재현 가능.</p>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>"AI LLM"은 11원칙 적용이 까다로움 — <b>대부분 비상장 또는 거대 모회사 일부</b>.
+        대안 베팅:</p>
+        <ul>
+          <li><b>인프라 측면</b>: NVDA · AMD · TSMC · SK하이닉스 (HBM)</li>
+          <li><b>적용층</b>: PLTR (B2B AI 솔루션) — 별도 페이지 참조</li>
+          <li><b>구독 마진</b>: GOOGL · META · MSFT (대형 모델 보유 + 광고)</li>
+        </ul>
+        <p>순수 LLM 베팅보다는 <b>RULE 05(연결고리)</b> 관점에서 인프라·적용층 우회가 합리적.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://www.saastr.com/anthropic-just-hit-14-billion-in-arr-up-from-1-billion-just-14-months-ago/">Anthropic hits $14B ARR · SaaStr</a></li>
+          <li><a href="https://www.getpanto.ai/blog/anthropic-ai-statistics">Anthropic AI Statistics 2026 · Panto</a></li>
+          <li><a href="https://technologychecker.io/blog/chatgpt-statistics">ChatGPT Statistics 2026 · TechnologyChecker</a></li>
+          <li><a href="https://firstpagesage.com/reports/top-generative-ai-chatbots/">Top Generative AI Chatbots May 2026 · First Page Sage</a></li>
+          <li><a href="https://www.uncoveralpha.com/p/anthropics-claude-code-is-having">Claude Code's "ChatGPT moment" · Uncover Alpha</a></li>
+          <li><a href="https://felloai.com/grok-pricing/">Grok Pricing 2026 · Fello AI</a></li>
+          <li><a href="https://finance.yahoo.com/news/chinas-open-source-models-30-093000383.html">China's open-source AI 30% share · Yahoo Finance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    const mobile = window.isMobile && window.isMobile();
+    mkChart("chartArr", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}B` },
+      xAxis: { type: "category", data: ["2024.12","2025.8","2025.12","2026.2","2026.3","2026.4","2026 Q2E"] },
+      yAxis: { type: "value", name: "$B" },
+      series: [{
+        type: "line", smooth: true,
+        data: [1, 5, 9, 14, 19, 30, 40],
+        lineStyle: { width: 3, color: "#ffb020" },
+        itemStyle: { color: "#ffb020" },
+        areaStyle: { color: "rgba(255,176,32,0.2)" },
+        symbolSize: 9,
+        label: { show: true, position: "top", color: "#ffb020", fontFamily: "JetBrains Mono", formatter: "{c}B" }
+      }]
+    });
+
+    // ---- 유료 전환 퍼널 (정성 비교) ----
+    mkChart("chartFunnel", {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: { type: "shadow" },
+        formatter: p => p.map(x => `${x.marker}${x.seriesName}: <b>${x.seriesName.includes("ARPU") ? "$" + x.value + "/월" : x.value + "%"}</b>`).join("<br/>")
+      },
+      legend: { data: ["유료 전환율", "ARPU"], top: 0 },
+      grid: { left: 54, right: 62, top: 58, bottom: 34 },
+      xAxis: { type: "category", data: ["OpenAI\nChatGPT", "Anthropic\nClaude"], axisLabel: { lineHeight: 14 } },
+      yAxis: [
+        { type: "value", name: "유료 전환율(%)", position: "left", min: 0, max: 20 },
+        { type: "value", name: "ARPU($/월)", position: "right", min: 0, max: 460 }
+      ],
+      series: [
+        {
+          name: "유료 전환율", type: "bar",
+          data: [6, 18],
+          itemStyle: { color: p => ["#2fbf9a", "#ffcb47"][p.dataIndex] },
+          label: {
+            show: true,
+            position: "insideTop",
+            distance: 8,
+            color: "#ffffff",
+            textBorderColor: "rgba(10,14,20,0.85)",
+            textBorderWidth: 2,
+            fontFamily: "JetBrains Mono",
+            formatter: "{c}%",
+            fontWeight: 900,
+            fontSize: 14
+          }
+        },
+        {
+          name: "ARPU", type: "line", yAxisIndex: 1, smooth: false, symbolSize: 14,
+          data: [35, 416],
+          lineStyle: { color: "#ff5fb0", width: 3 },
+          itemStyle: { color: "#ff5fb0", borderColor: "#ffffff", borderWidth: 2 },
+          label: {
+            show: true,
+            position: "right",
+            distance: 10,
+            color: "#ffffff",
+            backgroundColor: "rgba(255,95,176,0.85)",
+            padding: [3, 7],
+            borderRadius: 4,
+            fontFamily: "JetBrains Mono",
+            formatter: "${c}/월",
+            fontWeight: 800,
+            fontSize: 12
+          },
+          z: 10
+        }
+      ]
+    });
+
+    // 진짜 ARPU = 월매출 ÷ 유료 구독자 (보수적 추정)
+    mkChart("chartArpu", {
+      tooltip: {
+        trigger: "item",
+        formatter: p => {
+          const meta = {
+            "OpenAI ChatGPT": "run-rate $25B ÷ 12 ÷ 5,900만 = $35",
+            "Anthropic Claude (보수)": "run-rate $30B ÷ 12 ÷ 600만 = $416",
+            "Anthropic Claude (Q2E)": "Q2E $40B ÷ 12 ÷ 500만 = $667",
+          };
+          return `<b>${p.name}</b><br/>ARPU <b>$${p.value}/월</b><br/><span style="color:#8693a5">${meta[p.name] || ""}</span>`;
+        }
+      },
+      grid: { left: mobile ? 126 : 160, right: mobile ? 26 : 44, top: 28, bottom: 36 },
+      xAxis: { type: "log", name: "$/월 (로그)", logBase: 10, min: 20, max: 800 },
+      yAxis: { type: "category", data: ["OpenAI ChatGPT", "Anthropic Claude (보수)", "Anthropic Claude (Q2E)"], axisLabel: { fontSize: mobile ? 10 : 11.5 } },
+      series: [{
+        type: "bar",
+        data: [35, 416, 667],
+        itemStyle: { color: p => ["#2bd4a4", "#ffb020", "#ff7a00"][p.dataIndex] },
+        label: { show: true, position: "right", color: "#d7dee8", textBorderColor: "#0a0e14", textBorderWidth: 2, fontFamily: "JetBrains Mono", formatter: "${c}/월", fontWeight: 800 }
+      }]
+    });
+
+    // 참고용: 구독 플랜 가격 (ARPU 아님)
+    mkChart("chartPlans", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>정가 $${p[0].value}/월` },
+      xAxis: { type: "category", data: ["xAI Lite","ChatGPT Plus","Anthropic Pro","Team","SuperGrok","Anthropic Max","ChatGPT Pro","Grok Heavy"], axisLabel: { fontSize: 10, rotate: 15 } },
+      yAxis: { type: "log", name: "$/월 (로그)", logBase: 10 },
+      series: [{
+        type: "bar",
+        data: [10, 20, 20, 25, 30, 100, 200, 300],
+        itemStyle: { color: p => ["#c489ff","#2bd4a4","#ffb020","#2bd4a4","#c489ff","#ffb020","#2bd4a4","#c489ff"][p.dataIndex] },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "${c}" }
+      }]
+    });
+
+    mkChart("chartQuad", {
+      tooltip: {
+        formatter: p => {
+          // null-safe: markLine·markArea·기타 경로로 호출돼도 안전하게 fallback
+          const v = (p && p.data && p.data.value) || (p && p.value) || null;
+          if (!v || !Array.isArray(v)) {
+            // 4분면 안내선은 정보 없음 — 보조선 안내
+            return `<span style="color:#8693a5">기준선 (점유 15%·run-rate $25B)</span>`;
+          }
+          const [share, rr, name, note] = v;
+          return `<b style="color:#f0f4fa">${name}</b><br/>웹·모바일 점유: <b>${share}%</b><br/>연환산 매출(run-rate, 추정): <b>$${rr}B</b><br/><span style="color:#8693a5;font-size:11px">${note || ""}</span>`;
+        }
+      },
+      legend: {
+        show: false
+      },
+      grid: { left: mobile ? 48 : 60, right: mobile ? 18 : 30, top: mobile ? 50 : 50, bottom: mobile ? 60 : 50, containLabel: true },
+      xAxis: { type: "value", name: "← 웹·모바일 점유 (%) →", min: 0, max: 65, nameTextStyle: { color: "#a8b4c5", fontSize: 11 }, axisLabel: { formatter: "{value}%" } },
+      yAxis: { type: "value", name: "← 연환산 매출 ($B) →", min: 0, max: 50, nameTextStyle: { color: "#a8b4c5", fontSize: 11 }, axisLabel: { formatter: "${value}B" } },
+      graphic: [
+        // 4분면 모서리 라벨
+        { type: "text", left: 60, top: 56, style: { text: "B2B 정밀\n(소수 + 고매출)", fill: "rgba(240,195,93,0.45)", font: "10px " + (window.FONT_SANS_KR || "sans-serif"), textAlign: "left" } },
+        { type: "text", right: 36, top: 56, style: { text: "양면 우위\n(컨슈머+B2B)", fill: "rgba(43,212,164,0.45)", font: "10px " + (window.FONT_SANS_KR || "sans-serif"), textAlign: "right" } },
+        { type: "text", left: 60, bottom: 56, style: { text: "관전 대상", fill: "rgba(155,140,255,0.40)", font: "10px " + (window.FONT_SANS_KR || "sans-serif") } },
+        { type: "text", right: 36, bottom: 56, style: { text: "컨슈머 스케일\n(대중적, 저ARPU)", fill: "rgba(90,167,255,0.45)", font: "10px " + (window.FONT_SANS_KR || "sans-serif"), textAlign: "right" } },
+      ],
+      series: [{
+        name: "AI LLM 4분면",
+        type: "scatter", symbolSize: 26,
+        data: [
+          { value: [60.6, 25, "OpenAI",      "First Page Sage 2026.5 챗봇 점유 60.6% + 2026.2 run-rate $25B (The Information 보도)"], itemStyle: { color: "#2bd4a4" } },
+          { value: [5.0,  30, "Anthropic",   "챗봇 점유 5.0% + Anthropic 2026.4 공식 run-rate $30B+ (Q2 $40B+ 전망 제외)"],            itemStyle: { color: "#ffb020" } },
+          { value: [15.1, 15, "Google",      "Gemini 챗봇 점유 15.1%. Gemini 단독 run-rate는 미공개 (Workspace 통합 추정 참고값)"],     itemStyle: { color: "#5aa7ff" } },
+          { value: [12.5,  5, "Microsoft",   "Copilot 챗봇 점유 12.5%. Copilot 단독 run-rate는 미공개 (Azure OpenAI에 포함)"],          itemStyle: { color: "#7fd6e8" } },
+          { value: [0.6,   5, "xAI (Grok)",  "Grok 챗봇 점유 0.6%. run-rate는 미공개 추정 — X 통합으로 점유 확보 시도 중"],            itemStyle: { color: "#9b8cff" } }
+        ],
+        itemStyle: { opacity: 0.92, borderColor: "rgba(255,255,255,0.55)", borderWidth: 1.4 },
+        label: {
+          show: true,
+          formatter: p => (p && p.data && p.data.value) ? p.data.value[2] : "",
+          position: "top",
+          color: "#f0f4fa",
+          textBorderColor: "#0a0e14",
+          textBorderWidth: 2,
+          fontSize: mobile ? 10.5 : 13,
+          fontWeight: 700,
+          fontFamily: window.FONT_SANS_KR
+        },
+        emphasis: { focus: "self", scale: 1.25 },
+        markLine: {
+          silent: true,
+          tooltip: { show: false },
+          lineStyle: { color: "#3a4555", type: "dashed" },
+          label: { show: false },
+          symbol: "none",
+          data: [{ xAxis: 15 }, { yAxis: 25 }]
+        }
+      }]
+    });
+
+    mkChart("chartPrice", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["ChatGPT Plus","Claude Pro","SuperGrok","Gemini Advanced"], top: 0 },
+      xAxis: { type: "category", data: ["2023.3","2024.1","2024.7","2025.1","2025.7","2026.1","2026.5"] },
+      yAxis: { type: "value", name: "$/월" },
+      series: [
+        { name: "ChatGPT Plus", type: "line", smooth: true, data: [20, 20, 20, 20, 20, 20, 20], lineStyle: { color: "#2bd4a4" }, itemStyle: { color: "#2bd4a4" } },
+        { name: "Claude Pro",   type: "line", smooth: true, data: [null, 20, 20, 20, 20, 20, 20], lineStyle: { color: "#ffb020" }, itemStyle: { color: "#ffb020" } },
+        { name: "SuperGrok",    type: "line", smooth: true, data: [null, null, null, 16, 30, 30, 10], lineStyle: { color: "#c489ff" }, itemStyle: { color: "#c489ff" }, markPoint: { data: [{ name: "Lite 출시", coord: ["2026.5", 10], itemStyle: { color: "#c489ff" }, label: { color: "#ffffff", fontWeight: 700 } }] } },
+        { name: "Gemini Advanced", type: "line", smooth: true, data: [null, null, 20, 20, 20, 20, 20], lineStyle: { color: "#5aa7ff" }, itemStyle: { color: "#5aa7ff" } }
+      ]
+    });
+
+    // =====================================================
+    // 1) 유료 사용자 점유율 (도넛, 메인 좌측)
+    //    공개 확인분: ChatGPT 5,900만, Claude 600만, Copilot 200만, Perplexity 150만 = 6,850만
+    //    %화: ChatGPT 86.1, Claude 8.8, Copilot 2.9, Perplexity 2.2
+    // =====================================================
+    const paidShareData = [
+      { value: 86.1, name: "ChatGPT", full: "ChatGPT (OpenAI)", users: "5,900만+", note: "Plus·Team·Pro·Enterprise·Edu · 2026.2 OpenAI/언론", itemStyle: { color: "#2bd4a4" } },
+      { value:  8.8, name: "Claude",  full: "Claude (Anthropic)", users: "~600만", note: "Pro·Max·Team·Enterprise · 보도 추정", itemStyle: { color: "#ffb020" } },
+      { value:  2.9, name: "Copilot", full: "Copilot (Microsoft)", users: "200만", note: "M365 Copilot 유료 · 2026.2 보도", itemStyle: { color: "#5aa7ff" } },
+      { value:  2.2, name: "Perplexity", full: "Perplexity Pro", users: "~150만", note: "보도 추정", itemStyle: { color: "#d6bd62" } }
+    ];
+    mkChart("chartPaidShare", {
+      tooltip: {
+        trigger: "item",
+        formatter: p => `<b>${p.data.full}</b><br/>유료 사용자 점유율: <b>${p.value}%</b><br/>유료 구독자: <b>${p.data.users}</b><br/><span style="color:#8693a5">${p.data.note}</span>`
+      },
+      legend: {
+        show: true,
+        bottom: 0, left: "center", orient: "horizontal",
+        textStyle: { color: "#d7dee8", fontSize: 11 },
+        itemWidth: 10, itemHeight: 10,
+        formatter: name => {
+          const d = paidShareData.find(x => x.name === name);
+          return d ? `${name} ${d.value}%` : name;
+        }
+      },
+      graphic: [{
+        type: "text",
+        left: "center", top: "42%",
+        style: {
+          text: "유료 사용자\n공개 확인분",
+          textAlign: "center",
+          fill: "#a8b4c5",
+          font: (mobile ? "10.5px " : "11.5px ") + window.FONT_SANS_KR,
+          fontWeight: 600
+        }
+      }],
+      series: [{
+        type: "pie",
+        radius: mobile ? ["40%", "64%"] : ["44%", "68%"],
+        center: ["50%", "44%"],
+        avoidLabelOverlap: true,
+        padAngle: 1.6,
+        itemStyle: { borderColor: "#0a0e14", borderWidth: 2, borderRadius: 4 },
+        label: {
+          show: true,
+          // 모든 슬라이스에 외부 라벨 — 작은 슬라이스도 보이게 leader line 사용
+          position: "outside",
+          formatter: p => `${p.name}\n${p.value}%`,
+          color: "#f0f4fa",
+          fontWeight: 700,
+          fontSize: mobile ? 10 : 11.5,
+          textBorderColor: "rgba(10,14,20,0.7)",
+          textBorderWidth: 2
+        },
+        labelLine: {
+          show: true,
+          length: 8,
+          length2: 6,
+          lineStyle: { color: "rgba(199, 209, 224, 0.45)" }
+        },
+        labelLayout: { hideOverlap: false, moveOverlap: "shiftY" },
+        data: paidShareData
+      }]
+    });
+
+    // =====================================================
+    // 2) 매출 점유율 (도넛, 메인 우측)
+    // =====================================================
+    const revenueShareData = [
+      { name: "Anthropic", value: 54.5, runRate: 30, full: "Anthropic · Claude", meta: "2026.4 공식 run-rate $30B+", itemStyle: { color: "#ffb020" } },
+      { name: "OpenAI",    value: 45.5, runRate: 25, full: "OpenAI · ChatGPT",  meta: "2026.2 The Information/Reuters 보도 run-rate $25B+", itemStyle: { color: "#2bd4a4" } }
+    ];
+    mkChart("chartRevenue", {
+      tooltip: {
+        trigger: "item",
+        formatter: p => `<b>${p.data.full}</b><br/>매출 점유율(공개 확인분): <b>${p.value}%</b><br/>연환산 매출(run-rate): <b>$${p.data.runRate}B+</b><br/><span style="color:#8693a5">${p.data.meta}</span>`
+      },
+      legend: {
+        show: true,
+        bottom: 0, left: "center", orient: "horizontal",
+        textStyle: { color: "#d7dee8", fontSize: 11 },
+        itemWidth: 10, itemHeight: 10,
+        formatter: name => {
+          const d = revenueShareData.find(x => x.name === name);
+          return d ? `${name} ${d.value}%` : name;
+        }
+      },
+      graphic: [{
+        type: "text",
+        left: "center", top: "42%",
+        style: {
+          text: "매출 점유율\n공개 확인분",
+          textAlign: "center",
+          fill: "#a8b4c5",
+          font: (mobile ? "10.5px " : "11.5px ") + window.FONT_SANS_KR,
+          fontWeight: 600
+        }
+      }, {
+        type: "text", right: 6, top: 4,
+        style: { text: "Google·MSFT·xAI 미공개 제외", fill: "#8693a5", font: "10px " + window.FONT_SANS_KR }
+      }],
+      series: [{
+        type: "pie",
+        radius: mobile ? ["40%", "64%"] : ["44%", "68%"],
+        center: ["50%", "44%"],
+        avoidLabelOverlap: true,
+        padAngle: 1.6,
+        itemStyle: { borderColor: "#0a0e14", borderWidth: 2, borderRadius: 4 },
+        label: {
+          show: true,
+          position: "outside",
+          formatter: "{b}\n{c}%",
+          color: "#f0f4fa",
+          fontWeight: 700,
+          fontSize: mobile ? 10.5 : 12,
+          textBorderColor: "rgba(10,14,20,0.7)",
+          textBorderWidth: 2
+        },
+        labelLine: {
+          show: true,
+          length: 8,
+          length2: 6,
+          lineStyle: { color: "rgba(199, 209, 224, 0.45)" }
+        },
+        data: revenueShareData
+      }]
+    });
+
+    // =====================================================
+    // 3) 전체 사용자 점유율 (도넛, 보조지표 — 무료 포함)
+    //    First Page Sage 2026.5 웹·모바일 종합
+    // =====================================================
+    const shareData = [
+      { value: 60.6, name: "ChatGPT",  full: "ChatGPT (OpenAI)", itemStyle: { color: "#2bd4a4" } },
+      { value: 15.1, name: "Gemini",   full: "Gemini (Google)", itemStyle: { color: "#5aa7ff" } },
+      { value: 12.5, name: "Copilot",  full: "Copilot (Microsoft)", itemStyle: { color: "#7fc4d6" } },
+      { value:  5.4, name: "Perplexity", full: "Perplexity", itemStyle: { color: "#d6bd62" } },
+      { value:  5.0, name: "Claude",   full: "Claude (Anthropic)", itemStyle: { color: "#ffb020" } },
+      { value:  0.6, name: "Grok",     full: "Grok (xAI)", itemStyle: { color: "#c489ff" } },
+      { value:  0.8, name: "기타",     full: "기타", itemStyle: { color: "#5b6776" } },
+    ];
+    mkChart("chartShare", {
+      tooltip: { trigger: "item", formatter: p => `${p.data.full}: <b>${p.value}%</b><br/><span style="color:#8693a5">First Page Sage 2026.5 · 무료 포함 전체 사용자 종합</span>` },
+      legend: {
+        show: true,
+        bottom: 0, left: "center", orient: "horizontal",
+        textStyle: { color: "#d7dee8", fontSize: 10.5 },
+        itemWidth: 10, itemHeight: 10,
+        formatter: name => {
+          const d = shareData.find(x => x.name === name);
+          return d ? `${name} ${d.value}%` : name;
+        }
+      },
+      series: [{
+        type: "pie",
+        radius: mobile ? ["34%", "58%"] : ["38%", "62%"],
+        center: ["50%", "42%"],
+        avoidLabelOverlap: true,
+        padAngle: 1.2,
+        itemStyle: { borderColor: "#0a0e14", borderWidth: 1.5, borderRadius: 3 },
+        label: {
+          show: true,
+          position: "outside",
+          formatter: p => `${p.name}\n${p.value}%`,
+          color: "#f0f4fa",
+          fontWeight: 600,
+          fontSize: mobile ? 10 : 11,
+          textBorderColor: "rgba(10,14,20,0.7)",
+          textBorderWidth: 2
+        },
+        labelLine: {
+          show: true,
+          length: 6,
+          length2: 5,
+          lineStyle: { color: "rgba(199, 209, 224, 0.4)" }
+        },
+        data: shareData
+      }]
+    });
+
+    // 11원칙 레이더 — LLM 우회 베팅 4종
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["GOOGL", "META", "MSFT", "AMZN"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 5, 5, 5, 2], name: "GOOGL", lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.18)" } },
+          { value: [5, 5, 5, 5, 2], name: "META",  lineStyle: { color: "#2bd4a4" }, areaStyle: { color: "rgba(43,212,164,0.18)" } },
+          { value: [5, 5, 5, 5, 2], name: "MSFT",  lineStyle: { color: "#ffb020" }, areaStyle: { color: "rgba(255,176,32,0.18)" } },
+          { value: [5, 5, 5, 5, 3], name: "AMZN",  lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 엔터테인먼트 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-entertainment">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / AI 엔터테인먼트</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI 엔터테인먼트 · 월드모델과 캐릭터 챗</h1>
+          <p class="subtitle">Genie 3, 스캐터랩 3분기 연속 흑자, MiniMax MAU 2,760만</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SCATTERLAB · WRTN · MINIMAX · META · XAI</div>
+          <div>PERIOD · 2025–</div>
+          <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
+        </div>
+      </header>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>Google DeepMind <b>Genie 3</b>(2025.8 발표 → 2026.1 일반 공개)가 텍스트로 실시간 인터랙티브 3D 월드를 만드는 시대를 열었다.
+        한국 <b>스캐터랩(제타)</b>은 AI 캐릭터 챗 서비스로 3분기 연속 흑자 — 수익화 가능성 입증.
+        컨텍스트(기억) 한계가 풀리면 몰입형 게임 시장으로 확장될 전망 (로블록스·마인크래프트 심화 버전).</p>
+      </div>
+
+      <div class="callout fact">
+        <div class="head">검증 핵심</div>
+        <p>사용자의 직관은 <b>대체로 정확</b>. Genie 3는 2025.8.5 공식 발표, 스캐터랩은 2024.11 흑자 전환, MiniMax MAU 2,760만(2025.9 기준).
+        2025년 AI 컴패니언 시장 매출 $120M(연환산) — 빠르게 형성 중.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">MiniMax 0100.HK 시총</div>
+          <div class="value">$34.5<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">HKD 858 · IPO +420% · 매출 1년 2배</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Meta 시총</div>
+          <div class="value">$1.61<span style="font-size:0.6em">T</span></div>
+          <div class="delta down">$635.29 · Llama + AI 캐릭터</div>
+        </div>
+        <div class="kpi">
+          <div class="label">MiniMax MAU (2025.9)</div>
+          <div class="value">2,760<span style="font-size:0.6em">만</span></div>
+          <div class="delta up">2년 만 9배 · 100만 클라이언트</div>
+        </div>
+        <div class="kpi">
+          <div class="label">AI 컴패니언 시장 2025</div>
+          <div class="value">$120<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">연환산 · 신규 앱 128개</div>
+        </div>
+      </div>
+
+      <h2>한국 비상장 (Reference)</h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">스캐터랩 제타 (2025 Q2)</div>
+          <div class="value">52<span style="font-size:0.6em">억원</span></div>
+          <div class="delta up">영업이익률 17%, 3Q 연속 흑자</div>
+        </div>
+        <div class="kpi">
+          <div class="label">뤼튼 시리즈 B</div>
+          <div class="value">1,080<span style="font-size:0.6em">억원</span></div>
+          <div class="delta up">2025.3 · 누적 1,300억원</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Genie 3 공개</div>
+          <div class="value">2025.8</div>
+          <div class="delta up">월드모델 · Google</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Character.AI MAU</div>
+          <div class="value">2,000<span style="font-size:0.6em">만</span></div>
+          <div class="delta down">2024 피크 2,800만 → 감소</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>핵심 상태바 — 매출화·성장·리스크</div>
+        <div class="signal-bars">
+          <div class="signal-bar up">
+            <span class="signal-label">스캐터랩 제타</span>
+            <span class="signal-main">Q2 매출 52억원 · OPM 17%</span>
+            <span class="signal-note">3분기 연속 흑자</span>
+          </div>
+          <div class="signal-bar warn">
+            <span class="signal-label">뤼튼</span>
+            <span class="signal-main">MAU 500만+ · 시리즈 B 1,080억원</span>
+            <span class="signal-note">수익화 개선 중</span>
+          </div>
+          <div class="signal-bar hot">
+            <span class="signal-label">MiniMax Talkie</span>
+            <span class="signal-main">MAU 2,760만 · 유료 177만</span>
+            <span class="signal-note">ARPPU $15</span>
+          </div>
+          <div class="signal-bar info">
+            <span class="signal-label">Character.AI</span>
+            <span class="signal-main">MAU는 크지만 ARPU $0.72 추정</span>
+            <span class="signal-note">수익화 약점</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>검증 결과</h2>
+      <div class="grid cols-2">
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">FACT</span> Genie 3 (2025.8.5)</div>
+          <p>Google DeepMind 공식 발표. 텍스트 프롬프트로 <b>실시간 24fps, 720p, ~1분 메모리</b> 인터랙티브 3D 월드.
+          2026.1.29 일반 공개 (Project Genie, AI Ultra $250/월).</p>
+        </div>
+        <div class="card up">
+          <div class="card-title"><span class="dot"></span><span class="pill up">FACT</span> 스캐터랩 "제타" 흑자 정착</div>
+          <p>2024.4 오픈 베타 → <b>2024.11 흑자 전환</b>(7개월 만). 2025 Q2 매출 52억원, OPM 17%, 3분기 연속 흑자.
+          월간 23억 건+ 대화량 (2025 중반). 2026년 연 매출 ~200억원 전망.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span><span class="pill info">FACT</span> Character.AI 구글 딜</div>
+          <p>2024.8 구글 <b>$2.7B 라이선스/인재 영입</b> (창업자 Noam Shazeer 복귀). MAU 2.33억이나 ARPU $0.72로 수익화 부진. 미 법무부 반독점 조사 진행.</p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>📊 뤼튼 매출 단위 — 한국 보도 해석</div>
+          <p>국내 기사의 "<b>월 200억원</b>" 표현은 2024.12 기준 일부 시점 매출 또는 <b>연환산 수치</b>로 해석되는 경우가 많음. 시리즈 B 1,080억 원(2025.3) 조달 + MAU 500만+로 빠른 확장 단계임은 분명.</p>
+        </div>
+      </div>
+
+      <h2>주요 플레이어 비교</h2>
+      <div class="table-wrap compact-matrix">
+        <table>
+          <thead><tr><th>비교 축</th><th>스캐터랩</th><th>뤼튼</th><th>MiniMax</th><th>Character.AI</th><th>xAI Grok</th><th>Meta</th></tr></thead>
+          <tbody>
+            <tr><td>국가</td><td>한국</td><td>한국</td><td>중국</td><td>미국</td><td>미국</td><td>미국</td></tr>
+            <tr><td>제품</td><td><span class="cell-strong">제타(Zeta)</span></td><td>캐릭터 챗 · 검색</td><td><span class="cell-strong">Talkie · Xingye</span></td><td>캐릭터 챗</td><td>Grok Companion</td><td>AI Studio</td></tr>
+            <tr><td>2025 지표</td><td><b>Q2 52억원</b><br/><small>OPM 17%</small></td><td><b>MAU 500만+</b></td><td><b>9개월 $53.4M</b></td><td><b>MAU 2.33억</b></td><td>SuperGrok $30/월</td><td>Llama 3.1 기반</td></tr>
+            <tr><td>해석</td><td><span class="pill up">흑자 검증</span></td><td><span class="pill warn">확장 우선</span></td><td><span class="pill up">유료화 강함</span></td><td><span class="pill warn">ARPU 약점</span></td><td>캐릭터 번들 실험</td><td>인플루언서 AI 클론</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>MiniMax(Talkie) 성장</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>MAU 추이 (만명) · 2년 9배</div>
+        <div id="chartMm" class="chart"></div>
+      </div>
+
+      <h2>AI 컴패니언 시장 규모</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2024 → 2025 → 2026 추정 (단위 $M, 연환산)</div>
+        <div id="chartCompanion" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          상반기 $82M에서 연환산 $120M으로 추정. 활성 앱 337개, 신규 128개. <b>새로운 화폐 형태의 유희경제</b> 단서가 시장에 형성 중.
+        </p>
+      </div>
+
+      <h2>스캐터랩(제타) 분기 매출 — 흑자 전환 후 가속</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>분기 매출 (단위 억원) · 2024.11 흑자 전환</div>
+        <div id="chartZeta" class="chart sm"></div>
+      </div>
+
+      <h2>캐릭터 챗 시장 — 사용자 규모 vs 1인당 매출</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>가로=<abbr data-term="MAU">MAU</abbr>(만명) · 세로=<abbr data-term="ARPU">ARPU</abbr>($/월) · 버블=연 매출 추정</div>
+        <div id="chartMatrix" class="chart"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          Character.AI는 사용자 수 거대하지만 1인당 매출 매우 낮음, MiniMax/스캐터랩은 1인당 매출·전환율 우수.
+        </p>
+        <dl class="glossary">
+          <dt>MAU (Monthly Active Users)</dt>
+          <dd>월간 활성 사용자 수 — 한 달에 한 번 이상 서비스를 쓴 사람.</dd>
+          <dt>ARPU (Average Revenue Per User)</dt>
+          <dd>사용자 1명당 월평균 매출 = 월 매출 ÷ 활성 사용자 수. <b>유료 플랜 정가가 아님</b> — 무료/유료가 섞인 가중평균.</dd>
+          <dt>해석</dt>
+          <dd>우상단(MAU 大 + ARPU 高) = 시장 지배. 좌하단(MAU 小 + ARPU 低) = 초기 단계. 우하단 = 사용자는 많은데 돈을 못 버는 상태 (Character.AI 케이스).</dd>
+        </dl>
+      </div>
+
+      <h2>국가별 AI 엔터 매출 추정</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>한국 vs 중국 vs 미국 (2025)</div>
+        <div id="chartCountry" class="chart sm"></div>
+      </div>
+
+      <h2>월드모델 진척</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2024.2</div>
+          <div class="desc">OpenAI Sora 첫 공개. 텍스트→영상.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.5</div>
+          <div class="desc">Google Veo 3 / Runway Gen-4. 영상 생성 본격화.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025.8.5</div>
+          <div class="desc"><b>DeepMind Genie 3 발표</b>. 실시간 인터랙티브 3D 월드, 1분 메모리.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.1.29</div>
+          <div class="desc">Genie <b>일반 공개</b> (Project Genie, AI Ultra $250/월, 미국).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2026.3.24</div>
+          <div class="desc"><b>OpenAI Sora 종료 발표</b>. 컴퓨트 비용/매출 불균형.</div>
+        </div>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">저자 시각</div>
+        <p>사용자의 <b>"기억(컨텍스트) 한계 해결 → 몰입형 게임"</b> 가설은 정확한 기술적 진단.
+        Genie 3의 1분 메모리가 10분, 1시간으로 확장되면 <b>인디 게임 개발 비용 폭락</b> + 유저별 맞춤 월드 생성.</p>
+        <p>투자 관점:</p>
+        <ul>
+          <li><b>상장 수혜</b>: GOOGL(Genie), META(AI Studio), 로블록스(RBLX) — 유저 생성 콘텐츠 베이스</li>
+          <li><b>비상장</b>: 스캐터랩·뤼튼 (한국 vs 해외 IPO 가능성 관찰)</li>
+          <li><b>리스크</b>: Character.AI 사례처럼 <b>MAU ≠ 매출</b>. 충성도/ARPU가 핵심</li>
+        </ul>
+        <p>RULE 09(시장 수요 실재)는 <b>스캐터랩(흑자)</b>이 명확한 증거 — 다만 비상장이라 직접 투자 불가.</p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <p style="color:var(--text-2)">한국·중국 핵심 플레이어가 비상장. 상장 종목으로 우회 노출 평가.</p>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>스캐터랩*</th>
+                <th>뤼튼*</th>
+                <th>MiniMax</th>
+                <th>META</th>
+                <th>RBLX</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요</td>
+                <td data-label="스캐터랩*"><span class="pill up">흑자가 증거</span></td>
+                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
+                <td data-label="MiniMax"><span class="pill up">YES (글로벌)</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="RBLX"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 성장</td>
+                <td data-label="스캐터랩*"><span class="pill up">YES (가속)</span></td>
+                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
+                <td data-label="MiniMax"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="RBLX"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="스캐터랩*"><span class="pill up">3Q 흑자</span></td>
+                <td data-label="뤼튼*"><span class="pill warn">개선 중</span></td>
+                <td data-label="MiniMax"><span class="pill warn">비공개</span></td>
+                <td data-label="META"><span class="pill up">강세</span></td>
+                <td data-label="RBLX"><span class="pill warn">개선 중</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="스캐터랩*">일본 시장 확대</td>
+                <td data-label="뤼튼*">국내 시리즈 B</td>
+                <td data-label="MiniMax">Talkie · 0100.HK</td>
+                <td data-label="META">Llama·인스타·왓츠앱</td>
+                <td data-label="RBLX">유저 생성 콘텐츠</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총</td>
+                <td data-label="스캐터랩*">비상장</td>
+                <td data-label="뤼튼*">비상장</td>
+                <td data-label="MiniMax"><span class="pill warn">IPO +366%</span></td>
+                <td data-label="META"><span class="pill warn">고평가</span></td>
+                <td data-label="RBLX"><span class="pill warn">고평가</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>11원칙 충족도 — AI 엔터 5종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 스캐터랩·뤼튼은 비상장(점선), MiniMax는 2026-01 IPO 후 +366%로 ⑧ 우호 영역에서 멀어짐.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>규제 리스크</b>: 미성년자 AI 캐릭터, 자살·자해 유발 사례로 규제 압력 증가.<br>
+        ② <b>플랫폼 종속</b>: 애플·구글 앱스토어 정책에 가격/노출 의존.<br>
+        ③ <b>컴퓨트 비용</b>: Sora 종료가 보여주듯, 영상/월드모델은 단가 폭증 위험.<br>
+        ④ <b>저작권/IP</b>: 학습 데이터·캐릭터 권리 분쟁 잠재.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li><a href="https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/">Genie 3 발표 · Google DeepMind</a></li>
+          <li><a href="https://platum.kr/archives/266049">스캐터랩 제타 3분기 연속 흑자 · 플래텀</a></li>
+          <li><a href="https://wowtale.net/2025/03/31/239156/">뤼튼 시리즈 B 1,080억 · 와우테일</a></li>
+          <li><a href="https://sacra.com/c/minimax/">MiniMax Talkie 분석 · Sacra</a></li>
+          <li><a href="https://www.washingtonpost.com/technology/2024/08/02/google-character-ai-noam-shazeer/">Google-Character.AI $2.7B 딜 · WaPo</a></li>
+          <li><a href="https://techcrunch.com/2025/08/12/ai-companion-apps-on-track-to-pull-in-120m-in-2025/">AI Companion 시장 $120M · TechCrunch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 본 콘텐츠의 저작권은 상보그룹(BRSW)에 있으며, 비영리·공공 목적 인용·학습은 허용, <b>상업적 활용은 사전 서면 동의 없이 금지</b>됩니다 (CC BY-NC 4.0 준거) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.3"></script>
+  <script>
+    mkChart("chartMm", {
+      tooltip: { trigger: "axis" },
+      xAxis: { type: "category", data: ["2023.6","2023.12","2024.6","2024.12","2025.6","2025.9"] },
+      yAxis: { type: "value", name: "만명" },
+      series: [{
+        type: "line", smooth: true,
+        data: [310, 540, 950, 1600, 2300, 2760],
+        lineStyle: { width: 3, color: "#c489ff" },
+        itemStyle: { color: "#c489ff" },
+        areaStyle: { color: "rgba(196,137,255,0.18)" },
+        symbolSize: 8
+      }]
+    });
+
+    mkChart("chartZeta", {
+      tooltip: { trigger: "axis" },
+      legend: { data: ["매출", "영업이익"], top: 0 },
+      xAxis: { type: "category", data: ["24Q2","24Q3","24Q4","25Q1","25Q2","25Q3","25Q4E"] },
+      yAxis: { type: "value", name: "억원" },
+      series: [
+        { name: "매출", type: "bar", data: [12, 22, 31, 42, 52, 60, 70], itemStyle: { color: "#ffb020" }, label: { show: true, position: "top", color: "#ffffff", fontWeight: 700, fontFamily: "JetBrains Mono", textBorderColor: "#0a0e14", textBorderWidth: 2 } },
+        {
+          name: "영업이익", type: "line", smooth: true,
+          data: [-3, -1, 2, 6, 9, 11, 13],
+          lineStyle: { width: 3, color: "#2bd4a4" },
+          itemStyle: { color: "#2bd4a4", borderColor: "#0a0e14", borderWidth: 1 },
+          symbolSize: 8,
+          label: { show: true, position: "bottom", color: "#2bd4a4", fontFamily: "JetBrains Mono", fontWeight: 700, formatter: "{c}", textBorderColor: "#0a0e14", textBorderWidth: 2 },
+          markPoint: {
+            symbol: "pin",
+            symbolSize: 50,
+            data: [{
+              name: "흑자 전환",
+              coord: ["24Q4", 2],
+              itemStyle: { color: "#2bd4a4", borderColor: "#ffffff", borderWidth: 2 },
+              label: { color: "#0a0e14", fontWeight: 800, fontSize: 11, formatter: "흑자\n전환" }
+            }]
+          }
+        }
+      ]
+    });
+
+    // 데이터 검증 (2026.5 기준):
+    //  Character.AI MAU 약 2,000만 (2024 피크 2,800만 → 감소). ARPU $0.72는 매출 $50M/연 ÷ MAU로 추정 (Sacra·TechCrunch)
+    //  MiniMax(Talkie) MAU 2,760만, ARPPU $15 (Sacra 2025.10)
+    //  Replika MAU 약 200만, 매출 $24~30M (ElectroIQ)
+    //  뤼튼 한국 MAU 500만+ (회사 발표), ARPU는 공식 미공개 — 추정 표시 제외
+    //  스캐터랩 제타 한국 MAU·DAU 미공개. 25Q2 매출 52억원/분기 (회사 IR) → 분기 평균 사용자 추정 어려움
+    mkChart("chartMatrix", {
+      tooltip: {
+        formatter: p => {
+          const v = (p && p.data && p.data.value) || (p && p.value) || null;
+          if (!v || !Array.isArray(v)) return "";
+          return `<b style="color:#ffffff">${v[3]}</b><br/><abbr title="Monthly Active Users · 월간 활성 사용자 수">MAU</abbr>: <b>${v[0]}만 명</b><br/><abbr title="Average Revenue Per User · 사용자당 월평균 매출">ARPU</abbr>: <b>$${v[1]}/월</b><br/>추정 연 매출: $${v[2]}M<br/><span style="color:#8693a5;font-size:11px">${v[4] || ""}</span>`;
+        }
+      },
+      grid: { left: 60, right: 30, top: 40, bottom: 50, containLabel: true },
+      xAxis: { type: "log", name: "MAU (만명, 로그)", logBase: 10, nameTextStyle: { color: "#a8b4c5" } },
+      yAxis: { type: "log", name: "ARPU ($/월, 로그)", logBase: 10, nameTextStyle: { color: "#a8b4c5" } },
+      series: [{
+        type: "scatter",
+        symbolSize: d => Math.sqrt(d[2]) * 4,
+        data: [
+          { value: [2000, 0.72, 50, "Character.AI", "Sacra·2024 피크 2,800만→감소"], itemStyle: { color: "#ff5d6c", borderColor: "#ffffff", borderWidth: 1.5 } },
+          { value: [2760, 15,   50, "MiniMax (Talkie)", "Sacra 2025.10"],            itemStyle: { color: "#c489ff", borderColor: "#ffffff", borderWidth: 1.5 } },
+          { value: [200,  12,   30, "Replika", "ElectroIQ"],                          itemStyle: { color: "#5aa7ff", borderColor: "#ffffff", borderWidth: 1.5 } },
+          { value: [500,  8,    70, "뤼튼 (한국, ARPU 추정)", "MAU 회사 발표, ARPU 추정"], itemStyle: { color: "#ffb020", borderColor: "#ffffff", borderWidth: 1.5 } },
+          { value: [120,  20,   80, "스캐터랩 제타 (한국)", "MAU 미공개·추정"],         itemStyle: { color: "#2bd4a4", borderColor: "#ffffff", borderWidth: 1.5 } },
+        ],
+        label: { show: true, formatter: p => (p && p.data && p.data.value) ? p.data.value[3] : "", position: "right", color: "#ffffff", fontSize: 11, fontWeight: 700, textBorderColor: "#0a0e14", textBorderWidth: 2 }
+      }]
+    });
+
+    mkChart("chartCountry", {
+      tooltip: { trigger: "item", formatter: "{b}: ${c}M ({d}%)" },
+      legend: { bottom: 0 },
+      series: [{
+        type: "pie", radius: ["40%", "70%"], center: ["50%", "45%"],
+        data: [
+          { value: 65, name: "미국 (Character.AI·Replika·Meta)", itemStyle: { color: "#5aa7ff" } },
+          { value: 53, name: "중국 (MiniMax)", itemStyle: { color: "#ff5d6c" } },
+          { value: 25, name: "한국 (스캐터랩·뤼튼)", itemStyle: { color: "#ffb020" } }
+        ],
+        label: { color: "#c3cdd9", formatter: "{b}\n${c}M" }
+      }]
+    });
+
+    mkChart("chartCompanion", {
+      tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value}M` },
+      xAxis: { type: "category", data: ["2023","2024","2025","2026E"] },
+      yAxis: { type: "value", name: "$M" },
+      series: [{
+        type: "bar", data: [25, 60, 120, 250],
+        itemStyle: { color: (p) => p.dataIndex===3 ? "#2bd4a4" : "#ffb020" },
+        label: { show: true, position: "top", color: "#c3cdd9", fontFamily: "JetBrains Mono", formatter: "${c}M" }
+      }]
+    });
+
+    // 11원칙 레이더 — AI 엔터 5종 (MiniMax 추가)
+    mkChart("chartRadar", {
+      tooltip: {},
+      legend: { data: ["스캐터랩*", "뤼튼*", "MiniMax", "META", "RBLX"], top: 0, textStyle: { color: "#c3cdd9", fontSize: 11.5 } },
+      radar: {
+        indicator: [
+          { name: "③ 매출 성장", max: 5 },
+          { name: "⑤ 흑자", max: 5 },
+          { name: "② 실수요", max: 5 },
+          { name: "④ 발전·모멘텀", max: 5 },
+          { name: "⑧ 시총 우호", max: 5 }
+        ],
+        axisName: { color: "#c3cdd9", fontSize: 11 },
+        splitLine: { lineStyle: { color: "#2a3340" } },
+        axisLine: { lineStyle: { color: "#2a3340" } },
+        splitArea: { areaStyle: { color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)"] } }
+      },
+      series: [{
+        type: "radar",
+        data: [
+          { value: [5, 5, 5, 5, 0], name: "스캐터랩*", lineStyle: { color: "#ffb020", type: "dashed" }, areaStyle: { color: "rgba(255,176,32,0.12)" } },
+          { value: [4, 3, 4, 5, 0], name: "뤼튼*",     lineStyle: { color: "#2bd4a4", type: "dashed" }, areaStyle: { color: "rgba(43,212,164,0.10)" } },
+          // MiniMax — 2026-01 IPO 후 +366%, Talkie 글로벌 인기 (실수요 강), 흑자 미공개 → 3
+          { value: [5, 3, 5, 5, 2], name: "MiniMax",  lineStyle: { color: "#ff5fb0", width: 2.4 }, areaStyle: { color: "rgba(255,95,176,0.20)" } },
+          { value: [5, 5, 5, 5, 2], name: "META",     lineStyle: { color: "#5aa7ff" }, areaStyle: { color: "rgba(90,167,255,0.18)" } },
+          { value: [5, 3, 5, 5, 2], name: "RBLX",     lineStyle: { color: "#c489ff" }, areaStyle: { color: "rgba(196,137,255,0.15)" } }
+        ]
+      }]
+    });
+  </script>
+</body>
+</html>
