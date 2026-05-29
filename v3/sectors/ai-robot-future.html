@@ -6,7 +6,7 @@
   <title>AI · 로봇 · 미래사회 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="ai-robot-future">
@@ -26,6 +26,75 @@
           <div>PERIOD · 2025–</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — AI · 로봇 · 미래사회</div>
+        <p class="hm-future"><b>BMW에서 Figure 02가 일하는 중.</b> 휴머노이드 시장이 $2.1B → $38B(10년 CAGR ~38%)로 18배 성장 전망.</p>
+        <p class="hm-now"><b>지금</b> — Tesla Optimus Gen 3 2026.7~8 초기 생산. 한국은 레인보우로보틱스(삼성 자회사 편입)가 시총 ~13조로 1위.</p>
+        <p class="hm-watch"><b>워치포인트</b> — Optimus 실제 양산 일정, 노동 대체율(McKinsey 57%)과 UBI·공동소유 논쟁, AI 컴패니언 수익화.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 휴머노이드 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). ② 실수요는 5~10년 시간축 — 4종 모두 옵션성 영역.</p>
+        <p style="color:var(--text-3);font-size:11.5px;margin-top:10px">
+          ※ <b>NVDA·TSM 제외 이유</b>: 두 회사 모두 휴머노이드 사업이 전체 매출의 1~3% 수준이라 회사 전체 11원칙 평가에 휴머노이드 성과가 반영되지 않습니다. NVDA는 <b>GR00T 파운데이션 모델·Jetson Thor 엣지 칩</b>이라는 휴머노이드 인프라 베팅으로, TSM은 엣지 칩 파운드리로 별도 분류.<br>
+          ※ Figure AI는 비상장이라 직접 매수 불가 — Microsoft·NVIDIA·OpenAI 지분 참여 회사들이 우회 노출 경로.
+        </p>
+      </div>
+
+      <h2>11원칙 적용 점검 — 휴머노이드 직접 베팅 종목만</h2>
+      <p class="section-lede">휴머노이드를 <b>직접 만드는 회사</b>만 한 표에서 비교. NVDA·TSM 같은 인프라 회사는 회사 전체가 휴머노이드가 아니므로 별도 카테고리(<a href="#robot-infra-note">인프라 베팅 박스</a>)로 분리.</p>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>TSLA</th>
+                <th>레인보우로보</th>
+                <th>두산로보</th>
+                <th>Figure AI*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요</td>
+                <td data-label="TSLA"><span class="pill warn">5~10년</span></td>
+                <td data-label="레인보우로보"><span class="pill warn">5~10년</span></td>
+                <td data-label="두산로보"><span class="pill warn">5~10년</span></td>
+                <td data-label="Figure AI*"><span class="pill warn">5~10년</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="TSLA"><span class="pill warn">정체</span></td>
+                <td data-label="레인보우로보"><span class="pill up">YES</span></td>
+                <td data-label="두산로보"><span class="pill warn">정체</span></td>
+                <td data-label="Figure AI*"><span class="pill warn">소량 시범</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="TSLA"><span class="pill up">YES</span></td>
+                <td data-label="레인보우로보"><span class="pill warn">개선 중</span></td>
+                <td data-label="두산로보"><span class="pill down">적자</span></td>
+                <td data-label="Figure AI*"><span class="pill down">적자 (R&D)</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="TSLA">EV·자율주행</td>
+                <td data-label="레인보우로보">삼성전자 모회사</td>
+                <td data-label="두산로보">두산그룹</td>
+                <td data-label="Figure AI*">BMW X3 3만대 (2025)</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="TSLA"><span class="pill warn">고평가</span></td>
+                <td data-label="레인보우로보"><span class="pill warn">고평가 (13조)</span></td>
+                <td data-label="두산로보"><span class="pill warn">고평가</span></td>
+                <td data-label="Figure AI*"><span class="pill warn">밸류 $39.5B</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 4종목 공통: 보유 기간을 5~10년으로 늘려야 함 (옵션성 베팅).</p>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -172,65 +241,6 @@
         <div id="chartHuma" class="chart"></div>
       </div>
 
-      <h2>11원칙 적용 점검 — 휴머노이드 직접 베팅 종목만</h2>
-      <p class="section-lede">휴머노이드를 <b>직접 만드는 회사</b>만 한 표에서 비교. NVDA·TSM 같은 인프라 회사는 회사 전체가 휴머노이드가 아니므로 별도 카테고리(<a href="#robot-infra-note">인프라 베팅 박스</a>)로 분리.</p>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>TSLA</th>
-                <th>레인보우로보</th>
-                <th>두산로보</th>
-                <th>Figure AI*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">② 시장 수요</td>
-                <td data-label="TSLA"><span class="pill warn">5~10년</span></td>
-                <td data-label="레인보우로보"><span class="pill warn">5~10년</span></td>
-                <td data-label="두산로보"><span class="pill warn">5~10년</span></td>
-                <td data-label="Figure AI*"><span class="pill warn">5~10년</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
-                <td data-label="TSLA"><span class="pill warn">정체</span></td>
-                <td data-label="레인보우로보"><span class="pill up">YES</span></td>
-                <td data-label="두산로보"><span class="pill warn">정체</span></td>
-                <td data-label="Figure AI*"><span class="pill warn">소량 시범</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="TSLA"><span class="pill up">YES</span></td>
-                <td data-label="레인보우로보"><span class="pill warn">개선 중</span></td>
-                <td data-label="두산로보"><span class="pill down">적자</span></td>
-                <td data-label="Figure AI*"><span class="pill down">적자 (R&D)</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="TSLA">EV·자율주행</td>
-                <td data-label="레인보우로보">삼성전자 모회사</td>
-                <td data-label="두산로보">두산그룹</td>
-                <td data-label="Figure AI*">BMW X3 3만대 (2025)</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="TSLA"><span class="pill warn">고평가</span></td>
-                <td data-label="레인보우로보"><span class="pill warn">고평가 (13조)</span></td>
-                <td data-label="두산로보"><span class="pill warn">고평가</span></td>
-                <td data-label="Figure AI*"><span class="pill warn">밸류 $39.5B</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 4종목 공통: 보유 기간을 5~10년으로 늘려야 함 (옵션성 베팅).</p>
-
-        <h3 style="margin-top:20px">11원칙 충족도 — 휴머노이드 4종 레이더</h3>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). ② 실수요는 5~10년 시간축 — 4종 모두 옵션성 영역.</p>
-        <p style="color:var(--text-3);font-size:11.5px;margin-top:10px">
-          ※ <b>NVDA·TSM 제외 이유</b>: 두 회사 모두 휴머노이드 사업이 전체 매출의 1~3% 수준이라 회사 전체 11원칙 평가에 휴머노이드 성과가 반영되지 않습니다. NVDA는 <b>GR00T 파운데이션 모델·Jetson Thor 엣지 칩</b>이라는 휴머노이드 인프라 베팅으로, TSM은 엣지 칩 파운드리로 별도 분류.<br>
-          ※ Figure AI는 비상장이라 직접 매수 불가 — Microsoft·NVIDIA·OpenAI 지분 참여 회사들이 우회 노출 경로.
-        </p>
-      </div>
-
       <div class="callout fact" id="robot-infra-note" style="margin-top:18px">
         <div class="head">📦 휴머노이드 인프라 베팅 (회사 전체 ≠ 휴머노이드 사업)</div>
         <p>
@@ -283,7 +293,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     mkChart("chartPrice", {
       tooltip: { trigger: "axis", formatter: p => `${p[0].name}<br/>$${p[0].value.toLocaleString()}` },

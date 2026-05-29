@@ -20,10 +20,10 @@
   --text-2: #8693a5;       /* tertiary */
   --text-3: #5b6776;       /* muted */
 
-  /* Accent */
-  --accent: #ffb020;       /* signature amber (Bloomberg-ish) */
-  --accent-soft: rgba(255, 176, 32, 0.12);
-  --accent-strong: #ffc24d;
+  /* Accent — 망고 오렌지 (v4와 통일) */
+  --accent: #ff8c1a;       /* signature mango orange */
+  --accent-soft: rgba(255, 140, 26, 0.14);
+  --accent-strong: #ffa840;
 
   /* Semantic */
   --up: #2bd4a4;           /* gain */
@@ -1998,4 +1998,23 @@ tbody tr:last-child td { border-bottom: none; }
   .card .grid.cols-3 > div:last-child { border-bottom: none; }
   h1 { font-size: 1.12rem; }
   .kpi .value { font-size: 1.02rem; }
+}
+
+/* =========================================================
+   v4(Lite) 복귀 버튼 — 다크 사이드바용 (2026-05-29)
+   v3은 Bloomberg 다크 테마. 라이트 전환은 사용자 요청으로 원복.
+   accent만 망고(#ff8c1a)로 v4와 통일. 복귀 버튼만 신규 추가.
+   ========================================================= */
+.back-to-lite {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  margin-bottom: 18px; padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--accent); color: #0a0e14 !important;
+  font-weight: 700; font-size: 13px; letter-spacing: -0.01em;
+  border: none; box-shadow: 0 4px 14px rgba(255, 140, 26, 0.25);
+  transition: all .18s ease;
+}
+.back-to-lite:hover {
+  background: var(--accent-strong); color: #0a0e14 !important;
+  transform: translateY(-1px); border-bottom: none;
 }

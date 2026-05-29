@@ -6,7 +6,7 @@
   <title>방산 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="defense">
@@ -27,6 +27,81 @@
           <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 방산</div>
+        <p class="hm-future"><b>K-방산은 우러전쟁 이전·이후가 다른 그림.</b> 폴란드 단일 누적 약 34조원 계약이 슈퍼사이클을 열었어요.</p>
+        <p class="hm-now"><b>지금</b> — 한화에어로 5년 30~40배. 한국 빅4 합산 시총이 2021년 록히드마틴 1/10 미만 → 2026년 약 1/3까지 격차 축소.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 폴란드 K2 2차 본계약, 사우디·필리핀 등 신규 고객 확장, 생산 능력(케파) 확충 속도.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 빅4 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점)</div>
+        <div id="chartRadar" class="chart"></div>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>한화에어로</th>
+                <th>현대로템</th>
+                <th>LIG넥스원</th>
+                <th>KAI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진 (코스피)</td>
+                <td data-label="한화에어로"><span class="pill up">YES</span></td>
+                <td data-label="현대로템"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="KAI"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요 (수출 + 정부 조달)</td>
+                <td data-label="한화에어로"><span class="pill up">YES</span></td>
+                <td data-label="현대로템"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="KAI"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3개년 매출·영익 상승</td>
+                <td data-label="한화에어로"><span class="pill up">YES</span></td>
+                <td data-label="현대로템"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="KAI"><span class="pill warn">정체</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="한화에어로"><span class="pill up">YES</span></td>
+                <td data-label="현대로템"><span class="pill up">가속</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="KAI"><span class="pill warn">정체</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="한화에어로"><span class="pill up">YES</span></td>
+                <td data-label="현대로템"><span class="pill up">극적 반전</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="KAI"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="한화에어로">한화오션·시스템</td>
+                <td data-label="현대로템">K2 단독</td>
+                <td data-label="LIG넥스원">천궁·국방부</td>
+                <td data-label="KAI">FA-50·AAV</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호 (vs 미국 빅3)</td>
+                <td data-label="한화에어로"><span class="pill warn">고평가</span></td>
+                <td data-label="현대로템"><span class="pill warn">고평가</span></td>
+                <td data-label="LIG넥스원"><span class="pill">중립</span></td>
+                <td data-label="KAI"><span class="pill up">YES</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 4종목 공통: 고점권. 2023~24 진입자는 일부 매도 + 일부 보유 검토.</p>
+      </div>
 
       <!-- 관전 포인트 -->
       <div class="callout opinion">
@@ -158,11 +233,6 @@
         <div id="chartPoland" class="chart"></div>
       </div>
 
-      <h2>11원칙 충족도 — 빅4 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점)</div>
-        <div id="chartRadar" class="chart"></div>
-      </div>
 
       <h2>한국 빅4 vs 미국 방산 빅3 · 시총 변천</h2>
       <div class="card">
@@ -175,67 +245,6 @@
       </div>
 
       <!-- 11원칙 적용 -->
-      <h2>11원칙 적용 점검</h2>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>한화에어로</th>
-                <th>현대로템</th>
-                <th>LIG넥스원</th>
-                <th>KAI</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">① 본진 (코스피)</td>
-                <td data-label="한화에어로"><span class="pill up">YES</span></td>
-                <td data-label="현대로템"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="KAI"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">② 실수요 (수출 + 정부 조달)</td>
-                <td data-label="한화에어로"><span class="pill up">YES</span></td>
-                <td data-label="현대로템"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="KAI"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3개년 매출·영익 상승</td>
-                <td data-label="한화에어로"><span class="pill up">YES</span></td>
-                <td data-label="현대로템"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="KAI"><span class="pill warn">정체</span></td>
-              </tr>
-              <tr><td data-label="원칙">④ 발전</td>
-                <td data-label="한화에어로"><span class="pill up">YES</span></td>
-                <td data-label="현대로템"><span class="pill up">가속</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="KAI"><span class="pill warn">정체</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="한화에어로"><span class="pill up">YES</span></td>
-                <td data-label="현대로템"><span class="pill up">극적 반전</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="KAI"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="한화에어로">한화오션·시스템</td>
-                <td data-label="현대로템">K2 단독</td>
-                <td data-label="LIG넥스원">천궁·국방부</td>
-                <td data-label="KAI">FA-50·AAV</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호 (vs 미국 빅3)</td>
-                <td data-label="한화에어로"><span class="pill warn">고평가</span></td>
-                <td data-label="현대로템"><span class="pill warn">고평가</span></td>
-                <td data-label="LIG넥스원"><span class="pill">중립</span></td>
-                <td data-label="KAI"><span class="pill up">YES</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 4종목 공통: 고점권. 2023~24 진입자는 일부 매도 + 일부 보유 검토.</p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -298,7 +307,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     const years = ["2021","2022","2023","2024","2025"];
 

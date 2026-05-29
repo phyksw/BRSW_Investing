@@ -67,6 +67,9 @@ function renderSidebar(activeSlug) {
   const isSectorPage = activeSlug && sectorSlugs.has(activeSlug);
   const prefix = isSectorPage ? "../" : "./";
 
+  // v4(Lite)로 돌아가는 복귀 경로 — v3은 /v3/ 하위에 있으므로 한 단계 더 상위로
+  const liteHref = isSectorPage ? "../../index.html" : "../index.html";
+
   const html = `
     <a href="${prefix}index.html" class="brand" style="text-decoration:none;border-bottom:none">
       <div class="logo">$</div>
@@ -75,6 +78,7 @@ function renderSidebar(activeSlug) {
         <div class="brand-sub">Macro · Sector · Themes</div>
       </div>
     </a>
+    <a class="back-to-lite" href="${liteHref}">← Lite 요약으로</a>
 
     <div class="nav-group">
       <div class="nav-group-title">개요</div>

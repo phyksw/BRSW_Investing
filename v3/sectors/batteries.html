@@ -6,7 +6,7 @@
   <title>이차전지 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="batteries">
@@ -27,6 +27,74 @@
           <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 이차전지</div>
+        <p class="hm-future"><b>호황 후 케즘 진행 중.</b> 2022 호황 → 2023 리튬 폭락 → 2024~25 매출 하락의 사이클을 지나고 있어요.</p>
+        <p class="hm-now"><b>지금</b> — LG엔솔 매출 33.7→23.7조(2년 연속 -24%), 에코프로비엠 2024 -60%. 주가는 고점 대비 -50~80% 조정.</p>
+        <p class="hm-watch"><b>워치포인트</b> — ESS 시장 폭증·전고체 양산(목표 2027), 미국 IRA 후퇴 영향, 섹터 자체 훼손 여부 재검증.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 이차전지 3종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 3종 모두 ③④⑤ 약점, ⑧만 케즘 조정으로 일시적 강점.</p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>LG엔솔</th>
+                <th>삼성SDI</th>
+                <th>에코프로비엠</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진 (코스피)</td>
+                <td data-label="LG엔솔"><span class="pill up">YES</span></td>
+                <td data-label="삼성SDI"><span class="pill up">YES</span></td>
+                <td data-label="에코프로비엠"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요 (EV·ESS)</td>
+                <td data-label="LG엔솔"><span class="pill warn">케즘</span></td>
+                <td data-label="삼성SDI"><span class="pill warn">케즘</span></td>
+                <td data-label="에코프로비엠"><span class="pill warn">케즘</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3개년 매출·영익 상승</td>
+                <td data-label="LG엔솔"><span class="pill down">NO (역성장)</span></td>
+                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
+                <td data-label="에코프로비엠"><span class="pill down">NO (-63%)</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="LG엔솔"><span class="pill down">NO</span></td>
+                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
+                <td data-label="에코프로비엠"><span class="pill down">NO</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="LG엔솔"><span class="pill warn">감소</span></td>
+                <td data-label="삼성SDI"><span class="pill down">적자 전환</span></td>
+                <td data-label="에코프로비엠"><span class="pill warn">흑자 전환</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="LG엔솔">GM·테슬라·현대차</td>
+                <td data-label="삼성SDI">BMW·아우디</td>
+                <td data-label="에코프로비엠">SK온·삼성SDI</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="LG엔솔"><span class="pill up">-50% 조정</span></td>
+                <td data-label="삼성SDI"><span class="pill up">-70% 조정</span></td>
+                <td data-label="에코프로비엠"><span class="pill up">-75% 조정</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑩ 위기 대응 — 3종목 공통: 전체 시장 충격이 아니라 섹터 수요·마진 훼손. ③ 위반이라 "성장 베팅"으로 보기 어렵고, 재검증이 먼저 필요.</p>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -189,66 +257,7 @@
         </div>
       </div>
 
-      <h2>11원칙 적용 점검</h2>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>LG엔솔</th>
-                <th>삼성SDI</th>
-                <th>에코프로비엠</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">① 본진 (코스피)</td>
-                <td data-label="LG엔솔"><span class="pill up">YES</span></td>
-                <td data-label="삼성SDI"><span class="pill up">YES</span></td>
-                <td data-label="에코프로비엠"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">② 실수요 (EV·ESS)</td>
-                <td data-label="LG엔솔"><span class="pill warn">케즘</span></td>
-                <td data-label="삼성SDI"><span class="pill warn">케즘</span></td>
-                <td data-label="에코프로비엠"><span class="pill warn">케즘</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3개년 매출·영익 상승</td>
-                <td data-label="LG엔솔"><span class="pill down">NO (역성장)</span></td>
-                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
-                <td data-label="에코프로비엠"><span class="pill down">NO (-63%)</span></td>
-              </tr>
-              <tr><td data-label="원칙">④ 발전</td>
-                <td data-label="LG엔솔"><span class="pill down">NO</span></td>
-                <td data-label="삼성SDI"><span class="pill down">NO</span></td>
-                <td data-label="에코프로비엠"><span class="pill down">NO</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="LG엔솔"><span class="pill warn">감소</span></td>
-                <td data-label="삼성SDI"><span class="pill down">적자 전환</span></td>
-                <td data-label="에코프로비엠"><span class="pill warn">흑자 전환</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="LG엔솔">GM·테슬라·현대차</td>
-                <td data-label="삼성SDI">BMW·아우디</td>
-                <td data-label="에코프로비엠">SK온·삼성SDI</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="LG엔솔"><span class="pill up">-50% 조정</span></td>
-                <td data-label="삼성SDI"><span class="pill up">-70% 조정</span></td>
-                <td data-label="에코프로비엠"><span class="pill up">-75% 조정</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑩ 위기 대응 — 3종목 공통: 전체 시장 충격이 아니라 섹터 수요·마진 훼손. ③ 위반이라 "성장 베팅"으로 보기 어렵고, 재검증이 먼저 필요.</p>
-      </div>
 
-      <h2>11원칙 충족도 — 이차전지 3종 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 3종 모두 ③④⑤ 약점, ⑧만 케즘 조정으로 일시적 강점.</p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -292,7 +301,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     const yrs = ["2022","2023","2024","2025"];
 

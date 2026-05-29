@@ -6,7 +6,7 @@
   <title>드론 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="drones">
@@ -27,6 +27,75 @@
           <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 드론</div>
+        <p class="hm-future"><b>$400 드론이 $800만 전차를 잡는 시대.</b> FPV가 전장의 비용 방정식을 뒤집었어요 — 수량의 시대.</p>
+        <p class="hm-now"><b>지금</b> — FPV가 T-90·M1 Abrams 격파 다수, 차량 손실의 최대 90% 차지(보도). 미국방부 Replicator로 AVAV·KTOS 수주 폭증.</p>
+        <p class="hm-watch"><b>워치포인트</b> — AVAV의 BlueHalo 인수 시너지, 광섬유 유선 드론(재밍 회피), 한국 LIG MUCP·한화 천광 다음 사이클.</p>
+      </div>
+
+      <h2>11원칙 충족도 — 드론 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). KTOS가 -60% 조정으로 ⑧ 가장 강점.</p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>AVAV</th>
+                <th>KTOS</th>
+                <th>LIG넥스원</th>
+                <th>Skydio*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 실수요</td>
+                <td data-label="AVAV"><span class="pill up">YES</span></td>
+                <td data-label="KTOS"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="Skydio*"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="AVAV"><span class="pill up">YES</span></td>
+                <td data-label="KTOS"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="Skydio*"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="AVAV"><span class="pill warn">개선 중</span></td>
+                <td data-label="KTOS"><span class="pill up">YES</span></td>
+                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
+                <td data-label="Skydio*"><span class="pill down">적자</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="AVAV">미국방부</td>
+                <td data-label="KTOS">미국방부</td>
+                <td data-label="LIG넥스원">국방부·수출</td>
+                <td data-label="Skydio*">NDAA 정책</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="AVAV"><span class="pill warn">조정 중</span></td>
+                <td data-label="KTOS"><span class="pill up">-60% 조정</span></td>
+                <td data-label="LIG넥스원"><span class="pill">중립</span></td>
+                <td data-label="Skydio*">비상장</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 가격 관찰<br/><small style="color:var(--text-3)">⑩ 아님</small></td>
+                <td data-label="AVAV">$220 권역</td>
+                <td data-label="KTOS"><b>$54 권역</b></td>
+                <td data-label="LIG넥스원">—</td>
+                <td data-label="Skydio*">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -188,67 +257,7 @@
         </table>
       </div>
 
-      <h2>11원칙 적용 점검</h2>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>AVAV</th>
-                <th>KTOS</th>
-                <th>LIG넥스원</th>
-                <th>Skydio*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">② 실수요</td>
-                <td data-label="AVAV"><span class="pill up">YES</span></td>
-                <td data-label="KTOS"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="Skydio*"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
-                <td data-label="AVAV"><span class="pill up">YES</span></td>
-                <td data-label="KTOS"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="Skydio*"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="AVAV"><span class="pill warn">개선 중</span></td>
-                <td data-label="KTOS"><span class="pill up">YES</span></td>
-                <td data-label="LIG넥스원"><span class="pill up">YES</span></td>
-                <td data-label="Skydio*"><span class="pill down">적자</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="AVAV">미국방부</td>
-                <td data-label="KTOS">미국방부</td>
-                <td data-label="LIG넥스원">국방부·수출</td>
-                <td data-label="Skydio*">NDAA 정책</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="AVAV"><span class="pill warn">조정 중</span></td>
-                <td data-label="KTOS"><span class="pill up">-60% 조정</span></td>
-                <td data-label="LIG넥스원"><span class="pill">중립</span></td>
-                <td data-label="Skydio*">비상장</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 가격 관찰<br/><small style="color:var(--text-3)">⑩ 아님</small></td>
-                <td data-label="AVAV">$220 권역</td>
-                <td data-label="KTOS"><b>$54 권역</b></td>
-                <td data-label="LIG넥스원">—</td>
-                <td data-label="Skydio*">—</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
-      <h2>11원칙 충족도 — 드론 4종 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). KTOS가 -60% 조정으로 ⑧ 가장 강점.</p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -286,7 +295,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     mkChart("chartAvav", {
       tooltip: { trigger: "axis" },

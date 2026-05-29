@@ -6,7 +6,7 @@
   <title>AI LLM 사업방향 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="ai-llm">
@@ -27,6 +27,75 @@
           <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — AI LLM</div>
+        <p class="hm-future"><b>1위가 누구냐? 둘 다 1위예요.</b> 컨슈머는 OpenAI(WAU 9억), 엔터프라이즈는 Anthropic — 두 시장이 분리 진화 중.</p>
+        <p class="hm-now"><b>지금</b> — Anthropic이 Claude Code를 발판으로 run-rate $30B+ 폭증. 웹 점유율은 ChatGPT 60.6%지만, 매출 점유는 Anthropic이 앞섬(공개 확인분).</p>
+        <p class="hm-watch"><b>워치포인트</b> — 추론 수익화 시점, Anthropic 컴퓨트 공급자 4곳(+SpaceX) 확대, 가격 치킨게임 → 가치 구독 전환 속도.</p>
+      </div>
+
+      <h2>11원칙 충족도 — LLM 우회 베팅 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관) · GOOGL·META·MSFT·AMZN</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 4종 모두 ②③④⑤ 강력, AMZN만 ⑧ 중립.</p>
+        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
+          <b>전부 11원칙 5/9 충족 (③⑤⑦⑧② 중 ⑧만 미충족)</b>. ⑧(시총 우호) 개선까지는 관찰 구간 — 개별 종목 조정이 아닌 <b>전체 시장 위기(⑩ 적용 구간)</b>에서 ⑩이 자동 발동.
+          순수 LLM 베팅보단 <a href="./ai-solutions.html">AI 솔루션(PLTR)</a>이나 <a href="./semiconductors.html">반도체/HBM</a> 같은 인프라/적용층이 더 깨끗한 노출.
+        </p>
+      </div>
+
+      <h2>11원칙 적용 점검 — 우회 베팅 종목</h2>
+      <p class="section-lede">주요 LLM 기업(OpenAI·Anthropic·xAI)이 비상장이라 <b>모회사/지분 보유사로 우회 베팅</b>이 현실적.</p>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>GOOGL</th>
+                <th>META</th>
+                <th>MSFT</th>
+                <th>AMZN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요 실재</td>
+                <td data-label="GOOGL"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="MSFT"><span class="pill up">YES</span></td>
+                <td data-label="AMZN"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="GOOGL"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="MSFT"><span class="pill up">YES</span></td>
+                <td data-label="AMZN"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="GOOGL"><span class="pill up">강세</span></td>
+                <td data-label="META"><span class="pill up">강세</span></td>
+                <td data-label="MSFT"><span class="pill up">강세</span></td>
+                <td data-label="AMZN"><span class="pill up">강세</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="GOOGL">Search·Cloud·Android</td>
+                <td data-label="META">Reels·광고</td>
+                <td data-label="MSFT">OpenAI·Azure</td>
+                <td data-label="AMZN">Anthropic·AWS</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="GOOGL"><span class="pill warn">고평가</span></td>
+                <td data-label="META"><span class="pill warn">고평가</span></td>
+                <td data-label="MSFT"><span class="pill warn">고평가</span></td>
+                <td data-label="AMZN"><span class="pill">중립</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 — 4종 공통: 전부 ②③⑤⑦ 충족, ⑧만 관찰 구간. 개별 조정보다 전체 시장 위기(⑩)에서 분할 대응.</p>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -392,63 +461,6 @@
         <p>핵심은 <b>두 시장이 분리 진화</b> 중이라는 점. 사용자 메모의 "1위" 표현은 엔터프라이즈 한정으로 재진술하면 정확.</p>
       </div>
 
-      <h2>11원칙 적용 — 우회 베팅 종목</h2>
-      <p style="color:var(--text-2)">주요 LLM 기업(OpenAI·Anthropic·xAI)이 비상장이라 <b>모회사/지분 보유사로 우회 베팅</b>이 현실적.</p>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>GOOGL</th>
-                <th>META</th>
-                <th>MSFT</th>
-                <th>AMZN</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">② 시장 수요 실재</td>
-                <td data-label="GOOGL"><span class="pill up">YES</span></td>
-                <td data-label="META"><span class="pill up">YES</span></td>
-                <td data-label="MSFT"><span class="pill up">YES</span></td>
-                <td data-label="AMZN"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
-                <td data-label="GOOGL"><span class="pill up">YES</span></td>
-                <td data-label="META"><span class="pill up">YES</span></td>
-                <td data-label="MSFT"><span class="pill up">YES</span></td>
-                <td data-label="AMZN"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="GOOGL"><span class="pill up">강세</span></td>
-                <td data-label="META"><span class="pill up">강세</span></td>
-                <td data-label="MSFT"><span class="pill up">강세</span></td>
-                <td data-label="AMZN"><span class="pill up">강세</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="GOOGL">Search·Cloud·Android</td>
-                <td data-label="META">Reels·광고</td>
-                <td data-label="MSFT">OpenAI·Azure</td>
-                <td data-label="AMZN">Anthropic·AWS</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="GOOGL"><span class="pill warn">고평가</span></td>
-                <td data-label="META"><span class="pill warn">고평가</span></td>
-                <td data-label="MSFT"><span class="pill warn">고평가</span></td>
-                <td data-label="AMZN"><span class="pill">중립</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="margin-top:20px">11원칙 충족도 — LLM 우회 베팅 4종 레이더</h3>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 4종 모두 ②③④⑤ 강력, AMZN만 ⑧ 중립.</p>
-        <p style="color:var(--text-2);font-size:13px;margin-top:10px">
-          <b>전부 11원칙 5/9 충족 (③⑤⑦⑧② 중 ⑧만 미충족)</b>. ⑧(시총 우호) 개선까지는 관찰 구간 — 개별 종목 조정이 아닌 <b>전체 시장 위기(⑩ 적용 구간)</b>에서 ⑩이 자동 발동.
-          순수 LLM 베팅보단 <a href="./ai-solutions.html">AI 솔루션(PLTR)</a>이나 <a href="./semiconductors.html">반도체/HBM</a> 같은 인프라/적용층이 더 깨끗한 노출.
-        </p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -489,7 +501,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     const mobile = window.isMobile && window.isMobile();
     mkChart("chartArr", {

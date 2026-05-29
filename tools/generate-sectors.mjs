@@ -260,7 +260,7 @@ const navTemplate = (currentSlug) => `
         <a href="./ai-llm.html"${currentSlug === "ai-llm" ? ' class="active"' : ""}>AI</a>
         <a href="./space.html"${currentSlug === "space" ? ' class="active"' : ""}>우주</a>
         <a href="./defense.html"${currentSlug === "defense" ? ' class="active"' : ""}>방산</a>
-        <a href="/v3/sectors/${currentSlug}.html" target="_blank" rel="noopener" style="color:var(--mango-deep);font-weight:700">v3 상세 ↗</a>
+        <a href="/v3/sectors/${currentSlug}.html" style="color:var(--mango-deep);font-weight:700">v3 상세 ↗</a>
       </div>
     </div>
   </nav>`;
@@ -343,7 +343,7 @@ ${s.stocks.map(st => `        <div class="stat-card ${st.color}">
         <p class="section-sub" style="margin-left:auto;margin-right:auto">${s.v3Sub}</p>
       </div>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="/v3/sectors/${s.slug}.html" target="_blank" rel="noopener">${s.name} 전체 분석 →</a>
+        <a class="btn btn-primary" href="/v3/sectors/${s.slug}.html">${s.name} 전체 분석 →</a>
         <a class="btn btn-ghost" href="../index.html">다른 섹터</a>
       </div>
     </div>

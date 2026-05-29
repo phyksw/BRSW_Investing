@@ -6,7 +6,7 @@
   <title>AI 엔터테인먼트 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="ai-entertainment">
@@ -27,6 +27,76 @@
           <div class="as-of">AS OF · 2026-05-29 00:30 KST</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — AI 엔터테인먼트</div>
+        <p class="hm-future"><b>월드모델과 캐릭터 챗이 만나는 지점.</b> Genie 3가 텍스트로 실시간 3D 월드를 만드는 시대를 열었어요.</p>
+        <p class="hm-now"><b>지금</b> — MiniMax Talkie MAU 2,760만 · 매출 1년 2배. 한국 스캐터랩(제타)은 3분기 연속 흑자로 수익화 입증.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 컨텍스트(기억) 한계 해소 → 몰입형 게임 확장, ARPPU 지속성, 캐릭터 IP 규제.</p>
+      </div>
+
+      <h2>11원칙 충족도 — AI 엔터 5종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 스캐터랩·뤼튼은 비상장(점선), MiniMax는 2026-01 IPO 후 +366%로 ⑧ 우호 영역에서 멀어짐.</p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <p style="color:var(--text-2)">한국·중국 핵심 플레이어가 비상장. 상장 종목으로 우회 노출 평가.</p>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>스캐터랩*</th>
+                <th>뤼튼*</th>
+                <th>MiniMax</th>
+                <th>META</th>
+                <th>RBLX</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요</td>
+                <td data-label="스캐터랩*"><span class="pill up">흑자가 증거</span></td>
+                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
+                <td data-label="MiniMax"><span class="pill up">YES (글로벌)</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="RBLX"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 성장</td>
+                <td data-label="스캐터랩*"><span class="pill up">YES (가속)</span></td>
+                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
+                <td data-label="MiniMax"><span class="pill up">YES</span></td>
+                <td data-label="META"><span class="pill up">YES</span></td>
+                <td data-label="RBLX"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="스캐터랩*"><span class="pill up">3Q 흑자</span></td>
+                <td data-label="뤼튼*"><span class="pill warn">개선 중</span></td>
+                <td data-label="MiniMax"><span class="pill warn">비공개</span></td>
+                <td data-label="META"><span class="pill up">강세</span></td>
+                <td data-label="RBLX"><span class="pill warn">개선 중</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="스캐터랩*">일본 시장 확대</td>
+                <td data-label="뤼튼*">국내 시리즈 B</td>
+                <td data-label="MiniMax">Talkie · 0100.HK</td>
+                <td data-label="META">Llama·인스타·왓츠앱</td>
+                <td data-label="RBLX">유저 생성 콘텐츠</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총</td>
+                <td data-label="스캐터랩*">비상장</td>
+                <td data-label="뤼튼*">비상장</td>
+                <td data-label="MiniMax"><span class="pill warn">IPO +366%</span></td>
+                <td data-label="META"><span class="pill warn">고평가</span></td>
+                <td data-label="RBLX"><span class="pill warn">고평가</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -231,68 +301,7 @@
         <p>RULE 09(시장 수요 실재)는 <b>스캐터랩(흑자)</b>이 명확한 증거 — 다만 비상장이라 직접 투자 불가.</p>
       </div>
 
-      <h2>11원칙 적용 점검</h2>
-      <p style="color:var(--text-2)">한국·중국 핵심 플레이어가 비상장. 상장 종목으로 우회 노출 평가.</p>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>스캐터랩*</th>
-                <th>뤼튼*</th>
-                <th>MiniMax</th>
-                <th>META</th>
-                <th>RBLX</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">② 시장 수요</td>
-                <td data-label="스캐터랩*"><span class="pill up">흑자가 증거</span></td>
-                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
-                <td data-label="MiniMax"><span class="pill up">YES (글로벌)</span></td>
-                <td data-label="META"><span class="pill up">YES</span></td>
-                <td data-label="RBLX"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 성장</td>
-                <td data-label="스캐터랩*"><span class="pill up">YES (가속)</span></td>
-                <td data-label="뤼튼*"><span class="pill up">YES</span></td>
-                <td data-label="MiniMax"><span class="pill up">YES</span></td>
-                <td data-label="META"><span class="pill up">YES</span></td>
-                <td data-label="RBLX"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="스캐터랩*"><span class="pill up">3Q 흑자</span></td>
-                <td data-label="뤼튼*"><span class="pill warn">개선 중</span></td>
-                <td data-label="MiniMax"><span class="pill warn">비공개</span></td>
-                <td data-label="META"><span class="pill up">강세</span></td>
-                <td data-label="RBLX"><span class="pill warn">개선 중</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="스캐터랩*">일본 시장 확대</td>
-                <td data-label="뤼튼*">국내 시리즈 B</td>
-                <td data-label="MiniMax">Talkie · 0100.HK</td>
-                <td data-label="META">Llama·인스타·왓츠앱</td>
-                <td data-label="RBLX">유저 생성 콘텐츠</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총</td>
-                <td data-label="스캐터랩*">비상장</td>
-                <td data-label="뤼튼*">비상장</td>
-                <td data-label="MiniMax"><span class="pill warn">IPO +366%</span></td>
-                <td data-label="META"><span class="pill warn">고평가</span></td>
-                <td data-label="RBLX"><span class="pill warn">고평가</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
-      <h2>11원칙 충족도 — AI 엔터 5종 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 스캐터랩·뤼튼은 비상장(점선), MiniMax는 2026-01 IPO 후 +366%로 ⑧ 우호 영역에서 멀어짐.</p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -320,7 +329,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     mkChart("chartMm", {
       tooltip: { trigger: "axis" },

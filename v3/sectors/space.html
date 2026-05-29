@@ -6,7 +6,7 @@
   <title>우주 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="space">
@@ -26,6 +26,75 @@
           <div>PERIOD · 2020–</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 우주</div>
+        <p class="hm-future"><b>발사·통신 다음은 지상 컴퓨트.</b> SpaceX가 6월 IPO 예정($1.75~2T 평가)이고, 우주 데이터센터 시대가 열렸어요.</p>
+        <p class="hm-now"><b>지금</b> — 스타링크 캐시카우(2025 매출 $11.4B, 가입자 890만)로 수익화 입증. RKLB 1년 +112%, Starcloud-1이 H100 첫 궤도 진입.</p>
+        <p class="hm-watch"><b>워치포인트</b> — SpaceX IPO 밸류·S-1 갱신, Starship V3 발사 안정화, SpaceX×Anthropic 컴퓨트 계약(5/28 보도·추적).</p>
+      </div>
+
+      <h2>11원칙 충족도 — 우주 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadar" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). Iridium이 5축 균형 — Rocket Lab은 ④ 강하지만 ⑧ 약점.</p>
+      </div>
+
+      <h2>11원칙 적용 점검</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>SpaceX*</th>
+                <th>Rocket Lab</th>
+                <th>AST SpaceMobile</th>
+                <th>Iridium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">② 시장 수요 실재</td>
+                <td data-label="SpaceX*"><span class="pill up">YES</span></td>
+                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill warn">검증 중</span></td>
+                <td data-label="Iridium"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
+                <td data-label="SpaceX*"><span class="pill up">YES (Starlink)</span></td>
+                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill warn">초기</span></td>
+                <td data-label="Iridium"><span class="pill up">YES (안정)</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="SpaceX*"><span class="pill up">Starlink 흑자</span></td>
+                <td data-label="Rocket Lab"><span class="pill warn">개선 중</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill down">적자</span></td>
+                <td data-label="Iridium"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑦ 연결고리</td>
+                <td data-label="SpaceX*">NASA·국방·자체</td>
+                <td data-label="Rocket Lab">NASA·상업</td>
+                <td data-label="AST SpaceMobile">D2D 통신사</td>
+                <td data-label="Iridium">D2D·국방</td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="SpaceX*"><span class="pill warn">$800B 부담</span></td>
+                <td data-label="Rocket Lab"><span class="pill warn">고평가 (40배)</span></td>
+                <td data-label="AST SpaceMobile"><span class="pill">변동성</span></td>
+                <td data-label="Iridium"><span class="pill up">상대 저평가</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑨ 보유 시나리오</td>
+                <td data-label="SpaceX*">IPO 후 5~10년</td>
+                <td data-label="Rocket Lab">⑨ 적용기</td>
+                <td data-label="AST SpaceMobile">장기 관전</td>
+                <td data-label="Iridium">안정형</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -217,67 +286,7 @@
         </div>
       </div>
 
-      <h2>11원칙 적용 점검</h2>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>SpaceX*</th>
-                <th>Rocket Lab</th>
-                <th>AST SpaceMobile</th>
-                <th>Iridium</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">② 시장 수요 실재</td>
-                <td data-label="SpaceX*"><span class="pill up">YES</span></td>
-                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
-                <td data-label="AST SpaceMobile"><span class="pill warn">검증 중</span></td>
-                <td data-label="Iridium"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3년 매출·영익 상승</td>
-                <td data-label="SpaceX*"><span class="pill up">YES (Starlink)</span></td>
-                <td data-label="Rocket Lab"><span class="pill up">YES</span></td>
-                <td data-label="AST SpaceMobile"><span class="pill warn">초기</span></td>
-                <td data-label="Iridium"><span class="pill up">YES (안정)</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="SpaceX*"><span class="pill up">Starlink 흑자</span></td>
-                <td data-label="Rocket Lab"><span class="pill warn">개선 중</span></td>
-                <td data-label="AST SpaceMobile"><span class="pill down">적자</span></td>
-                <td data-label="Iridium"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑦ 연결고리</td>
-                <td data-label="SpaceX*">NASA·국방·자체</td>
-                <td data-label="Rocket Lab">NASA·상업</td>
-                <td data-label="AST SpaceMobile">D2D 통신사</td>
-                <td data-label="Iridium">D2D·국방</td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="SpaceX*"><span class="pill warn">$800B 부담</span></td>
-                <td data-label="Rocket Lab"><span class="pill warn">고평가 (40배)</span></td>
-                <td data-label="AST SpaceMobile"><span class="pill">변동성</span></td>
-                <td data-label="Iridium"><span class="pill up">상대 저평가</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑨ 보유 시나리오</td>
-                <td data-label="SpaceX*">IPO 후 5~10년</td>
-                <td data-label="Rocket Lab">⑨ 적용기</td>
-                <td data-label="AST SpaceMobile">장기 관전</td>
-                <td data-label="Iridium">안정형</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
-      <h2>11원칙 충족도 — 우주 4종 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
-        <div id="chartRadar" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). Iridium이 5축 균형 — Rocket Lab은 ④ 강하지만 ⑧ 약점.</p>
-      </div>
 
       <div class="callout opinion">
         <div class="head">저자 시각 — 시총 부담 vs 우주 운송 독점</div>
@@ -319,7 +328,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     mkChart("chartStarlink", {
       tooltip: { trigger: "axis" },

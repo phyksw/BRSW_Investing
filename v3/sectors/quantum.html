@@ -6,7 +6,7 @@
   <title>양자컴퓨팅 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.3">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="quantum">
@@ -26,6 +26,76 @@
           <div>PERIOD · 2022–2026</div>
         </div>
       </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 양자컴퓨팅</div>
+        <p class="hm-future"><b>양자 자체는 늦더라도 NVIDIA가 표준을 선점.</b> NVQLink로 GPU↔QPU 직결 표준 자리를 잡았어요.</p>
+        <p class="hm-now"><b>지금</b> — IonQ Q1 2026 매출 +755% YoY($64.67M, 사상 최고), D-Wave 2025 매출 +178%. 다만 절대 매출은 여전히 작고 변동성 극심.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 노선별(초전도·이온·광자) PoC 성숙도, NVQLink 채택 확대, 옵션성 베팅 영역(포트 5% 이하·5~10년).</p>
+      </div>
+
+      <h2>11원칙 충족도 — 양자 4종 레이더</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
+        <div id="chartRadarRules" class="chart"></div>
+        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 양자 3종은 ⑤(흑자) 모두 0~1점, IBM이 유일하게 5축 균형.</p>
+      </div>
+
+      <h2>11원칙 적용 점검 — 양자주는 RULE 위반 다수</h2>
+      <div class="card">
+        <div class="table-wrap rule-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>원칙</th>
+                <th>IONQ</th>
+                <th>RGTI</th>
+                <th>QBTS</th>
+                <th>IBM (대안)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="원칙">① 본진</td>
+                <td data-label="IONQ"><span class="pill up">NYSE</span></td>
+                <td data-label="RGTI"><span class="pill up">NASDAQ</span></td>
+                <td data-label="QBTS"><span class="pill up">NYSE</span></td>
+                <td data-label="IBM"><span class="pill up">NYSE</span></td>
+              </tr>
+              <tr><td data-label="원칙">② 실수요</td>
+                <td data-label="IONQ"><span class="pill warn">PoC</span></td>
+                <td data-label="RGTI"><span class="pill warn">PoC</span></td>
+                <td data-label="QBTS"><span class="pill warn">PoC</span></td>
+                <td data-label="IBM"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">③ 3년 매출</td>
+                <td data-label="IONQ"><span class="pill up">+755%</span></td>
+                <td data-label="RGTI"><span class="pill warn">정체</span></td>
+                <td data-label="QBTS"><span class="pill up">+178%</span></td>
+                <td data-label="IBM"><span class="pill warn">완만</span></td>
+              </tr>
+              <tr><td data-label="원칙">④ 발전</td>
+                <td data-label="IONQ"><span class="pill up">가속</span></td>
+                <td data-label="RGTI"><span class="pill warn">불확실</span></td>
+                <td data-label="QBTS"><span class="pill up">YES</span></td>
+                <td data-label="IBM"><span class="pill up">YES</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑤ 흑자</td>
+                <td data-label="IONQ"><span class="pill down">적자 (축소)</span></td>
+                <td data-label="RGTI"><span class="pill down">적자</span></td>
+                <td data-label="QBTS"><span class="pill down">적자</span></td>
+                <td data-label="IBM"><span class="pill up">YES + 배당</span></td>
+              </tr>
+              <tr><td data-label="원칙">⑧ 시총 우호</td>
+                <td data-label="IONQ"><span class="pill warn">광풍 후 조정</span></td>
+                <td data-label="RGTI"><span class="pill warn">변동성</span></td>
+                <td data-label="QBTS"><span class="pill warn">변동성</span></td>
+                <td data-label="IBM"><span class="pill up">상대 저평가</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 5~10년 옵션성 베팅 영역. 포트 1~2% 한정 시나리오. IBM 핵심 + IONQ 위성 조합으로 검토.</p>
+      </div>
 
       <div class="callout opinion">
         <div class="head">관전 포인트</div>
@@ -197,68 +267,7 @@
         </ul>
       </div>
 
-      <h2>11원칙 적용 점검 — 양자주는 RULE 위반 다수</h2>
-      <div class="card">
-        <div class="table-wrap rule-matrix">
-          <table>
-            <thead>
-              <tr>
-                <th>원칙</th>
-                <th>IONQ</th>
-                <th>RGTI</th>
-                <th>QBTS</th>
-                <th>IBM (대안)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="원칙">① 본진</td>
-                <td data-label="IONQ"><span class="pill up">NYSE</span></td>
-                <td data-label="RGTI"><span class="pill up">NASDAQ</span></td>
-                <td data-label="QBTS"><span class="pill up">NYSE</span></td>
-                <td data-label="IBM"><span class="pill up">NYSE</span></td>
-              </tr>
-              <tr><td data-label="원칙">② 실수요</td>
-                <td data-label="IONQ"><span class="pill warn">PoC</span></td>
-                <td data-label="RGTI"><span class="pill warn">PoC</span></td>
-                <td data-label="QBTS"><span class="pill warn">PoC</span></td>
-                <td data-label="IBM"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">③ 3년 매출</td>
-                <td data-label="IONQ"><span class="pill up">+755%</span></td>
-                <td data-label="RGTI"><span class="pill warn">정체</span></td>
-                <td data-label="QBTS"><span class="pill up">+178%</span></td>
-                <td data-label="IBM"><span class="pill warn">완만</span></td>
-              </tr>
-              <tr><td data-label="원칙">④ 발전</td>
-                <td data-label="IONQ"><span class="pill up">가속</span></td>
-                <td data-label="RGTI"><span class="pill warn">불확실</span></td>
-                <td data-label="QBTS"><span class="pill up">YES</span></td>
-                <td data-label="IBM"><span class="pill up">YES</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑤ 흑자</td>
-                <td data-label="IONQ"><span class="pill down">적자 (축소)</span></td>
-                <td data-label="RGTI"><span class="pill down">적자</span></td>
-                <td data-label="QBTS"><span class="pill down">적자</span></td>
-                <td data-label="IBM"><span class="pill up">YES + 배당</span></td>
-              </tr>
-              <tr><td data-label="원칙">⑧ 시총 우호</td>
-                <td data-label="IONQ"><span class="pill warn">광풍 후 조정</span></td>
-                <td data-label="RGTI"><span class="pill warn">변동성</span></td>
-                <td data-label="QBTS"><span class="pill warn">변동성</span></td>
-                <td data-label="IBM"><span class="pill up">상대 저평가</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="color:var(--text-2);font-size:12px;font-style:italic;margin-top:10px">⑨ 일부 매도 사이클 — 5~10년 옵션성 베팅 영역. 포트 1~2% 한정 시나리오. IBM 핵심 + IONQ 위성 조합으로 검토.</p>
-      </div>
 
-      <h2>11원칙 충족도 — 양자 4종 레이더</h2>
-      <div class="card">
-        <div class="card-title"><span class="dot"></span>5축 평균 (5점 만점 · 저자 주관)</div>
-        <div id="chartRadarRules" class="chart"></div>
-        <p style="color:var(--text-2);font-size:12px;margin-top:8px">축: 매출 성장(③) · 흑자(⑤) · 실수요(②) · 발전·모멘텀(④) · 시총 우호(⑧). 양자 3종은 ⑤(흑자) 모두 0~1점, IBM이 유일하게 5축 균형.</p>
-      </div>
 
       <div class="callout risk">
         <div class="head">리스크</div>
@@ -296,7 +305,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.3"></script>
+  <script src="../assets/js/main.js?v=3.9"></script>
   <script>
     mkChart("chartRev", {
       tooltip: { trigger: "axis" },
