@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>반도체 · HBM · Investing Memo</title>
+  <title>반도체 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.12">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="semiconductors">
@@ -14,11 +14,11 @@
   <div class="app">
     <aside class="sidebar" id="sidebar"></aside>
     <main class="main">
-      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / 반도체·HBM</div>
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / 반도체</div>
 
       <header class="page-header">
         <div class="title-block">
-          <h1>반도체 · HBM</h1>
+          <h1>반도체</h1>
           <p class="subtitle">LLM 학습이 메모리 대역폭을 잠식 — 2025 SK하이닉스 OPM 49% 사상 최대</p>
         </div>
         <div class="meta">
@@ -29,7 +29,7 @@
       </header>
 
       <div class="head-message">
-        <div class="hm-kicker">한 줄 헤드 — 반도체 / HBM</div>
+        <div class="hm-kicker">한 줄 헤드 — 반도체</div>
         <p class="hm-future"><b>메모리가 AI 사이클의 진짜 병목.</b> HBM4 본격화로 SK하이닉스·삼성·Micron이 동시에 $1조 클럽에 진입했어요.</p>
         <p class="hm-now"><b>지금</b> — SK하이닉스 2025 OPM 49%(사상 최대) · HBM이 DRAM 매출의 40%+ 돌파. Blackwell·Rubin 수요가 메모리 세대 진화를 끌고 있음.</p>
         <p class="hm-watch"><b>워치포인트</b> — HBM4 수율·납기, NVIDIA 공급 다변화(삼성 진입 여부), 메모리 ASP 사이클 정점 시점.</p>
@@ -115,6 +115,38 @@
         <div class="head">검증 핵심</div>
         <p>사용자 메모는 <b>핵심 트렌드를 정확히 짚음</b>. HBM3E 1.2TB/s → HBM4 ~2TB/s, GPU VRAM 192GB(B200)→288GB(Rubin Ultra)로 확장 중.
         놓친 부분: <b>CXL(Compute Express Link) 메모리</b> — 2025 $1.3B → 2034 $11.8B (CAGR 28.7%). 다만 매출 기여는 아직 미미.</p>
+      </div>
+
+      <h2>반도체 3분류 — 메모리 · 파운드리 · 시스템/로직</h2>
+      <p class="section-lede">2025 글로벌 반도체 <b>$791.7B</b>(+25.6%) → 2026E <b>~$1조</b> (SIA/WSTS). <b>로직+메모리가 전체의 75%</b>. 같은 회사가 여러 갈래에 걸칠 수 있어 <b>대표 갈래</b> 기준으로 분류 (출처: SIA/WSTS·TrendForce, 2026-05).</p>
+      <div class="grid cols-3">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>① 메모리 (DRAM·HBM·NAND) · $223B</div>
+          <p style="color:var(--text-2);font-size:13px">AI 슈퍼사이클의 진앙 — <b style="color:var(--up)">HBM만 +70%</b> 성장(일반 DDR는 라인 전환으로 축소). 2025 +34.8%.</p>
+          <ul style="font-size:13px;margin:6px 0 0">
+            <li><b>SK하이닉스</b> — HBM 1위 (3Q25 53%, HBM4 mid-50%대) · 5/27 $1T</li>
+            <li><b>삼성전자</b> — DRAM 1위 · HBM4 첫 양산 (초기 mid-20%대)</li>
+            <li><b>Micron</b> — Samsung 추월(11%대) · 5/26 $1T · 2026 capa 완판</li>
+            <li><b>한미반도체</b> — HBM TC 본더 글로벌 71%</li>
+          </ul>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>② 파운드리 (위탁생산) · ~$185B</div>
+          <p style="color:var(--text-2);font-size:13px">설계 없이 <b>제조만</b>. 첨단 노드(≤7nm)가 시장의 47%.</p>
+          <ul style="font-size:13px;margin:6px 0 0">
+            <li><b>TSMC</b> — <b style="color:var(--up)">71%</b> 압도적 1위 · 2026.5 시총 <b>$2.17T</b>($2T 돌파)</li>
+            <li><b>삼성전자</b> — <b>6.8%</b> 2위 (수율 격차, SF2/SF4 추격)</li>
+          </ul>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>③ 시스템/로직 (설계) · $302B</div>
+          <p style="color:var(--text-2);font-size:13px"><b>2025 최대 카테고리</b> (+39.9%). AI 가속기·커스텀 ASIC·네트워킹 칩.</p>
+          <ul style="font-size:13px;margin:6px 0 0">
+            <li><b>NVIDIA</b> — AI GPU 표준 · 세계 시총 1위 ($5.18T)</li>
+            <li><b>Broadcom</b> — 커스텀 ASIC + AI 네트워킹 · AI매출 +106% YoY</li>
+            <li><b>TSMC</b> — 로직 제조 기반 (팹리스가 위탁)</li>
+          </ul>
+        </div>
       </div>
 
       <h2>핵심 지표 <span class="as-of">AS OF 2026-05-29 10:30 KST</span></h2>
@@ -301,7 +333,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.9"></script>
+  <script src="../assets/js/main.js?v=3.12"></script>
   <script>
     const yrs = ["2022","2023","2024","2025"];
 

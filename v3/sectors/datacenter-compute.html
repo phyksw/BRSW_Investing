@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터센터 · 컴퓨트 (GPU·ASIC) · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.12">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="datacenter-compute">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / <a href="./datacenter.html">데이터센터</a> / 컴퓨트</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터센터 ① 컴퓨트 (GPU·ASIC·클라우드)</h1>
+          <p class="subtitle">AI 연산의 심장 — GPU/가속기 · 커스텀 ASIC · GPU 임대 네오클라우드</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">NVDA · AVGO · CRWV · NBIS</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 컴퓨트</div>
+        <p class="hm-future"><b>데이터센터 CapEx의 가장 큰 덩어리.</b> $1B 데이터센터 비용의 절반 이상이 GPU·가속기 등 컴퓨트에 들어가요.</p>
+        <p class="hm-now"><b>지금</b> — NVIDIA GPU 표준($5.18T, 세계 1위) · Broadcom 커스텀 ASIC(AI매출 +106% YoY) · 네오클라우드(CoreWeave·Nebius) GPU 임대로 급성장.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 하이퍼스케일러 커스텀 ASIC 전환 속도, NVIDIA 차세대(Rubin), 네오클라우드 수익성·전력 확보.</p>
+      </div>
+
+      <h2>핵심 종목 시총 <span class="as-of">AS OF 2026-05-29</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">NVIDIA NVDA</div>
+          <div class="value">$5.18<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">GPU 표준 · 세계 시총 1위</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Broadcom AVGO</div>
+          <div class="value">$2.02<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">커스텀 ASIC · AI +106%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">CoreWeave CRWV</div>
+          <div class="value">~$60<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">네오클라우드 · GPU 임대</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Nebius NBIS</div>
+          <div class="value">~$59<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">$231 · 네오클라우드</div>
+        </div>
+      </div>
+
+      <h2>컴퓨트 4종 시총 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>시가총액 ($B, 로그 스케일) · 5/29 기준</div>
+        <div id="chartCap" class="chart sm"></div>
+      </div>
+
+      <h2>$1B 데이터센터 비용 구조 (정성)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>컴퓨트(GPU·서버)가 절반 이상 — 나머지가 전력·냉각·네트워킹</div>
+        <div id="chartCost" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          AI 데이터센터는 기존 클라우드 대비 <b>컴퓨트(가속기) 비중이 압도적</b>. GPU·서버가 ~55%, 전력·냉각 ~25%, 네트워킹·스토리지·건물이 나머지. (정성 추정 — 사이트별 편차 큼)
+        </p>
+      </div>
+
+      <h2>종목 상세</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>종목</th><th>시총</th><th>역할</th><th>핵심</th></tr></thead>
+          <tbody>
+            <tr><td><b>NVIDIA</b><br><small>NVDA</small></td><td class="num">$5,180B</td><td>GPU/가속기</td><td>AI GPU 표준 · CUDA 생태계 해자 · Blackwell→Rubin 로드맵 (→ <a href="./semiconductors-logic.html">시스템/로직</a>)</td></tr>
+            <tr><td><b>Broadcom</b><br><small>AVGO</small></td><td class="num">$2,020B</td><td>커스텀 ASIC + 네트워킹</td><td>하이퍼스케일러 전용 칩 설계 · AI매출 +106% YoY · AI 서버 ASIC 60% 점유 전망(2027)</td></tr>
+            <tr><td><b>CoreWeave</b><br><small>CRWV</small></td><td class="num">~$60B</td><td>네오클라우드</td><td>GPU 임대 전문 · 2026-05 신규 검증 · 주가 $109.53</td></tr>
+            <tr><td><b>Nebius</b><br><small>NBIS</small></td><td class="num">~$59B</td><td>네오클라우드</td><td>GPU 임대 · 주가 $231 · 유럽 기반 AI 인프라</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>컴퓨트는 <b>설계 해자</b>(NVIDIA CUDA, Broadcom ASIC 공동설계)가 핵심. 네오클라우드는 ②(실수요)는 강하나 <b>⑤(흑자)·⑧(시총)</b>이 약점 — GPU 감가상각·전력 비용 구조를 검증해야 함. 순수 컴퓨트 베팅은 NVDA·AVGO가 우선, 네오클라우드는 옵션성.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>AI CapEx 사이클</b>: 빅테크 투자 둔화 시 가속기 수요 동조 하락.<br>
+        ② <b>네오클라우드 수익성</b>: GPU 감가상각·전력 비용 — 흑자 전환 검증 필요.<br>
+        ③ <b>커스텀 ASIC 전환</b>: 하이퍼스케일러 자체 칩 확대 → GPU 점유 잠식 가능.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-power.html"><span>→ 전력·냉각 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-storage.html"><span>→ 메모리·스토리지 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-network.html"><span>→ 네트워킹 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter.html"><span>↑ 데이터센터 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>McKinsey — AI 데이터센터 $7T 빌드아웃 전망</li>
+          <li>Broadcom — AI 반도체 매출 +106% YoY (2026 Q1)</li>
+          <li>시총: companiesmarketcap (NVDA·AVGO) · stockanalysis (CRWV·NBIS, 2026-05)</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.12"></script>
+  <script>
+    mkChart("chartCap", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>시총: $${p[0].value >= 1000 ? (p[0].value/1000).toFixed(2)+"T" : p[0].value+"B"}` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "log", name: "$B (로그)", min: 10, max: 8000, axisLabel: { color: "#8693a5", formatter: v => "$"+(v>=1000?(v/1000)+"T":v+"B") }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["Nebius", "CoreWeave", "Broadcom", "NVIDIA"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [59, 60, 2020, 5180],
+        itemStyle: { color: "#2bd4a4", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+(p.value>=1000?(p.value/1000).toFixed(2)+"T":p.value+"B") }
+      }]
+    });
+
+    mkChart("chartCost", {
+      tooltip: { trigger: "item", formatter: p => `<b>${p.name}</b><br/>${p.value}%` },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" } },
+      series: [{
+        type: "pie", radius: ["42%", "70%"], center: ["50%", "44%"],
+        data: [
+          { name: "컴퓨트(GPU·서버)", value: 55, itemStyle: { color: "#2bd4a4" } },
+          { name: "전력·냉각", value: 25, itemStyle: { color: "#ffb020" } },
+          { name: "네트워킹·스토리지", value: 12, itemStyle: { color: "#5aa7ff" } },
+          { name: "건물·기타", value: 8, itemStyle: { color: "#5b6776" } }
+        ],
+        label: { color: "#f0f4fa", formatter: "{b} {c}%" }
+      }]
+    });
+  </script>
+</body>
+</html>

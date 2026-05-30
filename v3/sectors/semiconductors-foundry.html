@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>반도체 · 파운드리 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.12">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="semiconductors-foundry">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / <a href="./semiconductors.html">반도체</a> / 파운드리</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>반도체 ② 파운드리 (위탁생산)</h1>
+          <p class="subtitle">설계 없이 제조만 — 2026E 시장 ~$185B, 첨단 노드(≤7nm)가 47% 차지</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">TSM · 005930</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 파운드리</div>
+        <p class="hm-future"><b>TSMC 천하.</b> 파운드리는 점유율 71%의 TSMC가 압도하고, 5월 시총 $2T를 돌파했어요.</p>
+        <p class="hm-now"><b>지금</b> — TSMC 71% vs 삼성 6.8%(1Q26). 첨단 노드(≤7nm)가 시장의 47% — AI 가속기 수요가 선단 공정에 집중.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 삼성 SF2/SF4 수율 개선 여부, TSMC 2nm(N2) 양산 램프, 미국·일본 신규 팹 가동.</p>
+      </div>
+
+      <h2>핵심 종목 시총 <span class="as-of">AS OF 2026-05-29</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">TSMC TSM</div>
+          <div class="value">$2.17<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">점유 71% · 5월 $2T 돌파</div>
+        </div>
+        <div class="kpi">
+          <div class="label">삼성전자 005930</div>
+          <div class="value">$1.32<span style="font-size:0.6em">T</span></div>
+          <div class="delta neutral">파운드리 6.8% · 메모리 겸영</div>
+        </div>
+        <div class="kpi">
+          <div class="label">파운드리 시장 2026E</div>
+          <div class="value">~$185<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">≤7nm가 47%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">TSMC 2026 YTD</div>
+          <div class="value">+39.8<span style="font-size:0.6em">%</span></div>
+          <div class="delta up">AI 수요로 $2T 진입</div>
+        </div>
+      </div>
+
+      <h2>파운드리 점유율 — 1Q26</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>TrendForce 1Q26 · TSMC 압도적 1위</div>
+        <div id="chartShare" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          <b>TSMC 71%</b> · 삼성 6.8% · 기타(GlobalFoundries·UMC·SMIC·Tower 등) ~22%.
+          삼성은 2026 메모리·파운드리·R&D에 $73B+ 투입해 격차 축소 시도하나 <b>수율 격차</b>가 핵심 변수.
+        </p>
+      </div>
+
+      <h2>TSMC vs 삼성 시총</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>시가총액 ($T) · 5/29 기준</div>
+        <div id="chartCap" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          ※ 삼성 시총은 <b>전사(메모리+파운드리+가전)</b> 기준이라 파운드리만의 가치가 아님. 순수 파운드리 비교는 점유율(위)이 더 정확.
+        </p>
+      </div>
+
+      <h2>종목 상세</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>종목</th><th>시총</th><th>점유 (1Q26)</th><th>핵심</th></tr></thead>
+          <tbody>
+            <tr><td><b>TSMC</b><br><small>TSM</small></td><td class="num">$2,170B</td><td class="num">71%</td><td>5월 $2T 돌파 · 2026 YTD +39.81% · N2(2nm) 램프 · AI 가속기 위탁 집중</td></tr>
+            <tr><td><b>삼성전자</b><br><small>005930</small></td><td class="num">$1,324B</td><td class="num">6.8%</td><td>2위지만 격차 큼 · SF2/SF4 추격 · 메모리 강점으로 종합 경쟁 · 수율이 관건</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>파운드리는 <b>승자독식</b> 구조 — 11원칙 ⑥(매출=시장, 이익=점유) 관점에서 TSMC가 점유·이익 모두 압도. 삼성은 ③(3년 성장)은 메모리로 충족하나 <b>파운드리 단독으로는 정체</b>. 순수 파운드리 베팅은 사실상 TSMC 단일 종목.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>지정학</b>: 대만 집중 리스크 (TSMC). 미국·일본 분산 가동 속도.<br>
+        ② <b>첨단 노드 CapEx</b>: 2nm 투자 부담, 수요 둔화 시 감가상각 압박.<br>
+        ③ <b>삼성 추격</b>: SF2 수율 정상화 시 경쟁 구도 변화 (현재는 격차 큼).</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:240px" href="./semiconductors-memory.html"><span>→ 메모리 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:240px" href="./semiconductors-logic.html"><span>→ 시스템/로직 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:240px" href="./semiconductors.html"><span>↑ 반도체 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>TrendForce — 글로벌 파운드리 점유율 (1Q26) · TSMC 71% / 삼성 6.8%</li>
+          <li>Future Market Insights — 파운드리 시장 2026E ~$185B, 첨단 노드 47%</li>
+          <li>시총: companiesmarketcap (TSMC $2.17T, 2026-05) · gurufocus ($2T 돌파)</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.12"></script>
+  <script>
+    mkChart("chartShare", {
+      tooltip: { trigger: "item", formatter: p => `<b>${p.name}</b><br/>점유율: ${p.value}%` },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" } },
+      series: [{
+        type: "pie", radius: ["42%", "70%"], center: ["50%", "44%"],
+        data: [
+          { name: "TSMC", value: 71, itemStyle: { color: "#5aa7ff" } },
+          { name: "기타", value: 22.2, itemStyle: { color: "#5b6776" } },
+          { name: "삼성전자", value: 6.8, itemStyle: { color: "#ffb020" } }
+        ],
+        label: { color: "#f0f4fa", formatter: "{b} {c}%" }
+      }]
+    });
+
+    mkChart("chartCap", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>시총: $${(p[0].value/1000).toFixed(2)}T` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$T", axisLabel: { color: "#8693a5", formatter: v => "$"+(v/1000).toFixed(1)+"T" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["삼성전자(전사)", "TSMC"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [1324, 2170],
+        itemStyle: { color: "#5aa7ff", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+(p.value/1000).toFixed(2)+"T" }
+      }]
+    });
+  </script>
+</body>
+</html>

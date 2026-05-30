@@ -16,12 +16,23 @@ window.SECTORS = [
     tickers: ["PLTR", "AI", "SNOW", "NOW"] },
 
   // AI 인프라
-  { slug: "semiconductors",   name: "반도체 / HBM",          period: "2024–2026", group: "AI 인프라",
+  { slug: "semiconductors",   name: "반도체",                period: "2024–2026", group: "AI 인프라",
     desc: "LLM 대용량 학습이 HBM·메모리 사이클을 견인.",
-    tickers: ["000660.KS", "005930.KS", "MU", "NVDA"] },
+    tickers: ["000660.KS", "005930.KS", "MU", "NVDA"],
+    sub: [
+      { slug: "semiconductors-memory",  name: "메모리 (DRAM·HBM)" },
+      { slug: "semiconductors-foundry", name: "파운드리" },
+      { slug: "semiconductors-logic",   name: "시스템 / 로직" },
+    ] },
   { slug: "datacenter",       name: "데이터센터",            period: "2026–",     group: "AI 인프라",
     desc: "빅테크 CapEx 슈퍼사이클. 변압기·전력·냉각·SMR.",
-    tickers: ["VRT", "ETN", "267260.KS", "OKLO"] },
+    tickers: ["VRT", "ETN", "267260.KS", "OKLO"],
+    sub: [
+      { slug: "datacenter-compute", name: "컴퓨트 (GPU·ASIC)" },
+      { slug: "datacenter-power",   name: "전력 · 냉각" },
+      { slug: "datacenter-storage", name: "메모리 · 스토리지" },
+      { slug: "datacenter-network", name: "네트워킹" },
+    ] },
 
   // 우주
   { slug: "space",            name: "우주",                  period: "2020–",     group: "우주",
@@ -60,11 +71,9 @@ function renderSidebar(activeSlug) {
     items: window.SECTORS.filter(s => s.group === g),
   }));
 
-  // prefix 로직 — sectors/ 하위 페이지만 "../", 루트 페이지(principles/timeline/methodology)는 "./"
-  // 버그 수정: 이전 버전은 activeSlug 존재 = "../" 였으나, 루트 페이지(principles 등)에서도
-  // ../ 를 사용해 프로젝트 외부로 나가는 잘못된 링크가 발생함.
-  const sectorSlugs = new Set(window.SECTORS.map(s => s.slug));
-  const isSectorPage = activeSlug && sectorSlugs.has(activeSlug);
+  // prefix 로직 — sectors/ 하위 페이지(섹터 + 하위분류)는 "../", 루트 페이지는 "./"
+  // 경로 기반으로 판정 (data-sector가 SECTORS에 없는 하위분류 페이지도 정확히 처리)
+  const isSectorPage = location.pathname.includes("/sectors/");
   const prefix = isSectorPage ? "../" : "./";
 
   // v4(Lite)로 돌아가는 복귀 경로 — v3은 /v3/ 하위에 있으므로 한 단계 더 상위로
@@ -96,12 +105,20 @@ function renderSidebar(activeSlug) {
     ${groups.map(g => `
       <div class="nav-group">
         <div class="nav-group-title">${g.name}</div>
-        ${g.items.map(s => `
-          <a class="nav-item ${activeSlug === s.slug ? "active" : ""}"
-             href="${prefix}sectors/${s.slug}.html">
+        ${g.items.map(s => {
+          const subActive = s.sub && s.sub.some(sub => sub.slug === activeSlug);
+          const itemActive = (activeSlug === s.slug || subActive) ? "active" : "";
+          const subHtml = (s.sub && (activeSlug === s.slug || subActive))
+            ? `<div class="nav-sub">${s.sub.map(sub => `
+                <a class="nav-subitem ${activeSlug === sub.slug ? "active" : ""}" href="${prefix}sectors/${sub.slug}.html">
+                  <span>${sub.name}</span>
+                </a>`).join("")}</div>`
+            : "";
+          return `
+          <a class="nav-item ${itemActive}" href="${prefix}sectors/${s.slug}.html">
             <span>${s.name}</span><span class="tag">${s.period.replace(/–.*/, "")}</span>
-          </a>
-        `).join("")}
+          </a>${subHtml}`;
+        }).join("")}
       </div>
     `).join("")}
 

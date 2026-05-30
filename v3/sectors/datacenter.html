@@ -6,7 +6,7 @@
   <title>데이터센터 · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.9">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.13">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="datacenter">
@@ -32,7 +32,7 @@
         <div class="hm-kicker">한 줄 헤드 — 데이터센터</div>
         <p class="hm-future"><b>AI는 결국 전력 싸움.</b> 빅테크가 2026년 데이터센터에 합산 $725B(약 1,000조원, +77% YoY)를 쏟아붓습니다.</p>
         <p class="hm-now"><b>지금</b> — 병목이 GPU에서 전력·변압기·냉각으로 이동. 한국 변압기 빅3 수주잔고가 5~6년치로 쌓이고, SMR(소형원전)이 전용 전력원으로 부상.</p>
-        <p class="hm-watch"><b>워치포인트</b> — AI 유료 침투율(현재 1% 미만)의 회복 속도, SpaceX의 컴퓨트 레이어 진입(5/28 보도·추적), 변압기 납기.</p>
+        <p class="hm-watch"><b>워치포인트</b> — AI 유료 침투율(현재 1% 미만)의 회복 속도, SpaceX(xAI)×Anthropic 딜(월 $1.25B, → <a href="#spx-anthropic-deal" style="color:var(--accent)">아래 집중분석</a>), 변압기 납기.</p>
       </div>
 
       <h2>11원칙 충족도 — 데이터센터 5종 레이더</h2>
@@ -119,21 +119,80 @@
         병목은 <b>전력·변압기·냉각</b>으로 이동, <abbr title="Small Modular Reactor — 소형모듈원자로. 데이터센터 전용 안정 전력원으로 부상">SMR</abbr>(소형원전)과 한국 변압기 빅3가 수혜.</p>
       </div>
 
-      <!-- 2026-05-28 신규 — SpaceX × Anthropic 컴퓨트 계약 -->
-      <div class="callout fact" id="spx-anthropic-deal">
-        <div class="head">🛰️ 2026-05-28 신규 — SpaceX의 컴퓨트 레이어 진입 (보도 추적 · as of 2026-05-29 00:30 KST)</div>
-        <p>
-          <b>SpaceX가 데이터센터 시설을 인수</b>한 후, 2026-05-28 <b>Anthropic과 월 12억 달러(연환산 약 $14.4B+) 규모 컴퓨트 계약</b>을 체결했다는 보도가 나왔습니다.
-          <span class="data-tag track">추적</span> 계약 기간·시설 위치·정확한 인수 대상은 추가 공시 대기.
-        </p>
-        <p style="margin-top:8px">
-          <b>시사점</b> — SpaceX가 발사(Starship)·통신(Starlink)에 이어 <b>AI 컴퓨트 인프라까지 수직 통합</b>하는 트랙으로 확장.
-          Anthropic 입장에서는 기존 Google·AWS·Broadcom 외 <b>네 번째 거대 컴퓨트 공급자</b>가 추가되는 셈.
-          연환산 $14.4B+ 단일 계약은 Anthropic 2026.4 run-rate $30B+의 약 절반에 해당하는 컴퓨트 지출 → AI run-rate가 곧 인프라 CapEx로 환류되는 흐름이 더 선명해짐.
-        </p>
+      <!-- 집중 분석 — SpaceX(xAI) × Anthropic 컴퓨트 딜 -->
+      <h2 id="spx-anthropic-deal" style="margin-top:8px">🛰️ 집중 분석 — SpaceX(xAI) × Anthropic 컴퓨트 딜</h2>
+
+      <div class="head-message" style="border-left-color:var(--info)">
+        <div class="hm-kicker" style="color:var(--info)">한 줄 헤드 — 로켓 회사가 AI 최대 임대인이 됐다</div>
+        <p class="hm-future"><b>SpaceX가 xAI를 삼키고, 그 컴퓨트를 Anthropic에 통째로 빌려줬어요.</b> 발사·통신에 이어 <b>AI 컴퓨트</b>까지 수직 통합 — 다음은 우주(궤도) 데이터센터.</p>
+        <p class="hm-now"><b>지금</b> — Anthropic이 xAI의 <b>Colossus 1</b>(멤피스) 컴퓨트 전량을 임차. <b>월 $1.25B(연 $15B), 2029.5까지</b>. 300MW+ · NVIDIA GPU 22만 장.</p>
+        <p class="hm-watch"><b>워치포인트</b> — SpaceX IPO(6월, ~$1.5T) 자금의 컴퓨트 전용, Colossus 2(GB200)·멤피스 3번째 건물 2GW 확장, 궤도 DC FCC 신청(위성 100만).</p>
+      </div>
+
+      <div class="grid cols-4">
+        <div class="kpi" style="border-left:3px solid var(--info)">
+          <div class="label">Anthropic→xAI 임차료</div>
+          <div class="value">$1.25<span style="font-size:0.6em">B/월</span></div>
+          <div class="delta up">연 $15B · 2029.5까지 <span class="data-tag official">S-1</span></div>
+        </div>
+        <div class="kpi">
+          <div class="label">Colossus 1 컴퓨트</div>
+          <div class="value">300<span style="font-size:0.6em">MW+</span></div>
+          <div class="delta up">NVIDIA GPU 22만 장 · 전량 임차</div>
+        </div>
+        <div class="kpi">
+          <div class="label">SpaceX의 xAI 인수 (2026.2)</div>
+          <div class="value">$1.25<span style="font-size:0.6em">T</span></div>
+          <div class="delta neutral">전액주식 (SpaceX $1T + xAI $250B)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">멤피스 확장 (Colossus 2+3)</div>
+          <div class="value">2<span style="font-size:0.6em">GW</span></div>
+          <div class="delta up">GB200 · 3번째 건물 'MACROHARD'</div>
+        </div>
+      </div>
+
+      <div class="grid cols-2" style="margin-top:14px">
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>구조 — 누가 누구에게 무엇을</div>
+          <p style="font-size:13.5px">① <b>2026.2</b> SpaceX가 <b>xAI 인수</b>(전액주식 ~$1.25T) → 로켓·Starlink·Grok·Colossus가 한 지붕.<br>
+          ② <b>2026.5</b> Anthropic이 그 <b>Colossus 1(멤피스) 컴퓨트 전량</b>을 임차 — 월 $1.25B, 2029.5까지(초기 2개월 램프업 할인).<br>
+          ③ 6월 <b>Colossus 2</b>(NVIDIA GB200)로 확장 예정.</p>
+          <p style="font-size:12.5px;color:var(--text-2);margin-top:6px">즉 <b>"SpaceX가 데이터센터를 새로 지은 것"이 아니라, xAI를 인수해 그 클러스터의 임대인이 된 구조.</b></p>
+        </div>
+        <div class="card info">
+          <div class="card-title"><span class="dot"></span>왜 중요한가 — 3가지</div>
+          <p style="font-size:13.5px">① <b>경쟁사 인프라를 빌리는 시대</b>: Anthropic이 머스크(xAI) 컴퓨트로 Claude를 돌림 — AI는 모델 경쟁이지만 인프라는 공유.<br>
+          ② <b>run-rate → CapEx 환류</b>: 연 $15B는 Anthropic run-rate $30B+의 절반. AI 매출이 곧 인프라 지출로 흐름.<br>
+          ③ <b>곡괭이 수혜 확장</b>: 최대 수혜는 <b>NVIDIA</b>(GPU 22만 장) — "곡괭이 파는 자가 번다"의 재확인.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:18px">다음 단계 — 우주(궤도) 데이터센터</h3>
+      <div class="callout fact">
+        <div class="head">🚀 SpaceX 궤도 DC 비전 (FCC 신청 · 2026)</div>
+        <p>SpaceX는 <b>최대 100만 기 '궤도 데이터센터' 위성</b> 배치를 FCC에 신청 — 연간 1백만 톤 발사 × 톤당 100kW = <b>연 100GW AI 컴퓨트</b> 추가 주장.
+        <b>Starlink V3</b>(2026 파일럿, 1Tbps 광링크)가 백홀, 레이저 메시로 지상국 연결. Anthropic도 <b>"멀티 GW 궤도 컴퓨트" 협력 의사</b> 표명.</p>
         <p style="color:var(--text-3);font-size:11.5px;margin-top:6px">
-          <b>5/29 00:30 KST 시점</b>: 정식 공시(SEC S-1 SpaceX 갱신 또는 Anthropic 공식 보도자료) <b>아직 미확인</b>. 5/28 보도 직후 후속 보도/논평 추적 중. 본 정보는 「추적 필요」로 분류 — 확정 공시 시 본 콜아웃을 「공식」으로 격상 예정.
+          ※ 궤도 DC는 <b>아직 비전·신청 단계</b>(상용화 미정). 발사 경제성·열 방출·방사선이 난제. 캐시 우드(ARK)는 "궤도 DC가 Starlink를 압도할 수 있다"고 전망(2026.5) — 낙관론 참고. 자세히는 <a href="./space.html">우주 페이지</a>.
         </p>
+      </div>
+
+      <h3 style="margin-top:18px">한국 투자자 관점 — 직접 노출은 제한적, 수혜는 명확</h3>
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>SpaceX·xAI·Anthropic은 모두 <b>비상장</b> — 직접 투자 불가 (SpaceX는 6월 IPO 예정). 한국 투자자에게 이 딜의 의미는 <b>"곡괭이 수혜 검증"</b>:<br>
+        ① <b>NVIDIA</b>(GPU 22만 장) → SK하이닉스·삼성 <b>HBM 수요</b> 직결 (→ <a href="./semiconductors-memory.html">메모리</a>).<br>
+        ② 300MW+ 신규 가동 → <b>전력·변압기·냉각</b> 수요 (→ <a href="./datacenter-power.html">전력·냉각</a>).<br>
+        ③ SpaceX IPO 성사 시 <b>우주 + AI 컴퓨트</b> 결합 테마 부상 (→ <a href="./space.html">우주</a>).</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크 · 유의</div>
+        <p>① <b>비상장 집중 리스크</b>: 머스크 단일 지배(SpaceX-xAI-Starlink) — 거버넌스·이해상충 우려.<br>
+        ② <b>순환 거래 논란</b>: SpaceX가 xAI 인수 → Anthropic이 임차 → 매출이 그룹 내부에서 도는 구조라는 비판 가능.<br>
+        ③ <b>궤도 DC는 미검증</b>: FCC 신청 ≠ 상용화. 발사·냉각·방사선 난제 — 장기 옵션으로만.<br>
+        ④ <b>출처 시점</b>: 2026.5 Anthropic 공식 + SpaceX S-1 + 언론(TechCrunch·Axios·DCD) 교차. 일부 수치(2GW 확장 등)는 보도 기준.</p>
       </div>
 
       <div class="callout fact">
@@ -166,15 +225,15 @@
         </div>
       </div>
       <div class="grid cols-2" style="margin-top:12px">
-        <div class="kpi" style="border-left:3px solid var(--accent)">
-          <div class="label">🛰️ SpaceX × Anthropic 월 컴퓨트 계약 <span class="data-tag track">추적</span></div>
-          <div class="value">$1.2<span style="font-size:0.6em">B/월</span></div>
-          <div class="delta up">연환산 $14.4B+ · 2026-05-28 보도</div>
+        <div class="kpi" style="border-left:3px solid var(--info)">
+          <div class="label">🛰️ SpaceX(xAI) × Anthropic 임차료 <span class="data-tag official">S-1</span></div>
+          <div class="value">$1.25<span style="font-size:0.6em">B/월</span></div>
+          <div class="delta up">연 $15B · 2029.5까지 (→ <a href="#spx-anthropic-deal">집중분석</a>)</div>
         </div>
         <div class="kpi">
           <div class="label">컴퓨트 공급자 다변화 (Anthropic)</div>
-          <div class="value">4<span style="font-size:0.6em">곳</span></div>
-          <div class="delta up">Google · AWS · Broadcom · SpaceX(신규)</div>
+          <div class="value">6<span style="font-size:0.6em">곳+</span></div>
+          <div class="delta up">AWS·Google·MS·NVIDIA·Broadcom·SpaceX(xAI)</div>
         </div>
       </div>
 
@@ -249,10 +308,16 @@
         <div id="chartKor" class="chart sm"></div>
       </div>
 
-      <h2>데이터센터 인프라 핵심 종목</h2>
+      <h2>데이터센터 역할별 핵심 종목 — 4대 레이어</h2>
+      <p class="section-lede">AI 데이터센터 밸류체인은 <b>① 컴퓨트 · ② 전력·냉각 · ③ 메모리·스토리지 · ④ 네트워킹</b>으로 나뉩니다. 병목이 GPU에서 <b>전력·냉각·스토리지</b>로 이동 중 (출처: McKinsey·Dell'Oro·IEA, 2026-05).</p>
       <div class="grid cols-3">
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>① 컴퓨트 (GPU·ASIC·클라우드)</div>
+          <p><b>NVIDIA (NVDA)</b> GPU/가속기 · <b>Broadcom (AVGO)</b> 커스텀 ASIC+네트워킹.<br>
+          <b>네오클라우드</b>: <b>CoreWeave (CRWV)</b> ~$60B · <b>Nebius (NBIS)</b> ~$59B — GPU 임대 전문 (2026-05 신규).</p>
+        </div>
         <div class="card">
-          <div class="card-title"><span class="dot"></span>전력 관리</div>
+          <div class="card-title"><span class="dot"></span>② 전력 관리</div>
           <p><b>Vertiv (VRT)</b>: 2025 가이던스 상향 $250M, 백로그 +25%, 2026.초 Barclays 업그레이드 +8.4%.<br>
           <b>Eaton (ETN)</b>: 전력관리, Vertiv 최대 경쟁사.<br>
           <b>Schneider Electric</b>: 변압기·전력관리 글로벌 강자.</p>
@@ -262,22 +327,27 @@
           <p><b>Equinix (EQIX) · Digital Realty (DLR)</b>: 코로케이션. 단, 전력비 상승 부담으로 마진 압박.</p>
         </div>
         <div class="card">
-          <div class="card-title"><span class="dot"></span>한국 (변압기·전력)</div>
-          <p><b>HD현대일렉트릭(267260)</b>, <b>효성중공업(298040)</b>, <b>LS ELECTRIC(010120)</b>.
-          <b>두산에너빌리티</b>(SMR 협력).</p>
+          <div class="card-title"><span class="dot"></span>② 냉각</div>
+          <p>액체 냉각, 직접 냉각(direct-to-chip) 시장. AI 칩이 기존 3~5배 발열 → <b>액냉이 신규 빌드 기본값</b>화. Vertiv 우위.</p>
         </div>
         <div class="card">
-          <div class="card-title"><span class="dot"></span>SMR (원전)</div>
+          <div class="card-title"><span class="dot"></span>② SMR (원전)</div>
           <p><b>Constellation (CEG)</b>, <b>Oklo (OKLO)</b>, <b>NuScale (SMR)</b>.
           핵심 모멘텀: 빅테크 PPA 체결 시 강한 상승.</p>
         </div>
         <div class="card">
-          <div class="card-title"><span class="dot"></span>냉각</div>
-          <p>액체 냉각, 직접 냉각(direct-to-chip) 시장. Vertiv 우위.</p>
+          <div class="card-title"><span class="dot"></span>② 한국 변압기·전력</div>
+          <p><b>HD현대일렉트릭(267260)</b>, <b>효성중공업(298040)</b>, <b>LS ELECTRIC(010120)</b>.
+          <b>두산에너빌리티</b>(SMR 협력). 수주잔고 33조 = 5~6년치.</p>
         </div>
-        <div class="card">
-          <div class="card-title"><span class="dot"></span>인접 (HBM·서버)</div>
-          <p><a href="./semiconductors.html">반도체 페이지</a> 참조 — HBM·서버 칩이 데이터센터 수요의 원천.</p>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>③ 메모리·스토리지</div>
+          <p><b>HBM</b>: SK하이닉스·삼성·Micron (→ <a href="./semiconductors.html">반도체 페이지</a>).<br>
+          <b>스토리지</b>: 엔터프라이즈 SSD 수요 +41% · <b>HDD는 2026 전량 완판</b>(WD 등, 리드타임 1년+) · NAND 가격 급등.</p>
+        </div>
+        <div class="card accent">
+          <div class="card-title"><span class="dot"></span>④ 네트워킹·인터커넥트</div>
+          <p>2026 <b>1.6T 광학(옵틱스)</b> 전환 → 공급 압박. 광트랜시버·인터커넥트: <b>Amphenol · Corning · InnoLight</b>.</p>
         </div>
       </div>
 
@@ -395,7 +465,8 @@
           <li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA · Energy and AI 리포트</a></li>
           <li><a href="https://www.sec.gov/Archives/edgar/data/0001849056/000110465925027276/tm2510004d1_ex99-1.htm">Oklo SEC Filings · Meta 1.2GW</a></li>
           <li><a href="https://www.investchosun.com/site/data/html_dir/2026/04/27/2026042780117.html">HD현대일렉트릭/효성중공업/LS 1Q 최대실적 · 인베스트조선</a></li>
-          <li><b>SpaceX × Anthropic 월 $1.2B 컴퓨트 계약 (2026-05-28 보도)</b> · <span style="color:var(--accent)">추적</span> · 정식 공시(SEC S-1 또는 Anthropic·SpaceX 공식 자료) 확보 시 본 항목 갱신 예정</li>
+          <li><b>SpaceX(xAI) × Anthropic 컴퓨트 딜</b> (월 $1.25B·연 $15B·2029.5까지·Colossus 1 300MW+·NVIDIA GPU 22만): <a href="https://www.anthropic.com/news/higher-limits-spacex">Anthropic 공식</a> · <a href="https://www.datacenterdynamics.com/en/news/spacex-ipo-filing-reveals-anthropic-set-to-pay-musks-firm-125bn-a-month-to-rent-xai-data-center-space/">SpaceX S-1 (DCD)</a> · <a href="https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/">TechCrunch</a> · <a href="https://www.axios.com/2026/05/20/anthropic-spacex-compute">Axios</a></li>
+          <li><b>SpaceX의 xAI 인수</b>(2026.2, 전액주식 ~$1.25T) · <b>궤도 DC FCC 신청</b>(위성 100만·연 100GW 주장): <a href="https://www.datacenterdynamics.com/en/news/spacex-files-for-million-satellite-orbital-ai-data-center-megaconstellation/">DCD</a> · <a href="https://techcrunch.com/2026/05/12/report-google-and-spacex-in-talks-to-put-data-centers-into-orbit/">TechCrunch</a></li>
         </ul>
       </div>
 
@@ -405,7 +476,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.9"></script>
+  <script src="../assets/js/main.js?v=3.13"></script>
   <script>
     mkChart("chartCapex", {
       tooltip: { trigger: "axis" },

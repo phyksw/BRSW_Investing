@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터센터 · 네트워킹 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.12">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="datacenter-network">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / <a href="./datacenter.html">데이터센터</a> / 네트워킹</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터센터 ④ 네트워킹 · 인터커넥트</h1>
+          <p class="subtitle">GPU 수만 장을 하나로 묶는 배선 — 1.6T 광학 전환과 인터커넥트 병목</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">AVGO · ANET · APH · GLW</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 네트워킹</div>
+        <p class="hm-future"><b>AI 클러스터는 네트워크가 곧 성능.</b> GPU 수만 장을 묶으려면 초고속 인터커넥트가 필수 — 2026 1.6T 광학으로 세대 전환 중이에요.</p>
+        <p class="hm-now"><b>지금</b> — 스위치 칩(Broadcom·Arista) · 광트랜시버(1.6T로 전환) · 인터커넥트(Amphenol·Corning). 이더넷 vs InfiniBand 표준 경쟁이 핵심 축.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 1.6T 옵틱스 공급 압박 해소, 이더넷(AVGO) vs InfiniBand(NVDA) 점유 변화, 광↔구리 인터커넥트 전환점.</p>
+      </div>
+
+      <h2>핵심 종목 시총 <span class="as-of">AS OF 2026-05-29</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Broadcom AVGO</div>
+          <div class="value">$2.02<span style="font-size:0.6em">T</span></div>
+          <div class="delta up">AI 네트워킹 + ASIC</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Arista ANET</div>
+          <div class="value">데이터센터</div>
+          <div class="delta neutral">이더넷 스위치 강자</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Amphenol APH</div>
+          <div class="value">인터커넥트</div>
+          <div class="delta neutral">고속 케이블·커넥터</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Corning GLW</div>
+          <div class="value">광섬유</div>
+          <div class="delta neutral">옵티컬 인터커넥트</div>
+        </div>
+      </div>
+
+      <h2>광트랜시버 세대 전환 — 속도 진화</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>800G → 1.6T로 전환 (단위 Gbps) · 2026 1.6T 본격화</div>
+        <div id="chartOptics" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          AI 클러스터 대역폭 수요로 광트랜시버가 <b>400G → 800G → 1.6T</b>로 빠르게 진화. 2026 <b>1.6T 본격 전환</b>으로 공급 압박 — 광부품·인터커넥트가 병목이자 수혜.
+        </p>
+      </div>
+
+      <h2>네트워킹 계층 구조</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>계층</th><th>핵심 종목</th><th>역할</th></tr></thead>
+          <tbody>
+            <tr><td><b>스위치 실리콘</b></td><td>Broadcom(AVGO)·Marvell</td><td>Tomahawk/Jericho 스위치 칩 · AI 패브릭의 두뇌</td></tr>
+            <tr><td><b>스위치 장비</b></td><td>Arista(ANET)·Cisco</td><td>이더넷 스위치 — AI 데이터센터 패브릭</td></tr>
+            <tr><td><b>광트랜시버</b></td><td>InnoLight·Coherent·Lumentum</td><td>800G→1.6T 전환 · 광↔전 신호 변환</td></tr>
+            <tr><td><b>인터커넥트·광부품</b></td><td>Amphenol(APH)·Corning(GLW)</td><td>고속 케이블·커넥터·광섬유</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>네트워킹은 <b>"보이지 않는 곡괭이"</b> — GPU만큼 주목받진 않지만 AI 클러스터 규모가 커질수록 필수. 표준 경쟁(이더넷 vs InfiniBand)에서 <b>Broadcom의 이더넷 진영</b>이 점유를 넓히는 중. 11원칙 ②③⑤는 양호하나 종목별 AI 노출 비중 편차가 커 ⑦(연결고리) 확인이 중요.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>표준 전환 리스크</b>: 이더넷↔InfiniBand, 광↔구리 전환 시점 오판.<br>
+        ② <b>AI 노출 희석</b>: Corning·Amphenol 등은 비-AI 매출 비중도 커 순수 베팅 아님.<br>
+        ③ <b>CapEx 동조</b>: 컴퓨트 투자 둔화 시 네트워킹도 동반 둔화.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-compute.html"><span>→ 컴퓨트 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-power.html"><span>→ 전력·냉각 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-storage.html"><span>→ 메모리·스토리지 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter.html"><span>↑ 데이터센터 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>광트랜시버 800G→1.6T 전환 (2026 본격화) · 업계 로드맵</li>
+          <li>Broadcom — AI 네트워킹 + 커스텀 ASIC (AI매출 +106% YoY)</li>
+          <li>인터커넥트·광부품: Amphenol · Corning · InnoLight</li>
+          <li>시총: companiesmarketcap (AVGO, 2026-05)</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.12"></script>
+  <script>
+    mkChart("chartOptics", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>${p[0].value} Gbps` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["400G", "800G", "1.6T"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "Gbps", axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [400, 800, 1600],
+        itemStyle: { color: "#9b8cff", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: p => p.value >= 1000 ? (p.value/1000)+"T" : p.value+"G" }
+      }]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터센터 · 메모리·스토리지 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.12">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="datacenter-storage">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / <a href="./datacenter.html">데이터센터</a> / 메모리·스토리지</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터센터 ③ 메모리 · 스토리지</h1>
+          <p class="subtitle">HBM은 진앙, SSD·HDD는 품절 사태 — AI가 만든 저장장치 슈퍼사이클</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">000660 · MU · WDC · STX</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 메모리·스토리지</div>
+        <p class="hm-future"><b>AI가 저장장치까지 빨아들이는 중.</b> HBM은 메모리 슈퍼사이클의 진앙, SSD·HDD는 2026 품절 사태가 났어요.</p>
+        <p class="hm-now"><b>지금</b> — HBM(SK하이닉스·삼성·Micron) → <a href="./semiconductors-memory.html">반도체 메모리</a>. 엔터프라이즈 SSD 수요 +41%, NAND 가격 월 30~60% 급등, HDD는 2026 전량 완판(리드타임 1년+).</p>
+        <p class="hm-watch"><b>워치포인트</b> — NAND/HDD 가격 정점 시점, QLC 대용량 SSD(122TB→244TB) 채택, HBM4 공급 배분.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">엔터프라이즈 SSD 수요</div>
+          <div class="value">+41<span style="font-size:0.6em">%</span></div>
+          <div class="delta up">AI 인프라 견인</div>
+        </div>
+        <div class="kpi">
+          <div class="label">NAND 가격 (MoM)</div>
+          <div class="value">30~60<span style="font-size:0.6em">%↑</span></div>
+          <div class="delta up">주·월 단위 인상</div>
+        </div>
+        <div class="kpi">
+          <div class="label">HDD 2026 공급</div>
+          <div class="value">완판</div>
+          <div class="delta up">WD 등 · 리드타임 1년+</div>
+        </div>
+        <div class="kpi">
+          <div class="label">스토리지 시장 CAGR</div>
+          <div class="value">20<span style="font-size:0.6em">%+</span></div>
+          <div class="delta up">Dell'Oro · 5년 전망</div>
+        </div>
+      </div>
+
+      <h2>저장장치 가격·수요 압력 (2026)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>DRAM·NAND·HDD 동반 상승 — AI 수요가 전 계층 압박</div>
+        <div id="chartPrice" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          2026 들어 DRAM·NAND·HDD 가격이 <b>동시에 급등</b>. 많은 공급사가 월·주 단위로 가격을 조정, 30~60% MoM 인상 보고. <b>AI가 메모리부터 HDD까지 전 저장 계층을 빨아들이는</b> 구조.
+        </p>
+      </div>
+
+      <h2>스토리지 계층 구조</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>계층</th><th>핵심 종목</th><th>현황 (2026-05)</th></tr></thead>
+          <tbody>
+            <tr><td><b>HBM</b> (AI 메모리)</td><td>SK하이닉스·삼성·Micron</td><td>슈퍼사이클 진앙 → <a href="./semiconductors-memory.html">반도체 메모리 페이지</a></td></tr>
+            <tr><td><b>엔터프라이즈 SSD</b></td><td>Samsung·SK하이닉스(Solidigm)·Micron·Sandisk</td><td>수요 +41% · QLC 대용량(122TB·244TB) · 가격 급등</td></tr>
+            <tr><td><b>HDD</b> (대용량 콜드)</td><td>Western Digital(WDC)·Seagate(STX)</td><td>2026 전량 완판 · 리드타임 1년+ · AI 데이터 보관 수요</td></tr>
+            <tr><td><b>CXL 메모리</b></td><td>SK하이닉스·삼성 (옵션성)</td><td>2025 $1.3B → 2034 $11.8B(CAGR 28.7%) · 매출 기여는 아직 미미</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>스토리지는 <b>HBM의 그림자 수혜</b>에서 <b>독자 슈퍼사이클</b>로 확장 중. SSD·HDD 품절은 11원칙 ②(실수요)의 강력한 증거. 다만 <b>가격 사이클</b> 특성상 정점 후 급락 위험 — ③(3년 성장)의 지속성을 봐야 함. 한국은 HBM·SSD 모두 SK하이닉스·삼성이 핵심.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>메모리 가격 사이클</b>: 2027+ 증설 물량 출회 시 ASP 급락.<br>
+        ② <b>HDD→SSD 전환</b>: QLC 대용량 SSD 가격 하락 시 HDD 수요 잠식.<br>
+        ③ <b>수요 과대 추정</b>: AI 학습/추론 스토리지 실수요가 기대보다 작을 위험.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-compute.html"><span>→ 컴퓨트 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-power.html"><span>→ 전력·냉각 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-network.html"><span>→ 네트워킹 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter.html"><span>↑ 데이터센터 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Dell'Oro Group — 스토리지 드라이브 시장 CAGR 20%+ (5년)</li>
+          <li>TrendForce — 2026 NAND/HDD 가격 급등 · 엔터프라이즈 SSD 수요 +41%</li>
+          <li>Western Digital — 2026 HDD 생산 전량 완판 확인</li>
+          <li>HBM: → <a href="./semiconductors-memory.html">반도체 메모리</a> 페이지 참조</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.12"></script>
+  <script>
+    mkChart("chartPrice", {
+      tooltip: { trigger: "axis", formatter: p => p.map(s => `${s.seriesName}: +${s.value}%`).join("<br/>") },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" }, data: ["가격 상승률(MoM 상단)"] },
+      grid: { left: 8, right: 24, top: 16, bottom: 36, containLabel: true },
+      xAxis: { type: "category", data: ["DRAM", "NAND", "HDD"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "% MoM(상단)", axisLabel: { color: "#8693a5", formatter: "{value}%" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        name: "가격 상승률(MoM 상단)", type: "bar", data: [60, 60, 40],
+        itemStyle: { color: "#5aa7ff", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: "+{c}%" }
+      }]
+    });
+  </script>
+</body>
+</html>
