@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI LLM · 파운데이션 모델 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.15">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-llm-foundation">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-llm.html">AI LLM 개발</a> / 파운데이션 모델</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI LLM ① 파운데이션 모델 (지능 개발)</h1>
+          <p class="subtitle">모델 지능 그 자체를 만드는 프런티어 랩 — OpenAI·Anthropic·Google·xAI·중국 오픈</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">OPENAI* · ANTHROPIC* · GOOGL · XAI* · META</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 파운데이션 모델</div>
+        <p class="hm-future"><b>지능 자체를 파는 층.</b> 컨슈머는 OpenAI, 엔터프라이즈는 Anthropic, 벤치마크·생태계는 Google — 1위가 시장마다 다릅니다.</p>
+        <p class="hm-now"><b>지금</b> — OpenAI ~$500B(run-rate $25B) · Anthropic ~$380B(5월 $900B 협상·run-rate $30B+) · xAI $250B(SpaceX 인수) · DeepSeek·Qwen 오픈웨이트가 가격 파괴.</p>
+        <p class="hm-watch"><b>워치포인트</b> — Anthropic $900B 라운드 확정 여부, Gemini 3 벤치 우위 지속, 중국 오픈모델의 점유 확대, 추론 수익화 시점.</p>
+      </div>
+
+      <h2>프런티어 랩 밸류에이션 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">OpenAI (비상장)</div>
+          <div class="value">~$500<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">run-rate $25B · ChatGPT 컨슈머 1위</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Anthropic (비상장)</div>
+          <div class="value">~$380<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">run-rate $30B+ · 5월 $900B 협상</div>
+        </div>
+        <div class="kpi">
+          <div class="label">xAI (SpaceX 인수)</div>
+          <div class="value">~$250<span style="font-size:0.6em">B</span></div>
+          <div class="delta neutral">2026.2 전액주식 · Grok</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Google Gemini</div>
+          <div class="value">Alphabet</div>
+          <div class="delta up">$4.7T 모회사 · 벤치 우위</div>
+        </div>
+      </div>
+
+      <h2>프런티어 랩 밸류에이션 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>비상장 평가액 ($B) · 2026-05 (Alphabet은 전사라 제외)</div>
+        <div id="chartVal" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          ※ 모두 <b>비상장</b> — 직접 투자 불가. 우회: <b>Microsoft</b>(OpenAI), <b>Amazon·Google</b>(Anthropic), <b>SpaceX</b>(xAI, 6월 IPO 예정). Google은 <b>Alphabet(GOOGL)</b>로 직접 상장.
+        </p>
+      </div>
+
+      <h2>연환산 매출(run-rate) 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>run-rate ($B) · 컨슈머 vs 엔터프라이즈</div>
+        <div id="chartRun" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          웹 점유율은 ChatGPT 60%대로 압도하지만, <b>엔터프라이즈/API 매출은 Anthropic이 앞섬</b>. "1위"가 컨슈머냐 매출이냐에 따라 갈림 (→ <a href="./ai-llm.html">AI LLM 전체</a>).
+        </p>
+      </div>
+
+      <h2>랩별 비교</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>랩</th><th>모델</th><th>평가/모회사</th><th>특징</th></tr></thead>
+          <tbody>
+            <tr><td><b>OpenAI</b></td><td>GPT 시리즈</td><td class="num">~$500B</td><td>컨슈머 9억 WAU 1위 · run-rate $25B · MS 지분</td></tr>
+            <tr><td><b>Anthropic</b></td><td>Claude</td><td class="num">~$380B</td><td>엔터프라이즈/코딩 1위 · run-rate $30B+ · 5월 $900B 협상</td></tr>
+            <tr><td><b>Google</b></td><td>Gemini 3</td><td>Alphabet $4.7T</td><td>벤치마크 우위 + 검색·안드로이드 생태계 번들</td></tr>
+            <tr><td><b>xAI</b></td><td>Grok</td><td class="num">~$250B</td><td>SpaceX 인수(2026.2) · X 통합 · Colossus 컴퓨트</td></tr>
+            <tr><td><b>Meta</b></td><td>Llama (오픈)</td><td>META $1.61T</td><td>오픈웨이트 + 30억 앱 생태계 · Superintelligence Labs</td></tr>
+            <tr><td><b>DeepSeek·Qwen</b></td><td>R·Qwen (오픈)</td><td>중국</td><td>오픈웨이트 저가 — 토큰 가격 파괴자 (→ <a href="./ai-llm-inference.html">추론·인프라</a>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>파운데이션 모델은 <b>승자 다극화</b> — 컨슈머(OpenAI)·엔터프라이즈(Anthropic)·생태계(Google)가 각자 1위. 11원칙 ②(실수요)는 폭발적이나 <b>대부분 비상장 + 적자</b>(추론 수익화 전)라 ③⑤ 검증이 어려움. 한국 투자자는 <b>우회 베팅(GOOGL·MSFT·META·AMZN)</b>이 현실적.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>비상장·적자</b>: 직접 투자 불가, 컴퓨트 비용으로 적자 지속.<br>
+        ② <b>모델 우위 12개월 주기</b>: 선두가 자주 바뀜 — 해자 불확실.<br>
+        ③ <b>중국 오픈모델</b>: DeepSeek·Qwen이 가격·성능으로 추격, 마진 압박.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>OpenAI ~$500B(2026.1 텐더) · Anthropic ~$380B(2026.2 Series G, 5월 $900B 협상 보도)</li>
+          <li>xAI ~$250B (SpaceX 전액주식 인수, 2026.2)</li>
+          <li>run-rate: Anthropic $30B+ · OpenAI $25B (공개 보도 기준)</li>
+          <li>⚠️ 모두 비상장 — 평가액은 라운드/보도 시점 기준, 변동성 큼</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.15"></script>
+  <script>
+    mkChart("chartVal", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>평가: $${p[0].value}B` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["xAI", "Anthropic", "OpenAI"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [250, 380, 500],
+        itemStyle: { color: "#2bd4a4", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+p.value+"B" }
+      }]
+    });
+    mkChart("chartRun", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>run-rate: $${p[0].value}B` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["OpenAI", "Anthropic"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [25, 30],
+        itemStyle: { color: "#ffb020", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+p.value+"B+" }
+      }]
+    });
+  </script>
+</body>
+</html>

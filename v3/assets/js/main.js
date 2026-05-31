@@ -7,10 +7,20 @@ window.SECTORS = [
   // AI (최상단 · LLM → 엔터 → 솔루션 순)
   { slug: "ai-llm",           name: "AI LLM 개발",            period: "2026–",     group: "AI",
     desc: "치킨게임에서 가치 구독으로. 클로드 코드의 ARPU 역전.",
-    tickers: ["ANTHROPIC*", "OPENAI*", "GOOGL", "META"] },
+    tickers: ["ANTHROPIC*", "OPENAI*", "GOOGL", "META"],
+    sub: [
+      { slug: "ai-llm-foundation", name: "파운데이션 모델" },
+      { slug: "ai-llm-agent",      name: "AI 에이전트" },
+      { slug: "ai-llm-inference",  name: "추론 · 인프라" },
+    ] },
   { slug: "ai-entertainment", name: "AI 엔터테인먼트",        period: "2025–",     group: "AI",
     desc: "월드모델·AI 캐릭터·생성형 스토리. 스캐터랩·MiniMax·Genie.",
-    tickers: ["SCATTERLAB*", "WRTN*", "META"] },
+    tickers: ["SCATTERLAB*", "WRTN*", "META"],
+    sub: [
+      { slug: "ai-ent-world",     name: "월드모델 · 영상" },
+      { slug: "ai-ent-character", name: "캐릭터 · 컴패니언" },
+      { slug: "ai-ent-audio",     name: "음악 · 음성" },
+    ] },
   { slug: "ai-solutions",     name: "데이터 솔루션",          period: "2023–2026", group: "AI",
     desc: "팔란티어·C3.ai·Snowflake·ServiceNow 등 B2B AI 적용층.",
     tickers: ["PLTR", "AI", "SNOW", "NOW"] },
@@ -363,7 +373,20 @@ if (typeof window !== "undefined") {
 }
 
 // Apply default options to every chart instance built via mkChart()
+// Mobile (<=600px) label-overlap mitigation, non-destructive
+function applyMobileChartDefaults(opt) {
+  if (!opt || (window.innerWidth || 9999) > 600) return;
+  if (opt.grid && !Array.isArray(opt.grid) && typeof opt.grid.right === 'number' && opt.grid.right < 38) opt.grid.right = 38;
+  var axes = [];
+  ['xAxis','yAxis'].forEach(function (k) { if (Array.isArray(opt[k])) axes = axes.concat(opt[k]); else if (opt[k]) axes.push(opt[k]); });
+  axes.forEach(function (ax) { if (!ax) return; ax.axisLabel = ax.axisLabel || {}; if (ax.axisLabel.hideOverlap === undefined) ax.axisLabel.hideOverlap = true; if (ax.axisLabel.fontSize === undefined) ax.axisLabel.fontSize = 10; });
+  if (opt.radar) { (Array.isArray(opt.radar) ? opt.radar : [opt.radar]).forEach(function (r) { if (!r) return; r.axisName = r.axisName || {}; if (r.axisName.fontSize === undefined) r.axisName.fontSize = 9; if (r.radius === undefined) r.radius = '60%'; }); }
+  var series = Array.isArray(opt.series) ? opt.series : (opt.series ? [opt.series] : []);
+  series.forEach(function (sr) { if (sr && sr.label && sr.label.show && sr.label.fontSize === undefined) sr.label.fontSize = 10; if (sr && sr.type === 'pie' && sr.label && sr.label.fontSize === undefined) sr.label.fontSize = 10; });
+}
+
 function mkChart(domId, option) {
+  try { applyMobileChartDefaults(option); } catch (e) {}
   const dom = document.getElementById(domId);
   if (!dom || typeof echarts === "undefined") return null;
   const chart = echarts.init(dom, null, { renderer: "canvas" });
@@ -712,10 +735,36 @@ window.fmt = {
   pct:   (n) => (n>0?"+":"") + n.toFixed(1) + "%",
 };
 
+// ---- Subnav (본문 상단 하위메뉴 칩 바) — 상위 복귀 + 형제 하위메뉴 ----
+function renderSubnav(activeSlug) {
+  if (!activeSlug) return;
+  let parent = null, isParent = false;
+  for (const s of window.SECTORS) {
+    if (!s.sub) continue;
+    if (s.slug === activeSlug) { parent = s; isParent = true; break; }
+    if (s.sub.some(sub => sub.slug === activeSlug)) { parent = s; break; }
+  }
+  if (!parent) return;                          // 하위메뉴 없는 섹터는 칩바 미표시
+  const main = document.querySelector(".main");
+  if (!main) return;
+  const chips = [
+    `<a class="subnav-chip parent ${isParent ? "active" : ""}" href="./${parent.slug}.html">▣ ${parent.name} 전체</a>`,
+    ...parent.sub.map(sub => `<a class="subnav-chip ${activeSlug === sub.slug ? "active" : ""}" href="./${sub.slug}.html">${sub.name}</a>`)
+  ].join("");
+  const bar = document.createElement("nav");
+  bar.className = "subnav";
+  bar.setAttribute("aria-label", parent.name + " 하위 메뉴");
+  bar.innerHTML = chips;
+  const crumb = main.querySelector(".crumb");
+  if (crumb) crumb.insertAdjacentElement("afterend", bar);
+  else main.insertBefore(bar, main.firstChild);
+}
+
 // ---- Init on DOM ready ----------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const slug = document.body.dataset.sector || null;
   renderSidebar(slug);
+  renderSubnav(slug);
   setupMobileToggle();
   if (window.fillAbbrs) window.fillAbbrs();
   if (window.autoTermify) window.autoTermify();

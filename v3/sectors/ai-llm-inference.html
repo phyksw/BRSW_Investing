@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI LLM · 추론·인프라 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.15">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-llm-inference">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-llm.html">AI LLM 개발</a> / 추론·인프라</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI LLM ③ 추론 · 인프라 (서빙·토큰 경제)</h1>
+          <p class="subtitle">학습보다 추론이 더 큰 비용으로 — 토큰값은 폭락, 오픈모델이 가격을 깬다</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">NVDA · 오픈모델 · 추론 프로바이더</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 추론·인프라</div>
+        <p class="hm-future"><b>이제 돈은 학습이 아니라 추론에서 나간다.</b> 배포가 늘면서 추론(서빙)이 컴퓨트 비용의 주류로 — 토큰값은 2년새 10~100배 하락.</p>
+        <p class="hm-now"><b>지금</b> — 오픈웨이트(DeepSeek·Qwen·Llama)가 가격을 깨고, 추론 프로바이더(Together·Fireworks·Groq·Cerebras)가 경쟁. 단 <b>추론형(reasoning) 모델</b>은 쿼리당 토큰을 폭증시켜 컴퓨트 수요는 오히려 증가.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 오픈 vs 클로즈드 점유, 추론 전용 칩(Groq LPU·Cerebras·ASIC), 토큰 단가 바닥, reasoning 토큰 소비 증가율.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">토큰 가격 (2년)</div>
+          <div class="value">10~100<span style="font-size:0.6em">x↓</span></div>
+          <div class="delta up">경쟁 + 효율로 폭락</div>
+        </div>
+        <div class="kpi">
+          <div class="label">추론 vs 학습</div>
+          <div class="value">추론 ↑</div>
+          <div class="delta up">배포 확대로 비용 주류화</div>
+        </div>
+        <div class="kpi">
+          <div class="label">오픈웨이트 점유</div>
+          <div class="value">확대</div>
+          <div class="delta up">Qwen·DeepSeek·Llama</div>
+        </div>
+        <div class="kpi">
+          <div class="label">reasoning 효과</div>
+          <div class="value">토큰↑</div>
+          <div class="delta up">쿼리당 소비 폭증 → 컴퓨트↑</div>
+        </div>
+      </div>
+
+      <h2>토큰 가격 하락 추세 (상대 인덱스)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>동급 성능 기준 토큰 단가 — 2024=100 (정성 추정)</div>
+        <div id="chartTok" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          경쟁 + 모델 효율 + 오픈웨이트로 <b>동급 성능 토큰값이 급락</b>. 단가는 떨어지지만 <b>사용량(특히 reasoning)이 폭증</b>해 전체 컴퓨트 지출은 증가 — NVIDIA·HBM에 유리.
+        </p>
+      </div>
+
+      <h2>추론 생태계 구조</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>계층</th><th>핵심 플레이어</th><th>역할</th></tr></thead>
+          <tbody>
+            <tr><td><b>추론 HW</b></td><td>NVIDIA(GPU)·Broadcom/Google TPU·AWS Trainium·Groq(LPU)·Cerebras</td><td>추론 가속 — NVDA 여전히 주류, ASIC·전용칩 성장</td></tr>
+            <tr><td><b>추론 프로바이더</b></td><td>Together AI·Fireworks·Groq·Cerebras + 하이퍼스케일러</td><td>오픈모델 서빙·API — 저가 경쟁</td></tr>
+            <tr><td><b>오픈웨이트 모델</b></td><td>DeepSeek(R)·Alibaba Qwen·Meta Llama</td><td>가격 파괴자 — Qwen 오픈모델 사용 점유 상위</td></tr>
+            <tr><td><b>클로즈드 API</b></td><td>OpenAI·Anthropic·Google</td><td>프리미엄 — 성능·신뢰성으로 차별화</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>추론은 <b>"AI의 진짜 단가 싸움"</b> — 토큰값 하락은 소비자엔 호재, 모델 랩엔 마진 압박. 하지만 <b>reasoning이 토큰 소비를 키워 컴퓨트 수요는 오히려 증가</b> → 최대 수혜는 <b>NVIDIA·HBM(SK하이닉스·삼성)</b>. 한국 투자자는 추론 스타트업(비상장)보다 <b>곡괭이(반도체·DC)</b> 노출이 깨끗 (→ <a href="./semiconductors-memory.html">메모리</a> · <a href="./datacenter-compute.html">컴퓨트</a>).</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>마진 압박</b>: 토큰값 폭락 — 모델 랩 수익성 악화.<br>
+        ② <b>오픈모델 잠식</b>: 중국 오픈웨이트가 클로즈드 API 점유 잠식.<br>
+        ③ <b>추론칩 경쟁</b>: ASIC·LPU가 NVIDIA 추론 점유 일부 가져갈 가능.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>토큰 가격 2년 10~100x 하락 · 추론이 학습 비용 추월 (업계 분석)</li>
+          <li>오픈웨이트 점유 확대: DeepSeek R-시리즈·Alibaba Qwen·Meta Llama</li>
+          <li>추론 프로바이더: Together AI·Fireworks·Groq(LPU)·Cerebras</li>
+          <li>⚠️ 토큰가·점유율은 정성 추정 — 방향성 참고</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.15"></script>
+  <script>
+    mkChart("chartTok", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>지수: ${p[0].value}` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["2024", "2025", "2026"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "지수(2024=100, 로그)", type: "log", min: 1, max: 100, axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "line", data: [100, 20, 4], smooth: false,
+        lineStyle: { width: 3, color: "#ff5d6c" }, itemStyle: { color: "#ff5d6c" }, symbol: "circle", symbolSize: 9,
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: "{c}" }
+      }]
+    });
+  </script>
+</body>
+</html>

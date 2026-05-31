@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI LLM · AI 에이전트 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.15">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-llm-agent">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-llm.html">AI LLM 개발</a> / AI 에이전트</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI LLM ② AI 에이전트 (실행하는 AI)</h1>
+          <p class="subtitle">챗봇에서 에이전트로 — 2026은 '에이전트의 해'. 코딩 에이전트가 첫 수익화 카테고리</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">ANTHROPIC* · CRM · MSFT · OPENAI*</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — AI 에이전트</div>
+        <p class="hm-future"><b>AI가 답하는 걸 넘어 '일을 한다'.</b> 멀티스텝 작업을 자동 실행하는 에이전트가 2026 최대 테마 — 시장 ~$13.8B(+44% CAGR).</p>
+        <p class="hm-now"><b>지금</b> — 가장 명확한 수익은 <b>코딩 에이전트</b>. Claude Code run-rate <b>$1B+</b>, Salesforce Agentforce 부킹 <b>$1B</b>(12,000딜), MS Copilot 확산.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 에이전트 신뢰성(환각·실패율), 업무 자동화 ROI 입증, 가격 모델(좌석 vs 성과), 코딩 외 영역(영업·고객지원) 확장.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">AI 에이전트 시장 2026</div>
+          <div class="value">~$13.8<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">2025 $7.8B → +44% CAGR</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Claude Code run-rate</div>
+          <div class="value">$1<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">최고속 성장 개발자 제품</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Agentforce 부킹</div>
+          <div class="value">$1<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">12,000 딜 (런칭 이후)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2030 전망</div>
+          <div class="value">$50<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">일부 추정 · 고성장</div>
+        </div>
+      </div>
+
+      <h2>AI 에이전트 시장 성장</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>시장 규모 ($B) · 2025 → 2026 → 2030E</div>
+        <div id="chartMkt" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          2025 $7.8B → 2026 $13.8B(+44% CAGR), 2030 $50B+ 전망(추정 편차 큼). <b>"챗봇 → 에이전트"</b> 전환이 엔터프라이즈 AI의 핵심 동력.
+        </p>
+      </div>
+
+      <h2>주요 에이전트 제품</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>제품</th><th>제공</th><th>영역</th><th>현황</th></tr></thead>
+          <tbody>
+            <tr><td><b>Claude Code</b></td><td>Anthropic*</td><td>코딩 에이전트</td><td>run-rate $1B+ · 코딩/에이전틱 워크로드 선두</td></tr>
+            <tr><td><b>Agentforce</b></td><td>Salesforce (CRM)</td><td>업무 자동화</td><td>부킹 $1B · 12,000딜 · CRM 통합 (→ <a href="./ai-solutions.html">데이터 솔루션</a>)</td></tr>
+            <tr><td><b>Copilot / Studio</b></td><td>Microsoft (MSFT)</td><td>엔터프라이즈</td><td>오피스·Azure 통합 · 월 수백만 에이전트</td></tr>
+            <tr><td><b>Operator / 에이전트</b></td><td>OpenAI*</td><td>컨슈머·태스크</td><td>ChatGPT 에이전트 기능 확장</td></tr>
+            <tr><td><b>Cursor · GitHub Copilot</b></td><td>Anysphere · MS</td><td>코딩</td><td>코딩 에이전트 경쟁 — 개발자 채택 급증</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>에이전트는 <b>"AI가 매출을 내는 첫 증거"</b> — 코딩(Claude Code·Cursor)이 ROI가 가장 명확. 11원칙 ②(실수요)는 강력. 한국 투자자 베팅 경로는 <b>상장 우회</b>: Salesforce(CRM·Agentforce)·Microsoft(Copilot). 순수 에이전트 스타트업은 대부분 비상장.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>신뢰성</b>: 멀티스텝 실패·환각 — 미션 크리티컬 업무 적용 한계.<br>
+        ② <b>가격 모델 불확실</b>: 좌석당 vs 성과당 — 수익화 구조 미정착.<br>
+        ③ <b>경쟁 격화</b>: 모델 랩이 직접 에이전트로 진입 — SaaS 마진 잠식.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>AI 에이전트 시장 2026 ~$13.8B(2025 $7.8B, +44% CAGR), 2030 $50B+ 전망 (업계 리서치)</li>
+          <li>Claude Code run-rate $1B+ · Salesforce Agentforce 부킹 $1B·12,000딜 (공개 보도)</li>
+          <li>⚠️ 시장 규모 추정치는 기관별 편차 큼 — 방향성 참고</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.15"></script>
+  <script>
+    mkChart("chartMkt", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>$${p[0].value}B` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["2025", "2026", "2030E"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [7.8, 13.8, 50],
+        itemStyle: { color: "#2bd4a4", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: p => "$"+p.value+"B" }
+      }]
+    });
+  </script>
+</body>
+</html>

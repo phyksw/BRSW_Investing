@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 엔터 · 음악·음성 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.15">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-ent-audio">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-entertainment.html">AI 엔터테인먼트</a> / 음악·음성</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI 엔터 ③ 음악 · 음성 생성</h1>
+          <p class="subtitle">텍스트로 곡과 목소리를 — Suno·Udio(음악), ElevenLabs(음성). 저작권이 핵심 전장</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SUNO* · ELEVENLABS* · UDIO*</div>
+          <div>PERIOD · 2025–</div>
+          <div class="as-of">AS OF · 2026-05</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 음악·음성</div>
+        <p class="hm-future"><b>누구나 곡과 목소리를 만든다.</b> Suno가 AI 음악을, ElevenLabs가 AI 음성을 주도 — 진짜 싸움은 <b>저작권·라이선싱</b>.</p>
+        <p class="hm-now"><b>지금</b> — Suno ~$2.45B 밸류(음악) · ElevenLabs ~$3.3B+ 밸류(음성·더빙) · Udio가 추격. 메이저 레이블과 소송→라이선스 전환 진행.</p>
+        <p class="hm-watch"><b>워치포인트</b> — 레이블 라이선스 타결, 엔터프라이즈 음성(더빙·콜센터) 확산, 저작권 판례, 한국 음원 시장 적용.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Suno (비상장)</div>
+          <div class="value">~$2.45<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">AI 음악 생성 선두</div>
+        </div>
+        <div class="kpi">
+          <div class="label">ElevenLabs (비상장)</div>
+          <div class="value">~$3.3<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">AI 음성·더빙 · 보도 최대 $6.6B</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Udio (비상장)</div>
+          <div class="value">경쟁</div>
+          <div class="delta neutral">음악 생성 · 라이선스 타결</div>
+        </div>
+        <div class="kpi">
+          <div class="label">핵심 변수</div>
+          <div class="value">저작권</div>
+          <div class="delta down">RIAA 소송 → 라이선스</div>
+        </div>
+      </div>
+
+      <h2>밸류에이션 비교 (비상장)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>평가액 ($B) · 2026 보도 기준</div>
+        <div id="chartVal" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          ※ 모두 <b>비상장</b> — 직접 투자 불가. ElevenLabs는 후속 라운드에서 보도상 최대 $6.6B까지 거론. 저작권 합의가 밸류 변수.
+        </p>
+      </div>
+
+      <h2>주요 플레이어</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>회사</th><th>영역</th><th>평가</th><th>현황</th></tr></thead>
+          <tbody>
+            <tr><td><b>Suno</b></td><td>AI 음악</td><td class="num">~$2.45B</td><td>음악 생성 선두 · 메이저 레이블 라이선스 협상/분쟁</td></tr>
+            <tr><td><b>ElevenLabs</b></td><td>AI 음성·더빙</td><td class="num">~$3.3B+</td><td>음성 합성·더빙 선두 · 엔터프라이즈 확장 (보도 최대 $6.6B)</td></tr>
+            <tr><td><b>Udio</b></td><td>AI 음악</td><td>비상장</td><td>Suno 경쟁사 · 메이저와 라이선스 타결</td></tr>
+            <tr><td>메이저 레이블</td><td>저작권</td><td>—</td><td>UMG·Sony·Warner — 소송에서 라이선스 파트너로 전환 중</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>음악·음성은 <b>"기술보다 저작권이 승부"</b> — 소송이 라이선스로 전환되며 합법화 진행. 11원칙 ②(실수요)는 크리에이터·엔터프라이즈(더빙·콜센터)로 입증되나, <b>전원 비상장이라 직접 투자 불가</b>. 한국 투자자에겐 관찰 영역 — 음원·미디어 상장사의 AI 도입 수혜를 간접 관찰.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>저작권 소송</b>: 학습 데이터 권리 분쟁 — 사업 모델 위협.<br>
+        ② <b>비상장</b>: 직접 투자 불가, 평가액은 보도 기준 변동.<br>
+        ③ <b>플랫폼 내장</b>: 빅테크(Google·OpenAI)가 음악·음성 기능 통합 시 경쟁 격화.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Suno ~$2.45B(2026 라운드) · ElevenLabs ~$3.3B+(보도 최대 $6.6B) · Udio</li>
+          <li>저작권: RIAA 소송 → 메이저 레이블 라이선스 전환 (UMG·Sony·Warner)</li>
+          <li>⚠️ 전원 비상장 — 평가액은 라운드/보도 시점 기준, 변동성 큼</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.15"></script>
+  <script>
+    mkChart("chartVal", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>평가: $${p[0].value}B` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["Suno", "ElevenLabs"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [2.45, 3.3],
+        itemStyle: { color: "#c489ff", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+p.value+"B" }
+      }]
+    });
+  </script>
+</body>
+</html>

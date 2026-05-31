@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 엔터 · 캐릭터·컴패니언 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.15">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-ent-character">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-entertainment.html">AI 엔터테인먼트</a> / 캐릭터·컴패니언</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>AI 엔터 ② AI 캐릭터 · 컴패니언 챗</h1>
+          <p class="subtitle">MAU는 거대, 수익화가 관건 — 한국 스캐터랩은 흑자, MiniMax는 상장</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">MINIMAX(0100.HK) · SCATTERLAB* · WRTN*</div>
+          <div>PERIOD · 2025–</div>
+          <div class="as-of">AS OF · 2026-05</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 캐릭터·컴패니언</div>
+        <p class="hm-future"><b>사용자가 AI 캐릭터와 매일 대화한다.</b> MAU는 수천만 규모지만 진짜 승부는 <b>수익화(ARPU)</b> — 한국 스캐터랩이 흑자로 증명.</p>
+        <p class="hm-now"><b>지금</b> — MiniMax Talkie MAU <b>2,760만</b>(0100.HK, IPO +420%) · Character.AI MAU ~2,300만이나 ARPU $0.72(약점) · 스캐터랩 제타 <b>3분기 연속 흑자</b>(Q2 52억·OPM 17%).</p>
+        <p class="hm-watch"><b>워치포인트</b> — ARPPU 지속성, 미성년자 보호 규제, 캐릭터 IP 라이선싱, 컨텍스트(기억) 확장으로 몰입↑.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">MiniMax 0100.HK</div>
+          <div class="value">$34.5<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">Talkie MAU 2,760만 · IPO +420%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Character.AI MAU</div>
+          <div class="value">~2,300<span style="font-size:0.6em">만</span></div>
+          <div class="delta down">ARPU $0.72 · 수익화 약점</div>
+        </div>
+        <div class="kpi">
+          <div class="label">스캐터랩 제타 (비상장)</div>
+          <div class="value">3Q<span style="font-size:0.6em"> 흑자</span></div>
+          <div class="delta up">Q2 52억원 · OPM 17%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">AI 컴패니언 시장 2025</div>
+          <div class="value">$120<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">연환산 · 고성장</div>
+        </div>
+      </div>
+
+      <h2>MAU 비교 (캐릭터·컴패니언)</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>월간 활성 사용자 (만 명)</div>
+        <div id="chartMau" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">
+          MAU는 MiniMax Talkie·Character.AI가 수천만으로 거대. 그러나 <b>수익화 밀도(ARPU)는 천차만별</b> — MAU 규모 ≠ 매출.
+        </p>
+      </div>
+
+      <h2>주요 플레이어</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>회사</th><th>제품</th><th>국가</th><th>현황</th></tr></thead>
+          <tbody>
+            <tr><td><b>MiniMax</b><br><small>0100.HK</small></td><td>Talkie·Xingye</td><td>중국</td><td>MAU 2,760만 · IPO 2026.1 +420% · 시총 $34.5B · 유료화 강함</td></tr>
+            <tr><td><b>스캐터랩</b><br><small>비상장</small></td><td>제타(Zeta)</td><td>한국</td><td><b>3분기 연속 흑자</b> · Q2 52억원·OPM 17% · 수익화 검증</td></tr>
+            <tr><td><b>Character.AI</b><br><small>비상장</small></td><td>캐릭터 챗</td><td>미국</td><td>MAU ~2,300만 · Google $2.7B 딜 · <b>ARPU $0.72 약점</b></td></tr>
+            <tr><td><b>뤼튼</b><br><small>비상장</small></td><td>캐릭터·검색</td><td>한국</td><td>시리즈 B 1,080억원 · MAU 500만+ · 확장 우선</td></tr>
+            <tr><td>Meta · xAI</td><td>AI Studio·Grok 컴패니언</td><td>미국</td><td>대형 플랫폼의 캐릭터 실험</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>캐릭터·컴패니언은 <b>"MAU는 쉽고 수익화는 어렵다"</b>의 전형 — Character.AI(ARPU $0.72)가 반면교사, <b>스캐터랩(흑자)·MiniMax(유료화)</b>가 모범. 한국 직접 노출은 <b>MiniMax(0100.HK)</b>가 유일한 상장 경로, 스캐터랩·뤼튼은 비상장. 11원칙 ⑤(흑자)를 스캐터랩이 통과한 점이 핵심.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>수익화 실패</b>: 높은 MAU에도 ARPU 낮으면 적자 (Character.AI).<br>
+        ② <b>규제</b>: AI 컴패니언 미성년자 보호·안전 규제 강화 흐름.<br>
+        ③ <b>플랫폼 잠식</b>: Meta·xAI 등 대형 플랫폼이 캐릭터 기능 내장.</p>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>MiniMax Talkie MAU 2,760만(2025.9) · 0100.HK IPO 2026.1 +420% · 시총 $34.5B</li>
+          <li>스캐터랩 제타 3분기 연속 흑자 · Q2 매출 52억원·OPM 17%</li>
+          <li>Character.AI MAU ~2,300만·ARPU $0.72 · Google $2.7B 라이선스(2024.8)</li>
+          <li>AI 컴패니언 시장 $120M(2025 연환산, TechCrunch)</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.15"></script>
+  <script>
+    mkChart("chartMau", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>MAU: ${p[0].value}만` },
+      grid: { left: 8, right: 24, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "만 명", axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["뤼튼", "Character.AI", "MiniMax Talkie"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [500, 2300, 2760],
+        itemStyle: { color: "#2bd4a4", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => p.value+"만" }
+      }]
+    });
+  </script>
+</body>
+</html>
