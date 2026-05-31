@@ -38,6 +38,7 @@ window.SECTORS = [
     desc: "빅테크 CapEx 슈퍼사이클. 변압기·전력·냉각·SMR.",
     tickers: ["VRT", "ETN", "267260.KS", "OKLO"],
     sub: [
+      { slug: "datacenter-spacex",  name: "SpaceX · xAI Colossus" },
       { slug: "datacenter-compute", name: "컴퓨트 (GPU·ASIC)" },
       { slug: "datacenter-power",   name: "전력 · 냉각" },
       { slug: "datacenter-storage", name: "메모리 · 스토리지" },
@@ -47,7 +48,12 @@ window.SECTORS = [
   // 우주
   { slug: "space",            name: "우주",                  period: "2020–",     group: "우주",
     desc: "스타링크 캐시카우와 우주 데이터센터 비전.",
-    tickers: ["SPACEX*", "RKLB", "ASTS", "IRDM"] },
+    tickers: ["SPACEX*", "RKLB", "ASTS", "IRDM"],
+    sub: [
+      { slug: "space-launch",     name: "발사체 (로켓)" },
+      { slug: "space-network",    name: "위성 네트워크" },
+      { slug: "space-orbital-dc", name: "궤도 데이터센터" },
+    ] },
 
   // 프런티어
   { slug: "quantum",          name: "양자컴퓨팅",            period: "2022–2026", group: "프런티어",

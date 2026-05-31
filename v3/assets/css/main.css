@@ -1850,6 +1850,56 @@ tbody tr:last-child td { border-bottom: none; }
   }
   .mobile-card-table td[colspan]::before,
   .mobile-card-table th[colspan]::before { display: none; }
+
+  /* 긴 설명형 표(.stacked): 가로 스크롤·nowrap 대신 라벨 위/값 아래 전폭 좌측정렬 카드 */
+  .table-wrap.stacked table {
+    overflow-x: visible;
+    display: table;
+    white-space: normal;
+    min-width: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  .table-wrap.stacked thead { display: none; }
+  .table-wrap.stacked tbody { display: block; }
+  .table-wrap.stacked tr {
+    display: block;
+    padding: 12px;
+    border: 1px solid var(--border-1);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.018);
+  }
+  .table-wrap.stacked td {
+    display: block;
+    width: auto;
+    text-align: left;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border-1);
+    line-height: 1.55;
+  }
+  .table-wrap.stacked td:last-child { border-bottom: 0; }
+  .table-wrap.stacked td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 3px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: left;
+  }
+  .table-wrap.stacked td:first-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-0);
+    padding-bottom: 8px;
+  }
+  .table-wrap.stacked td:first-child::before { display: none; }
+
   /* 모바일 한국어 본문 letter-spacing 미세 조정 — 너무 좁아짐 방지 */
   p, li { letter-spacing: 0; }
 

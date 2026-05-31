@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우주 · 위성 네트워크 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.16">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="space-network">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 우주 / <a href="./space.html">우주</a> / 위성 네트워크</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>우주 ② 위성 네트워크</h1>
+          <p class="subtitle">Starlink가 SpaceX 매출의 61% — 위성통신이 진짜 캐시카우, 휴대폰 직접 연결로 확장</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">STARLINK* · ASTS · 한화시스템</div>
+          <div>PERIOD · 2020–</div>
+          <div class="as-of">AS OF · 2026-05-31</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 위성 네트워크</div>
+        <p class="hm-future"><b>로켓은 화제, 돈은 위성에서 나와요.</b> Starlink가 SpaceX 매출의 <b>61%</b> — 위성통신이 캐시카우. 다음은 일반 휴대폰에 바로 연결하는 <b>다이렉트-투-셀</b>.</p>
+        <p class="hm-now"><b>지금</b> — Starlink 가입자 <b>1,000만+</b>(160개국). 2025 매출 <b>$11.4B(+50%)</b>, 2026E <b>$20B+</b>. DTC 위성 663기+, EchoStar 주파수 <b>$17B</b> 인수.</p>
+        <p class="hm-watch"><b>워치포인트</b> — Starlink V3(Starship 전개)·DTC 음성/데이터 상용화, Amazon Kuiper·AST SpaceMobile 경쟁, SpaceX IPO 내 Starlink 분리 가능성, 한국 진입.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Starlink 가입자</div>
+          <div class="value">1,000<span style="font-size:0.6em">만+</span></div>
+          <div class="delta up">160개국 (2026.2)</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2025 매출</div>
+          <div class="value">$11.4<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">+50% YoY · SpaceX의 61%</div>
+        </div>
+        <div class="kpi">
+          <div class="label">2026 매출(E)</div>
+          <div class="value">$20<span style="font-size:0.6em">B+</span></div>
+          <div class="delta up">고성장 지속</div>
+        </div>
+        <div class="kpi">
+          <div class="label">다이렉트-투-셀</div>
+          <div class="value">663<span style="font-size:0.6em">기+</span></div>
+          <div class="delta up">EchoStar 주파수 $17B</div>
+        </div>
+      </div>
+
+      <h2>Starlink 매출 추이</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연 매출 ($B) · 2023 → 2026E</div>
+        <div id="chartRev" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">2025 $11.4B(+50%)에서 2026 <b>$20B+</b> 전망. 위성통신이 SpaceX의 <b>실질 캐시카우</b>이자 IPO 밸류(~$1.75T)의 핵심 근거 (→ <a href="./datacenter-spacex.html">SpaceX·Colossus</a>).</p>
+      </div>
+
+      <h2>위성통신 경쟁 구도</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>LEO 위성 운영 규모 — 상대 점유(정성)</div>
+        <div id="chartShare" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">Starlink가 LEO 위성·가입자에서 압도적 1위. Amazon <b>Kuiper</b>가 추격, <b>AST SpaceMobile</b>은 휴대폰 직접연결 특화 — 직접연결 시장이 새 전장.</p>
+      </div>
+
+      <h2>주요 플레이어</h2>
+      <div class="table-wrap stacked">
+        <table>
+          <thead><tr><th>회사</th><th>서비스</th><th>현황 (2026)</th></tr></thead>
+          <tbody>
+            <tr><td><b>Starlink</b><br><small>SpaceX, 비상장</small></td><td>LEO 광대역·DTC</td><td>가입자 1,000만+ · 2025 매출 $11.4B(+50%) · DTC 663기+ · EchoStar $17B</td></tr>
+            <tr><td><b>Amazon Kuiper</b><br><small>AMZN</small></td><td>LEO 광대역</td><td>전개 가속 — Starlink 최대 도전자 · Amazon 자본력</td></tr>
+            <tr><td><b>AST SpaceMobile</b><br><small>ASTS</small></td><td>휴대폰 직접연결</td><td>대형 위성 직접연결 특화 · 통신사 제휴 · 상장 직접 노출</td></tr>
+            <tr><td><b>Eutelsat OneWeb</b><br><small>유럽</small></td><td>LEO 기업·정부</td><td>B2B·정부 중심 · 유럽 주권 통신</td></tr>
+            <tr><td><b>한화시스템</b><br><small>한국</small></td><td>위성·ASTS 투자</td><td>AST SpaceMobile 투자 · 한국 군·민 위성통신 진입</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>위성통신은 <b>Starlink 1강</b>이지만 직접 투자처는 비상장. 상장 노출은 <b>AST SpaceMobile(ASTS, 직접연결)</b>·<b>Amazon(Kuiper)</b>, 한국은 <b>한화시스템</b>(ASTS 투자). Starlink는 SpaceX IPO에 통합 — <b>분리 IPO</b> 가능성이 장기 촉매. 매출 61% 기여는 11원칙 ⑤(흑자 체력)의 근거.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>경쟁 심화</b>: Kuiper·중국 GW 메가컨스털레이션이 가격·점유 압박.<br>
+        ② <b>DTC 상용화 속도</b>: 음성·데이터 직접연결의 규제·기술 검증 변수.<br>
+        ③ <b>비상장</b>: Starlink 직접 투자 불가 — 분리 IPO 전엔 우회만 가능.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-launch.html"><span>→ 발사체 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-orbital-dc.html"><span>→ 궤도 데이터센터 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space.html"><span>↑ 우주 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Starlink 가입자 1,000만+(2026.2)·160개국 · 2025 매출 $11.4B(+50%)·SpaceX의 61% · 2026E $20B+: Sacra·TradingKey·idemest</li>
+          <li>DTC 위성 663기+ · EchoStar 주파수 $17B 인수 · Starlink V3(Starship 전개): theglobalstatistics·업계 보도</li>
+          <li>경쟁: Amazon Kuiper · AST SpaceMobile(ASTS) · Eutelsat OneWeb</li>
+          <li>⚠️ 비상장·추정 — 매출/가입자 변동성 큼</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.16"></script>
+  <script>
+    mkChart("chartRev", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>$${p[0].value}B` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["2023", "2024", "2025", "2026E"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: "${value}B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [4.2, 7.6, 11.4, 20],
+        itemStyle: { color: "#2bd4a4", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: p => "$" + p.value + "B" }
+      }]
+    });
+    mkChart("chartShare", {
+      tooltip: { trigger: "item", formatter: p => `<b>${p.name}</b><br/>상대 점유 ${p.percent}%` },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" } },
+      series: [{
+        type: "pie", radius: ["42%", "70%"], center: ["50%", "44%"],
+        data: [
+          { name: "Starlink", value: 80, itemStyle: { color: "#2bd4a4" } },
+          { name: "Amazon Kuiper", value: 9, itemStyle: { color: "#ffb020" } },
+          { name: "OneWeb", value: 6, itemStyle: { color: "#5aa7ff" } },
+          { name: "기타", value: 5, itemStyle: { color: "#5b6776" } }
+        ],
+        label: { color: "#f0f4fa", formatter: "{b} {d}%" }
+      }]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우주 · 발사체 (로켓) · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.16">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="space-launch">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 우주 / <a href="./space.html">우주</a> / 발사체</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>우주 ① 발사체 (로켓)</h1>
+          <p class="subtitle">SpaceX의 발사 독점 — 재사용이 비용을 깨고, Starship V3가 판을 다시 키운다</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SPACEX* · RKLB · 012450 · 047810</div>
+          <div>PERIOD · 2020–</div>
+          <div class="as-of">AS OF · 2026-05-31</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 발사체</div>
+        <p class="hm-future"><b>발사 비용이 싸지면 우주의 모든 게 가능해져요.</b> SpaceX 재사용 로켓이 단가를 깨고, Starship V3는 1회 100톤+를 궤도로 — 위성·궤도 DC의 전제 조건.</p>
+        <p class="hm-now"><b>지금</b> — SpaceX 2026 발사 <b>~160회 페이스</b>(전 세계 압도). Falcon 9 ~$74M. <b>Starship V3</b> 첫 시험 2026.5.22(12차)·높이 400ft+·LEO 100톤+·Raptor 3.</p>
+        <p class="hm-watch"><b>워치포인트</b> — Starship 궤도 재사용·월 4회 발사(Starlink V3 전개), $/kg 하락 속도, 한국 차세대 발사체(누리호 후속)·KAI·한화에어로.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">SpaceX 2026 발사</div>
+          <div class="value">~160<span style="font-size:0.6em">회</span></div>
+          <div class="delta up">페이스 · 전 세계 1위</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Falcon 9 가격</div>
+          <div class="value">$74<span style="font-size:0.6em">M</span></div>
+          <div class="delta up">재사용으로 단가 하락</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Starship V3 LEO</div>
+          <div class="value">100<span style="font-size:0.6em">톤+</span></div>
+          <div class="delta up">400ft+ · Raptor 3</div>
+        </div>
+        <div class="kpi">
+          <div class="label">$/kg 목표</div>
+          <div class="value">&lt;$200</div>
+          <div class="delta up">현 Falcon ~$1,500–2,700</div>
+        </div>
+      </div>
+
+      <h2>발사 비용 $/kg — 재사용의 충격</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>LEO 1kg당 발사 비용 ($, 로그·정성 추정)</div>
+        <div id="chartCost" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">셔틀 시대 ~$50,000/kg → Falcon 9 ~$2,700 → Starship 목표 <b>$200 미만</b>. 단가 급락이 <b>위성 대량 전개·궤도 데이터센터</b>를 경제적으로 만드는 핵심 동력 (→ <a href="./space-orbital-dc.html">궤도 DC</a>).</p>
+      </div>
+
+      <h2>연 발사 수 — SpaceX vs 나머지</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>2026 궤도 발사 (회, 추정)</div>
+        <div id="chartLaunch" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">SpaceX가 전 세계 궤도 발사의 과반을 차지. 재사용·고빈도 운영으로 경쟁사와 격차 확대 — 발사는 사실상 <b>SpaceX 독점에 가까운 과점</b>.</p>
+      </div>
+
+      <h2>주요 발사체 플레이어</h2>
+      <div class="table-wrap stacked">
+        <table>
+          <thead><tr><th>주체</th><th>발사체</th><th>현황 (2026)</th></tr></thead>
+          <tbody>
+            <tr><td><b>SpaceX</b><br><small>비상장</small></td><td>Falcon 9 · Starship</td><td>2026 ~160회 페이스 · 재사용 선도 · Starship V3 시험(5.22) · IPO ~$1.75T 추진</td></tr>
+            <tr><td><b>Rocket Lab</b><br><small>RKLB</small></td><td>Electron · Neutron</td><td>소형 발사 2위 · 중형 Neutron 2026 데뷔 추진 · 상장 직접 노출 가능</td></tr>
+            <tr><td><b>한화에어로스페이스</b><br><small>012450</small></td><td>누리호 체계종합</td><td>누리호 후속·고체발사체 · 한국 우주 밸류체인 핵심</td></tr>
+            <tr><td><b>KAI</b><br><small>047810</small></td><td>발사체·위성</td><td>차세대 발사체·위성 본체 · 정부 우주 프로그램 수혜</td></tr>
+            <tr><td>Blue Origin · ULA · Arianespace</td><td>New Glenn 등</td><td>추격군 — 재사용·빈도에서 SpaceX에 열위</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>발사는 <b>SpaceX 독과점</b>이 본질 — 직접 투자처는 비상장이라 제한적. 상장 노출은 <b>Rocket Lab(RKLB)</b>이 가장 순수, 한국은 <b>한화에어로(012450)·KAI(047810)</b>가 정부 우주예산·누리호 후속의 수혜. Starship 단가 하락은 위성·궤도 DC 전 밸류체인의 전제 (→ <a href="./space-network.html">위성 네트워크</a>).</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>Starship 개발 지연</b>: 궤도 재사용·고빈도 검증이 늦으면 로드맵 전체 지연.<br>
+        ② <b>SpaceX 독점</b>: 경쟁사·한국엔 진입장벽 — 가격 협상력 SpaceX 우위.<br>
+        ③ <b>발사 사고·규제</b>: 단발 사고가 일정·보험·승인에 큰 충격.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-network.html"><span>→ 위성 네트워크 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-orbital-dc.html"><span>→ 궤도 데이터센터 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space.html"><span>↑ 우주 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>SpaceX 2026 발사 ~160회 페이스(4월말 50회): SpaceNexus·NextBigFuture·SpaceDaily</li>
+          <li>Falcon 9 Block 5 ~$74M(2026) · Starship V3 첫 시험 2026.5.22(12차)·400ft+·LEO 100톤+·Raptor 3: Wikipedia·tesorb</li>
+          <li>$/kg: Falcon 9 ~$1,500–2,700 · Starship 목표 &lt;$200(Musk): Jarsy Research</li>
+          <li>⚠️ 발사 수·비용은 추정/목표치 — 변동성 큼</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.16"></script>
+  <script>
+    mkChart("chartCost", {
+      tooltip: { trigger: "axis", formatter: p => `<b>${p[0].name}</b><br/>~$${p[0].value.toLocaleString()}/kg` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["셔틀", "Falcon 9", "Starship(목표)"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "log", name: "$/kg(로그)", min: 100, max: 100000, axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [50000, 2700, 200],
+        itemStyle: { color: "#5aa7ff", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: p => "$" + p.value.toLocaleString() }
+      }]
+    });
+    mkChart("chartLaunch", {
+      tooltip: { trigger: "item", formatter: p => `<b>${p.name}</b><br/>${p.value}회 (${p.percent}%)` },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" } },
+      series: [{
+        type: "pie", radius: ["42%", "70%"], center: ["50%", "44%"],
+        data: [
+          { name: "SpaceX", value: 160, itemStyle: { color: "#2bd4a4" } },
+          { name: "중국(전체)", value: 75, itemStyle: { color: "#ffb020" } },
+          { name: "기타 전 세계", value: 60, itemStyle: { color: "#5b6776" } }
+        ],
+        label: { color: "#f0f4fa", formatter: "{b} {c}" }
+      }]
+    });
+  </script>
+</body>
+</html>

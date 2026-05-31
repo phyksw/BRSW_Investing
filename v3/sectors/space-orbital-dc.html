@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우주 · 궤도 데이터센터 · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.16">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="space-orbital-dc">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / 우주 / <a href="./space.html">우주</a> / 궤도 데이터센터</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>우주 ③ 궤도 데이터센터</h1>
+          <p class="subtitle">AI 컴퓨트를 우주로 — 무한 태양광·자연냉각의 비전, 그러나 아직 미검증</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">STARCLOUD* · GOOGL · NVDA · SPACEX*</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05-31</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 궤도 데이터센터</div>
+        <p class="hm-future"><b>데이터센터를 우주로 올린다?</b> 태양광은 지상의 8배, 냉각은 공짜 — 발사비만 싸지면 AI 컴퓨트의 다음 무대. 비전은 거대하지만 <b>아직 검증 전</b>.</p>
+        <p class="hm-now"><b>지금</b> — Google <b>Project Suncatcher</b>(TPU+태양광, 2027 초 위성 2기), <b>Starcloud</b> 유니콘 $1.1B(H100 위성 가동, 10월 Blackwell), Axiom <b>첫 궤도 DC 노드</b>(2026.1).</p>
+        <p class="hm-watch"><b>워치포인트</b> — 2027 프로토타입 성패, Starship 발사비 하락, 방사선·열 방출·디브리 해결, Varda의 "지상 대비 3배 비용" 회의론.</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Starcloud 밸류</div>
+          <div class="value">$1.1<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">유니콘 · $170M 펀딩</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Suncatcher 첫 위성</div>
+          <div class="value">2027<span style="font-size:0.6em">초</span></div>
+          <div class="delta neutral">Google×Planet Labs 2기</div>
+        </div>
+        <div class="kpi">
+          <div class="label">우주 태양광 효율</div>
+          <div class="value">~8<span style="font-size:0.6em">배</span></div>
+          <div class="delta up">지상 대비 · 거의 24시간</div>
+        </div>
+        <div class="kpi">
+          <div class="label">현실(회의론)</div>
+          <div class="value">~3<span style="font-size:0.6em">배 비용</span></div>
+          <div class="delta down">Varda · W당 지상 대비</div>
+        </div>
+      </div>
+
+      <h2>지상 vs 궤도 — 컴퓨트 비용</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>W당 상대 비용 (지상=100, 정성 추정)</div>
+        <div id="chartCost" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">현재는 궤도가 <b>지상 대비 ~3배</b> 비싸다는 회의론(Varda). 단 <b>Starship 발사비 급락</b> + 무한 태양광·자연냉각이 결합하면 역전 가능 — 그게 베팅의 핵심 변수 (→ <a href="./space-launch.html">발사체</a>).</p>
+      </div>
+
+      <h2>주요 플레이어</h2>
+      <div class="table-wrap stacked">
+        <table>
+          <thead><tr><th>주체</th><th>접근</th><th>현황 (2026)</th></tr></thead>
+          <tbody>
+            <tr><td><b>Starcloud</b><br><small>비상장 유니콘</small></td><td>전용 위성 DC</td><td>밸류 $1.1B($170M 펀딩) · Starcloud-1(H100) 가동 · 10월 Starcloud-2(Blackwell) · 88,000기 FCC 신청 · 5GW/4km 태양광 구상</td></tr>
+            <tr><td><b>Google</b><br><small>GOOGL</small></td><td>Project Suncatcher</td><td>TPU+태양광+광통신 · Planet Labs 제휴 · 2027 초 위성 2기 · 81기 1km 클러스터 구상</td></tr>
+            <tr><td><b>Axiom Space</b><br><small>비상장</small></td><td>궤도 DC 노드</td><td>2026.1.11 첫 2개 노드 발사 — 우주 클라우드 인프라 시작</td></tr>
+            <tr><td><b>NVIDIA</b><br><small>NVDA</small></td><td>칩 공급</td><td>궤도 DC용 H100/Blackwell 공급 — 어느 쪽이 이겨도 곡괭이 수혜</td></tr>
+            <tr><td><b>SpaceX(xAI)</b><br><small>비상장</small></td><td>발사+컴퓨트</td><td>Starship 발사 + xAI 궤도 컴퓨트 비전 (→ <a href="./datacenter-spacex.html">Colossus</a>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>시장의 두 시각</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>🟢 비전 (무한 확장)</div>
+          <p style="font-size:13.5px">태양광 <b>8배</b>·거의 24시간 발전·<b>자연 냉각</b>·무한 부지. 지상 전력·용수·그리드 병목을 우회. Starship 발사비가 목표(&lt;$200/kg)에 닿으면 <b>경제성 역전</b> 가능.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>🔴 현실 (미검증)</div>
+          <p style="font-size:13.5px">Varda 추산 <b>W당 ~3배</b> 비용 · 방사선·열 방출·우주 디브리·유지보수 난제 · 전부 <b>프로토타입 단계</b>. 2027 시험 전엔 상용성 <b>미검증</b> — 장기 옵션으로만.</p>
+        </div>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>궤도 DC는 <b>"고위험·고잠재"</b> 장기 테마 — 직접 투자처는 대부분 비상장(Starcloud·Axiom). 상장 노출은 <b>Google(GOOGL, Suncatcher)</b>·<b>NVIDIA(NVDA, 칩)</b>가 현실적. 11원칙상 ②(실수요)는 형성 전, ③⑤(매출·흑자)는 미검증 — <b>관찰 영역</b>. 핵심 트리거는 <b>Starship 발사비</b> (→ <a href="./space-launch.html">발사체</a>).</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>미검증 경제성</b>: 현재 W당 ~3배 비용 · 2027 시험 전 상용성 불확실.<br>
+        ② <b>기술 난제</b>: 방사선·열 방출·디브리·궤도상 유지보수.<br>
+        ③ <b>비상장·초기</b>: Starcloud·Axiom 직접 투자 제한 — 변동성 극대.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-launch.html"><span>→ 발사체 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-network.html"><span>→ 위성 네트워크 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:240px" href="./datacenter-spacex.html"><span>→ 데이터센터 · SpaceX Colossus</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space.html"><span>↑ 우주 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Google Project Suncatcher(TPU+태양광+광통신·Planet Labs·2027초 2기·81기 1km 클러스터): research.google·DCD</li>
+          <li>Starcloud $1.1B 유니콘($170M)·Starcloud-1(H100)·Starcloud-2(2026.10 Blackwell)·88,000기 FCC(2026.2.3)·5GW/4km: GeekWire·Fierce·Wikipedia</li>
+          <li>Axiom 첫 궤도 DC 노드 2026.1.11 · 우주 태양광 ~8배·자연냉각 · Varda 회의(W당 ~3배): Introl·carboncredits</li>
+          <li>⚠️ 전부 프로토타입·비상장 — 상용성 미검증, 장기 옵션</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.16"></script>
+  <script>
+    mkChart("chartCost", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>상대 비용 ${p[0].value}` },
+      grid: { left: 8, right: 24, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["지상 DC", "궤도 DC(현재)", "궤도 DC(발사비↓)"], axisLabel: { color: "#c3cdd9", interval: 0, fontSize: 11 } },
+      yAxis: { type: "value", name: "W당 상대비용", axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [100, 300, 90],
+        itemStyle: { color: function(p){ return ["#5b6776", "#ff5d6c", "#2bd4a4"][p.dataIndex]; }, borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: "{c}" }
+      }]
+    });
+  </script>
+</body>
+</html>

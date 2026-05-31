@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터센터 · SpaceX(xAI) Colossus · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.16">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="datacenter-spacex">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI 인프라 / <a href="./datacenter.html">데이터센터</a> / SpaceX · xAI Colossus</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터센터 ⑤ SpaceX · xAI Colossus</h1>
+          <p class="subtitle">Anthropic 계약으로 급부상 — 로켓 회사가 AI 컴퓨트 임대인으로</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SPACEX* · XAI* · ANTHROPIC* · NVDA</div>
+          <div>PERIOD · 2026–</div>
+          <div class="as-of">AS OF · 2026-05-31</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — SpaceX(xAI) Colossus</div>
+        <p class="hm-future"><b>AI 인프라가 '소유'에서 '임대·부채'로.</b> SpaceX가 xAI를 인수하며 멤피스 Colossus를 손에 넣었고, 그 컴퓨트를 <b>Anthropic에 통째로 임대</b>하며 데이터센터 임대인으로 급부상했어요.</p>
+        <p class="hm-now"><b>지금</b> — Anthropic이 <b>Colossus 1</b>(멤피스 300MW·NVIDIA GPU 22만) 전량 임차: <b>월 $1.25B(연 $15B), 2029.5까지</b>. xAI는 자체 학습을 신축 <b>Colossus 2</b>(세계 첫 1GW+급)로 이전.</p>
+        <p class="hm-watch"><b>워치포인트</b> — ① NVIDIA→xAI 최대 $2B 투자→그 돈으로 NVIDIA GPU 구매하는 <b>순환 거래</b> 논란, ② GPU 담보 부채 $12.5B의 <b>감가(연 ~20%)</b>, ③ 멤피스 가스터빈·그리드 규제, ④ SpaceX IPO(6월, ~$1.75T).</p>
+      </div>
+
+      <h2>핵심 지표 <span class="as-of">AS OF 2026-05</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Anthropic 임차료</div>
+          <div class="value">$1.25<span style="font-size:0.6em">B/월</span></div>
+          <div class="delta up">연 $15B · 2029.5까지</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Colossus 1</div>
+          <div class="value">22<span style="font-size:0.6em">만 GPU</span></div>
+          <div class="delta up">300MW+ · 전량 임차</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Colossus 2 (신축)</div>
+          <div class="value">1<span style="font-size:0.6em">GW+</span></div>
+          <div class="delta up">세계 첫 기가와트 · GPU 55.5만</div>
+        </div>
+        <div class="kpi">
+          <div class="label">SPV 임대 파이낸싱</div>
+          <div class="value">~$20<span style="font-size:0.6em">B</span></div>
+          <div class="delta neutral">자본 $7.5B + 부채 $12.5B</div>
+        </div>
+      </div>
+
+      <h2>Colossus 전력 규모 — 1 → 2 점프</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>추정 전력 (MW) · Colossus 1 vs 2 단지 (보도 기반)</div>
+        <div id="chartPower" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">Colossus 1 ~300MW → Colossus 2 단지 <b>최대 2,000MW</b>(원전 2기급). 전력·냉각·변압기 공급망 전체가 핵심 수혜·병목 (→ <a href="./datacenter-power.html">전력·냉각</a>).</p>
+      </div>
+
+      <h2>~$20B 임대(SPV) 구조</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>리스-투-오운 SPV — 자본 vs 부채 ($B, 보도)</div>
+        <div id="chartSpv" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:12.5px;margin-top:8px">GPU를 <b>특수목적법인(SPV)이 소유</b>하고 xAI가 5년 임차. 자기자본 $7.5B(NVIDIA 최대 $2B 포함) + 부채 $12.5B, 담보는 <b>GPU 자체</b>. 막대한 capex를 장부 밖으로 빼는 <b>네오클라우드 임대</b> 방식.</p>
+      </div>
+
+      <h2>구조 — 누가 무엇을 빌리나</h2>
+      <div class="table-wrap stacked">
+        <table>
+          <thead><tr><th>레이어</th><th>주체</th><th>내용</th></tr></thead>
+          <tbody>
+            <tr><td>임차인 ①</td><td><b>Anthropic ← Colossus 1</b></td><td>멤피스 300MW·GPU 22만 전량 임차 (월 $1.25B, 2029.5까지). Claude 학습·추론에 사용</td></tr>
+            <tr><td>임차인 ②</td><td><b>xAI ← Colossus 2</b></td><td>자체 학습(Grok)을 신축 기가와트동으로 이전. 555k GPU(GB200/GB300)·~$18B</td></tr>
+            <tr><td>금융</td><td><b>SPV ← NVIDIA GPU</b></td><td>~$20B로 NVIDIA 칩 매입 후 xAI에 5년 임대. NVIDIA가 최대 $2B 지분 참여(보도)</td></tr>
+            <tr><td>모회사</td><td><b>SpaceX</b></td><td>xAI 인수(2026.2 전액주식)로 임대인. 발사·Starlink·Grok·Colossus를 한 지붕. IPO ~$1.75T 추진</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>시장의 두 시각 — 실수요 vs 순환 거래</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>🟢 강세 (실수요)</div>
+          <p style="font-size:13.5px">Anthropic 연 <b>$15B</b>는 <b>실제 계약 매출</b>(run-rate $30B+의 절반). GPU 22만 장은 <b>HBM</b>(SK하이닉스·삼성) 실수요로 직결. AI 매출이 곧 인프라 지출로 환류 — "곡괭이 파는 자가 번다"의 재확인.</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="dot"></span>🔴 약세 (순환·부채)</div>
+          <p style="font-size:13.5px">NVIDIA가 xAI에 최대 $2B 투자→그 돈으로 NVIDIA 칩 구매 — 닷컴기 <b>Nortel '벤더 파이낸싱'</b>과 유사 비판. $12.5B 부채는 <b>GPU 감가(연 ~20%)</b>에 취약. 수요가 소수 고객(Anthropic·xAI)에 집중.</p>
+        </div>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">한국 투자자 관점</div>
+        <p>SpaceX·xAI·Anthropic은 모두 <b>비상장</b> — 직접 투자 불가(SpaceX는 6월 IPO 예정). 노출은 <b>곡괭이</b>: ① NVDA·HBM(<a href="./datacenter-storage.html">메모리·스토리지</a>·<a href="./semiconductors-memory.html">반도체 메모리</a>) ② 전력·냉각(<a href="./datacenter-power.html">VRT·ETN·한국 변압기 빅3</a>). 다음 단계인 궤도 DC는 → <a href="./space-orbital-dc.html">우주 데이터센터</a>.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>순환 거래·부채</b>: NVIDIA 투자→칩 구매 구조 + GPU 담보 $12.5B 감가.<br>
+        ② <b>전력·규제</b>: 멤피스 가스터빈 환경 소송·그리드 인터커넥션 지연.<br>
+        ③ <b>비상장·집중</b>: 머스크 단일 지배(SpaceX-xAI-Starlink) 거버넌스·이해상충.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-power.html"><span>→ 전력·냉각 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter-compute.html"><span>→ 컴퓨트 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./space-orbital-dc.html"><span>→ 궤도 데이터센터</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./datacenter.html"><span>↑ 데이터센터 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Anthropic ← Colossus 1 임차(월 $1.25B·연 $15B·2029.5까지·300MW·GPU 22만): 2026.5 보도(TechCrunch·DCD) + SpaceX S-1</li>
+          <li>Colossus 2 세계 첫 1GW급·단지 2GW·GPU 55.5만·~$18B: SemiAnalysis(2026.1)·Introl·DCD</li>
+          <li>SPV ~$20B(자본 $7.5B[NVIDIA ≤$2B] + 부채 $12.5B·GPU 담보·5년): roic.ai·TipRanks·Converge(2025.10–2026)</li>
+          <li>SpaceX 밸류 $1.25T(2026.2 secondary)·IPO ~$1.75T(~6/12): Bloomberg·Sacra</li>
+          <li>⚠️ 비상장·보도 기준 — 수치 변동성 큼. 회사 공식 확정치 아님</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.16"></script>
+  <script>
+    mkChart("chartPower", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>${p[0].value.toLocaleString()} MW` },
+      grid: { left: 8, right: 30, top: 16, bottom: 24, containLabel: true },
+      xAxis: { type: "category", data: ["Colossus 1", "Colossus 2 (단지)"], axisLabel: { color: "#c3cdd9" } },
+      yAxis: { type: "value", name: "MW", axisLabel: { color: "#8693a5" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      series: [{
+        type: "bar", data: [300, 2000],
+        itemStyle: { color: "#ffb020", borderRadius: [4, 4, 0, 0] },
+        label: { show: true, position: "top", color: "#f0f4fa", formatter: p => p.value.toLocaleString() + "MW" }
+      }]
+    });
+    mkChart("chartSpv", {
+      tooltip: { trigger: "item", formatter: p => `<b>${p.name}</b><br/>$${p.value}B (${p.percent}%)` },
+      legend: { bottom: 0, textStyle: { color: "#c3cdd9" } },
+      series: [{
+        type: "pie", radius: ["42%", "70%"], center: ["50%", "44%"],
+        data: [
+          { name: "부채 (GPU 담보)", value: 12.5, itemStyle: { color: "#ff5d6c" } },
+          { name: "자기자본 (NVIDIA ≤$2B 포함)", value: 7.5, itemStyle: { color: "#2bd4a4" } }
+        ],
+        label: { color: "#f0f4fa", formatter: "{b}\n${c}B" }
+      }]
+    });
+  </script>
+</body>
+</html>
