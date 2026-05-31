@@ -23,7 +23,11 @@ window.SECTORS = [
     ] },
   { slug: "ai-solutions",     name: "데이터 솔루션",          period: "2023–2026", group: "AI",
     desc: "팔란티어·C3.ai·Snowflake·ServiceNow 등 B2B AI 적용층.",
-    tickers: ["PLTR", "AI", "SNOW", "NOW"] },
+    tickers: ["PLTR", "AI", "SNOW", "NOW"],
+    sub: [
+      { slug: "ai-solutions-decision", name: "의사결정·운영 AI" },
+      { slug: "ai-solutions-platform", name: "데이터 플랫폼·DB" },
+    ] },
 
   // AI 인프라
   { slug: "semiconductors",   name: "반도체",                period: "2024–2026", group: "AI 인프라",

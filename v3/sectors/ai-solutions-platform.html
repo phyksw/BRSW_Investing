@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터 솔루션 · 데이터 플랫폼·DB · Investing Memo</title>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.18">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body data-sector="ai-solutions-platform">
+  <button class="mobile-toggle" id="mobileToggle">≡ MENU</button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+      <div class="crumb"><a href="../index.html">대시보드</a> / AI / <a href="./ai-solutions.html">데이터 솔루션</a> / 데이터 플랫폼·DB</div>
+
+      <header class="page-header">
+        <div class="title-block">
+          <h1>데이터 솔루션 ② 데이터 플랫폼·DB</h1>
+          <p class="subtitle">AI의 '연료 탱크' — 데이터를 저장·처리하는 인프라층. Snowflake vs Databricks 양강</p>
+        </div>
+        <div class="meta">
+          <div class="ticker">SNOW · DBX* · MDB · CFLT</div>
+          <div>PERIOD · 2024–2026</div>
+          <div class="as-of">AS OF · 2026-05-29</div>
+        </div>
+      </header>
+
+      <div class="head-message">
+        <div class="hm-kicker">한 줄 헤드 — 데이터 플랫폼·DB</div>
+        <p class="hm-future"><b>AI가 쓸 데이터를 담는 '연료 탱크' 층.</b> 모델이 아무리 좋아도 데이터가 정리돼야 작동 — Snowflake·Databricks가 양강, DB·스트리밍이 보조.</p>
+        <p class="hm-now"><b>지금</b> — Databricks 사모 <b>$134B</b>(run-rate $5.4B·+65%, Mosaic AI) vs Snowflake <b>$60.7B</b>(FY26 매출 $4.7B, Cortex AI). 둘 다 AI 기능 경쟁, Snowflake는 영업적자.</p>
+        <p class="hm-watch"><b>워치포인트</b> — Databricks IPO(2026 추진설), Snowflake 흑자 전환, 벡터·RAG 수요로 MongoDB·Confluent 수혜, 하이퍼스케일러(MSFT Fabric) 번들 압박.</p>
+      </div>
+
+      <h2>핵심 종목 <span class="as-of">AS OF 2026-05-29</span></h2>
+      <div class="grid cols-4">
+        <div class="kpi">
+          <div class="label">Databricks (사모)</div>
+          <div class="value">$134<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">run-rate $5.4B(+65%) · IPO 대기</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Snowflake SNOW</div>
+          <div class="value">$60.7<span style="font-size:0.6em">B</span></div>
+          <div class="delta neutral">FY26 매출 $4.7B · Cortex AI</div>
+        </div>
+        <div class="kpi">
+          <div class="label">MongoDB MDB</div>
+          <div class="value">$27.0<span style="font-size:0.6em">B</span></div>
+          <div class="delta up">FY26 매출 $2.46B · Atlas·벡터</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Confluent (IBM 인수)</div>
+          <div class="value">$11<span style="font-size:0.6em">B</span></div>
+          <div class="delta neutral">2026.3 IBM 피인수·상폐</div>
+        </div>
+      </div>
+
+      <h2>플랫폼·DB 매출 비교</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>연 매출 / run-rate ($B) · 2026</div>
+        <div id="chartRev" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">Databricks(run-rate $5.4B·+65%)가 Snowflake($4.7B)를 매출·성장에서 추월. MongoDB·Confluent는 특화 DB로 견고하나 규모는 한 단계 아래.</p>
+      </div>
+
+      <h2>시총 비교 — 사모 vs 상장</h2>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>밸류에이션 ($B) · Databricks는 사모</div>
+        <div id="chartCap" class="chart sm"></div>
+        <p style="color:var(--text-2);font-size:13px;margin-top:8px">Databricks(사모 $134B)가 밸류 최대지만 <b>직접 투자 불가</b>(IPO 대기). 상장 직접 노출은 <b>SNOW·MDB</b>(Confluent는 IBM 피인수·상폐). MSFT(Fabric)는 하이퍼스케일러 번들로 별도 압박.</p>
+      </div>
+
+      <h2>종목 상세</h2>
+      <div class="table-wrap stacked">
+        <table>
+          <thead><tr><th>종목</th><th>시총</th><th>매출</th><th>핵심</th></tr></thead>
+          <tbody>
+            <tr><td><b>Databricks</b><br><small>DBX* · 사모</small></td><td class="num">$134B</td><td class="num">$5.4B(run-rate)</td><td>레이크하우스+Mosaic AI · AI 학습 데이터 강 · +65% 성장 · IPO 대기 · FCF 흑자전환</td></tr>
+            <tr><td><b>Snowflake</b><br><small>SNOW</small></td><td class="num">$60.7B</td><td class="num">$4.7B</td><td>데이터 클라우드 순수 플레이 · Cortex AI · FY26 +29% · 영업적자</td></tr>
+            <tr><td><b>MongoDB</b><br><small>MDB</small></td><td class="num">$27.0B</td><td class="num">$2.46B</td><td>문서형 DB 1위 · Atlas 클라우드 · <b>벡터 검색</b>으로 RAG 수혜 (+23%)</td></tr>
+            <tr><td><b>Confluent</b><br><small>CFLT → IBM</small></td><td class="num">~$11B</td><td class="num">$1.17B</td><td>Kafka 실시간 스트리밍 · <b>2026.3 IBM 피인수·상폐</b>($31/주)</td></tr>
+            <tr><td><b>Microsoft</b><br><small>MSFT</small></td><td class="num">$3.1T</td><td>Fabric</td><td>데이터+클라우드+AI 수직통합 · 번들로 순수 플레이어 압박 (→ <a href="./datacenter-compute.html">컴퓨트</a>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout opinion">
+        <div class="head">관전 포인트</div>
+        <p>데이터 플랫폼은 <b>"AI 시대의 곡괭이 중 곡괭이"</b> — 모델 경쟁과 무관하게 데이터는 쌓임(11원칙 ②). 단 SNOW·DBX 모두 <b>아직 영업적자</b>(⑤ 미충족), 하이퍼스케일러 번들 위협이 상수. <b>벡터·RAG</b> 수요는 MongoDB에 신규 동력. 한국 직접 상장 플레이어는 부재 — 미국주 노출이 현실적.</p>
+      </div>
+
+      <div class="callout risk">
+        <div class="head">리스크</div>
+        <p>① <b>하이퍼스케일러 번들</b>: MSFT Fabric·AWS·Google이 묶음으로 잠식.<br>
+        ② <b>적자 지속</b>: SNOW·DBX 영업적자 — 금리·밸류 민감.<br>
+        ③ <b>Databricks 비상장</b>: IPO 전 직접 투자 불가, 사모 밸류 변동.</p>
+      </div>
+
+      <div style="margin:28px 0;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:240px" href="./ai-solutions-decision.html"><span>→ 의사결정·운영 AI 보기</span></a>
+        <a class="nav-item" style="border:1px solid var(--border-2);max-width:220px" href="./ai-solutions.html"><span>↑ 데이터 솔루션 전체</span></a>
+      </div>
+
+      <h2>출처</h2>
+      <div class="card">
+        <ul style="font-size:13px;color:var(--text-2)">
+          <li>Databricks 사모 $134B(2025.12 Series L)·run-rate $5.4B(+65%, 2026.2): CNBC·SaaStr</li>
+          <li>Snowflake $60.7B·FY26 매출 $4.7B(+29%): stockanalysis·SaaStr (2026-05)</li>
+          <li>MongoDB $27.0B·FY26 매출 $2.46B(+23%): stockanalysis (2026-05)</li>
+          <li>Confluent 2026.3 <b>IBM 피인수</b>(~$11B·$31/주)·상폐 · 직전 매출 $1.17B: CNBC·stockanalysis</li>
+          <li>⚠️ Databricks는 사모(보도 기준), 상장사는 실측 — 변동성 있음</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="disclaimer">본 페이지는 공개 자료 기반의 개인 메모이며, 투자권유가 아닙니다.</div>
+        <div class="copyright" style="margin-top:8px;font-size:11.5px;color:var(--text-3);line-height:1.55">© 2026 · 상보그룹 <b>BRSW</b> (Kim Sangwoo · Won Bora) · 비영리·공공 인용 허용, <b>상업적 활용 금지</b> (CC BY-NC 4.0) · 문의 <a href="https://www.instagram.com/phyksw/" target="_blank" rel="noopener noreferrer">@phyksw</a> · <a href="../methodology.html#copyright">자세히</a></div>
+      </div>
+    </main>
+  </div>
+  <script src="../assets/js/main.js?v=3.18"></script>
+  <script>
+    mkChart("chartRev", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>$${p[0].value}B` },
+      grid: { left: 8, right: 28, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["Confluent", "MongoDB", "Snowflake", "Databricks"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [1.17, 2.46, 4.7, 5.4],
+        itemStyle: { color: "#5aa7ff", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+p.value+"B" }
+      }]
+    });
+    mkChart("chartCap", {
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>시총: $${p[0].value}B` },
+      grid: { left: 8, right: 28, top: 16, bottom: 8, containLabel: true },
+      xAxis: { type: "value", name: "$B", axisLabel: { color: "#8693a5", formatter: v => "$"+v+"B" }, splitLine: { lineStyle: { color: "#1f2632" } } },
+      yAxis: { type: "category", data: ["Confluent", "MongoDB", "Snowflake", "Databricks*"], axisLabel: { color: "#c3cdd9" } },
+      series: [{
+        type: "bar", data: [11, 27.0, 60.7, 134],
+        itemStyle: { color: "#2bd4a4", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "right", color: "#f0f4fa", formatter: p => "$"+p.value+"B" }
+      }]
+    });
+  </script>
+</body>
+</html>
