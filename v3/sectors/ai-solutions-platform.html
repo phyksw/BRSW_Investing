@@ -6,7 +6,7 @@
   <title>데이터 솔루션 · 데이터 플랫폼·DB · Investing Memo</title>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css?v=3.18">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3.19">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="ai-solutions-platform">
@@ -78,11 +78,11 @@
         <table>
           <thead><tr><th>종목</th><th>시총</th><th>매출</th><th>핵심</th></tr></thead>
           <tbody>
-            <tr><td><b>Databricks</b><br><small>DBX* · 사모</small></td><td class="num">$134B</td><td class="num">$5.4B(run-rate)</td><td>레이크하우스+Mosaic AI · AI 학습 데이터 강 · +65% 성장 · IPO 대기 · FCF 흑자전환</td></tr>
-            <tr><td><b>Snowflake</b><br><small>SNOW</small></td><td class="num">$60.7B</td><td class="num">$4.7B</td><td>데이터 클라우드 순수 플레이 · Cortex AI · FY26 +29% · 영업적자</td></tr>
-            <tr><td><b>MongoDB</b><br><small>MDB</small></td><td class="num">$27.0B</td><td class="num">$2.46B</td><td>문서형 DB 1위 · Atlas 클라우드 · <b>벡터 검색</b>으로 RAG 수혜 (+23%)</td></tr>
-            <tr><td><b>Confluent</b><br><small>CFLT → IBM</small></td><td class="num">~$11B</td><td class="num">$1.17B</td><td>Kafka 실시간 스트리밍 · <b>2026.3 IBM 피인수·상폐</b>($31/주)</td></tr>
-            <tr><td><b>Microsoft</b><br><small>MSFT</small></td><td class="num">$3.1T</td><td>Fabric</td><td>데이터+클라우드+AI 수직통합 · 번들로 순수 플레이어 압박 (→ <a href="./datacenter-compute.html">컴퓨트</a>)</td></tr>
+            <tr><td data-label="종목"><b>Databricks</b><br><small>DBX* · 사모</small></td><td data-label="시총" class="num">$134B</td><td data-label="매출" class="num">$5.4B(run-rate)</td><td data-label="핵심">레이크하우스+Mosaic AI · AI 학습 데이터 강 · +65% 성장 · IPO 대기 · FCF 흑자전환</td></tr>
+            <tr><td data-label="종목"><b>Snowflake</b><br><small>SNOW</small></td><td data-label="시총" class="num">$60.7B</td><td data-label="매출" class="num">$4.7B</td><td data-label="핵심">데이터 클라우드 순수 플레이 · Cortex AI · FY26 +29% · 영업적자</td></tr>
+            <tr><td data-label="종목"><b>MongoDB</b><br><small>MDB</small></td><td data-label="시총" class="num">$27.0B</td><td data-label="매출" class="num">$2.46B</td><td data-label="핵심">문서형 DB 1위 · Atlas 클라우드 · <b>벡터 검색</b>으로 RAG 수혜 (+23%)</td></tr>
+            <tr><td data-label="종목"><b>Confluent</b><br><small>CFLT → IBM</small></td><td data-label="시총" class="num">~$11B</td><td data-label="매출" class="num">$1.17B</td><td data-label="핵심">Kafka 실시간 스트리밍 · <b>2026.3 IBM 피인수·상폐</b>($31/주)</td></tr>
+            <tr><td data-label="종목"><b>Microsoft</b><br><small>MSFT</small></td><td data-label="시총" class="num">$3.1T</td><td data-label="매출">Fabric</td><td data-label="핵심">데이터+클라우드+AI 수직통합 · 번들로 순수 플레이어 압박 (→ <a href="./datacenter-compute.html">컴퓨트</a>)</td></tr>
           </tbody>
         </table>
       </div>
@@ -121,7 +121,7 @@
       </div>
     </main>
   </div>
-  <script src="../assets/js/main.js?v=3.18"></script>
+  <script src="../assets/js/main.js?v=3.19"></script>
   <script>
     mkChart("chartRev", {
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: p => `<b>${p[0].name}</b><br/>$${p[0].value}B` },
