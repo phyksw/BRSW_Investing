@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="./assets/css/main.css?v=3.16">
+  <link rel="stylesheet" href="./assets/css/main.css?v=3.17">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body data-sector="principles">
@@ -42,8 +42,8 @@
       <h2>1단계 · 시장 선정</h2>
       <div class="grid cols-2">
         <div class="card accent">
-          <div class="card-title"><span class="dot"></span>RULE 01 — 본진 시장</div>
-          <p><b>코스피·미국 시장</b>을 본진으로 운영. 변두리 시장은 정보·유동성 비용이 크다.
+          <div class="card-title"><span class="dot"></span>RULE 01 — 시장 (증권거래소)</div>
+          <p><b>코스피·미국 시장</b>을 주력으로 운영. 변두리 시장은 정보·유동성 비용이 크다.
           <span class="pill" style="margin-left:6px">옛 ⑧</span></p>
         </div>
         <div class="card accent">
@@ -170,7 +170,7 @@
       <div class="callout warn" style="margin-top:30px">
         <div class="head">자기점검 체크리스트</div>
         <p>
-        ① 본진(코스피·미국)? <span class="pill">YES</span>
+        ① 시장(코스피·미국)? <span class="pill">YES</span>
         ② 실수요? <span class="pill">YES</span>
         ③ 3년 매출·영익 상승? <span class="pill">YES</span>
         ④ 정체 아니라 발전? <span class="pill">YES</span> <br>
@@ -191,7 +191,7 @@
       </div>
     </main>
   </div>
-  <script src="./assets/js/main.js?v=3.16"></script>
+  <script src="./assets/js/main.js?v=3.17"></script>
   <script>
     // ---- 11원칙 레이더 차트 ----
     mkChart("chartRadar", {
@@ -199,7 +199,7 @@
       legend: { data: ["가상 종목 A (좋음)", "가상 종목 B (나쁨)"], top: 0, textStyle: { color: "#c3cdd9" } },
       radar: {
         indicator: [
-          { name: "①본진", max: 5 },
+          { name: "①시장", max: 5 },
           { name: "②실수요", max: 5 },
           { name: "③3년 성장", max: 5 },
           { name: "④발전성", max: 5 },
